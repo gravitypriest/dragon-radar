@@ -1,6 +1,6 @@
 import json
 import os
-from constants import DragonConstants
+from constants import Constants
 
 
 def load_series_frame_data(series):
@@ -9,7 +9,7 @@ def load_series_frame_data(series):
     '''
     try:
         series_frame_data = json.load(
-            open(DragonConstants.JSON_FILE))[series]
+            open(Constants.JSON_FILE))[series]
     except OSError as o:
         print k
     except KeyError as k:

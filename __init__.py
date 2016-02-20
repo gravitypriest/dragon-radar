@@ -2,8 +2,28 @@
 Dragon Radar
 '''
 import argparse
-from subtitle import Subtitle
+import ConfigParser
+import subtitle
+from constants import Constants
+from episode import Episode
 from utils import load_series_frame_data, get_op_offset, pad_zeroes
+
+
+def load_config_file():
+    '''
+    Load config from dragon-radar.conf
+    '''
+    config = ConfigParser.RawConfigParser(
+        {'working_dir': Constants.WORKING_DIR})
+    try:
+        config.read(Constants.CONF_FILE)
+    except ConfigParser.Error:
+        pass
+    try:
+        config.add_section(Constants.APP_NAME)
+    except ConfigParser.Error:
+        pass
+    return config
 
 
 def create_args():
@@ -40,15 +60,17 @@ def create_args():
 
 def main():
     args = create_args().parse_args()
+    config = load_config_file()
     series_frame_data = load_series_frame_data(args.series)
 
-    for episode in xrange(args.start, args.end + 1):
-        op_offset = get_op_offset(args.series, episode, series_frame_data)
-        episode_str = str(episode).zfill(pad_zeroes(args.series))
-        episode_offsets = series_frame_data[episode_str]
+    for ep in xrange(args.start, args.end + 1):
+
+        # create episode object
+        episode = Episode(ep, args.series, series_frame_data)
+
         # subtitle mode
         if args.sub:
-            Subtitle(args.series, episode_offsets, op_offset).retime_vobsub()
+            subtitle.retime_vobsub(episode, config)
 
 
 if __name__ == "__main__":
