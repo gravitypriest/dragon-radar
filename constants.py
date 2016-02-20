@@ -1,2 +1,2 @@
 class DragonConstants(object):
-	JSON_FILE = './DB.json'
+    JSON_FILE = './DB.json'

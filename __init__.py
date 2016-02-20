@@ -2,7 +2,8 @@
 Dragon Radar
 '''
 import argparse
-from utils import load_series_frame_data, get_op_offset
+from subtitle import Subtitle
+from utils import load_series_frame_data, get_op_offset, pad_zeroes
 
 
 def create_args():
@@ -40,7 +41,15 @@ def create_args():
 def main():
     args = create_args().parse_args()
     series_frame_data = load_series_frame_data(args.series)
-    op_offset = get_op_offset(args.series, '1', series_frame_data)
+
+    for episode in xrange(args.start, args.end + 1):
+        op_offset = get_op_offset(args.series, episode, series_frame_data)
+        episode_str = str(episode).zfill(pad_zeroes(args.series))
+        episode_offsets = series_frame_data[episode_str]
+        # subtitle mode
+        if args.sub:
+            Subtitle(args.series, episode_offsets, op_offset).retime_vobsub()
+
 
 if __name__ == "__main__":
     main()

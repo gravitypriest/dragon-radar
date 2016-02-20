@@ -22,7 +22,7 @@ def get_op_offset(series, episode, frame_data):
     '''
     Get the initial frame offset of the beginning of the OP
     '''
-    if series == "DBZ":
+    if series == "DBZ" or series == 'DBZOB':
         if episode == 25:
             op = "OP25"
         elif episode > 36 and episode < 43:
@@ -53,7 +53,7 @@ def timestamp_to_seconds(timestamp):
     Represent timestamp in total seconds
     '''
     # separate vobsub timestamp
-    time_parts = time.split(":")
+    time_parts = timestamp.split(":")
     h = int(time_parts[0])
     m = int(time_parts[1])
     s = int(time_parts[2])
@@ -90,27 +90,11 @@ def frame_to_seconds(frame):
     return float(frame * 1001) / 30000
 
 
-def adjust_timecode(time, episode_offsets, op_offset):
+def pad_zeroes(series):
     '''
-    Offset a timecode by the total number of offset frames
+    Add leading zeroes for dictionary keys
     '''
-    frame = timestamp_to_seconds(time)
-
-    # calculate offset from frame data
-    if isinstance(episode_offsets, list):
-        # for list-types (movies, not episodes), start with 0 offset
-        total_offset = 0
-        for o in epOffsets:
-            if frame > frame_to_seconds(o['frame']):
-                total_offset += frame_to_seconds(o['offset'])
-    else:
-        # for episodes, start with the OP offset
-        total_offset = frame_to_seconds(op_offset)
-        for key in epOffsets.keys():
-            if frame > frame_to_seconds(epOffsets[key]["frame"]):
-                total_offset += frame_to_seconds(epOffsets[key]["offset"])
-
-    # apply offset to subtitle timing
-    frame -= total_offset
-
-    return seconds_to_timestamp(frame)
+    leading = 3
+    if series == 'DBM' or series == 'DBGT':
+        leading = 2
+    return leading
