@@ -5,3 +5,6 @@ class Constants(object):
     FUNI_SUB_DIR = 'Subtitles - Funi'
     RETIMED_SUB_DIR = 'Retimed IDX Subs'
     APP_NAME = 'dragon-radar'
+    PGCDEMUX = ''
+    VSRIP = ''
+    DELAYCUT = ''

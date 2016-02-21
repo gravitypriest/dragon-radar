@@ -58,13 +58,27 @@ def create_args():
     return parser
 
 
+def pre_check():
+    '''
+    Make sure directories are correct
+    and required programs are installed
+    '''
+    pass
+
+
+def initial_setup():
+    '''
+    Create working directory structure
+    '''
+    pass
+
+
 def main():
     args = create_args().parse_args()
     config = load_config_file()
     series_frame_data = load_series_frame_data(args.series)
 
     for ep in xrange(args.start, args.end + 1):
-
         # create episode object
         episode = Episode(ep, args.series, series_frame_data)
 
