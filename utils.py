@@ -3,19 +3,28 @@ import os
 from constants import Constants
 
 
+def load_json(filename):
+    try:
+        json_data = json.load(open(filename))
+    except OSError as o:
+        print k
+    return json_data
+
+
 def load_series_frame_data(series):
     '''
     Load the JSON data of frame offsets for one series
     '''
-    try:
-        series_frame_data = json.load(
-            open(Constants.JSON_FILE))[series]
-    except OSError as o:
-        print k
-    except KeyError as k:
-        print k
-
+    series_frame_data = load_json(Constants.JSON_FILE)[series]
     return series_frame_data
+
+
+def load_episode_disc_data(series, season, disc):
+    '''
+    Load the JSON data of episode/disc layout
+    '''
+    disc_data = load_json('episodes.json')[series][season][disc]
+    return disc_data
 
 
 def get_op_offset(series, episode, frame_data):
