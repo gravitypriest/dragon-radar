@@ -83,7 +83,7 @@ def create_args():
     for cmd in [demux_cmd, subtitle_cmd, audio_cmd]:
         cmd.add_argument('--series',
                          metavar='<series>',
-                         help='Choose a series [DB, DBZ, DBZOB, DBGT, DBM]',
+                         help='Choose a series [DB, DBZ, DBoxZ, DBGT, DBM]',
                          required=True)
         if cmd is not demux_cmd:
             cmd.add_argument('--start',
@@ -94,7 +94,6 @@ def create_args():
                              metavar='<last>',
                              type=int,
                              help='The last episode to process')
-
 
     return parser
 
@@ -134,9 +133,9 @@ def main():
         # demux mode
         demux = Demux(config, args.series, args.season, args.disc)
         if args.r1:
-            if series in ['DB', 'DBZOB', 'DBGT']:
+            if series in ['DB', 'DBZ', 'DBGT']:
                 demux.season_set_demux()
-            if series in ['DBZ']:
+            if series in ['DBoxZ']:
                 demux.dbox_demux()
         if args.r2:
             demux.r2_demux()

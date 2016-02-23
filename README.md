@@ -1,4 +1,4 @@
-# dragon-radar
+# Dragon Radar
 Utility for synchronizing R1 Dragon Ball audio and subtitle assets with R2 video (still-in-progress)
 
 ### Requires:
