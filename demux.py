@@ -5,6 +5,7 @@ import os
 import subprocess
 import tempfile
 import shutil
+import logging
 from utils import load_episode_disc_data
 from constants import Constants
 
@@ -12,6 +13,8 @@ R1_DEMUX_DIR = Constants.R1_DEMUX_DIR
 R1_DISC_DIR = Constants.R1_DISC_DIR
 MIN_SIZE = Constants.MIN_SIZE
 APP_NAME = Constants.APP_NAME
+
+logger = logging.getLogger(APP_NAME)
 
 
 class Demux(object):
@@ -31,21 +34,11 @@ class Demux(object):
         pass
 
     def _run_pgcdemux(self, source_file, dest_path, vid, pgc=None):
-        print 'Demuxing {s} to {d}'.format(s=source_file, d=dest_path)
+        logger.info('Demuxing %s to %s...' % source_file, dest_path)
         if pgc:
             p = pgc['pgc']
             s = pgc['start']
             e = pgc['end']
-            print (
-                '{pgcdemux} -pgc {p} -m2v -aud -nosub -cellt -nolog -guism '
-                '-sc {s} -ec {e} \"{source} {dest}'.format(
-                    pgcdemux=self.pgcdemux,
-                    p=p,
-                    s=s,
-                    e=e,
-                    source=source_file,
-                    dest=dest_path))
-
             os.system(
                 '{pgcdemux} -pgc {p} -m2v -aud -nosub -cellt -nolog -guism '
                 '-sc {s} -ec {e} \"{source}\" \"{dest}\"'.format(
@@ -75,6 +68,7 @@ class Demux(object):
         Go through the demuxed files and pick out what we want,
         delete the rest
         '''
+        logger.info('Inspecting output...')
         final_dest = os.path.join(self.working_dir, self.series, R1_DEMUX_DIR)
         for d in os.listdir(tmp_dir):
             m2v = os.path.join(tmp_dir, d, 'VideoFile.m2v')
@@ -83,11 +77,12 @@ class Demux(object):
             chap = os.path.join(tmp_dir, d, 'Celltimes.txt')
             if os.path.isfile(m2v):
                 if os.path.getsize(m2v) < MIN_SIZE:
-                    print 'Ripped something that\'s not an episode.  Ignoring.'
+                    logger.info('Ripped something that\'s not an episode. '
+                                'Ignoring.')
                 else:
                     ep_num = self._translate_folder_to_episode(d)
-                    print 'Ripped an episode.  \
-                           Renaming to {e} and moving...'.format(e=ep_num)
+                    logger.info('Ripped an episode.\t'
+                                'Renaming to %s and moving...' % ep_num)
                     m2v_n = os.path.join(
                         tmp_dir, d, '{e}.m2v'.format(e=ep_num))
                     aud0_n = os.path.join(
@@ -108,17 +103,17 @@ class Demux(object):
                         shutil.move(aud1_n, final_dest)
                         shutil.move(chap_n, final_dest)
                     except shutil.Error as e:
-                        print e
+                        logger.info(e)
 
-                    print 'Move complete.'
+                    logger.info('Move complete.')
             else:
-                print '{0} does not exist'.format(m2v)
-        print 'Deleting temporary files...'
+                logger.info('%s does not exist' % m2v)
+        logger.info('Deleting temporary files...')
         try:
             shutil.rmtree(tmp_dir)
         except OSError:
-            print 'Problem deleting temp directory. \
-                   Please manually delete {0}'.format(tmp_dir)
+            logger.info('Problem deleting temp directory. '
+                        'Please manually delete %s' % tmp_dir)
 
     def _detect_main_feature(self, source_folder):
         '''
@@ -151,8 +146,7 @@ class Demux(object):
 
     def _create_temp_dir(self, vid, tmp_dir):
         vid_dir = os.path.join(tmp_dir,
-                               'S{s} D{d} V{v}'.format(series=self.series,
-                                                       s=self.season,
+                               'S{s} D{d} V{v}'.format(s=self.season,
                                                        d=self.disc, v=vid))
         os.mkdir(vid_dir)
         return vid_dir
@@ -166,34 +160,47 @@ class Demux(object):
                                      R1_DISC_DIR,
                                      self._generate_source_folder_name(),
                                      'VIDEO_TS')
+        logging.debug('Source folder: %s' % source_folder)
+
         main_feature = self._detect_main_feature(source_folder)
         source_file = os.path.join(source_folder, main_feature)
         dest_path = os.path.join(self.working_dir, self.series, R1_DEMUX_DIR)
         tmp_dir = tempfile.mkdtemp()
-        print tmp_dir
+        logging.debug('Temp folder: %s' % tmp_dir)
+
         if self.series in ['DB', 'DBGT']:
             # demux all VIDS
             for vid in xrange(1, 100):
                 vid_dir = self._create_temp_dir(vid, tmp_dir)
                 self._run_pgcdemux(source_file, dest_path, vid)
-            # go through and delete dummy files and rename based on episode
+
         elif self.series == 'DBZOB':
             no_of_eps = self.disc_episodes[1] - self.disc_episodes[0] + 1
-            print no_of_eps
+            logger.debug('# of episodes: ' % no_of_eps)
             for ep in xrange(0, no_of_eps):
                 vid_dir = self._create_temp_dir(ep, tmp_dir)
+                # chapters based on season set PGC layout
                 pgc = {'pgc': 1, 'start': ep * 9 + 1, 'end': (ep + 1) * 9}
                 self._run_pgcdemux(source_file, vid_dir, 0, pgc=pgc)
+
+        # go through and delete dummy files and rename based on episode
         self._clean_up_files(dest_path, tmp_dir)
+
         # if avisynth is req'd, run DGDecode on all m2vs
 
     def dbox_demux(self):
+        '''
+        Demux from R1 Dragon Box
+        '''
         pass
 
     def r2_demux(self):
+        '''
+        Demux from R2 Dragon Box
+        '''
         pass
 
-    def demux_subtitles(self):
+    def subtitle_demux(self):
         '''
         Use VSRip to pull out the subtitles
         '''

@@ -4,6 +4,10 @@ from utils import (timestamp_to_seconds,
                    frame_to_seconds)
 from constants import Constants
 
+APP_NAME = Constants.APP_NAME
+
+logger = logging.getLogger(APP_NAME)
+
 
 def _adjust_timecode(episode, timestamp):
     '''
@@ -44,13 +48,13 @@ def retime_vobsub(episode, config):
         episode.series,
         Constants.FUNI_SUB_DIR,
         episode.number + '.idx')
-    print 'Opened %s for reading.' % (orig_file)
+    logger.info('Opened %s for reading.' % (orig_file))
     fixed_file = os.path.join(
         config.get(Constants.APP_NAME, 'working_dir'),
         episode.series,
         Constants.RETIMED_SUB_DIR,
         episode.number + '.idx')
-    print 'Opened %s for writing.' % (fixed_file)
+    logger.info('Opened %s for writing.' % (fixed_file))
     try:
         with open(
                 orig_file, 'r') as file_in, open(
@@ -65,9 +69,9 @@ def retime_vobsub(episode, config):
                 else:
                     file_out.write(line)
     except IOError as e:
-        print e
-    print 'Subtitle retiming for %s %s is complete.' % (episode.series,
-                                                        episode.number)
+        logger.error(e)
+    logger.info('Subtitle retiming for %s %s is complete.' % (episode.series,
+                                                              episode.number))
 
 
 def patch_substation(self):

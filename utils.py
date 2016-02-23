@@ -7,7 +7,7 @@ def load_json(filename):
     try:
         json_data = json.load(open(filename))
     except OSError as o:
-        print k
+        logger.error(o)
     return json_data
 
 

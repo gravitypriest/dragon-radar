@@ -1,8 +1,10 @@
 '''
 Dragon Radar
 '''
+import sys
 import argparse
 import ConfigParser
+import logging
 import subtitle
 from constants import Constants
 from episode import Episode
@@ -47,27 +49,32 @@ def create_args():
                                      help='Demux audio from a DVD '
                                           'VIDEO_TS folder')
     demux_cmd.add_argument('--season',
-                           metavar='<season>',
+                           metavar='<first>:<last>',
                            type=int,
-                           help='Which season/box to demux',
+                           help='Which season(s)/box(es) to demux, '
+                                'from first to last',
                            required=True)
     demux_cmd.add_argument('--disc',
-                           metavar='<disc>',
+                           metavar='<first>:<last>',
                            type=int,
                            help='Which disc to demux',
                            required=True)
     demux_cmd.add_argument('--video',
                            action='store_true',
                            help='Demux video in addition to audio')
+    demux_cmd.add_argument('--subtitle',
+                           action='store_true',
+                           default=False,
+                           help='Demux subtitles')
     group = demux_cmd.add_mutually_exclusive_group()
     group.add_argument('--r1',
                        action='store_true',
                        default=True,
-                       help='Demux the R1 DVD (default)')
+                       help='Demux the audio/video from R1 DVD (default)')
     group.add_argument('--r2',
                        action='store_true',
                        default=False,
-                       help='Demux the R2 DVD')
+                       help='Demux the audio/video from R2 DVD')
 
     # process subtitles
     subtitle_cmd = subparser.add_parser('subtitle',
@@ -86,16 +93,21 @@ def create_args():
                          help='Choose a series [DB, DBZ, DBoxZ, DBGT, DBM]',
                          required=True)
         if cmd is not demux_cmd:
-            cmd.add_argument('--start',
-                             metavar='<first>',
-                             type=int,
-                             help='The first episode to process')
-            cmd.add_argument('--end',
-                             metavar='<last>',
-                             type=int,
-                             help='The last episode to process')
+            cmd.add_argument('--episode',
+                             metavar='<first>:<last>',
+                             help='Episodes to process, from first to last',
+                             required=True)
 
     return parser
+
+
+def init_logging():
+    stdout_handler = logging.StreamHandler(sys.stdout)
+    stdout_handler.setLevel(logging.INFO)
+    logging.root.addHandler(stdout_handler)
+    logger = logging.getLogger(Constants.APP_NAME)
+    logger.setLevel(logging.INFO)
+    return logger
 
 
 def pre_check():
@@ -113,21 +125,27 @@ def initial_setup():
     pass
 
 
-def subtitle_mode():
-    pass
-
-
-def demux_mode():
-    pass
-
-
-def audio_mode():
-    pass
+def split_args(argtype, arg):
+    '''
+    Split argument into start/end
+    '''
+    spread = arg.split(':', 1)
+    try:
+        start = int(spread[0])
+        end = int(spread[1])
+    except ValueError:
+        logger.error('Bad argument for --%s' % argtype)
+        sys.exit(1)
+    except IndexError:
+        logger.debug('No end %s specified.' % argtype)
 
 
 def main():
+    logger = init_logging()
     config = load_config_file()
     args = create_args().parse_args()
+
+    logger.info('Welcome to Dragon Radar')
 
     if args.command == 'demux':
         # demux mode
@@ -139,27 +157,37 @@ def main():
                 demux.dbox_demux()
         if args.r2:
             demux.r2_demux()
-    elif args.command == 'subtitle':
-        # subtitle mode
-        pass
-    elif args.command == 'audio':
-        # audio mode
-        pass
-    elif args.command == 'avisynth':
-        # avisynth mode
-        pass
-    elif args.command == 'bluray':
-        # blu-ray author mode
-        pass
-    # series_frame_data = load_series_frame_data(args.series)
+        start_season, end_season = split_args('season', args.season)
+        start_disc, end_disc = split_args('disc', args.disc)
 
-    # for ep in xrange(args.start, args.end + 1):
-    #     # create episode object
-    #     episode = Episode(ep, args.series, series_frame_data)
+        for season in xrange(start_season, end_season + 1):
+            for disc in xrange(start_disc, end_disc + 1):
+                logger.info('Launching demux mode for S%s D%s...' % season,
+                            disc)
+                demux = Demux(config, args.series, season, disc)
+                if args.r1:
+                    if series in ['DB', 'DBZOB', 'DBGT']:
+                        demux.season_set_demux()
+                    if series in ['DBZ']:
+                        demux.dbox_demux()
+                if args.r2:
+                    demux.r2_demux()
+                if args.subtitle:
+                    demux.subtitle_demux()
 
-    #     # subtitle mode
-    #     if args.sub:
-    #         subtitle.retime_vobsub(episode, config)
+    elif args.command in ['subtitle', 'audio']:
+        # per-episode modes
+        series_frame_data = load_series_frame_data(args.series)
+        start_ep, end_ep = split_args('episode', args.episode)
+
+        for ep in xrange(start_ep, end_ep + 1):
+            episode = Episode(ep, args.series, series_frame_data)
+            if args.command == 'subtitle':
+                # subtitle mode
+                subtitle.retime_vobsub(episode, config)
+            elif args.command == 'audio':
+                # audio mode
+                pass
 
 
 if __name__ == "__main__":
