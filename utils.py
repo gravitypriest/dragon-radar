@@ -15,7 +15,7 @@ def load_series_frame_data(series):
     '''
     Load the JSON data of frame offsets for one series
     '''
-    series_frame_data = load_json(Constants.JSON_FILE)[series]
+    series_frame_data = load_json(Constants.OFFSETS_JSON)[series]
     return series_frame_data
 
 
@@ -23,15 +23,23 @@ def load_episode_disc_data(series, season, disc):
     '''
     Load the JSON data of episode/disc layout
     '''
-    disc_data = load_json('episodes.json')[series][season][disc]
+    disc_data = load_json(Constants.DISC_JSON)[series][season][disc]
     return disc_data
+
+
+def load_demux_map(series, season):
+    '''
+    Load the JSON data of demux info
+    '''
+    demux_map = load_json(Constants.DEMUX_JSON)[series][season]
+    return demux_map
 
 
 def get_op_offset(series, episode, frame_data):
     '''
     Get the initial frame offset of the beginning of the OP
     '''
-    if series == "DBZ" or series == 'DBZOB':
+    if series == "DBZ" or series == 'DBoxZ':
         if episode == 25:
             op = "OP25"
         elif episode > 36 and episode < 43:

@@ -1,6 +1,12 @@
+import os
+
+
 class Constants(object):
-    JSON_FILE = './DB.json'
-    CONF_FILE = './dragon-radar.conf'
+    PACKAGE_DIR = os.path.dirname(os.path.abspath(__file__))
+    DEMUX_JSON = os.path.join(PACKAGE_DIR, 'demux.json')
+    DISC_JSON = os.path.join(PACKAGE_DIR, 'episodes.json')
+    OFFSETS_JSON = os.path.join(PACKAGE_DIR, 'DB.json')
+    CONF_FILE = os.path.join(PACKAGE_DIR, 'dragon-radar.conf')
     WORKING_DIR = 'C:/dragon-radar'
     SOURCE_DIR = WORKING_DIR
     FUNI_SUB_DIR = 'Funi VobSubs'
@@ -13,4 +19,15 @@ class Constants(object):
     PGCDEMUX = ''
     VSRIP = ''
     DELAYCUT = ''
+    VSRIP_TEMPLATE = ('{in_path}\n'
+                      '{out_path}\n'
+                      '1\n'
+                      '{vid_sequence}\n'
+                      'ALL\n'
+                      'CLOSE\n'
+                      'RESETTIME\n')
+    PARAM_FILE = 'param.lst'
+    WELCOME_MSG = ('.__ .__ .__..__ .__..  .  .__ .__..__ .__..__ \n'
+                   '|  \\[__)[__][ __|  ||\\ |  [__)[__]|  \\[__][__)\n'
+                   '|__/|  \\|  |[_./|__|| \\|  |  \\|  ||__/|  ||  \\')
     MIN_SIZE = 100000000

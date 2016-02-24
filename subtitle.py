@@ -1,4 +1,5 @@
 import os
+import logging
 from utils import (timestamp_to_seconds,
                    seconds_to_timestamp,
                    frame_to_seconds)
@@ -29,7 +30,7 @@ def _adjust_timecode(episode, timestamp):
         total_offset = frame_to_seconds(offsets['op']['offset'])
         for key in offsets.keys():
             # orange bricks have a 1.5 second delay on the OP subs
-            if (series == 'DBZOB' and
+            if (series == 'DBZ' and
                     key == 'prologue' and
                     frame < frame_to_seconds(offsets[key]["frame"])):
                 total_offset += 1.5

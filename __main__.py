@@ -11,6 +11,8 @@ from episode import Episode
 from demux import Demux
 from utils import load_series_frame_data, get_op_offset, pad_zeroes
 
+logger = None
+
 
 def load_config_file():
     '''
@@ -19,7 +21,8 @@ def load_config_file():
     config = ConfigParser.RawConfigParser(
         {'working_dir': Constants.WORKING_DIR,
          'source_dir': Constants.SOURCE_DIR,
-         'pgcdemux': Constants.PGCDEMUX})
+         'pgcdemux': Constants.PGCDEMUX,
+         'vsrip': Constants.VSRIP})
     try:
         config.read(Constants.CONF_FILE)
     except ConfigParser.Error:
@@ -50,13 +53,11 @@ def create_args():
                                           'VIDEO_TS folder')
     demux_cmd.add_argument('--season',
                            metavar='<first>:<last>',
-                           type=int,
                            help='Which season(s)/box(es) to demux, '
                                 'from first to last',
                            required=True)
     demux_cmd.add_argument('--disc',
                            metavar='<first>:<last>',
-                           type=int,
                            help='Which disc to demux',
                            required=True)
     demux_cmd.add_argument('--video',
@@ -65,7 +66,7 @@ def create_args():
     demux_cmd.add_argument('--subtitle',
                            action='store_true',
                            default=False,
-                           help='Demux subtitles')
+                           help='Demux only subtitles')
     group = demux_cmd.add_mutually_exclusive_group()
     group.add_argument('--r1',
                        action='store_true',
@@ -97,16 +98,23 @@ def create_args():
                              metavar='<first>:<last>',
                              help='Episodes to process, from first to last',
                              required=True)
+        cmd.add_argument('--verbose',
+                         action='store_true',
+                         default=False,
+                         help='More descriptive output')
 
     return parser
 
 
-def init_logging():
+def init_logging(verbose):
+    level = logging.INFO
+    if verbose:
+        level = logging.DEBUG
     stdout_handler = logging.StreamHandler(sys.stdout)
-    stdout_handler.setLevel(logging.INFO)
+    stdout_handler.setLevel(level)
     logging.root.addHandler(stdout_handler)
     logger = logging.getLogger(Constants.APP_NAME)
-    logger.setLevel(logging.INFO)
+    logger.setLevel(level)
     return logger
 
 
@@ -138,42 +146,36 @@ def split_args(argtype, arg):
         sys.exit(1)
     except IndexError:
         logger.debug('No end %s specified.' % argtype)
+        end = start
+    return start, end
 
 
 def main():
-    logger = init_logging()
+    print Constants.WELCOME_MSG
+    global logger
     config = load_config_file()
     args = create_args().parse_args()
-
-    logger.info('Welcome to Dragon Radar')
+    logger = init_logging(args.verbose)
 
     if args.command == 'demux':
         # demux mode
-        demux = Demux(config, args.series, args.season, args.disc)
-        if args.r1:
-            if series in ['DB', 'DBZ', 'DBGT']:
-                demux.season_set_demux()
-            if series in ['DBoxZ']:
-                demux.dbox_demux()
-        if args.r2:
-            demux.r2_demux()
         start_season, end_season = split_args('season', args.season)
         start_disc, end_disc = split_args('disc', args.disc)
 
         for season in xrange(start_season, end_season + 1):
             for disc in xrange(start_disc, end_disc + 1):
-                logger.info('Launching demux mode for S%s D%s...' % season,
-                            disc)
-                demux = Demux(config, args.series, season, disc)
+                logger.info('Launching demux mode for %s season %s  disc %s...'
+                            % (args.series, season, disc))
+                demux = Demux(config, args.series, season, disc, args.subtitle)
                 if args.r1:
-                    if series in ['DB', 'DBZOB', 'DBGT']:
+                    if args.series in ['DB', 'DBZ', 'DBGT']:
                         demux.season_set_demux()
-                    if series in ['DBZ']:
+                    if args.series in ['DBoxZ']:
                         demux.dbox_demux()
                 if args.r2:
                     demux.r2_demux()
-                if args.subtitle:
-                    demux.subtitle_demux()
+                # if args.subtitle:
+                #     demux.subtitle_demux()
 
     elif args.command in ['subtitle', 'audio']:
         # per-episode modes
