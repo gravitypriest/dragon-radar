@@ -11,7 +11,13 @@ from episode import Episode
 from demux import Demux
 from utils import load_series_frame_data, get_op_offset, pad_zeroes
 
-logger = None
+WELCOME_MSG = Constants.WELCOME_MSG
+WORKING_DIR = Constants.WORKING_DIR
+SOURCE_DIR = Constants.SOURCE_DIR
+PGCDEMUX = Constants.PGCDEMUX
+VSRIP = Constants.VSRIP
+CONF_FILE = Constants.CONF_FILE
+APP_NAME = Constants.APP_NAME
 
 
 def load_config_file():
@@ -19,16 +25,16 @@ def load_config_file():
     Load config from dragon-radar.conf
     '''
     config = ConfigParser.RawConfigParser(
-        {'working_dir': Constants.WORKING_DIR,
-         'source_dir': Constants.SOURCE_DIR,
-         'pgcdemux': Constants.PGCDEMUX,
-         'vsrip': Constants.VSRIP})
+        {'working_dir': WORKING_DIR,
+         'source_dir': SOURCE_DIR,
+         'pgcdemux': PGCDEMUX,
+         'vsrip': VSRIP})
     try:
-        config.read(Constants.CONF_FILE)
+        config.read(CONF_FILE)
     except ConfigParser.Error:
         pass
     try:
-        config.add_section(Constants.APP_NAME)
+        config.add_section(APP_NAME)
     except ConfigParser.Error:
         pass
     return config
@@ -58,15 +64,19 @@ def create_args():
                            required=True)
     demux_cmd.add_argument('--disc',
                            metavar='<first>:<last>',
-                           help='Which disc to demux',
+                           help='Which disc(s) to demux, from first to last',
                            required=True)
-    demux_cmd.add_argument('--video',
+    demux_cmd.add_argument('--no-video',
                            action='store_true',
-                           help='Demux video in addition to audio')
+                           help='Don\'t demux video')
     demux_cmd.add_argument('--subtitle',
                            action='store_true',
                            default=False,
                            help='Demux only subtitles')
+    demux_cmd.add_argument('--avs',
+                           action='store_true',
+                           default=False,
+                           help='Generate .d2v file')
     group = demux_cmd.add_mutually_exclusive_group()
     group.add_argument('--r1',
                        action='store_true',
@@ -86,6 +96,11 @@ def create_args():
     audio_cmd = subparser.add_parser('audio',
                                      help='Sync an R1 English AC3 audio file '
                                           'to the R2 Dragon Box')
+
+    avisynth_cmd = subparser.add_parser('avisynth',
+                                        help='Generate an AVS script for '
+                                             'side-by-side R1 vs R2 '
+                                             'comparison')
 
     # add these args this way because help message looks fucky otherwise
     for cmd in [demux_cmd, subtitle_cmd, audio_cmd]:
@@ -113,7 +128,7 @@ def init_logging(verbose):
     stdout_handler = logging.StreamHandler(sys.stdout)
     stdout_handler.setLevel(level)
     logging.root.addHandler(stdout_handler)
-    logger = logging.getLogger(Constants.APP_NAME)
+    logger = logging.getLogger(APP_NAME)
     logger.setLevel(level)
     return logger
 
@@ -151,7 +166,7 @@ def split_args(argtype, arg):
 
 
 def main():
-    print Constants.WELCOME_MSG
+    print WELCOME_MSG
     global logger
     config = load_config_file()
     args = create_args().parse_args()
@@ -164,9 +179,9 @@ def main():
 
         for season in xrange(start_season, end_season + 1):
             for disc in xrange(start_disc, end_disc + 1):
-                logger.info('Launching demux mode for %s season %s  disc %s...'
+                logger.info('Launching demux mode for %s season %s disc %s...'
                             % (args.series, season, disc))
-                demux = Demux(config, args.series, season, disc, args.subtitle)
+                demux = Demux(config, args, season, disc)
                 if args.r1:
                     if args.series in ['DB', 'DBZ', 'DBGT']:
                         demux.season_set_demux()

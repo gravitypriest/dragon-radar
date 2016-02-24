@@ -7,7 +7,13 @@ import tempfile
 import shutil
 import logging
 import atexit
-from utils import load_episode_disc_data, load_demux_map
+from utils import (load_episode_disc_data,
+                   load_demux_map,
+                   create_dir,
+                   delete_temp,
+                   move_file,
+                   rename,
+                   run_dgdecode)
 from constants import Constants
 
 R1_DEMUX_DIR = Constants.R1_DEMUX_DIR
@@ -23,34 +29,34 @@ logger = logging.getLogger(APP_NAME)
 
 class Demux(object):
 
-    def __init__(self, config, series, season, disc, sub_only):
-        self.series = series
+    def __init__(self, config, args, season, disc):
+        self.series = args.series
         self.season = season
         self.disc = disc
+        self.sub_only = args.subtitle
+        self.avs = args.avs
         self.working_dir = config.get(APP_NAME, 'working_dir')
         self.source_dir = config.get(APP_NAME, 'source_dir')
         self.pgcdemux = config.get(APP_NAME, 'pgcdemux')
         self.vsrip = config.get(APP_NAME, 'vsrip')
-        self.disc_episodes = load_episode_disc_data(series,
-                                                    str(season),
-                                                    str(disc))
+        self.disc_episodes = load_episode_disc_data(self.series,
+                                                    str(self.season),
+                                                    str(self.disc))
         source_folder = os.path.join(self.source_dir,
                                      self.series,
                                      R1_DISC_DIR,
                                      self._generate_source_folder_name(),
                                      'VIDEO_TS')
         logging.debug('Source folder: %s' % source_folder)
-
         main_feature = self._detect_main_feature(source_folder)
         self.source_file = os.path.join(source_folder, main_feature)
-        self.sub_only = sub_only
         logger.debug('Series: %s, Season: %s, Disc: %s' % (self.series,
                      self.season, self.disc))
 
-    def _run_dgdecode(self, video):
-        pass
-
     def _run_pgcdemux(self, dest_path, vid, pgc=None):
+        '''
+        Run PGCdemux to demux video & audio
+        '''
         logger.info('Demuxing %s to %s...' % (self.source_file, dest_path))
         if pgc:
             p = pgc['pgc']
@@ -78,6 +84,9 @@ class Demux(object):
         logger.info('Audio/video demux complete.')
 
     def _run_vsrip(self, vid_seq, vid_dir):
+        '''
+        Run VSRip to extract DVD subtitles as VobSub
+        '''
         vid_seq_str = '1 '
         for v in vid_seq:
             vid_seq_str += 'v{0} '.format(v)
@@ -96,18 +105,13 @@ class Demux(object):
         logger.info('Subtitle demux complete.')
 
     def _translate_folder_to_episode(self, folder):
+        '''
+        Figure out how to rename the video based on the folder name
+        '''
         vid = folder.split('V')[1]
         episodes = list(
             range(self.disc_episodes[0], self.disc_episodes[1] + 1))
         return str(episodes[int(vid)]).zfill(3)
-
-    def _delete_temp(self, tmp_dir):
-        logger.info('Deleting temporary files...')
-        try:
-            shutil.rmtree(tmp_dir)
-        except OSError:
-            logger.info('Problem deleting temp directory. '
-                        'Please manually delete %s' % tmp_dir)
 
     def _clean_up_files(self, dest_path, tmp_dir):
         '''
@@ -127,8 +131,8 @@ class Demux(object):
 
             if os.path.isfile(m2v) or os.path.isfile(subi):
                 if os.path.isfile(m2v) and os.path.getsize(m2v) < MIN_SIZE:
-                    logger.info('Ripped something that\'s not an episode. '
-                                'Ignoring.')
+                    logger.debug('Ripped something that\'s not an episode. '
+                                 'Ignoring.')
                 else:
                     ep_num = self._translate_folder_to_episode(d)
                     logger.info('Ripped an episode.\t'
@@ -146,59 +150,29 @@ class Demux(object):
                     subs_n = os.path.join(
                         tmp_dir, d, '{e}.sub'.format(e=ep_num))
 
-                    try:
-                        os.rename(m2v, m2v_n)
-                        os.rename(aud0, aud0_n)
-                        os.rename(aud1, aud1_n)
-                        os.rename(chap, chap_n)
-                    except:
-                        # ignore when there are missing files, might have only
-                        #  one audio stream or be in sub-only mode
-                        pass
-                    try:
-                        os.rename(subi, subi_n)
-                        os.rename(subs, subs_n)
-                    except:
-                        pass
+                    rename(m2v, m2v_n)
+                    rename(aud0, aud0_n)
+                    rename(aud1, aud1_n)
+                    rename(chap, chap_n)
+                    rename(subi, subi_n)
+                    rename(subs, subs_n)
 
-                    # make the directory
-                    try:
-                        os.makedirs(final_dest)
-                    except OSError:
-                        if not os.path.isdir(final_dest):
-                            self._delete_temp(tmp_dir)
-                            logger.debug('There was a problem creating %s' %
-                                         final_dest)
-                            raise
-                        logger.debug('%s not created (already exists)' %
-                                     final_dest)
-                    try:
-                        os.makedirs(sub_dest)
-                    except OSError:
-                        if not os.path.isdir(sub_dest):
-                            self._delete_temp(tmp_dir)
-                            logger.debug('There was a problem creating %s' %
-                                         sub_dest)
-                            raise
-                        logger.debug('%s not created (already exists)' %
-                                     sub_dest)
-                    try:
-                        shutil.move(m2v_n, final_dest)
-                        shutil.move(aud0_n, final_dest)
-                        shutil.move(aud1_n, final_dest)
-                        shutil.move(chap_n, final_dest)
-                    except shutil.Error as e:
-                        logger.info(e)
-                    try:
-                        shutil.move(subi_n, sub_dest)
-                        shutil.move(subs_n, sub_dest)
-                    except shutil.Error as e:
-                        logger.info(e)
+                    # make the directories
+                    create_dir(sub_dest)
+                    create_dir(final_dest)
+
+                    for f in [m2v_n, aud0_n, aud1_n, chap_n]:
+                        move_file(f, final_dest)
+
+                    for f in [subi_n, subs_n]:
+                        move_file(f, sub_dest)
             else:
-                logger.info('%s does not exist' % m2v)
+                logger.debug('%s does not exist' % m2v)
         logger.info('Demux complete.\n'
                     'See demuxed A/V files in %s.\n'
                     'See demuxed subs in %s.\n' % (final_dest, sub_dest))
+
+        delete_temp(tmp_dir)
 
     def _detect_main_feature(self, source_folder):
         '''
@@ -244,7 +218,7 @@ class Demux(object):
         tmp_dir = tempfile.mkdtemp()
         # in the case of unexpected exit, we don't want to
         # keep temp files around
-        atexit.register(self._delete_temp, tmp_dir)
+        atexit.register(delete_temp, tmp_dir)
         logging.debug('Temp folder: %s' % tmp_dir)
 
         if self.series in ['DB', 'DBGT']:
@@ -281,8 +255,9 @@ class Demux(object):
                 self._run_vsrip(vsrip_vid_seq, vid_dir)
         # go through and delete dummy files and rename based on episode
         self._clean_up_files(dest_path, tmp_dir)
-
         # if avisynth is req'd, run DGDecode on all m2vs
+        if self.avs:
+            run_dgdecode(dest_path, self.disc_episodes, self.series)
 
     def dbox_demux(self):
         '''

@@ -1,6 +1,15 @@
 import json
 import os
+import logging
+import shutil
 from constants import Constants
+
+APP_NAME = Constants.APP_NAME
+OFFSETS_JSON = Constants.OFFSETS_JSON
+DISC_JSON = Constants.DISC_JSON
+DEMUX_JSON = Constants.DEMUX_JSON
+
+logger = logging.getLogger(APP_NAME)
 
 
 def load_json(filename):
@@ -15,7 +24,7 @@ def load_series_frame_data(series):
     '''
     Load the JSON data of frame offsets for one series
     '''
-    series_frame_data = load_json(Constants.OFFSETS_JSON)[series]
+    series_frame_data = load_json(OFFSETS_JSON)[series]
     return series_frame_data
 
 
@@ -23,7 +32,7 @@ def load_episode_disc_data(series, season, disc):
     '''
     Load the JSON data of episode/disc layout
     '''
-    disc_data = load_json(Constants.DISC_JSON)[series][season][disc]
+    disc_data = load_json(DISC_JSON)[series][season][disc]
     return disc_data
 
 
@@ -31,7 +40,7 @@ def load_demux_map(series, season):
     '''
     Load the JSON data of demux info
     '''
-    demux_map = load_json(Constants.DEMUX_JSON)[series][season]
+    demux_map = load_json(DEMUX_JSON)[series][season]
     return demux_map
 
 
@@ -115,3 +124,54 @@ def pad_zeroes(series):
     if series == 'DBM' or series == 'DBGT':
         leading = 2
     return leading
+
+
+def delete_temp(tmp_dir):
+    try:
+        if os.path.isdir(tmp_dir):
+            logger.info('Deleting temporary files...')
+            shutil.rmtree(tmp_dir)
+    except OSError:
+        logger.info('Problem deleting temp directory. '
+                    'Please manually delete %s' % tmp_dir)
+
+
+def rename(fname, new_fname):
+    try:
+        os.rename(fname, new_fname)
+    except OSError as e:
+        logger.error('Could not rename %s: %s' (fname, e))
+
+
+def move_file(fname, new_path):
+    try:
+        shutil.move(fname, new_path)
+    except shutil.Error as e:
+        logger.error(e)
+
+
+def create_dir(newdir):
+    try:
+        os.makedirs(newdir)
+    except OSError:
+        if not os.path.isdir(newdir):
+            self._delete_temp(tmp_dir)
+            logger.debug('There was a problem creating %s' %
+                         newdir)
+            raise
+        logger.debug('%s not created (already exists)' %
+                     newdir)
+
+
+def run_dgdecode(path, episodes, series):
+    start = str(episodes[0]).zfill(pad_zeroes(series))
+    end = str(episodes[1]).zfill(pad_zeroes(series))
+    for e in xrange(start, end + 1):
+        full_path = os.path.join(path, e)
+        if (os.path.isfile(full_path + '.m2v') and
+           not os.path.isfile(full_path + '.d2v')):
+            os.system(
+                '{dgdecode} -IF=[{inf}] -OF=[{outf}] -MINIMIZE -EXIT'.format(
+                    dgdecode=config.get(APP_NAME, 'dgdecode'),
+                    inf=full_path + '.m2v',
+                    outf=full_path))
