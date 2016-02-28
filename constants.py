@@ -5,7 +5,7 @@ class Constants(object):
     PACKAGE_DIR = os.path.dirname(os.path.abspath(__file__))
     DEMUX_JSON = os.path.join(PACKAGE_DIR, 'demux.json')
     DISC_JSON = os.path.join(PACKAGE_DIR, 'episodes.json')
-    OFFSETS_JSON = os.path.join(PACKAGE_DIR, 'DB.json')
+    OFFSETS_JSON = os.path.join(PACKAGE_DIR, 'offsets.json')
     CONF_FILE = os.path.join(PACKAGE_DIR, 'dragon-radar.conf')
     WORKING_DIR = 'C:/dragon-radar'
     SOURCE_DIR = WORKING_DIR
@@ -15,10 +15,11 @@ class Constants(object):
     R2_DEMUX_DIR = 'R2 Demux'
     R1_DISC_DIR = 'R1 Discs'
     R2_DISC_DIR = 'R2 Discs'
+    AVS_DIR = 'AVS Scripts'
     APP_NAME = 'dragon-radar'
-    PGCDEMUX = ''
-    VSRIP = ''
-    DELAYCUT = ''
+    PGCDEMUX = 'C:\PGCDemux'
+    VSRIP = 'C:\VSrip'
+    DELAYCUT = 'C:\Delaycut'
     VSRIP_TEMPLATE = ('{in_path}\n'
                       '{out_path}\n'
                       '1\n'

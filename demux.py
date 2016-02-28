@@ -34,6 +34,7 @@ class Demux(object):
         self.season = season
         self.disc = disc
         self.sub_only = args.subtitle
+        self.no_video = args.no_video
         self.avs = args.avs
         self.working_dir = config.get(APP_NAME, 'working_dir')
         self.source_dir = config.get(APP_NAME, 'source_dir')
@@ -58,6 +59,10 @@ class Demux(object):
         Run PGCdemux to demux video & audio
         '''
         logger.info('Demuxing %s to %s...' % (self.source_file, dest_path))
+        streams = '-m2v -aud -nosub -cellt'
+        # only demux audio
+        if self.no_video:
+            streams = '-nom2v -aud -nosub -nocellt'
         if pgc:
             p = pgc['pgc']
             s = pgc['start']
@@ -65,20 +70,22 @@ class Demux(object):
             # this call needs quotes around the paths because
             #  fuck consistency right?
             os.system(
-                '{pgcdemux} -pgc {p} -m2v -aud -nosub -cellt -nolog -guism '
+                '{pgcdemux} -pgc {p} {streams} -nolog -guism '
                 '-sc {s} -ec {e} \"{source}\" \"{dest}\"'.format(
                     pgcdemux=self.pgcdemux,
                     p=p,
+                    streams=streams,
                     s=s,
                     e=e,
                     source=self.source_file,
                     dest=dest_path))
         else:
             os.system(
-                '{pgcdemux} -vid {v} -m2v -aud -nosub -cellt -nolog -guism '
+                '{pgcdemux} -vid {v} {streams} -nolog -guism '
                 '\"{source}\" \"{dest}\"'.format(
                     pgcdemux=self.pgcdemux,
                     v=vid,
+                    streams=streams,
                     source=self.source_file,
                     dest=dest_path))
         logger.info('Audio/video demux complete.')

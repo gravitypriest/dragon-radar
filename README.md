@@ -12,8 +12,8 @@ Utility for synchronizing R1 Dragon Ball audio and subtitle assets with R2 video
 
 ##### For Avisynth scripts:
 - [Avisynth](http://avisynth.nl/index.php/Main_Page)
-- [DGMPGDec](http://www.videohelp.com/software/DGMPGDec)
-- [NicAudio](https://nicaudio.codeplex.com/)
+- [DGMPGDec](http://www.videohelp.com/software/DGMPGDec) -- also copy DGDecode.dll to your Avisynth plugins folder
+- [NicAudio](https://nicaudio.codeplex.com/) -- copy NicAudio.dll to your Avisynth plugins folder
 
 ##### For MKV muxing:
 - [MKVToolnix](http://www.videohelp.com/software/MKVtoolnix)

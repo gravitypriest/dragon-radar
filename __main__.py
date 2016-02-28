@@ -5,10 +5,12 @@ import sys
 import argparse
 import ConfigParser
 import logging
-import subtitle
 from constants import Constants
 from episode import Episode
 from demux import Demux
+from avisynth import write_avs_file
+from subtitle import retime_vobsub
+from audio import retime_audio
 from utils import load_series_frame_data, get_op_offset, pad_zeroes
 
 WELCOME_MSG = Constants.WELCOME_MSG
@@ -103,7 +105,7 @@ def create_args():
                                              'comparison')
 
     # add these args this way because help message looks fucky otherwise
-    for cmd in [demux_cmd, subtitle_cmd, audio_cmd]:
+    for cmd in [demux_cmd, subtitle_cmd, audio_cmd, avisynth_cmd]:
         cmd.add_argument('--series',
                          metavar='<series>',
                          help='Choose a series [DB, DBZ, DBoxZ, DBGT, DBM]',
@@ -166,11 +168,12 @@ def split_args(argtype, arg):
 
 
 def main():
-    print WELCOME_MSG
     global logger
     config = load_config_file()
     args = create_args().parse_args()
     logger = init_logging(args.verbose)
+
+    print WELCOME_MSG
 
     if args.command == 'demux':
         # demux mode
@@ -189,22 +192,24 @@ def main():
                         demux.dbox_demux()
                 if args.r2:
                     demux.r2_demux()
-                # if args.subtitle:
-                #     demux.subtitle_demux()
 
-    elif args.command in ['subtitle', 'audio']:
+    elif args.command in ['subtitle', 'audio', 'avisynth']:
         # per-episode modes
         series_frame_data = load_series_frame_data(args.series)
         start_ep, end_ep = split_args('episode', args.episode)
 
         for ep in xrange(start_ep, end_ep + 1):
             episode = Episode(ep, args.series, series_frame_data)
+
+            if args.command == 'avisynth':
+                # avisynth mode
+                write_avs_file(episode, config)
             if args.command == 'subtitle':
                 # subtitle mode
-                subtitle.retime_vobsub(episode, config)
+                retime_vobsub(episode, config)
             elif args.command == 'audio':
                 # audio mode
-                pass
+                retime_audio(episode)
 
 
 if __name__ == "__main__":
