@@ -33,8 +33,9 @@ class Demux(object):
         self.series = args.series
         self.season = season
         self.disc = disc
-        self.sub_only = args.subtitle
-        self.no_video = args.no_video
+        self.no_sub = args.no_sub
+        self.no_video = args.no_vid
+        self.no_audio = args.no_aud
         self.avs = args.avs
         self.working_dir = config.get(APP_NAME, 'working_dir')
         self.source_dir = config.get(APP_NAME, 'source_dir')
@@ -59,10 +60,19 @@ class Demux(object):
         Run PGCdemux to demux video & audio
         '''
         logger.info('Demuxing %s to %s...' % (self.source_file, dest_path))
-        streams = '-m2v -aud -nosub -cellt'
-        # only demux audio
+
+        arg_list = []
         if self.no_video:
-            streams = '-nom2v -aud -nosub -nocellt'
+            arg_list.extend(['-nom2v', '-nocellt'])
+        else:
+            arg_list.extend(['-m2v', '-cellt'])
+        if self.no_audio:
+            arg_list.append('-noaud')
+        else:
+            arg_list.append('-aud')
+        arg_list.append('-nosub')
+        streams = ' '.join(arg_list)
+
         if pgc:
             p = pgc['pgc']
             s = pgc['start']
@@ -232,7 +242,7 @@ class Demux(object):
             # demux all VIDS
             for vid in xrange(1, 100):
                 vid_dir = self._create_temp_dir(vid, tmp_dir)
-                if not self.sub_only:
+                if not (self.no_video and self.no_audio):
                     self._run_pgcdemux(dest_path, vid)
 
         elif self.series == 'DBZ':
@@ -257,9 +267,10 @@ class Demux(object):
                 logger.debug('VSRip vid sequence: %s', vsrip_vid_seq)
                 # chapters based on season set PGC layout
                 pgc = {'pgc': 1, 'start': start_chap, 'end': end_chap}
-                if not self.sub_only:
+                if not (self.no_video and self.no_audio):
                     self._run_pgcdemux(vid_dir, 0, pgc=pgc)
-                self._run_vsrip(vsrip_vid_seq, vid_dir)
+                if not(self.no_sub):
+                    self._run_vsrip(vsrip_vid_seq, vid_dir)
         # go through and delete dummy files and rename based on episode
         self._clean_up_files(dest_path, tmp_dir)
         # if avisynth is req'd, run DGDecode on all m2vs

@@ -6,6 +6,7 @@ class Constants(object):
     DEMUX_JSON = os.path.join(PACKAGE_DIR, 'demux.json')
     DISC_JSON = os.path.join(PACKAGE_DIR, 'episodes.json')
     OFFSETS_JSON = os.path.join(PACKAGE_DIR, 'offsets.json')
+    VALID_JSON = os.path.join(PACKAGE_DIR, 'valid.json')
     CONF_FILE = os.path.join(PACKAGE_DIR, 'dragon-radar.conf')
     WORKING_DIR = 'C:/dragon-radar'
     SOURCE_DIR = WORKING_DIR

@@ -1,6 +1,7 @@
 '''
 Dragon Radar
 '''
+import os
 import sys
 import argparse
 import ConfigParser
@@ -11,7 +12,10 @@ from demux import Demux
 from avisynth import write_avs_file
 from subtitle import retime_vobsub
 from audio import retime_audio
-from utils import load_series_frame_data, get_op_offset, pad_zeroes
+from utils import (load_series_frame_data,
+                   get_op_offset,
+                   pad_zeroes,
+                   load_validate)
 
 WELCOME_MSG = Constants.WELCOME_MSG
 WORKING_DIR = Constants.WORKING_DIR
@@ -68,17 +72,41 @@ def create_args():
                            metavar='<first>:<last>',
                            help='Which disc(s) to demux, from first to last',
                            required=True)
-    demux_cmd.add_argument('--no-video',
+
+    vid_group = demux_cmd.add_mutually_exclusive_group()
+    vid_group.add_argument('--vid',
                            action='store_true',
-                           help='Don\'t demux video')
-    demux_cmd.add_argument('--subtitle',
+                           default=True,
+                           help='Demux video (default)')
+    vid_group.add_argument('--no-vid',
                            action='store_true',
                            default=False,
-                           help='Demux only subtitles')
+                           help='Don\'t demux video')
+
+    aud_group = demux_cmd.add_mutually_exclusive_group()
+    aud_group.add_argument('--aud',
+                           action='store_true',
+                           default=True,
+                           help='Demux audio (default)')
+    aud_group.add_argument('--no-aud',
+                           action='store_true',
+                           default=False,
+                           help='Don\'t demux audio')
+    sub_group = demux_cmd.add_mutually_exclusive_group()
+
+    demux_cmd.add_argument('--sub',
+                           action='store_true',
+                           default=True,
+                           help='Demux subtitles (default)')
+    demux_cmd.add_argument('--no-sub',
+                           action='store_true',
+                           default=False,
+                           help='Do not demux subtitles')
     demux_cmd.add_argument('--avs',
                            action='store_true',
                            default=False,
                            help='Generate .d2v file')
+
     group = demux_cmd.add_mutually_exclusive_group()
     group.add_argument('--r1',
                        action='store_true',
@@ -135,12 +163,30 @@ def init_logging(verbose):
     return logger
 
 
-def pre_check():
+def pre_check(args, config):
     '''
     Make sure directories are correct
     and required programs are installed
     '''
-    pass
+    logger.debug('Performing pre-check...')
+    bad_conf = False
+    if args.command == 'demux':
+        if not (args.no_vid and args.no_aud):
+            pgcdemux = config.get(APP_NAME, 'pgcdemux')
+            logger.debug('PGCDemux path: %s' % pgcdemux)
+            if not os.path.isfile(pgcdemux):
+                logger.error('Path to PgcDemux \"%s\" is invalid.' % pgcdemux)
+                bad_conf = True
+        if not args.no_sub:
+            vsrip = config.get(APP_NAME, 'vsrip')
+            logger.debug('VSRip path: %s' % vsrip)
+            if not os.path.isfile(vsrip):
+                logger.error('Path to VSRip \"%s\" is invalid.' % vsrip)
+                bad_conf = True
+    if bad_conf:
+        sys.exit(1)
+    else:
+        logger.debug('Pre-check finished.')
 
 
 def initial_setup():
@@ -148,6 +194,17 @@ def initial_setup():
     Create working directory structure
     '''
     pass
+
+
+def bad_arg_exit(arg):
+    logger.error('Bad argument for --%s' % arg)
+    sys.exit(1)
+
+
+def validate_args(argtype, arg, series):
+    valid = load_validate(series)
+    if not all((a - 1) in xrange(valid[argtype]) for a in arg):
+        bad_arg_exit(argtype)
 
 
 def split_args(argtype, arg):
@@ -159,8 +216,7 @@ def split_args(argtype, arg):
         start = int(spread[0])
         end = int(spread[1])
     except ValueError:
-        logger.error('Bad argument for --%s' % argtype)
-        sys.exit(1)
+        bad_arg_exit(argtype)
     except IndexError:
         logger.debug('No end %s specified.' % argtype)
         end = start
@@ -173,12 +229,18 @@ def main():
     args = create_args().parse_args()
     logger = init_logging(args.verbose)
 
+    # don't proceed if paths aren't right/programs missing
+    pre_check(args, config)
+
     print WELCOME_MSG
 
-    if args.command == 'demux':
+    if args.command == 'demux' and not (args.no_vid and args.no_aud and
+                                        args.no_sub):
         # demux mode
         start_season, end_season = split_args('season', args.season)
+        validate_args('season', [start_season, end_season], args.series)
         start_disc, end_disc = split_args('disc', args.disc)
+        validate_args('disc', [start_disc, end_disc], args.series)
 
         for season in xrange(start_season, end_season + 1):
             for disc in xrange(start_disc, end_disc + 1):

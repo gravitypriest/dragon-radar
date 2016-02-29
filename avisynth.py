@@ -1,6 +1,7 @@
 import os
 import logging
 from constants import Constants
+from utils import create_dir
 
 AVS_DIR = Constants.AVS_DIR
 R1_DEMUX_DIR = Constants.R1_DEMUX_DIR
@@ -73,9 +74,10 @@ def generate_avs(episode, working_dir):
     r2_dir = os.path.join(working_dir,
                           episode.series,
                           R2_DEMUX_DIR)
+    # only use audio channels 2 and 3 because Virtualdub can't deal with 5.1
     import_section = ('r1_v = MPEG2Source(\"{r1_v}\")\n'
                       'r2_v = MPEG2Source(\"{r2_v}\")\n'
-                      'r1_a = NicAC3Source(\"{r1_a}\").GetChannel(1,2)\n'
+                      'r1_a = NicAC3Source(\"{r1_a}\").GetChannel(2,3)\n'
                       'r2_a = NicAC3Source(\"{r2_a}\")\n'.format(
                           r1_v=os.path.join(r1_dir, episode.number + '.d2v'),
                           r2_v=os.path.join(r2_dir, episode.number + '.d2v'),
@@ -99,6 +101,8 @@ def write_avs_file(episode, config):
                              episode.series,
                              AVS_DIR,
                              episode.number + '.avs')
+    create_dir(os.path.dirname(avs_fname))
+
     with open(avs_fname, 'w') as avs_file:
         logger.info('%s.avs opened for writing.' % episode.number)
         avs_file.write(generate_avs(episode, working_dir))

@@ -8,6 +8,7 @@ APP_NAME = Constants.APP_NAME
 OFFSETS_JSON = Constants.OFFSETS_JSON
 DISC_JSON = Constants.DISC_JSON
 DEMUX_JSON = Constants.DEMUX_JSON
+VALID_JSON = Constants.VALID_JSON
 
 logger = logging.getLogger(APP_NAME)
 
@@ -42,6 +43,14 @@ def load_demux_map(series, season):
     '''
     demux_map = load_json(DEMUX_JSON)[series][season]
     return demux_map
+
+
+def load_validate(series):
+    '''
+    Load the JSON data of demux info
+    '''
+    validate = load_json(VALID_JSON)[series]
+    return validate
 
 
 def get_op_offset(series, episode, frame_data):
