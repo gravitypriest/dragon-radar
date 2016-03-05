@@ -253,9 +253,12 @@ class Demux(object):
             for ep in xrange(0, no_of_eps):
                 vid_dir = self._create_temp_dir(ep, tmp_dir)
                 if self.season > 1:
+                    print demux_map
                     # S2 and up follow a pattern
-                    start_chap = demux_map['pgcdemux'][0] + (ep * demux_map[1])
-                    end_chap = demux_map['pgcdemux'][1] + (ep * demux_map[1])
+                    start_chap = demux_map['pgcdemux'][0] + (
+                        ep * demux_map['pgcdemux'][1])
+                    end_chap = demux_map['pgcdemux'][1] + (
+                        ep * demux_map['pgcdemux'][1])
                 else:
                     # DBZ season 1 is the only weird one
                     current_ep = str(self.disc_episodes[0] + ep).zfill(3)

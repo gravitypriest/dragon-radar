@@ -29,6 +29,31 @@ def load_r2_chapters(episode, working_dir):
     return chapters
 
 
+def check_for_d2v(episode, working_dir):
+    logger.debug('Checking that %s.d2v files (R1 and R2) exist...' %
+                 episode.number)
+    r2_d2v_file = os.path.join(working_dir,
+                               episode.series,
+                               R2_DEMUX_DIR,
+                               episode.number + '.d2v')
+    r1_d2v_file = os.path.join(working_dir,
+                               episode.series,
+                               R1_DEMUX_DIR,
+                               episode.number + '.d2v')
+    if not os.path.isfile(r2_d2v_file):
+        logger.debug('R2 %s.d2v file not found. Creating...' %
+                     episode.number)
+        run_dgdecode(os.path.dirname(r2_d2v_file),
+                     [episode.number, episode.number],
+                     episode.series)
+    if not os.path.isfile(r1_d2v_file):
+        logger.debug('R1 %s.d2v file not found. Creating...' %
+                     episode.number)
+        run_dgdecode(os.path.dirname(r1_d2v_file),
+                     [episode.number, episode.number],
+                     episode.series)
+
+
 def episode_edits(episode, r2_chaps):
     logger.debug('Generating edits...')
     offsets = episode.offsets

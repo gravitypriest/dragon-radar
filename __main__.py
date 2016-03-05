@@ -168,6 +168,14 @@ def pre_check(args, config):
     Make sure directories are correct
     and required programs are installed
     '''
+    def dgdecode_check():
+        dgdecode = config.get(APP_NAME, 'dgdecode')
+        logger.debug('DGDecode path: %s' % dgdecode)
+        if not os.path.isfile(dgdecode):
+            logger.error('Path to DGDecode \"%s\" is invalid.' % dgdecode)
+            return True
+        return False
+
     logger.debug('Performing pre-check...')
     bad_conf = False
     if args.command == 'demux':
@@ -175,7 +183,7 @@ def pre_check(args, config):
             pgcdemux = config.get(APP_NAME, 'pgcdemux')
             logger.debug('PGCDemux path: %s' % pgcdemux)
             if not os.path.isfile(pgcdemux):
-                logger.error('Path to PgcDemux \"%s\" is invalid.' % pgcdemux)
+                logger.error('Path to PGCDemux \"%s\" is invalid.' % pgcdemux)
                 bad_conf = True
         if not args.no_sub:
             vsrip = config.get(APP_NAME, 'vsrip')
@@ -183,6 +191,10 @@ def pre_check(args, config):
             if not os.path.isfile(vsrip):
                 logger.error('Path to VSRip \"%s\" is invalid.' % vsrip)
                 bad_conf = True
+        if args.avs:
+            bad_conf = dgdecode_check()
+    if args.command == 'avisynth':
+        bad_conf = dgdecode_check()
     if bad_conf:
         sys.exit(1)
     else:
