@@ -187,7 +187,7 @@ class Demux(object):
                 logger.debug('%s does not exist' % m2v)
         logger.info('Demux complete.\n'
                     'See demuxed A/V files in %s.\n'
-                    'See demuxed subs in %s.\n' % (final_dest, sub_dest))
+                    'See demuxed subs in %s.' % (final_dest, sub_dest))
 
         delete_temp(tmp_dir)
 
