@@ -14,13 +14,13 @@ logger = logging.getLogger(APP_NAME)
 
 class Episode(object):
 
-    def __init__(self, config, number, series, series_frame_data):
+    def __init__(self, config, number, series):
         ep_str = str(number).zfill(pad_zeroes(series))
         self.number = ep_str
         self.series = series
         frame_data = load_series_frame_data(series)
         op_offset = get_op_offset(series, number, frame_data)
-        offsets = series_frame_data[self.number]
+        offsets = frame_data[self.number]
         self.offsets = self.combine_framedata(offsets, op_offset)
         working_dir = config.get(APP_NAME, 'working_dir')
         self.r2_chapters = self.load_r2_chapters(series, ep_str, working_dir)

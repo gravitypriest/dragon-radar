@@ -170,17 +170,3 @@ def create_dir(newdir):
             raise
         logger.debug('%s not created (already exists)' %
                      newdir)
-
-
-def run_dgdecode(path, episodes, series):
-    start = str(episodes[0]).zfill(pad_zeroes(series))
-    end = str(episodes[1]).zfill(pad_zeroes(series))
-    for e in xrange(start, end + 1):
-        full_path = os.path.join(path, e)
-        if (os.path.isfile(full_path + '.m2v') and
-           not os.path.isfile(full_path + '.d2v')):
-            os.system(
-                '{dgdecode} -IF=[{inf}] -OF=[{outf}] -MINIMIZE -EXIT'.format(
-                    dgdecode=config.get(APP_NAME, 'dgdecode'),
-                    inf=full_path + '.m2v',
-                    outf=full_path))

@@ -11,9 +11,9 @@ from utils import (load_episode_disc_data,
                    create_dir,
                    delete_temp,
                    move_file,
-                   rename,
-                   run_dgdecode)
+                   rename)
 from constants import Constants
+from avisynth import run_dgdecode
 
 R1_DEMUX_DIR = Constants.R1_DEMUX_DIR
 R1_DISC_DIR = Constants.R1_DISC_DIR

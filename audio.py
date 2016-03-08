@@ -95,6 +95,8 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, series):
             for fname in file_combine:
                 with open(fname, 'rb') as f:
                     shutil.copyfileobj(f, final_file)
+        for f in file_combine:
+            os.remove(f)
 
 
 def retime_audio(episode, config):
@@ -133,15 +135,8 @@ def retime_audio(episode, config):
         r2_chaps = episode.r2_chapters
         offsets = episode.offsets
 
-        for key in ['op', 'prologue', 'partA', 'partB', 'ED', 'NEP']:
+        for key in ['op', 'prologue', 'partB', 'ED', 'NEP']:
             if key in offsets.keys():
-
-                if key is 'partA':
-                    # no part A in r2_chaps so improvise
-                    r2_chaps[key] = offsets[key]['frame'] - (
-                        offsets['op']['offset'] +
-                        offsets['prologue']['offset'])
-
                 # skip scenes with offset of 0
                 if offsets[key]['offset'] == 0:
                     continue

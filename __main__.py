@@ -9,7 +9,7 @@ import logging
 from constants import Constants
 from episode import Episode
 from demux import Demux
-from avisynth import write_avs_file
+from avisynth import Avisynth
 from subtitle import retime_vobsub
 from audio import retime_audio
 from utils import (load_series_frame_data,
@@ -45,9 +45,7 @@ def load_config_file():
         config.add_section(APP_NAME)
     except ConfigParser.Error:
         pass
-    # normalize paths
-    for c in config.keys():
-        config[c] = os.path.normpath(config[c])
+
     return config
 
 
@@ -272,10 +270,10 @@ def main():
         start_ep, end_ep = split_args('episode', args.episode)
 
         for ep in xrange(start_ep, end_ep + 1):
-            episode = Episode(ep, args.series)
+            episode = Episode(config, ep, args.series)
             if args.command == 'avisynth':
                 # avisynth mode
-                write_avs_file(episode, config)
+                Avisynth(episode, config).write_avs_file()
             if args.command == 'subtitle':
                 # subtitle mode
                 retime_vobsub(episode, config)

@@ -8,10 +8,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":4505,
-                "offset":0
-            },
             "partB":{
                 "frame":21691,
                 "offset":10
@@ -25,10 +21,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":4821,
-                "offset":0
             },
             "partB":{
                 "frame":22501,
@@ -44,10 +36,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5364,
-                "offset":0
-            },
             "partB":{
                 "frame":22531,
                 "offset":5
@@ -61,10 +49,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":6208,
-                "offset":0
             },
             "partB":{
                 "frame":20731,
@@ -80,10 +64,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":6019,
-                "offset":0
-            },
             "partB":{
                 "frame":22351,
                 "offset":5
@@ -97,10 +77,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":6588,
-                "offset":0
             },
             "partB":{
                 "frame":20311,
@@ -116,10 +92,6 @@
                 "frame":3300,
                 "offset":5
             },
-            "partA":{
-                "frame":5833,
-                "offset":0
-            },
             "partB":{
                 "frame":21481,
                 "offset":0
@@ -133,10 +105,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":4870,
-                "offset":0
             },
             "partB":{
                 "frame":22411,
@@ -152,10 +120,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":7325,
-                "offset":0
-            },
             "partB":{
                 "frame":21871,
                 "offset":30
@@ -169,10 +133,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5979,
-                "offset":0
             },
             "partB":{
                 "frame":20851,
@@ -188,10 +148,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5148,
-                "offset":0
-            },
             "partB":{
                 "frame":21751,
                 "offset":30
@@ -205,10 +161,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":6749,
-                "offset":0
             },
             "partB":{
                 "frame":21781,
@@ -224,10 +176,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":4133,
-                "offset":0
-            },
             "partB":{
                 "frame":21661,
                 "offset":25
@@ -241,10 +189,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":20
-            },
-            "partA":{
-                "frame":5334,
-                "offset":0
             },
             "partB":{
                 "frame":23431,
@@ -260,10 +204,6 @@
                 "frame":3300,
                 "offset":20
             },
-            "partA":{
-                "frame":5854,
-                "offset":0
-            },
             "partB":{
                 "frame":21810,
                 "offset":25
@@ -277,10 +217,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":7039,
-                "offset":0
             },
             "partB":{
                 "frame":21841,
@@ -296,10 +232,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":6321,
-                "offset":0
-            },
             "partB":{
                 "frame":23191,
                 "offset":25
@@ -313,10 +245,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5501,
-                "offset":0
             },
             "partB":{
                 "frame":22321,
@@ -332,10 +260,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":4416,
-                "offset":0
-            },
             "partB":{
                 "frame":22261,
                 "offset":25
@@ -349,10 +273,6 @@
             "prologue":{
                 "frame":3304,
                 "offset":15
-            },
-            "partA":{
-                "frame":4764,
-                "offset":0
             },
             "partB":{
                 "frame":23041,
@@ -368,10 +288,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":4224,
-                "offset":0
-            },
             "partB":{
                 "frame":22231,
                 "offset":25
@@ -385,10 +301,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5603,
-                "offset":0
             },
             "partB":{
                 "frame":23850,
@@ -404,10 +316,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":9354,
-                "offset":0
-            },
             "partB":{
                 "frame":22023,
                 "offset":25
@@ -421,10 +329,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5679,
-                "offset":0
             },
             "partB":{
                 "frame":21330,
@@ -440,10 +344,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5920,
-                "offset":0
-            },
             "partB":{
                 "frame":19140,
                 "offset":30
@@ -457,10 +357,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5819,
-                "offset":0
             },
             "partB":{
                 "frame":22920,
@@ -476,10 +372,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5500,
-                "offset":0
-            },
             "partB":{
                 "frame":21629,
                 "offset":28
@@ -493,10 +385,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":6371,
-                "offset":0
             },
             "partB":{
                 "frame":20130,
@@ -512,10 +400,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":10428,
-                "offset":0
-            },
             "partB":{
                 "frame":22560,
                 "offset":30
@@ -529,10 +413,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":4230,
-                "offset":0
             },
             "partB":{
                 "frame":21030,
@@ -548,10 +428,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5029,
-                "offset":0
-            },
             "partB":{
                 "frame":21150,
                 "offset":30
@@ -565,10 +441,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5321,
-                "offset":0
             },
             "partB":{
                 "frame":22170,
@@ -584,10 +456,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5454,
-                "offset":0
-            },
             "partB":{
                 "frame":20160,
                 "offset":30
@@ -601,10 +469,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":4428,
-                "offset":0
             },
             "partB":{
                 "frame":22713,
@@ -620,10 +484,6 @@
                 "frame":3300,
                 "offset":20
             },
-            "partA":{
-                "frame":5173,
-                "offset":0
-            },
             "partB":{
                 "frame":24061,
                 "offset":30
@@ -637,10 +497,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":7735,
-                "offset":0
             },
             "partB":{
                 "frame":21749,
@@ -656,10 +512,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5325,
-                "offset":0
-            },
             "partB":{
                 "frame":21361,
                 "offset":30
@@ -673,10 +525,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5990,
-                "offset":0
             },
             "partB":{
                 "frame":21271,
@@ -692,10 +540,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5574,
-                "offset":0
-            },
             "partB":{
                 "frame":22203,
                 "offset":32
@@ -709,10 +553,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":6050,
-                "offset":0
             },
             "partB":{
                 "frame":22021,
@@ -728,10 +568,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5761,
-                "offset":0
-            },
             "partB":{
                 "frame":20341,
                 "offset":30
@@ -745,10 +581,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":3540,
-                "offset":0
             },
             "partB":{
                 "frame":22831,
@@ -764,10 +596,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":4801,
-                "offset":0
-            },
             "partB":{
                 "frame":23130,
                 "offset":30
@@ -781,10 +609,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":4933,
-                "offset":0
             },
             "partB":{
                 "frame":23775,
@@ -800,10 +624,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":6413,
-                "offset":0
-            },
             "partB":{
                 "frame":23085,
                 "offset":30
@@ -817,10 +637,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":7293,
-                "offset":0
             },
             "partB":{
                 "frame":21675,
@@ -836,10 +652,6 @@
                 "frame":3305,
                 "offset":15
             },
-            "partA":{
-                "frame":6718,
-                "offset":0
-            },
             "partB":{
                 "frame":21885,
                 "offset":25
@@ -853,10 +665,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5008,
-                "offset":0
             },
             "partB":{
                 "frame":23205,
@@ -872,10 +680,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":4928,
-                "offset":0
-            },
             "partB":{
                 "frame":21045,
                 "offset":30
@@ -889,10 +693,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":6851,
-                "offset":0
             },
             "partB":{
                 "frame":22426,
@@ -908,10 +708,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":7381,
-                "offset":0
-            },
             "partB":{
                 "frame":21285,
                 "offset":30
@@ -925,10 +721,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":6765,
-                "offset":0
             },
             "partB":{
                 "frame":22515,
@@ -944,10 +736,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":8398,
-                "offset":0
-            },
             "partB":{
                 "frame":24435,
                 "offset":30
@@ -961,10 +749,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5990,
-                "offset":0
             },
             "partB":{
                 "frame":22845,
@@ -980,10 +764,6 @@
                 "frame":3300,
                 "offset":6
             },
-            "partA":{
-                "frame":5961,
-                "offset":0
-            },
             "partB":{
                 "frame":23501,
                 "offset":30
@@ -997,10 +777,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":7
-            },
-            "partA":{
-                "frame":4944,
-                "offset":0
             },
             "partB":{
                 "frame":22813,
@@ -1016,10 +792,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":4733,
-                "offset":0
-            },
             "partB":{
                 "frame":23055,
                 "offset":30
@@ -1033,10 +805,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":4934,
-                "offset":0
             },
             "partB":{
                 "frame":23085,
@@ -1052,10 +820,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5094,
-                "offset":0
-            },
             "partB":{
                 "frame":23536,
                 "offset":30
@@ -1069,10 +833,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":12
-            },
-            "partA":{
-                "frame":5094,
-                "offset":0
             },
             "partB":{
                 "frame":21584,
@@ -1088,10 +848,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":6166,
-                "offset":0
-            },
             "partB":{
                 "frame":23955,
                 "offset":30
@@ -1105,10 +861,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":7
-            },
-            "partA":{
-                "frame":5848,
-                "offset":0
             },
             "partB":{
                 "frame":21523,
@@ -1124,10 +876,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5893,
-                "offset":0
-            },
             "partB":{
                 "frame":22290,
                 "offset":30
@@ -1141,10 +889,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":4701,
-                "offset":0
             },
             "partB":{
                 "frame":22125,
@@ -1160,10 +904,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5405,
-                "offset":0
-            },
             "partB":{
                 "frame":21945,
                 "offset":30
@@ -1177,10 +917,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":6080,
-                "offset":0
             },
             "partB":{
                 "frame":19936,
@@ -1196,10 +932,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5355,
-                "offset":0
-            },
             "partB":{
                 "frame":21765,
                 "offset":30
@@ -1213,10 +945,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":4500,
-                "offset":0
             },
             "partB":{
                 "frame":19905,
@@ -1232,10 +960,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5729,
-                "offset":0
-            },
             "partB":{
                 "frame":20296,
                 "offset":30
@@ -1249,10 +973,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5166,
-                "offset":0
             },
             "partB":{
                 "frame":22455,
@@ -1268,10 +988,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":4425,
-                "offset":0
-            },
             "partB":{
                 "frame":22006,
                 "offset":30
@@ -1285,10 +1001,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5999,
-                "offset":0
             },
             "partB":{
                 "frame":20746,
@@ -1304,10 +1016,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":6254,
-                "offset":0
-            },
             "partB":{
                 "frame":22096,
                 "offset":30
@@ -1321,10 +1029,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5295,
-                "offset":0
             },
             "partB":{
                 "frame":21436,
@@ -1340,10 +1044,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":6066,
-                "offset":0
-            },
             "partB":{
                 "frame":22183,
                 "offset":30
@@ -1357,10 +1057,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":4744,
-                "offset":0
             },
             "partB":{
                 "frame":20836,
@@ -1376,10 +1072,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5003,
-                "offset":0
-            },
             "partB":{
                 "frame":21135,
                 "offset":30
@@ -1393,10 +1085,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5076,
-                "offset":0
             },
             "partB":{
                 "frame":21436,
@@ -1412,10 +1100,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5380,
-                "offset":0
-            },
             "partB":{
                 "frame":22156,
                 "offset":30
@@ -1429,10 +1113,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5678,
-                "offset":0
             },
             "partB":{
                 "frame":22485,
@@ -1448,10 +1128,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":6890,
-                "offset":0
-            },
             "partB":{
                 "frame":22485,
                 "offset":30
@@ -1465,10 +1141,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5235,
-                "offset":0
             },
             "partB":{
                 "frame":23355,
@@ -1484,10 +1156,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":8348,
-                "offset":0
-            },
             "partB":{
                 "frame":21526,
                 "offset":30
@@ -1501,10 +1169,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":6391,
-                "offset":0
             },
             "partB":{
                 "frame":23236,
@@ -1520,10 +1184,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":4663,
-                "offset":0
-            },
             "partB":{
                 "frame":22245,
                 "offset":30
@@ -1537,10 +1197,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":6930,
-                "offset":0
             },
             "partB":{
                 "frame":22158,
@@ -1556,10 +1212,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5764,
-                "offset":0
-            },
             "partB":{
                 "frame":24046,
                 "offset":30
@@ -1573,10 +1225,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":20
-            },
-            "partA":{
-                "frame":6530,
-                "offset":0
             },
             "partB":{
                 "frame":21255,
@@ -1592,10 +1240,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":6030,
-                "offset":0
-            },
             "partB":{
                 "frame":23026,
                 "offset":30
@@ -1609,10 +1253,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5788,
-                "offset":0
             },
             "partB":{
                 "frame":22695,
@@ -1628,10 +1268,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5839,
-                "offset":0
-            },
             "partB":{
                 "frame":22036,
                 "offset":30
@@ -1645,10 +1281,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5689,
-                "offset":0
             },
             "partB":{
                 "frame":21166,
@@ -1664,10 +1296,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5710,
-                "offset":0
-            },
             "partB":{
                 "frame":22096,
                 "offset":30
@@ -1681,10 +1309,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5333,
-                "offset":0
             },
             "partB":{
                 "frame":21495,
@@ -1700,10 +1324,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":7318,
-                "offset":0
-            },
             "partB":{
                 "frame":22006,
                 "offset":30
@@ -1717,10 +1337,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5194,
-                "offset":0
             },
             "partB":{
                 "frame":21346,
@@ -1736,10 +1352,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":7364,
-                "offset":0
-            },
             "partB":{
                 "frame":24286,
                 "offset":30
@@ -1753,10 +1365,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5806,
-                "offset":0
             },
             "partB":{
                 "frame":21916,
@@ -1772,10 +1380,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5733,
-                "offset":0
-            },
             "partB":{
                 "frame":22246,
                 "offset":30
@@ -1789,10 +1393,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":6900,
-                "offset":0
             },
             "partB":{
                 "frame":22065,
@@ -1808,10 +1408,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5170,
-                "offset":0
-            },
             "partB":{
                 "frame":20626,
                 "offset":30
@@ -1825,10 +1421,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5234,
-                "offset":0
             },
             "partB":{
                 "frame":20416,
@@ -1844,10 +1436,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5014,
-                "offset":0
-            },
             "partB":{
                 "frame":21165,
                 "offset":28
@@ -1861,10 +1449,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5410,
-                "offset":0
             },
             "partB":{
                 "frame":23055,
@@ -1880,10 +1464,6 @@
                 "frame":3300,
                 "offset":8
             },
-            "partA":{
-                "frame":6210,
-                "offset":0
-            },
             "partB":{
                 "frame":22246,
                 "offset":31
@@ -1897,10 +1477,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5956,
-                "offset":0
             },
             "partB":{
                 "frame":21496,
@@ -1916,10 +1492,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5158,
-                "offset":0
-            },
             "partB":{
                 "frame":21016,
                 "offset":30
@@ -1933,10 +1505,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5685,
-                "offset":0
             },
             "partB":{
                 "frame":20656,
@@ -1952,10 +1520,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5568,
-                "offset":0
-            },
             "partB":{
                 "frame":23686,
                 "offset":30
@@ -1969,10 +1533,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5818,
-                "offset":0
             },
             "partB":{
                 "frame":22006,
@@ -1988,10 +1548,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5774,
-                "offset":0
-            },
             "partB":{
                 "frame":20716,
                 "offset":28
@@ -2005,10 +1561,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":6086,
-                "offset":0
             },
             "partB":{
                 "frame":20926,
@@ -2024,10 +1576,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":4789,
-                "offset":0
-            },
             "partB":{
                 "frame":20806,
                 "offset":30
@@ -2041,10 +1589,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":4969,
-                "offset":0
             },
             "partB":{
                 "frame":21466,
@@ -2060,10 +1604,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5630,
-                "offset":0
-            },
             "partB":{
                 "frame":24316,
                 "offset":30
@@ -2077,10 +1617,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5285,
-                "offset":0
             },
             "partB":{
                 "frame":22306,
@@ -2096,10 +1632,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5263,
-                "offset":0
-            },
             "partB":{
                 "frame":21436,
                 "offset":30
@@ -2113,10 +1645,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":6045,
-                "offset":0
             },
             "partB":{
                 "frame":22276,
@@ -2132,10 +1660,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":6431,
-                "offset":0
-            },
             "partB":{
                 "frame":22666,
                 "offset":30
@@ -2149,10 +1673,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":6108,
-                "offset":0
             },
             "partB":{
                 "frame":23476,
@@ -2168,10 +1688,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5460,
-                "offset":0
-            },
             "partB":{
                 "frame":22816,
                 "offset":30
@@ -2185,10 +1701,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":6819,
-                "offset":0
             },
             "partB":{
                 "frame":24226,
@@ -2204,10 +1716,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5799,
-                "offset":0
-            },
             "partB":{
                 "frame":22186,
                 "offset":30
@@ -2221,10 +1729,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5676,
-                "offset":0
             },
             "partB":{
                 "frame":22696,
@@ -2240,10 +1744,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5830,
-                "offset":0
-            },
             "partB":{
                 "frame":22276,
                 "offset":30
@@ -2257,10 +1757,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":5584,
-                "offset":0
             },
             "partB":{
                 "frame":22695,
@@ -2276,10 +1772,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":5116,
-                "offset":0
-            },
             "partB":{
                 "frame":22426,
                 "offset":30
@@ -2293,10 +1785,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5195,
-                "offset":0
             },
             "partB":{
                 "frame":23776,
@@ -2312,10 +1800,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":4584,
-                "offset":0
-            },
             "partB":{
                 "frame":24181,
                 "offset":30
@@ -2329,10 +1813,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5451,
-                "offset":0
             },
             "partB":{
                 "frame":23866,
@@ -2348,10 +1828,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5393,
-                "offset":0
-            },
             "partB":{
                 "frame":22396,
                 "offset":30
@@ -2365,10 +1841,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":6416,
-                "offset":0
             },
             "partB":{
                 "frame":23116,
@@ -2384,10 +1856,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":4976,
-                "offset":0
-            },
             "partB":{
                 "frame":22486,
                 "offset":30
@@ -2401,10 +1869,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5258,
-                "offset":0
             },
             "partB":{
                 "frame":23145,
@@ -2420,10 +1884,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":6479,
-                "offset":0
-            },
             "partB":{
                 "frame":22726,
                 "offset":30
@@ -2437,10 +1897,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":13
-            },
-            "partA":{
-                "frame":6541,
-                "offset":0
             },
             "partB":{
                 "frame":23086,
@@ -2456,10 +1912,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":6581,
-                "offset":0
-            },
             "partB":{
                 "frame":23206,
                 "offset":30
@@ -2473,10 +1925,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":20
-            },
-            "partA":{
-                "frame":6198,
-                "offset":0
             },
             "partB":{
                 "frame":22876,
@@ -2492,10 +1940,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":6415,
-                "offset":0
-            },
             "partB":{
                 "frame":24256,
                 "offset":30
@@ -2509,10 +1953,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":6618,
-                "offset":0
             },
             "partB":{
                 "frame":19606,
@@ -2528,10 +1968,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":6278,
-                "offset":0
-            },
             "partB":{
                 "frame":23626,
                 "offset":30
@@ -2545,10 +1981,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":7066,
-                "offset":0
             },
             "partB":{
                 "frame":24616,
@@ -2564,10 +1996,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":6155,
-                "offset":0
-            },
             "partB":{
                 "frame":24946,
                 "offset":30
@@ -2581,10 +2009,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":6099,
-                "offset":0
             },
             "partB":{
                 "frame":23836,
@@ -2600,10 +2024,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":6248,
-                "offset":0
-            },
             "partB":{
                 "frame":23626,
                 "offset":30
@@ -2617,10 +2037,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":10
-            },
-            "partA":{
-                "frame":6984,
-                "offset":0
             },
             "partB":{
                 "frame":20116,
@@ -2636,10 +2052,6 @@
                 "frame":3300,
                 "offset":10
             },
-            "partA":{
-                "frame":6949,
-                "offset":0
-            },
             "partB":{
                 "frame":20446,
                 "offset":30
@@ -2653,10 +2065,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5405,
-                "offset":0
             },
             "partB":{
                 "frame":22216,
@@ -2672,10 +2080,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5966,
-                "offset":0
-            },
             "partB":{
                 "frame":24406,
                 "offset":30
@@ -2689,10 +2093,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":5505,
-                "offset":0
             },
             "partB":{
                 "frame":22636,
@@ -2708,10 +2108,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5473,
-                "offset":0
-            },
             "partB":{
                 "frame":24106,
                 "offset":30
@@ -2726,10 +2122,6 @@
                 "frame":3300,
                 "offset":15
             },
-            "partA":{
-                "frame":5368,
-                "offset":0
-            },
             "partB":{
                 "frame":21016,
                 "offset":30
@@ -2743,10 +2135,6 @@
             "prologue":{
                 "frame":3300,
                 "offset":15
-            },
-            "partA":{
-                "frame":6030,
-                "offset":0
             },
             "partB":{
                 "frame":22516,
@@ -8024,11 +7412,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":8
-            }, 
-            "partA":{
-                "frame":3490, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21566, 
                 "offset":6
@@ -8046,11 +7430,7 @@
             "titlecard":{
                 "frame":5493, 
                 "offset":0 
-            }, 
-            "partA":{
-                "frame":5748, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21412, 
                 "offset":2
@@ -8068,11 +7448,7 @@
             "titlecard":{
                 "frame":5372, 
                 "offset":0 
-            }, 
-            "partA":{
-                "frame":5627, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":19640, 
                 "offset":1
@@ -8090,11 +7466,7 @@
             "titlecard":{
                 "frame":5824, 
                 "offset":0 
-            }, 
-            "partA":{
-                "frame":6079, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22197, 
                 "offset":5
@@ -8112,11 +7484,7 @@
             "titlecard":{
                 "frame":5942, 
                 "offset":0 
-            }, 
-            "partA":{
-                "frame":6213, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22614, 
                 "offset":4
@@ -8134,11 +7502,7 @@
             "titlecard":{
                 "frame":5463, 
                 "offset":0 
-            }, 
-            "partA":{
-                "frame":5719, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22211, 
                 "offset":-1
@@ -8156,11 +7520,7 @@
             "titlecard":{
                 "frame":5463, 
                 "offset":0 
-            }, 
-            "partA":{
-                "frame":5719, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23696, 
                 "offset":-1
@@ -8174,11 +7534,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":5719, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22136, 
                 "offset":-2
@@ -8192,11 +7548,7 @@
             "prologue":{
                 "frame":3235, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":7037, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":20845, 
                 "offset":-1
@@ -8210,11 +7562,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":6799, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23246, 
                 "offset":-1
@@ -8228,11 +7576,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":5479, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22586, 
                 "offset":-1
@@ -8246,11 +7590,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":7039, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":19826, 
                 "offset":-1
@@ -8264,11 +7604,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":3 
-            }, 
-            "partA":{
-                "frame":6318, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22492, 
                 "offset":-3
@@ -8282,11 +7618,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":6679, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22073, 
                 "offset":-3
@@ -8300,11 +7632,7 @@
             "prologue":{
                 "frame":3237, 
                 "offset":2
-            }, 
-            "partA":{
-                "frame":5718, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":24290, 
                 "offset":-6
@@ -8318,11 +7646,7 @@
             "prologue":{
                 "frame":3237, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6319, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21716, 
                 "offset":0 
@@ -8336,11 +7660,7 @@
             "prologue":{
                 "frame":3237, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6859, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23246, 
                 "offset":5
@@ -8354,11 +7674,7 @@
             "prologue":{
                 "frame":3237, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":7219, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22196, 
                 "offset":5
@@ -8372,11 +7688,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":6679, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23306, 
                 "offset":-1
@@ -8390,11 +7702,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":7039, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23126, 
                 "offset":-1
@@ -8408,11 +7716,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6318, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23246, 
                 "offset":0
@@ -8426,11 +7730,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":-1
-            }, 
-            "partA":{
-                "frame":5719, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22646, 
                 "offset":-1
@@ -8444,11 +7744,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":3 
-            }, 
-            "partA":{
-                "frame":6859, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22016, 
                 "offset":0 
@@ -8462,11 +7758,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6259, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22436, 
                 "offset":0 
@@ -8480,11 +7772,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6378, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22015, 
                 "offset":5
@@ -8498,11 +7786,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":5178, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22584, 
                 "offset":4
@@ -8516,11 +7800,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":5778, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22435, 
                 "offset":-1
@@ -8534,11 +7814,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":-3
-            }, 
-            "partA":{
-                "frame":4637, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22135, 
                 "offset":1
@@ -8552,11 +7828,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6498, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22645, 
                 "offset":0
@@ -8570,11 +7842,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":2
-            }, 
-            "partA":{
-                "frame":5477, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23485, 
                 "offset":0 
@@ -8588,11 +7856,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":2
-            }, 
-            "partA":{
-                "frame":5957, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21114, 
                 "offset":0 
@@ -8606,11 +7870,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":5538, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21175, 
                 "offset":0 
@@ -8624,11 +7884,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6558, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":20725, 
                 "offset":0 
@@ -8642,11 +7898,7 @@
             "prologue":{
                 "frame":3236, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":7159, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":20606, 
                 "offset":0 
@@ -8660,11 +7912,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":-1
-            }, 
-            "partA":{
-                "frame":7670, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":24508, 
                 "offset":0 
@@ -8678,11 +7926,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6829, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22045, 
                 "offset":-1
@@ -8697,10 +7941,6 @@
                 "frame":3266, 
                 "offset":4
             }, 
-            "partA":{
-                "frame":7070, 
-                "offset":0 
-            },
             "partB":{
                 "frame":22437, 
                 "offset":0 
@@ -8714,11 +7954,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":5450, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21338, 
                 "offset":-19
@@ -8732,11 +7968,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":5
-            }, 
-            "partA":{
-                "frame":6351, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21716, 
                 "offset":-3
@@ -8750,11 +7982,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":-1
-            }, 
-            "partA":{
-                "frame":5870, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22313, 
                 "offset":-2
@@ -8768,11 +7996,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":5990, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21837, 
                 "offset":-1
@@ -8786,11 +8010,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":7242, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23397, 
                 "offset":0 
@@ -8804,11 +8024,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":7670, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23667, 
                 "offset":0 
@@ -8822,11 +8038,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":6469, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23187, 
                 "offset":0 
@@ -8840,11 +8052,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":7909, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23305, 
                 "offset":-1
@@ -8858,11 +8066,7 @@
             "prologue":{
                 "frame":3264, 
                 "offset":2
-            }, 
-            "partA":{
-                "frame":6955, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22733, 
                 "offset":-2
@@ -8876,11 +8080,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":4788, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21265, 
                 "offset":-1
@@ -8894,11 +8094,7 @@
             "prologue":{
                 "frame":3267, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6709, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23549, 
                 "offset":2
@@ -8912,11 +8108,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":6110, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21896, 
                 "offset":-1
@@ -8930,11 +8122,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":6050, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22765, 
                 "offset":-3
@@ -8948,11 +8136,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":5571, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22766, 
                 "offset":-1
@@ -8966,11 +8150,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6351, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21318, 
                 "offset":-8
@@ -8984,11 +8164,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":7191, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23603, 
                 "offset":-3
@@ -9002,11 +8178,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":6590, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23031, 
                 "offset":-4
@@ -9020,11 +8192,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":5509, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":23546, 
                 "offset":0
@@ -9038,11 +8206,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6649, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":20544, 
                 "offset":-3
@@ -9056,11 +8220,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6049, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22734, 
                 "offset":-3
@@ -9074,11 +8234,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":7189, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22945, 
                 "offset":-1
@@ -9092,11 +8248,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":6589, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21954, 
                 "offset":-3
@@ -9110,11 +8262,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":5450, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":20846, 
                 "offset":-1
@@ -9128,11 +8276,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":4
-            }, 
-            "partA":{
-                "frame":5509, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":22684, 
                 "offset":-23
@@ -9146,11 +8290,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":3
-            }, 
-            "partA":{
-                "frame":6710, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":21804, 
                 "offset":-3
@@ -9164,11 +8304,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":-2
-            }, 
-            "partA":{
-                "frame":5509, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":19886, 
                 "offset":-1
@@ -9182,11 +8318,7 @@
             "prologue":{
                 "frame":3266, 
                 "offset":-2
-            }, 
-            "partA":{
-                "frame":5509, 
-                "offset":0 
-            }, 
+            },  
             "partB":{
                 "frame":20864, 
                 "offset":-2
@@ -9707,10 +8839,6 @@
             "prologue":{
                 "offset":25
             },
-            "partA":{
-                "frame":5846,
-                "offset":0
-            },
             "partB":{
                 "offset":29
             },
@@ -9720,11 +8848,7 @@
         },
         "002":{
             "prologue":{
-                "offset":26
-            },
-            "partA":{
-                "frame":5867,
-                "offset":-1
+                "offset":25
             },
             "partB":{
                 "offset":20
@@ -9735,11 +8859,7 @@
         },
         "003":{
             "prologue":{
-                "offset":29
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
+                "offset":30
             },
             "partB":{
                 "offset":45
@@ -9752,10 +8872,6 @@
             "prologue":{
                 "offset":55
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -9766,10 +8882,6 @@
         "005":{
             "prologue":{
                 "offset":26
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":36
@@ -9782,10 +8894,6 @@
             "prologue":{
                 "offset":24
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":35
             },
@@ -9797,10 +8905,6 @@
             "prologue":{
                 "offset":24
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -9810,11 +8914,7 @@
         },
         "008":{
             "prologue":{
-                "offset":24
-            },
-            "partA":{
-                "frame":5826,
-                "offset":-1
+                "offset":23
             },
             "partB":{
                 "offset":10
@@ -9827,10 +8927,6 @@
             "prologue":{
                 "offset":23
             },
-            "partA":{
-                "frame":5541,
-                "offset":0
-            },
             "partB":{
                 "offset":20
             },
@@ -9840,11 +8936,7 @@
         },
         "010":{
             "prologue":{
-                "offset":24
-            },
-            "partA":{
-                "frame":5241,
-                "offset":-1
+                "offset":23
             },
             "partB":{
                 "offset":10
@@ -9857,10 +8949,6 @@
             "prologue":{
                 "offset":17
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -9871,10 +8959,6 @@
         "012":{
             "prologue":{
                 "offset":14
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":15
@@ -9887,10 +8971,6 @@
             "prologue":{
                 "offset":16
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -9902,10 +8982,6 @@
             "prologue":{
                 "offset":21
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -9915,11 +8991,7 @@
         },
         "015":{
             "prologue":{
-                "offset":16
-            },
-            "partA":{
-                "frame":5611,
-                "offset":1
+                "offset":17
             },
             "partB":{
                 "offset":10
@@ -9932,10 +9004,6 @@
             "prologue":{
                 "offset":16
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -9946,10 +9014,6 @@
         "017":{
             "prologue":{
                 "offset":16
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":10
@@ -9962,10 +9026,6 @@
             "prologue":{
                 "offset":37
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -9977,10 +9037,6 @@
             "prologue":{
                 "offset":16
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":20
             },
@@ -9990,11 +9046,7 @@
         },
         "020":{
             "prologue":{
-                "offset":36
-            },
-            "partA":{
-                "frame":6029,
-                "offset":1
+                "offset":37
             },
             "partB":{
                 "offset":20
@@ -10007,10 +9059,6 @@
             "prologue":{
                 "offset":16
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":60
             },
@@ -10021,10 +9069,6 @@
         "022":{
             "prologue":{
                 "offset":11
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":5
@@ -10037,10 +9081,6 @@
             "prologue":{
                 "offset":11
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":5
             },
@@ -10052,10 +9092,6 @@
             "prologue":{
                 "offset":11
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":5
             },
@@ -10065,11 +9101,7 @@
         },
         "025":{
             "prologue":{
-                "offset":24
-            },
-            "partA":{
-                "frame":5782,
-                "offset":-1
+                "offset":23
             },
             "partB":{
                 "offset":50
@@ -10080,11 +9112,7 @@
         },
         "026":{
             "prologue":{
-                "offset":34
-            },
-            "partA":{
-                "frame":5716,
-                "offset":-1
+                "offset":33
             },
             "partB":{
                 "offset":28
@@ -10095,11 +9123,7 @@
         },
         "027":{
             "prologue":{
-                "offset":24
-            },
-            "partA":{
-                "frame":5701,
-                "offset":-1
+                "offset":23
             },
             "partB":{
                 "offset":10
@@ -10112,10 +9136,6 @@
             "prologue":{
                 "offset":54
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":35
             },
@@ -10127,10 +9147,6 @@
             "prologue":{
                 "offset":24
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":45
             },
@@ -10140,11 +9156,7 @@
         },
         "030":{
             "prologue":{
-                "offset":24
-            },
-            "partA":{
-                "frame":5432,
-                "offset":-1
+                "offset":23
             },
             "partB":{
                 "offset":20
@@ -10157,10 +9169,6 @@
             "prologue":{
                 "offset":24
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10172,10 +9180,6 @@
             "prologue":{
                 "offset":24
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10185,11 +9189,7 @@
         },
         "033":{
             "prologue":{
-                "offset":24
-            },
-            "partA":{
-                "frame":6081,
-                "offset":-1
+                "offset":23
             },
             "partB":{
                 "offset":10
@@ -10202,10 +9202,6 @@
             "prologue":{
                 "offset":24
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10216,10 +9212,6 @@
         "035":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":10
@@ -10232,10 +9224,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10246,10 +9234,6 @@
         "037":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":10
@@ -10262,10 +9246,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10276,10 +9256,6 @@
         "039":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":60
@@ -10292,10 +9268,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":20
             },
@@ -10306,10 +9278,6 @@
         "041":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":30
@@ -10322,10 +9290,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":50
             },
@@ -10336,10 +9300,6 @@
         "043":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":10
@@ -10352,10 +9312,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10366,10 +9322,6 @@
         "045":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":10
@@ -10382,10 +9334,6 @@
             "prologue":{
                 "frame":3271,
                 "offset":30
-            },
-            "partA":{
-                "frame":5400,
-                "offset":1
             },
             "partB":{
                 "frame":22996,
@@ -10400,10 +9348,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10414,10 +9358,6 @@
         "048":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":25
@@ -10430,10 +9370,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10444,10 +9380,6 @@
         "050":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":10
@@ -10460,10 +9392,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10474,10 +9402,6 @@
         "052":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":5353,
-                "offset":1
             },
             "partB":{
                 "offset":35
@@ -10490,10 +9414,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10504,10 +9424,6 @@
         "054":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":10
@@ -10520,10 +9436,6 @@
             "prologue":{
                 "offset":12
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":14
             },
@@ -10534,10 +9446,6 @@
         "056":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":5358,
-                "offset":1
             },
             "partB":{
                 "offset":10
@@ -10550,10 +9458,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10564,10 +9468,6 @@
         "058":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":10
@@ -10580,10 +9480,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10594,10 +9490,6 @@
         "060":{
             "prologue":{
                 "offset":15
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":10
@@ -10610,10 +9502,6 @@
             "prologue":{
                 "offset":30
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10624,10 +9512,6 @@
         "062":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":10
@@ -10640,10 +9524,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10654,10 +9534,6 @@
         "064":{
             "prologue":{
                 "offset":10
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":10
@@ -10670,10 +9546,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":-20
             },
@@ -10685,10 +9557,6 @@
             "prologue":{
                 "offset":10
             },
-            "partA":{
-                "frame":0,
-                "offset":0
-            },
             "partB":{
                 "offset":10
             },
@@ -10699,10 +9567,6 @@
         "067":{
             "prologue":{
                 "offset":15
-            },
-            "partA":{
-                "frame":0,
-                "offset":0
             },
             "partB":{
                 "offset":10
