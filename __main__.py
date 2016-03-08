@@ -45,6 +45,9 @@ def load_config_file():
         config.add_section(APP_NAME)
     except ConfigParser.Error:
         pass
+    # normalize paths
+    for c in config.keys():
+        config[c] = os.path.normpath(config[c])
     return config
 
 
@@ -205,13 +208,6 @@ def pre_check(args, config):
         logger.debug('Pre-check finished.')
 
 
-def initial_setup():
-    '''
-    Create working directory structure
-    '''
-    pass
-
-
 def bad_arg_exit(arg):
     logger.error('Bad argument for --%s' % arg)
     sys.exit(1)
@@ -273,12 +269,10 @@ def main():
 
     elif args.command in ['subtitle', 'audio', 'avisynth']:
         # per-episode modes
-        series_frame_data = load_series_frame_data(args.series)
         start_ep, end_ep = split_args('episode', args.episode)
 
         for ep in xrange(start_ep, end_ep + 1):
-            episode = Episode(config, ep, args.series, series_frame_data)
-
+            episode = Episode(ep, args.series)
             if args.command == 'avisynth':
                 # avisynth mode
                 write_avs_file(episode, config)

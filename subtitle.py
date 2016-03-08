@@ -73,7 +73,3 @@ def retime_vobsub(episode, config):
         logger.error(e)
     logger.info('Subtitle retiming for %s %s is complete.' % (episode.series,
                                                               episode.number))
-
-
-def patch_substation(self):
-    pass

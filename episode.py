@@ -3,7 +3,7 @@ Object to contain episode metadata
 '''
 import os
 import logging
-from utils import pad_zeroes, get_op_offset
+from utils import pad_zeroes, get_op_offset, load_series_frame_data
 from constants import Constants
 
 APP_NAME = Constants.APP_NAME
@@ -18,7 +18,8 @@ class Episode(object):
         ep_str = str(number).zfill(pad_zeroes(series))
         self.number = ep_str
         self.series = series
-        op_offset = get_op_offset(series, number, series_frame_data)
+        frame_data = load_series_frame_data(series)
+        op_offset = get_op_offset(series, number, frame_data)
         offsets = series_frame_data[self.number]
         self.offsets = self.combine_framedata(offsets, op_offset)
         working_dir = config.get(APP_NAME, 'working_dir')
