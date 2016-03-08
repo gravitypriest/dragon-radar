@@ -11,24 +11,6 @@ APP_NAME = Constants.APP_NAME
 logger = logging.getLogger(APP_NAME)
 
 
-def load_r2_chapters(episode, working_dir):
-    logger.debug('Loading R2 chapter file...')
-    r2_chap_file = os.path.join(working_dir,
-                                episode.series,
-                                R2_DEMUX_DIR,
-                                episode.number + '.txt')
-    with open(r2_chap_file) as r2_chaps:
-        chap_list = r2_chaps.readlines()
-    chapters = {
-        'op': 0,
-        'prologue': int(chap_list[0]),
-        'partB': int(chap_list[1]),
-        'ED': int(chap_list[2]),
-        'NEP': int(chap_list[3])
-    }
-    return chapters
-
-
 def check_for_d2v(episode, working_dir):
     logger.debug('Checking that %s.d2v files (R1 and R2) exist...' %
                  episode.number)
@@ -54,8 +36,9 @@ def check_for_d2v(episode, working_dir):
                      episode.series)
 
 
-def episode_edits(episode, r2_chaps):
+def episode_edits(episode):
     logger.debug('Generating edits...')
+    r2_chaps = episode.r2_chapters
     offsets = episode.offsets
     edits = []
     for key in ['op', 'prologue', 'partA', 'partB', 'ED', 'NEP']:
@@ -92,7 +75,6 @@ def episode_edits(episode, r2_chaps):
 
 
 def generate_avs(episode, working_dir):
-    r2_chaps = load_r2_chapters(episode, working_dir)
     r1_dir = os.path.join(working_dir,
                           episode.series,
                           R1_DEMUX_DIR)
@@ -112,7 +94,7 @@ def generate_avs(episode, working_dir):
     prep_section = ('r1_v = AudioDub(r1_v, r1_a)\n'
                     'r2_v = AudioDub(r2_v, r2_a)\n'
                     'b=BlankClip(clip=r1_v, length=10000)\n')
-    process_section = episode_edits(episode, r2_chaps)
+    process_section = episode_edits(episode)
     output_section = ('r1_v = r1_v.Telecide().Decimate()\n'
                       'r2_v = r2_v.Telecide().Decimate()\n'
                       'StackHorizontal(r1_v, r2_v)\n')

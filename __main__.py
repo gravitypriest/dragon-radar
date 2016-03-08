@@ -22,6 +22,7 @@ WORKING_DIR = Constants.WORKING_DIR
 SOURCE_DIR = Constants.SOURCE_DIR
 PGCDEMUX = Constants.PGCDEMUX
 VSRIP = Constants.VSRIP
+DELAYCUT = Constants.DELAYCUT
 CONF_FILE = Constants.CONF_FILE
 APP_NAME = Constants.APP_NAME
 
@@ -34,7 +35,8 @@ def load_config_file():
         {'working_dir': WORKING_DIR,
          'source_dir': SOURCE_DIR,
          'pgcdemux': PGCDEMUX,
-         'vsrip': VSRIP})
+         'vsrip': VSRIP,
+         'delaycut': DELAYCUT})
     try:
         config.read(CONF_FILE)
     except ConfigParser.Error:
@@ -178,7 +180,7 @@ def pre_check(args, config):
 
     logger.debug('Performing pre-check...')
     bad_conf = False
-    if args.command == 'demux':
+    if args.command is 'demux':
         if not (args.no_vid and args.no_aud):
             pgcdemux = config.get(APP_NAME, 'pgcdemux')
             logger.debug('PGCDemux path: %s' % pgcdemux)
@@ -193,8 +195,10 @@ def pre_check(args, config):
                 bad_conf = True
         if args.avs:
             bad_conf = dgdecode_check()
-    if args.command == 'avisynth':
+    if args.command is 'avisynth':
         bad_conf = dgdecode_check()
+    if args.command is 'audio':
+        pass
     if bad_conf:
         sys.exit(1)
     else:
@@ -273,7 +277,7 @@ def main():
         start_ep, end_ep = split_args('episode', args.episode)
 
         for ep in xrange(start_ep, end_ep + 1):
-            episode = Episode(ep, args.series, series_frame_data)
+            episode = Episode(config, ep, args.series, series_frame_data)
 
             if args.command == 'avisynth':
                 # avisynth mode
@@ -283,7 +287,7 @@ def main():
                 retime_vobsub(episode, config)
             elif args.command == 'audio':
                 # audio mode
-                retime_audio(episode)
+                retime_audio(episode, config)
 
 
 if __name__ == "__main__":

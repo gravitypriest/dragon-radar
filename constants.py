@@ -12,6 +12,7 @@ class Constants(object):
     SOURCE_DIR = WORKING_DIR
     FUNI_SUB_DIR = 'Funi VobSubs'
     RETIMED_SUB_DIR = 'Retimed VobSubs'
+    RETIMED_AUDIO_DIR = 'Retimed Audio - {0}'
     R1_DEMUX_DIR = 'R1 Demux'
     R2_DEMUX_DIR = 'R2 Demux'
     R1_DISC_DIR = 'R1 Discs'
@@ -48,3 +49,4 @@ class Constants(object):
             888   T88bd88P     8888888888P\" d88P     888888   T88b
     '''
     MIN_SIZE = 100000000
+    FRAME_RATE = float(30000)/float(1001)

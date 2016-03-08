@@ -4,7 +4,6 @@ Functions to demux discs
 import os
 import subprocess
 import tempfile
-import shutil
 import logging
 import atexit
 from utils import (load_episode_disc_data,
