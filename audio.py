@@ -86,11 +86,11 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, series):
         if os.path.isfile(file_out_2):
             file_combine.append(file_out_2)
         file_combine.append(file_out_3)
-        os.remove(file_in)
+
         logger.debug('Writing combined audio...')
-        # os.system('copy /b {in_files} {out}'.format(
-        #     in_files='+'.join(file_combine),
-        #     out=file_in))
+
+        # delete file before re-creating it
+        os.remove(file_in)
         with open(file_in, 'wb') as final_file:
             for fname in file_combine:
                 with open(fname, 'rb') as f:
@@ -150,3 +150,4 @@ def retime_audio(episode, config):
 
         create_dir(dst_path)
         move_file(working_file, dst_path)
+    delete_temp(tmp_dir)

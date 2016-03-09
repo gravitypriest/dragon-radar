@@ -13,7 +13,7 @@ from utils import (load_episode_disc_data,
                    move_file,
                    rename)
 from constants import Constants
-from avisynth import run_dgdecode
+from avisynth import run_dgindex
 
 R1_DEMUX_DIR = Constants.R1_DEMUX_DIR
 R1_DISC_DIR = Constants.R1_DISC_DIR
@@ -275,9 +275,9 @@ class Demux(object):
                     self._run_vsrip(vsrip_vid_seq, vid_dir)
         # go through and delete dummy files and rename based on episode
         self._clean_up_files(dest_path, tmp_dir)
-        # if avisynth is req'd, run DGDecode on all m2vs
+        # if avisynth is req'd, run DGIndex on all m2vs
         if self.avs:
-            run_dgdecode(dest_path, self.disc_episodes, self.series)
+            run_dgindex(dest_path, self.disc_episodes, self.series)
 
     def dbox_demux(self):
         '''

@@ -36,7 +36,8 @@ def load_config_file():
          'source_dir': SOURCE_DIR,
          'pgcdemux': PGCDEMUX,
          'vsrip': VSRIP,
-         'delaycut': DELAYCUT})
+         'delaycut': DELAYCUT,
+         'dgindex': DGINDEX})
     try:
         config.read(CONF_FILE)
     except ConfigParser.Error:
@@ -171,11 +172,11 @@ def pre_check(args, config):
     Make sure directories are correct
     and required programs are installed
     '''
-    def dgdecode_check():
-        dgdecode = config.get(APP_NAME, 'dgdecode')
-        logger.debug('DGDecode path: %s' % dgdecode)
-        if not os.path.isfile(dgdecode):
-            logger.error('Path to DGDecode \"%s\" is invalid.' % dgdecode)
+    def dgindex_check():
+        dgindex = config.get(APP_NAME, 'dgindex')
+        logger.debug('DGIndex path: %s' % dgindex)
+        if not os.path.isfile(dgindex):
+            logger.error('Path to DGIndex \"%s\" is invalid.' % dgindex)
             return True
         return False
 
@@ -195,9 +196,9 @@ def pre_check(args, config):
                 logger.error('Path to VSRip \"%s\" is invalid.' % vsrip)
                 bad_conf = True
         if args.avs:
-            bad_conf = dgdecode_check()
+            bad_conf = dgindex_check()
     if args.command is 'avisynth':
-        bad_conf = dgdecode_check()
+        bad_conf = dgindex_check()
     if args.command is 'audio':
         pass
     if bad_conf:

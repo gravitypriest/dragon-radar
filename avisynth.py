@@ -11,7 +11,7 @@ APP_NAME = Constants.APP_NAME
 logger = logging.getLogger(APP_NAME)
 
 
-def run_dgdecode(path, episodes, series, dgdecode):
+def run_dgindex(path, episodes, series, dgindex):
     start = int(episodes[0])
     end = int(episodes[1])
     for e in xrange(start, end + 1):
@@ -21,8 +21,8 @@ def run_dgdecode(path, episodes, series, dgdecode):
            not os.path.isfile(full_path + '.d2v')):
             logger.info('Generating %s.d2v...' % ep_str)
             os.system(
-                '{dgdecode} -IF=[{inf}] -OF=[{outf}] -MINIMIZE -EXIT'.format(
-                    dgdecode=dgdecode,
+                '{dgindex} -IF=[{inf}] -OF=[{outf}] -MINIMIZE -EXIT'.format(
+                    dgindex=dgindex,
                     inf=full_path + '.m2v',
                     outf=full_path))
 
@@ -30,7 +30,7 @@ def run_dgdecode(path, episodes, series, dgdecode):
 class Avisynth(object):
 
     def __init__(self, episode, config):
-        self.dgdecode = config.get(APP_NAME, 'dgdecode')
+        self.dgindex = config.get(APP_NAME, 'dgindex')
         self.episode = episode
         working_dir = config.get(APP_NAME, 'working_dir')
         self.dst_file = os.path.join(working_dir,
@@ -50,15 +50,15 @@ class Avisynth(object):
         if not os.path.isfile(r2_d2v_file):
             logger.debug('R2 %s.d2v file not found. Creating...' %
                          self.episode.number)
-            run_dgdecode(os.path.dirname(r2_d2v_file),
-                         [self.episode.number, self.episode.number],
-                         self.episode.series, self.dgdecode)
+            run_dgindex(os.path.dirname(r2_d2v_file),
+                        [self.episode.number, self.episode.number],
+                        self.episode.series, self.dgindex)
         if not os.path.isfile(r1_d2v_file):
             logger.debug('R1 %s.d2v file not found. Creating...' %
                          self.episode.number)
-            run_dgdecode(os.path.dirname(r1_d2v_file),
-                         [self.episode.number, self.episode.number],
-                         self.episode.series, self.dgdecode)
+            run_dgindex(os.path.dirname(r1_d2v_file),
+                        [self.episode.number, self.episode.number],
+                        self.episode.series, self.dgindex)
 
     def episode_edits(self):
         logger.debug('Generating edits...')
