@@ -11,6 +11,7 @@ R1_DEMUX_DIR = Constants.R1_DEMUX_DIR
 RETIMED_AUDIO_DIR = Constants.RETIMED_AUDIO_DIR
 FRAME_RATE = Constants.FRAME_RATE
 DELAYCUT_CMD = '{delaycut} -i {i} -endcut {end} -startcut {begin} -o {o}'
+AC3_DIR = Constants.AC3_DIR
 
 logger = logging.getLogger(APP_NAME)
 
@@ -73,7 +74,7 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, series):
             else:
                 bitrate = '51_448'
             logger.debug('Using %s kbps blank ac3.' % bitrate)
-            blank_file = os.path.join(PACKAGE_DIR, 'blank_' + bitrate + '.ac3')
+            blank_file = os.path.join(AC3_DIR, 'blank_' + bitrate + '.ac3')
             os.system(DELAYCUT_CMD.format(
                 delaycut=delaycut,
                 i=blank_file,

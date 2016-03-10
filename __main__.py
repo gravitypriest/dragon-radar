@@ -20,9 +20,6 @@ from utils import (load_series_frame_data,
 WELCOME_MSG = Constants.WELCOME_MSG
 WORKING_DIR = Constants.WORKING_DIR
 SOURCE_DIR = Constants.SOURCE_DIR
-PGCDEMUX = Constants.PGCDEMUX
-VSRIP = Constants.VSRIP
-DELAYCUT = Constants.DELAYCUT
 CONF_FILE = Constants.CONF_FILE
 APP_NAME = Constants.APP_NAME
 
@@ -33,11 +30,7 @@ def load_config_file():
     '''
     config = ConfigParser.RawConfigParser(
         {'working_dir': WORKING_DIR,
-         'source_dir': SOURCE_DIR,
-         'pgcdemux': PGCDEMUX,
-         'vsrip': VSRIP,
-         'delaycut': DELAYCUT,
-         'dgindex': DGINDEX})
+         'source_dir': SOURCE_DIR})
     try:
         config.read(CONF_FILE)
     except ConfigParser.Error:
@@ -172,11 +165,11 @@ def pre_check(args, config):
     Make sure directories are correct
     and required programs are installed
     '''
-    def dgindex_check():
-        dgindex = config.get(APP_NAME, 'dgindex')
-        logger.debug('DGIndex path: %s' % dgindex)
-        if not os.path.isfile(dgindex):
-            logger.error('Path to DGIndex \"%s\" is invalid.' % dgindex)
+    def exe_check(name):
+        exe = config.get(APP_NAME, name.lower())
+        logger.debug('%s path: %s' % (name, exe))
+        if not os.path.isfile(exe):
+            logger.error('Path to %s \"%s\" is invalid.' % (name, exe))
             return True
         return False
 
@@ -184,23 +177,15 @@ def pre_check(args, config):
     bad_conf = False
     if args.command is 'demux':
         if not (args.no_vid and args.no_aud):
-            pgcdemux = config.get(APP_NAME, 'pgcdemux')
-            logger.debug('PGCDemux path: %s' % pgcdemux)
-            if not os.path.isfile(pgcdemux):
-                logger.error('Path to PGCDemux \"%s\" is invalid.' % pgcdemux)
-                bad_conf = True
+            bad_conf = exe_check('PGCDemux')
         if not args.no_sub:
-            vsrip = config.get(APP_NAME, 'vsrip')
-            logger.debug('VSRip path: %s' % vsrip)
-            if not os.path.isfile(vsrip):
-                logger.error('Path to VSRip \"%s\" is invalid.' % vsrip)
-                bad_conf = True
+            bad_conf = exe_check('VSRip')
         if args.avs:
-            bad_conf = dgindex_check()
+            bad_conf = exe_check('DGIndex')
     if args.command is 'avisynth':
-        bad_conf = dgindex_check()
+        bad_conf = exe_check('DGIndex')
     if args.command is 'audio':
-        pass
+        bad_conf = exe_check('DelayCut')
     if bad_conf:
         sys.exit(1)
     else:

@@ -2,12 +2,12 @@ import os
 
 
 class Constants(object):
-    PACKAGE_DIR = os.path.dirname(os.path.abspath(__file__))
-    DEMUX_JSON = os.path.join(PACKAGE_DIR, 'demux.json')
-    DISC_JSON = os.path.join(PACKAGE_DIR, 'episodes.json')
-    OFFSETS_JSON = os.path.join(PACKAGE_DIR, 'offsets.json')
-    VALID_JSON = os.path.join(PACKAGE_DIR, 'valid.json')
-    CONF_FILE = os.path.join(PACKAGE_DIR, 'dragon-radar.conf')
+    DEMUX_JSON = 'params/demux.json'
+    DISC_JSON = 'params/episodes.json'
+    OFFSETS_JSON = 'params/offsets.json'
+    VALID_JSON = 'params/valid.json'
+    CONF_FILE = 'dragon-radar.conf'
+    AC3_DIR = 'ac3files'
     WORKING_DIR = 'C:/dragon-radar'
     SOURCE_DIR = WORKING_DIR
     FUNI_SUB_DIR = 'Funi VobSubs'
@@ -19,9 +19,6 @@ class Constants(object):
     R2_DISC_DIR = 'R2 Discs'
     AVS_DIR = 'AVS Scripts'
     APP_NAME = 'dragon-radar'
-    PGCDEMUX = 'C:\PGCDemux'
-    VSRIP = 'C:\VSrip'
-    DELAYCUT = 'C:\Delaycut'
     VSRIP_TEMPLATE = ('{in_path}\n'
                       '{out_path}\n'
                       '1\n'
@@ -49,4 +46,4 @@ class Constants(object):
             888   T88bd88P     8888888888P\" d88P     888888   T88b
     '''
     MIN_SIZE = 100000000
-    FRAME_RATE = float(30000)/float(1001)
+    FRAME_RATE = float(30000) / float(1001)
