@@ -2,8 +2,6 @@
 Utility for synchronizing R1 Dragon Ball audio and subtitle assets with R2 video (still-in-progress)
 
 ### Requires:
-- [Python 2](https://www.python.org/download/releases/2.7.2/)
-
 ##### For demuxing:
 - [PGCdemux 1.2.0.5 / m03 MOD](http://www.videohelp.com/software/PgcDemux)
 - [VSRip](http://www.videohelp.com/software/VSRip)

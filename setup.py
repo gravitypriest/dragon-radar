@@ -3,7 +3,7 @@ import py2exe
 
 setup(zipfile=None,
       console=[
-          {'script': '__main__.py',
+          {'script': '__init__.py',
            'dest_base': 'dragon-radar',
            'icon_resources': [(0, 'icon.ico')]
            }],

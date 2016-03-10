@@ -236,23 +236,24 @@ class Demux(object):
         # keep temp files around
         atexit.register(delete_temp, tmp_dir)
         logging.debug('Temp folder: %s' % tmp_dir)
+        demux_map = load_demux_map(self.series,
+                                   str(self.season))
 
         if self.series in ['DB', 'DBGT']:
             # demux all VIDS
-            for vid in xrange(1, 100):
+            for vid in demux_map[str(self.disc)]:
                 vid_dir = self._create_temp_dir(vid, tmp_dir)
                 if not (self.no_video and self.no_audio):
                     self._run_pgcdemux(dest_path, vid)
+                if not(self.no_sub):
+                    self._run_vsrip([vid], vid_dir)
 
         elif self.series == 'DBZ':
-            demux_map = load_demux_map(self.series,
-                                       str(self.season))
             no_of_eps = self.disc_episodes[1] - self.disc_episodes[0] + 1
             logger.debug('# of episodes: %s' % no_of_eps)
             for ep in xrange(0, no_of_eps):
                 vid_dir = self._create_temp_dir(ep, tmp_dir)
                 if self.season > 1:
-                    print demux_map
                     # S2 and up follow a pattern
                     start_chap = demux_map['pgcdemux'][0] + (
                         ep * demux_map['pgcdemux'][1])
