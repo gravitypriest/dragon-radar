@@ -1,5 +1,6 @@
 import json
 import os
+import time
 import logging
 import shutil
 from constants import Constants
@@ -9,6 +10,7 @@ OFFSETS_JSON = Constants.OFFSETS_JSON
 DISC_JSON = Constants.DISC_JSON
 DEMUX_JSON = Constants.DEMUX_JSON
 VALID_JSON = Constants.VALID_JSON
+FRAME_RATE = Constants.FRAME_RATE
 
 logger = logging.getLogger(APP_NAME)
 
@@ -100,29 +102,33 @@ def timestamp_to_seconds(timestamp):
     return frame
 
 
-def seconds_to_timestamp(frame):
+def _split_seconds(seconds):
+    rounded_time = '%.3f' % round(frame, 3)
+    time_parts = rounded_time.split('.')
+    s = time_parts[0]
+    ms = time_parts[1]
+    return s, ms
+
+
+def to_timestamp(frame, ntsc_frame=None):
     '''
     Convert seconds to timestamp format
     '''
-    rounded_time = '%.3f' % round(frame, 3)
-    total_seconds = int(float(rounded_time))
-    frames = rounded_time.split(".")[1]
-    seconds = total_seconds % 60
-    minutes = (total_seconds / 60) % 60
-    hours = (total_seconds / 60) / 60
-    time_code =\
-        str(hours).zfill(2) + ":" +\
-        str(minutes).zfill(2) + ":" +\
-        str(seconds).zfill(2) + ":" +\
-        str(frames).zfill(3)
-    return time_code
+    delimiter = ':'
+    if ntsc_frame:
+        frame = float(ntsc_frame) / FRAME_RATE
+        delimiter = '.'
+    seconds, ms = _split_seconds(frame)
+    hms = time.strftime('%H:%M:%S',
+                        time.gmtime(int(seconds)))
+    return delimiter.join([hms, ms])
 
 
 def frame_to_seconds(frame):
     '''
     Convert NTSC frame number to seconds
     '''
-    return float(frame * 1001) / 30000
+    return frame / FRAME_RATE
 
 
 def pad_zeroes(series):

@@ -1,7 +1,7 @@
 import os
 import logging
 from utils import (timestamp_to_seconds,
-                   seconds_to_timestamp,
+                   to_timestamp,
                    frame_to_seconds)
 from constants import Constants
 
@@ -40,7 +40,7 @@ def _adjust_timecode(episode, timestamp):
     # apply offset to subtitle timing
     frame -= total_offset
 
-    return seconds_to_timestamp(frame)
+    return to_timestamp(frame)
 
 
 def retime_vobsub(episode, config):
