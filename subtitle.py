@@ -33,7 +33,17 @@ def _adjust_timecode(episode, timestamp):
             if (series == 'DBZ' and
                     key == 'prologue' and
                     frame < frame_to_seconds(offsets[key]["frame"])):
-                total_offset += 1.5
+                # episodes 1-20     +0.5 delay
+                # episodes 21-34    +0.333 delay
+                # episodes 35-39    -0.167 delay
+                # episodes 40-?     +1.5 delay
+                if int(episode.number) in range(1, 21):
+                    total_offset += 0.5
+                if int(episode.number) in range(21, 35):
+                    total_offset += 0.333
+                if int(episode.number) in range(35, 39):
+                    total_offset -= 0.167
+                # also account for ED subs being +0.333 s early
             if frame > frame_to_seconds(offsets[key]["frame"]):
                 total_offset += frame_to_seconds(
                     offsets[key]["offset"])

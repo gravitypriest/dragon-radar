@@ -15,4 +15,4 @@ setup(zipfile=None,
                                 'ac3files/blank_20_384.ac3',
                                 'ac3files/blank_51_384.ac3',
                                 'ac3files/blank_51_448.ac3']),
-                  ('', ['dragon-radar.conf'])])
+                  ('', ['dragon-radar.ini'])])

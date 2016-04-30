@@ -6,7 +6,7 @@ class Constants(object):
     DISC_JSON = 'params/episodes.json'
     OFFSETS_JSON = 'params/offsets.json'
     VALID_JSON = 'params/valid.json'
-    CONF_FILE = 'dragon-radar.conf'
+    CONF_FILE = 'dragon-radar.ini'
     AC3_DIR = 'ac3files'
     WORKING_DIR = 'C:/dragon-radar'
     SOURCE_DIR = WORKING_DIR

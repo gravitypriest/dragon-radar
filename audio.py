@@ -64,6 +64,7 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, series):
             begin=ch_begin,
             o=file_out_3))
         if delay > 0:
+            bitrate = '51_448'
             # need to add blank space between cuts
             logger.debug('Cutting blank delay...')
             if series in ['DBZ', 'DBGT']:
@@ -71,8 +72,6 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, series):
                     bitrate = '20_192'
             elif series is 'DBoxZ':
                     bitrate = '51_384'
-            else:
-                bitrate = '51_448'
             logger.debug('Using %s kbps blank ac3.' % bitrate)
             blank_file = os.path.join(AC3_DIR, 'blank_' + bitrate + '.ac3')
             os.system(DELAYCUT_CMD.format(

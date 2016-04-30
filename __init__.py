@@ -22,6 +22,7 @@ WORKING_DIR = Constants.WORKING_DIR
 SOURCE_DIR = Constants.SOURCE_DIR
 CONF_FILE = Constants.CONF_FILE
 APP_NAME = Constants.APP_NAME
+logger = logging.getLogger(APP_NAME)
 
 
 def load_config_file():
@@ -155,9 +156,7 @@ def init_logging(verbose):
     stdout_handler = logging.StreamHandler(sys.stdout)
     stdout_handler.setLevel(level)
     logging.root.addHandler(stdout_handler)
-    logger = logging.getLogger(APP_NAME)
     logger.setLevel(level)
-    return logger
 
 
 def pre_check(args, config):
@@ -220,10 +219,9 @@ def split_args(argtype, arg):
 
 
 def main():
-    global logger
     config = load_config_file()
     args = create_args().parse_args()
-    logger = init_logging(args.verbose)
+    init_logging(args.verbose)
 
     # don't proceed if paths aren't right/programs missing
     pre_check(args, config)

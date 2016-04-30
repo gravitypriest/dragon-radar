@@ -103,7 +103,7 @@ def timestamp_to_seconds(timestamp):
 
 
 def _split_seconds(seconds):
-    rounded_time = '%.3f' % round(frame, 3)
+    rounded_time = '%.3f' % round(seconds, 3)
     time_parts = rounded_time.split('.')
     s = time_parts[0]
     ms = time_parts[1]
