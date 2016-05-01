@@ -18,6 +18,11 @@ def _adjust_timecode(episode, timestamp):
     offsets = episode.offsets
     series = episode.series
 
+    # part B on the orange bricks starts after the eyecatch, so
+    #  pedal back a few frames just to be safe
+    # if series == 'DBZ':
+        # offsets['partB']['frame'] = offsets['partB']['frame'] - 100
+
     # calculate offset from frame data
     if isinstance(offsets, list):
         # for list-types (movies, not episodes), start with 0 offset
@@ -28,22 +33,21 @@ def _adjust_timecode(episode, timestamp):
     else:
         # for episodes, start with the OP offset
         total_offset = frame_to_seconds(offsets['op']['offset'])
+        # orange bricks have a delay on the OP subs
+        if (series == 'DBZ' and
+           frame < frame_to_seconds(offsets['prologue']["frame"])):
+            # episodes 1-20     +0.5 delay
+            # episodes 21-34    +0.333 delay
+            # episodes 35-39    -0.167 delay
+            # episodes 40-?     +1.5 delay
+            if int(episode.number) in range(1, 21):
+                total_offset += 0.5
+            if int(episode.number) in range(21, 35):
+                total_offset += 0.333
+            if int(episode.number) in range(35, 39):
+                total_offset -= 0.167
         for key in offsets.keys():
-            # orange bricks have a 1.5 second delay on the OP subs
-            if (series == 'DBZ' and
-                    key == 'prologue' and
-                    frame < frame_to_seconds(offsets[key]["frame"])):
-                # episodes 1-20     +0.5 delay
-                # episodes 21-34    +0.333 delay
-                # episodes 35-39    -0.167 delay
-                # episodes 40-?     +1.5 delay
-                if int(episode.number) in range(1, 21):
-                    total_offset += 0.5
-                if int(episode.number) in range(21, 35):
-                    total_offset += 0.333
-                if int(episode.number) in range(35, 39):
-                    total_offset -= 0.167
-                # also account for ED subs being +0.333 s early
+            # also account for ED subs being +0.333 s early
             if frame > frame_to_seconds(offsets[key]["frame"]):
                 total_offset += frame_to_seconds(
                     offsets[key]["offset"])
