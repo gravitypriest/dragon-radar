@@ -1,0 +1,12 @@
+DB and DBGT demux data is based on VIDs in the DVD structure.
+Each VID is an episode.
+The data tree can be explained as:
+	DB -> Season 1 -> Disc 1 -> VIDs 2, 3, 4, 5 ...
+You can use these VIDs for both VSRip and PGCDemux.
+
+DBZ demux data is based on PGCs and splitting them over cells.
+Season 1 is a goddamn free-for-all with no pattern, but the rest have a pattern.
+For demuxing video, use the "pgcdemux" attribute to get the begin and ending cells to demux.
+Season 1 has it listed for each episode since it's all over the place.
+For the rest, use the "pgcdemux" attribute for the first episode on the disc, and add 9 for each additional episode after.
+For VSRip, the pattern is common to all discs but the starting point is different for S1 -- use given attribute for first episode, add 6 for each episode after.

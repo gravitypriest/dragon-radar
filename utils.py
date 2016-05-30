@@ -154,14 +154,14 @@ def delete_temp(tmp_dir):
 def rename(fname, new_fname):
     try:
         os.rename(fname, new_fname)
-    except OSError as e:
-        logger.error('Could not rename %s: %s' (fname, e))
+    except (OSError, FileNotFoundError) as e:
+        logger.error('Could not rename %s: %s', fname, e)
 
 
 def move_file(fname, new_path):
     try:
         shutil.move(fname, new_path)
-    except shutil.Error as e:
+    except (shutil.Error, FileNotFoundError) as e:
         logger.error(e)
 
 

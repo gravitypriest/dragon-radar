@@ -4,7 +4,7 @@ Dragon Radar
 import os
 import sys
 import argparse
-import ConfigParser
+import configparser
 import logging
 from constants import Constants
 from episode import Episode
@@ -27,18 +27,18 @@ logger = logging.getLogger(APP_NAME)
 
 def load_config_file():
     '''
-    Load config from dragon-radar.conf
+    Load config from dragon-radar.ini
     '''
-    config = ConfigParser.RawConfigParser(
+    config = configparser.ConfigParser(
         {'working_dir': WORKING_DIR,
          'source_dir': SOURCE_DIR})
     try:
         config.read(CONF_FILE)
-    except ConfigParser.Error:
+    except configparser.Error:
         pass
     try:
         config.add_section(APP_NAME)
-    except ConfigParser.Error:
+    except configparser.Error:
         pass
 
     return config
@@ -92,15 +92,15 @@ def create_args():
                            help='Don\'t demux audio')
     sub_group = demux_cmd.add_mutually_exclusive_group()
 
-    demux_cmd.add_argument('--sub',
+    sub_group.add_argument('--sub',
                            action='store_true',
                            default=True,
                            help='Demux subtitles (default)')
-    demux_cmd.add_argument('--no-sub',
+    sub_group.add_argument('--no-sub',
                            action='store_true',
                            default=False,
                            help='Do not demux subtitles')
-    demux_cmd.add_argument('--avs',
+    sub_group.add_argument('--avs',
                            action='store_true',
                            default=False,
                            help='Generate .d2v file')
@@ -165,16 +165,20 @@ def pre_check(args, config):
     and required programs are installed
     '''
     def exe_check(name):
-        exe = config.get(APP_NAME, name.lower())
-        logger.debug('%s path: %s' % (name, exe))
+        try:
+            exe = config.get(APP_NAME, name.lower())
+        except configparser.Error:
+            logger.error('Path to %s is not defined in dragon-radar.ini', name)
+            return True
+        logger.debug('%s path: %s', name, exe)
         if not os.path.isfile(exe):
-            logger.error('Path to %s \"%s\" is invalid.' % (name, exe))
+            logger.error('Path to %s \"%s\" is invalid.', name, exe)
             return True
         return False
 
     logger.debug('Performing pre-check...')
     bad_conf = False
-    if args.command is 'demux':
+    if args.command == 'demux':
         if not (args.no_vid and args.no_aud):
             bad_conf = exe_check('PGCDemux')
         if not args.no_sub:
@@ -198,7 +202,7 @@ def bad_arg_exit(arg):
 
 def validate_args(argtype, arg, series):
     valid = load_validate(series)
-    if not all((a - 1) in xrange(valid[argtype]) for a in arg):
+    if not all((a - 1) in range(valid[argtype]) for a in arg):
         bad_arg_exit(argtype)
 
 
@@ -220,13 +224,17 @@ def split_args(argtype, arg):
 
 def main():
     config = load_config_file()
-    args = create_args().parse_args()
+    parser = create_args()
+    args = parser.parse_args()
+    if not args.command:
+        parser.print_help()
+        sys.exit()
     init_logging(args.verbose)
 
     # don't proceed if paths aren't right/programs missing
     pre_check(args, config)
 
-    print WELCOME_MSG
+    print(WELCOME_MSG)
 
     if args.command == 'demux' and not (args.no_vid and args.no_aud and
                                         args.no_sub):
@@ -236,8 +244,8 @@ def main():
         start_disc, end_disc = split_args('disc', args.disc)
         validate_args('disc', [start_disc, end_disc], args.series)
 
-        for season in xrange(start_season, end_season + 1):
-            for disc in xrange(start_disc, end_disc + 1):
+        for season in range(start_season, end_season + 1):
+            for disc in range(start_disc, end_disc + 1):
                 logger.info('Launching demux mode for %s season %s disc %s...'
                             % (args.series, season, disc))
                 demux = Demux(config, args, season, disc)
@@ -253,7 +261,7 @@ def main():
         # per-episode modes
         start_ep, end_ep = split_args('episode', args.episode)
 
-        for ep in xrange(start_ep, end_ep + 1):
+        for ep in range(start_ep, end_ep + 1):
             episode = Episode(config, ep, args.series)
             if args.command == 'avisynth':
                 # avisynth mode

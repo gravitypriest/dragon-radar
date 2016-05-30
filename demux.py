@@ -2,10 +2,10 @@
 Functions to demux discs
 '''
 import os
-import subprocess
 import tempfile
 import logging
 import atexit
+import subprocess
 from utils import (load_episode_disc_data,
                    load_demux_map,
                    create_dir,
@@ -60,43 +60,27 @@ class Demux(object):
         '''
         logger.info('Demuxing %s to %s...' % (self.source_file, dest_path))
 
-        arg_list = []
+        streams = []
         if self.no_video:
-            arg_list.extend(['-nom2v', '-nocellt'])
+            streams.extend(['-nom2v', '-nocellt'])
         else:
-            arg_list.extend(['-m2v', '-cellt'])
+            streams.extend(['-m2v', '-cellt'])
         if self.no_audio:
-            arg_list.append('-noaud')
+            streams.append('-noaud')
         else:
-            arg_list.append('-aud')
-        arg_list.append('-nosub')
-        streams = ' '.join(arg_list)
+            streams.append('-aud')
+        streams.append('-nosub')
 
         if pgc:
             p = pgc['pgc']
             s = pgc['start']
             e = pgc['end']
-            # this call needs quotes around the paths because
-            #  fuck consistency right?
-            os.system(
-                '{pgcdemux} -pgc {p} {streams} -nolog -guism '
-                '-sc {s} -ec {e} \"{source}\" \"{dest}\"'.format(
-                    pgcdemux=self.pgcdemux,
-                    p=p,
-                    streams=streams,
-                    s=s,
-                    e=e,
-                    source=self.source_file,
-                    dest=dest_path))
+            args = [self.pgcdemux, '-pgc', p] + streams + ['-nolog', '-guism', '-sc', s,'-ec', e, self.source_file, dest_path]
         else:
-            os.system(
-                '{pgcdemux} -vid {v} {streams} -nolog -guism '
-                '\"{source}\" \"{dest}\"'.format(
-                    pgcdemux=self.pgcdemux,
-                    v=vid,
-                    streams=streams,
-                    source=self.source_file,
-                    dest=dest_path))
+            args = [self.pgcdemux, '-vid', str(vid)] + streams + ['-nolog', '-guism', self.source_file, dest_path]
+
+        proc = subprocess.run(args)
+
         logger.info('Audio/video demux complete.')
 
     def _run_vsrip(self, vid_seq, vid_dir):
@@ -116,15 +100,16 @@ class Demux(object):
             param.write(content)
 
         logger.info('Demuxing subtitles to VobSub...')
-        os.system('{vsrip} {param}'.format(vsrip=self.vsrip,
-                                           param=param_file))
+        subprocess.run([self.vsrip, param_file])
         logger.info('Subtitle demux complete.')
 
     def _translate_folder_to_episode(self, folder):
         '''
         Figure out how to rename the video based on the folder name
         '''
-        vid = folder.split('V')[1]
+        vid = folder
+        # vid = folder.split('V')[1]
+        # should actually use the demux index for this...
         episodes = list(
             range(self.disc_episodes[0], self.disc_episodes[1] + 1))
         return str(episodes[int(vid)]).zfill(3)
@@ -137,6 +122,12 @@ class Demux(object):
         logger.info('Inspecting output...')
         final_dest = os.path.join(self.working_dir, self.series, R1_DEMUX_DIR)
         sub_dest = os.path.join(self.working_dir, self.series, FUNI_SUB_DIR)
+        # make the directories
+        create_dir(sub_dest)
+        create_dir(final_dest)
+        # keep track of loop iteration
+        count = 0
+
         for d in os.listdir(tmp_dir):
             m2v = os.path.join(tmp_dir, d, 'VideoFile.m2v')
             aud0 = os.path.join(tmp_dir, d, 'AudioFile_80.ac3')
@@ -145,48 +136,48 @@ class Demux(object):
             subi = os.path.join(tmp_dir, d, 'Subtitle.idx')
             subs = os.path.join(tmp_dir, d, 'Subtitle.sub')
 
-            if os.path.isfile(m2v) or os.path.isfile(subi):
+            if os.path.isfile(m2v) or os.path.isfile(aud0) or os.path.isfile(subi):
                 if os.path.isfile(m2v) and os.path.getsize(m2v) < MIN_SIZE:
                     logger.debug('Ripped something that\'s not an episode. '
                                  'Ignoring.')
-                else:
-                    ep_num = self._translate_folder_to_episode(d)
-                    logger.info('Ripped an episode.\t'
-                                'Renaming to %s and moving...' % ep_num)
-                    m2v_n = os.path.join(
-                        tmp_dir, d, '{e}.m2v'.format(e=ep_num))
-                    aud0_n = os.path.join(
-                        tmp_dir, d, '{e}_en.ac3'.format(e=ep_num))
-                    aud1_n = os.path.join(
-                        tmp_dir, d, '{e}_us.ac3'.format(e=ep_num))
-                    chap_n = os.path.join(
-                        tmp_dir, d, '{e}.txt'.format(e=ep_num))
-                    subi_n = os.path.join(
-                        tmp_dir, d, '{e}.idx'.format(e=ep_num))
-                    subs_n = os.path.join(
-                        tmp_dir, d, '{e}.sub'.format(e=ep_num))
+                    continue
 
+                ep_num = self._translate_folder_to_episode(count)
+                logger.info('Ripped an episode.\t'
+                            'Renaming to %s and moving...', ep_num)
+                m2v_n = os.path.join(
+                    tmp_dir, d, '{e}.m2v'.format(e=ep_num))
+                aud0_n = os.path.join(
+                    tmp_dir, d, '{e}_en.ac3'.format(e=ep_num))
+                aud1_n = os.path.join(
+                    tmp_dir, d, '{e}_us.ac3'.format(e=ep_num))
+                chap_n = os.path.join(
+                    tmp_dir, d, '{e}.txt'.format(e=ep_num))
+                subi_n = os.path.join(
+                    tmp_dir, d, '{e}.idx'.format(e=ep_num))
+                subs_n = os.path.join(
+                    tmp_dir, d, '{e}.sub'.format(e=ep_num))
+
+                rename(aud0, aud0_n)
+                rename(aud1, aud1_n)
+                move_file(aud0_n, final_dest)
+                move_file(aud1_n, final_dest)
+                if not self.no_video:
                     rename(m2v, m2v_n)
-                    rename(aud0, aud0_n)
-                    rename(aud1, aud1_n)
                     rename(chap, chap_n)
+                    move_file(m2v_n, final_dest)
+                    move_file(chap_n, final_dest)
+                if not self.no_sub:
                     rename(subi, subi_n)
                     rename(subs, subs_n)
-
-                    # make the directories
-                    create_dir(sub_dest)
-                    create_dir(final_dest)
-
-                    for f in [m2v_n, aud0_n, aud1_n, chap_n]:
-                        move_file(f, final_dest)
-
-                    for f in [subi_n, subs_n]:
-                        move_file(f, sub_dest)
+                    move_file(subi, sub_dest)
+                    move_file(subs, sub_dest)
+                count = count + 1
             else:
-                logger.debug('%s does not exist' % m2v)
+                logger.debug('%s does not exist', m2v)
         logger.info('Demux complete.\n'
                     'See demuxed A/V files in %s.\n'
-                    'See demuxed subs in %s.' % (final_dest, sub_dest))
+                    'See demuxed subs in %s.', final_dest, sub_dest)
 
         delete_temp(tmp_dir)
 
@@ -210,14 +201,19 @@ class Demux(object):
     def _generate_source_folder_name(self):
         if self.series == 'DB':
             return 'DRAGON_BALL_S{s}_D{d}'.format(s=self.season, d=self.disc)
+        if self.series == 'DBGT':
+            return 'DRAGON_BALL_GT_S{s}_D{d}'.format(s=self.season, d=self.disc)
         if self.series == 'DBZ':
-            if self.season > 1:
+            if self.season > 1 and self.season < 4:
                 return 'DBZ_SEASON{s}_D{d}'.format(s=str(self.season).zfill(2),
                                                    d=self.disc)
-            else:
+            elif self.season == 1:
                 return 'DBZ_SEASON{s}_DISC{d}'.format(
                     s=str(self.season).zfill(2),
                     d=self.disc)
+            else:
+                return 'DRAGON_BALL_Z_S{s}_D{d}'.format(
+                    s=self.season, d=self.disc)
 
     def _create_temp_dir(self, vid, tmp_dir):
         vid_dir = os.path.join(tmp_dir,
@@ -244,7 +240,7 @@ class Demux(object):
             for vid in demux_map[str(self.disc)]:
                 vid_dir = self._create_temp_dir(vid, tmp_dir)
                 if not (self.no_video and self.no_audio):
-                    self._run_pgcdemux(dest_path, vid)
+                    self._run_pgcdemux(vid_dir, vid)
                 if not(self.no_sub):
                     self._run_vsrip([vid], vid_dir)
 

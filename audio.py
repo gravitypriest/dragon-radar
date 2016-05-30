@@ -36,12 +36,7 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, series):
     if prev_ch_end == 0:
         # initial offset
         logger.debug('Cutting initial part...')
-        os.system(DELAYCUT_CMD.format(
-                  delaycut=delaycut,
-                  i=file_in,
-                  end=prev_ch_end,
-                  begin=ch_begin,
-                  o=file_out_1))
+        subprocess.run([delaycut, '-i', file_in, '-endcut', prev_ch_end, '-startcut', ch_begin, '-o', file_out_1])
         # remove the initial file and begin again
         os.remove(file_in)
         shutil.rename(file_out_1, file_in)
@@ -49,20 +44,10 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, series):
     else:
         # episode up until chapter point
         logger.debug('Cutting first part...')
-        os.system(DELAYCUT_CMD.format(
-            delaycut=delaycut,
-            i=file_in,
-            end=prev_ch_end,
-            begin=0,
-            o=file_out_1))
+        subprocess.run([delaycut, '-i', file_in, '-endcut', prev_ch_end, '-startcut', 0, '-o', file_out_1])
         # episode from chapter until end with offset applied
         logger.debug('Cutting second part...')
-        os.system(DELAYCUT_CMD.format(
-            delaycut=delaycut,
-            i=file_in,
-            end=0,
-            begin=ch_begin,
-            o=file_out_3))
+        subprocess.run([delaycut, '-i', file_in, '-endcut', 0, '-startcut', ch_begin, '-o', file_out_3])
         if delay > 0:
             bitrate = '51_448'
             # need to add blank space between cuts
@@ -74,13 +59,7 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, series):
                     bitrate = '51_384'
             logger.debug('Using %s kbps blank ac3.' % bitrate)
             blank_file = os.path.join(AC3_DIR, 'blank_' + bitrate + '.ac3')
-            os.system(DELAYCUT_CMD.format(
-                delaycut=delaycut,
-                i=blank_file,
-                end=delay,
-                begin=0,
-                o=file_out_2))
-
+            subprocess.run([delaycut, '-i', blank_file, '-endcut', delay, '-startcut', 0, '-o', file_out_2])
         file_combine = []
         file_combine.append(file_out_1)
         if os.path.isfile(file_out_2):
