@@ -108,6 +108,9 @@ class Demux(object):
         Figure out how to rename the video based on the folder name
         '''
         vid = folder
+        # DB S1D2 is weird
+        if (self.series == 'DB' and self.season == 1 and self.disc == 2):
+            vid = (vid + 3) % 7
         # vid = folder.split('V')[1]
         # should actually use the demux index for this...
         episodes = list(
@@ -161,7 +164,9 @@ class Demux(object):
                 rename(aud0, aud0_n)
                 rename(aud1, aud1_n)
                 move_file(aud0_n, final_dest)
-                move_file(aud1_n, final_dest)
+                if (self.series != 'DB'):
+                    # only one audio track for DB
+                    move_file(aud1_n, final_dest)
                 if not self.no_video:
                     rename(m2v, m2v_n)
                     rename(chap, chap_n)
@@ -170,8 +175,8 @@ class Demux(object):
                 if not self.no_sub:
                     rename(subi, subi_n)
                     rename(subs, subs_n)
-                    move_file(subi, sub_dest)
-                    move_file(subs, sub_dest)
+                    move_file(subi_n, sub_dest)
+                    move_file(subs_n, sub_dest)
                 count = count + 1
             else:
                 logger.debug('%s does not exist', m2v)
