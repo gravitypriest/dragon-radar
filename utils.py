@@ -23,12 +23,13 @@ def load_json(filename):
     return json_data
 
 
-def load_series_frame_data(series):
+def load_frame_data(series, episode):
     '''
     Load the JSON data of frame offsets for one series
     '''
     series_frame_data = load_json(OFFSETS_JSON)[series]
-    return series_frame_data
+    op_offset = get_op_offset(series, int(episode), series_frame_data)
+    return series_frame_data[episode], op_offset
 
 
 def load_episode_disc_data(series, season, disc):
@@ -39,11 +40,11 @@ def load_episode_disc_data(series, season, disc):
     return disc_data
 
 
-def load_demux_map(series, season):
+def load_demux_map(series, episode):
     '''
     Load the JSON data of demux info
     '''
-    demux_map = load_json(DEMUX_JSON)[series][season]
+    demux_map = load_json(DEMUX_JSON)[series][episode]
     return demux_map
 
 

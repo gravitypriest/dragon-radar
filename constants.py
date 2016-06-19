@@ -2,7 +2,7 @@ import os
 
 
 class Constants(object):
-    DEMUX_JSON = 'params/demux.json'
+    DEMUX_JSON = 'params/demux_by_episode.json'
     DISC_JSON = 'params/episodes.json'
     OFFSETS_JSON = 'params/offsets.json'
     VALID_JSON = 'params/valid.json'
@@ -21,7 +21,7 @@ class Constants(object):
     APP_NAME = 'dragon-radar'
     VSRIP_TEMPLATE = ('{in_path}\n'
                       '{out_path}\n'
-                      '1\n'
+                      '{pgc}\n'
                       '{vid_sequence}\n'
                       'ALL\n'
                       'CLOSE\n'

@@ -2,18 +2,18 @@
 	"DBZ": {
 		"001": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [2, 12],
-				"disc": 1,
+				"disc": "DBZ_SEASON01_DISC1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 1,
+				"disc": "DBZ1_1",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -22,18 +22,18 @@
 		},
 		"002": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [13, 21],
-				"disc": 1,
+				"disc": "DBZ_SEASON01_DISC1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 1,
+				"disc": "DBZ1_1",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -42,18 +42,18 @@
 		},
 		"003": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [22, 30],
-				"disc": 1,
+				"disc": "DBZ_SEASON01_DISC1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 1,
+				"disc": "DBZ1_1",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -62,18 +62,18 @@
 		},
 		"004": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [31, 39],
-				"disc": 1,
+				"disc": "DBZ_SEASON01_DISC1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [20, 21, 23, 24],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 1,
+				"disc": "DBZ1_1",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -82,18 +82,18 @@
 		},
 		"005": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [40, 48],
-				"disc": 1,
+				"disc": "DBZ_SEASON01_DISC1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [26, 27, 29, 30],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 1,
+				"disc": "DBZ1_1",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -102,18 +102,18 @@
 		},
 		"006": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [49, 59],
-				"disc": 1,
+				"disc": "DBZ_SEASON01_DISC1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [32, 33, 35, 36],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 1,
+				"disc": "DBZ1_1",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -122,18 +122,18 @@
 		},
 		"007": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [60, 70],
-				"disc": 1,
+				"disc": "DBZ_SEASON01_DISC1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [38, 39, 41, 42],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 2,
+				"disc": "DBZ1_2",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -142,18 +142,18 @@
 		},
 		"008": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [2, 10],
-				"disc": 2,
+				"disc": "DBZ_SEASON01_DISC2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 2,
+				"disc": "DBZ1_2",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -162,18 +162,18 @@
 		},
 		"009": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 21],
-				"disc": 2,
+				"disc": "DBZ_SEASON01_DISC2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 2,
+				"disc": "DBZ1_2",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -182,18 +182,18 @@
 		},
 		"010": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [22, 30],
-				"disc": 2,
+				"disc": "DBZ_SEASON01_DISC2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 2,
+				"disc": "DBZ1_2",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -202,18 +202,18 @@
 		},
 		"011": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [31, 39],
-				"disc": 2,
+				"disc": "DBZ_SEASON01_DISC2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [20, 21, 23, 24],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 2,
+				"disc": "DBZ1_2",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -222,18 +222,18 @@
 		},
 		"012": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [40, 48],
-				"disc": 2,
+				"disc": "DBZ_SEASON01_DISC2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [26, 27, 29, 30],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 2,
+				"disc": "DBZ1_2",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -242,18 +242,18 @@
 		},
 		"013": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [49, 57],
-				"disc": 2,
+				"disc": "DBZ_SEASON01_DISC2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [32, 33, 35, 36],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 3,
+				"disc": "DBZ1_3",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -262,18 +262,18 @@
 		},
 		"014": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [58, 66],
-				"disc": 2,
+				"disc": "DBZ_SEASON01_DISC2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [38, 39, 41, 42],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 3,
+				"disc": "DBZ1_3",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -282,18 +282,18 @@
 		},
 		"015": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [2, 12],
-				"disc": 3,
+				"disc": "DBZ_SEASON01_DISC3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 3,
+				"disc": "DBZ1_3",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -302,18 +302,18 @@
 		},
 		"016": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [13, 21],
-				"disc": 3,
+				"disc": "DBZ_SEASON01_DISC3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 3,
+				"disc": "DBZ1_3",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -322,18 +322,18 @@
 		},
 		"017": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [22, 30],
-				"disc": 3,
+				"disc": "DBZ_SEASON01_DISC3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 3,
+				"disc": "DBZ1_3",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -342,18 +342,18 @@
 		},
 		"018": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [31, 39],
-				"disc": 3,
+				"disc": "DBZ_SEASON01_DISC3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [20, 21, 23, 24],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 3,
+				"disc": "DBZ1_3",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -362,18 +362,18 @@
 		},
 		"019": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [40, 48],
-				"disc": 3,
+				"disc": "DBZ_SEASON01_DISC3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [26, 27, 29, 30],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 4,
+				"disc": "DBZ1_4",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -382,18 +382,18 @@
 		},
 		"020": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [49, 57],
-				"disc": 3,
+				"disc": "DBZ_SEASON01_DISC3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [32, 33, 35, 36],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 4,
+				"disc": "DBZ1_4",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -402,18 +402,18 @@
 		},
 		"021": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [58, 66],
-				"disc": 3,
+				"disc": "DBZ_SEASON01_DISC3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [38, 39, 41, 42],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 4,
+				"disc": "DBZ1_4",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -422,18 +422,18 @@
 		},
 		"022": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [2, 10],
-				"disc": 4,
+				"disc": "DBZ_SEASON01_DISC4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 4,
+				"disc": "DBZ1_4",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -442,18 +442,18 @@
 		},
 		"023": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 21],
-				"disc": 4,
+				"disc": "DBZ_SEASON01_DISC4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 4,
+				"disc": "DBZ1_4",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -462,18 +462,18 @@
 		},
 		"024": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [22, 32],
-				"disc": 4,
+				"disc": "DBZ_SEASON01_DISC4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 4,
+				"disc": "DBZ1_4",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -482,18 +482,18 @@
 		},
 		"025": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [33, 41],
-				"disc": 4,
+				"disc": "DBZ_SEASON01_DISC4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [20, 21, 23, 24],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 5,
+				"disc": "DBZ1_5",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -502,18 +502,18 @@
 		},
 		"026": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [42, 52],
-				"disc": 4,
+				"disc": "DBZ_SEASON01_DISC4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [26, 27, 29, 30],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 5,
+				"disc": "DBZ1_5",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -522,18 +522,18 @@
 		},
 		"027": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [53, 63],
-				"disc": 4,
+				"disc": "DBZ_SEASON01_DISC4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [32, 33, 35, 36],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 5,
+				"disc": "DBZ1_5",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -542,18 +542,18 @@
 		},
 		"028": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [64, 72],
-				"disc": 4,
+				"disc": "DBZ_SEASON01_DISC4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [38, 39, 41, 42],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 5,
+				"disc": "DBZ1_5",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -562,18 +562,18 @@
 		},
 		"029": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [2, 12],
-				"disc": 5,
+				"disc": "DBZ_SEASON01_DISC5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 5,
+				"disc": "DBZ1_5",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -582,18 +582,18 @@
 		},
 		"030": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [13, 21],
-				"disc": 5,
+				"disc": "DBZ_SEASON01_DISC5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 5,
+				"disc": "DBZ1_5",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -602,18 +602,18 @@
 		},
 		"031": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [22, 30],
-				"disc": 5,
+				"disc": "DBZ_SEASON01_DISC5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 6,
+				"disc": "DBZ1_6",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -622,18 +622,18 @@
 		},
 		"032": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [31, 39],
-				"disc": 5,
+				"disc": "DBZ_SEASON01_DISC5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [20, 21, 23, 24],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 6,
+				"disc": "DBZ1_6",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -642,18 +642,18 @@
 		},
 		"033": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [40, 48],
-				"disc": 5,
+				"disc": "DBZ_SEASON01_DISC5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [26, 27, 29, 30],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 6,
+				"disc": "DBZ1_6",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -662,18 +662,18 @@
 		},
 		"034": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [49, 57],
-				"disc": 5,
+				"disc": "DBZ_SEASON01_DISC5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [32, 33, 35, 36],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 6,
+				"disc": "DBZ1_6",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -682,18 +682,18 @@
 		},
 		"035": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [58, 66],
-				"disc": 5,
+				"disc": "DBZ_SEASON01_DISC5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [38, 39, 41, 42],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 6,
+				"disc": "DBZ1_6",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -702,18 +702,18 @@
 		},
 		"036": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [2, 10],
-				"disc": 6,
+				"disc": "DBZ_SEASON01_DISC6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 6,
+				"disc": "DBZ1_6",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -722,18 +722,18 @@
 		},
 		"037": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 19],
-				"disc": 6,
+				"disc": "DBZ_SEASON01_DISC6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 7,
+				"disc": "DBZ1_7",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -742,18 +742,18 @@
 		},
 		"038": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [20, 30],
-				"disc": 6,
+				"disc": "DBZ_SEASON01_DISC6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 7,
+				"disc": "DBZ1_7",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -762,18 +762,18 @@
 		},
 		"039": {
 			"R1": {
-				"box": 1,
+				"audio": ["en", "us", "jp"],
 				"cells": [31, 41],
-				"disc": 6,
+				"disc": "DBZ_SEASON01_DISC6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [20, 21, 23, 24],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 7,
+				"disc": "DBZ1_7",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -782,18 +782,18 @@
 		},
 		"040": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 9],
-				"disc": 1,
+				"disc": "DBZ_SEASON02_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [1, 2, 4, 5],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 7,
+				"disc": "DBZ1_7",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -802,18 +802,18 @@
 		},
 		"041": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [10, 18],
-				"disc": 1,
+				"disc": "DBZ_SEASON02_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [7, 8, 10, 11],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 7,
+				"disc": "DBZ1_7",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -822,18 +822,18 @@
 		},
 		"042": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [19, 27],
-				"disc": 1,
+				"disc": "DBZ_SEASON02_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [13, 14, 16, 17],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 7,
+				"disc": "DBZ1_7",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -842,18 +842,18 @@
 		},
 		"043": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [28, 36],
-				"disc": 1,
+				"disc": "DBZ_SEASON02_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [19, 20, 22, 23],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 8,
+				"disc": "DBZ1_8",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -862,18 +862,18 @@
 		},
 		"044": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [37, 45],
-				"disc": 1,
+				"disc": "DBZ_SEASON02_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 8,
+				"disc": "DBZ1_8",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -882,18 +882,18 @@
 		},
 		"045": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [46, 54],
-				"disc": 1,
+				"disc": "DBZ_SEASON02_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [31, 32, 34, 35],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 8,
+				"disc": "DBZ1_8",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -902,18 +902,18 @@
 		},
 		"046": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 9],
-				"disc": 2,
+				"disc": "DBZ_SEASON02_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [1, 2, 4, 5],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 8,
+				"disc": "DBZ1_8",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -922,18 +922,18 @@
 		},
 		"047": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [10, 18],
-				"disc": 2,
+				"disc": "DBZ_SEASON02_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [7, 8, 10, 11],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 8,
+				"disc": "DBZ1_8",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -942,18 +942,18 @@
 		},
 		"048": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [19, 27],
-				"disc": 2,
+				"disc": "DBZ_SEASON02_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [13, 14, 16, 17],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 8,
+				"disc": "DBZ1_8",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -962,18 +962,18 @@
 		},
 		"049": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [28, 36],
-				"disc": 2,
+				"disc": "DBZ_SEASON02_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [19, 20, 22, 23],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 9,
+				"disc": "DBZ1_9",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -982,18 +982,18 @@
 		},
 		"050": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [37, 45],
-				"disc": 2,
+				"disc": "DBZ_SEASON02_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 9,
+				"disc": "DBZ1_9",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -1002,18 +1002,18 @@
 		},
 		"051": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [46, 54],
-				"disc": 2,
+				"disc": "DBZ_SEASON02_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [31, 32, 34, 35],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 9,
+				"disc": "DBZ1_9",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -1022,18 +1022,18 @@
 		},
 		"052": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 9],
-				"disc": 3,
+				"disc": "DBZ_SEASON02_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [1, 2, 4, 5],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 9,
+				"disc": "DBZ1_9",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -1042,18 +1042,18 @@
 		},
 		"053": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [10, 18],
-				"disc": 3,
+				"disc": "DBZ_SEASON02_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [7, 8, 10, 11],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 9,
+				"disc": "DBZ1_9",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -1062,18 +1062,18 @@
 		},
 		"054": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [19, 27],
-				"disc": 3,
+				"disc": "DBZ_SEASON02_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [13, 14, 16, 17],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 9,
+				"disc": "DBZ1_9",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -1082,18 +1082,18 @@
 		},
 		"055": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [28, 36],
-				"disc": 3,
+				"disc": "DBZ_SEASON02_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [19, 20, 22, 23],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 10,
+				"disc": "DBZ1_10",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -1102,18 +1102,18 @@
 		},
 		"056": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [37, 45],
-				"disc": 3,
+				"disc": "DBZ_SEASON02_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 10,
+				"disc": "DBZ1_10",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -1122,18 +1122,18 @@
 		},
 		"057": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [46, 54],
-				"disc": 3,
+				"disc": "DBZ_SEASON02_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [31, 32, 34, 35],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 10,
+				"disc": "DBZ1_10",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -1142,18 +1142,18 @@
 		},
 		"058": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 9],
-				"disc": 4,
+				"disc": "DBZ_SEASON02_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [1, 2, 4, 5],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 10,
+				"disc": "DBZ1_10",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -1162,18 +1162,18 @@
 		},
 		"059": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [10, 18],
-				"disc": 4,
+				"disc": "DBZ_SEASON02_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [7, 8, 10, 11],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 10,
+				"disc": "DBZ1_10",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -1182,18 +1182,18 @@
 		},
 		"060": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [19, 27],
-				"disc": 4,
+				"disc": "DBZ_SEASON02_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [13, 14, 16, 17],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 10,
+				"disc": "DBZ1_10",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -1202,18 +1202,18 @@
 		},
 		"061": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [28, 36],
-				"disc": 4,
+				"disc": "DBZ_SEASON02_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [19, 20, 22, 23],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 11,
+				"disc": "DBZ1_11",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -1222,18 +1222,18 @@
 		},
 		"062": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [37, 45],
-				"disc": 4,
+				"disc": "DBZ_SEASON02_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 11,
+				"disc": "DBZ1_11",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -1242,18 +1242,18 @@
 		},
 		"063": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [46, 54],
-				"disc": 4,
+				"disc": "DBZ_SEASON02_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [31, 32, 34, 35],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 11,
+				"disc": "DBZ1_11",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -1262,18 +1262,18 @@
 		},
 		"064": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 9],
-				"disc": 5,
+				"disc": "DBZ_SEASON02_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [1, 2, 4, 5],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 11,
+				"disc": "DBZ1_11",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -1282,18 +1282,18 @@
 		},
 		"065": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [10, 18],
-				"disc": 5,
+				"disc": "DBZ_SEASON02_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [7, 8, 10, 11],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 11,
+				"disc": "DBZ1_11",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -1302,18 +1302,18 @@
 		},
 		"066": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [19, 27],
-				"disc": 5,
+				"disc": "DBZ_SEASON02_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [13, 14, 16, 17],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 11,
+				"disc": "DBZ1_11",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -1322,18 +1322,18 @@
 		},
 		"067": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [28, 36],
-				"disc": 5,
+				"disc": "DBZ_SEASON02_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [19, 20, 22, 23],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 12,
+				"disc": "DBZ1_12",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -1342,18 +1342,18 @@
 		},
 		"068": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [37, 45],
-				"disc": 5,
+				"disc": "DBZ_SEASON02_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 12,
+				"disc": "DBZ1_12",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -1362,18 +1362,18 @@
 		},
 		"069": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [46, 54],
-				"disc": 5,
+				"disc": "DBZ_SEASON02_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [31, 32, 34, 35],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 12,
+				"disc": "DBZ1_12",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -1382,18 +1382,18 @@
 		},
 		"070": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 9],
-				"disc": 6,
+				"disc": "DBZ_SEASON02_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [1, 2, 4, 5],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 12,
+				"disc": "DBZ1_12",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -1402,18 +1402,18 @@
 		},
 		"071": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [10, 18],
-				"disc": 6,
+				"disc": "DBZ_SEASON02_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [7, 8, 10, 11],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 12,
+				"disc": "DBZ1_12",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -1422,18 +1422,18 @@
 		},
 		"072": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [19, 27],
-				"disc": 6,
+				"disc": "DBZ_SEASON02_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [13, 14, 16, 17],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 12,
+				"disc": "DBZ1_12",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -1442,18 +1442,18 @@
 		},
 		"073": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [28, 36],
-				"disc": 6,
+				"disc": "DBZ_SEASON02_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [19, 20, 22, 23],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 13,
+				"disc": "DBZ1_13",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -1462,18 +1462,18 @@
 		},
 		"074": {
 			"R1": {
-				"box": 2,
+				"audio": ["en", "us", "jp"],
 				"cells": [37, 45],
-				"disc": 6,
+				"disc": "DBZ_SEASON02_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 13,
+				"disc": "DBZ1_13",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -1482,18 +1482,18 @@
 		},
 		"075": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 9],
-				"disc": 1,
+				"disc": "DBZ_SEASON03_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [1, 2, 4, 5],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 13,
+				"disc": "DBZ1_13",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -1502,18 +1502,18 @@
 		},
 		"076": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [10, 18],
-				"disc": 1,
+				"disc": "DBZ_SEASON03_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [7, 8, 10, 11],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 13,
+				"disc": "DBZ1_13",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -1522,18 +1522,18 @@
 		},
 		"077": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [19, 27],
-				"disc": 1,
+				"disc": "DBZ_SEASON03_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [13, 14, 16, 17],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 13,
+				"disc": "DBZ1_13",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -1542,18 +1542,18 @@
 		},
 		"078": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [28, 36],
-				"disc": 1,
+				"disc": "DBZ_SEASON03_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [19, 20, 22, 23],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 13,
+				"disc": "DBZ1_13",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -1562,18 +1562,18 @@
 		},
 		"079": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [37, 45],
-				"disc": 1,
+				"disc": "DBZ_SEASON03_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 14,
+				"disc": "DBZ1_14",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -1582,18 +1582,18 @@
 		},
 		"080": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [46, 54],
-				"disc": 1,
+				"disc": "DBZ_SEASON03_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [31, 32, 34, 35],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 14,
+				"disc": "DBZ1_14",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -1602,18 +1602,18 @@
 		},
 		"081": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 9],
-				"disc": 2,
+				"disc": "DBZ_SEASON03_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [1, 2, 4, 5],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 14,
+				"disc": "DBZ1_14",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -1622,18 +1622,18 @@
 		},
 		"082": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [10, 18],
-				"disc": 2,
+				"disc": "DBZ_SEASON03_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [7, 8, 10, 11],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 14,
+				"disc": "DBZ1_14",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -1642,18 +1642,18 @@
 		},
 		"083": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [19, 27],
-				"disc": 2,
+				"disc": "DBZ_SEASON03_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [13, 14, 16, 17],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 14,
+				"disc": "DBZ1_14",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -1662,18 +1662,18 @@
 		},
 		"084": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [28, 36],
-				"disc": 2,
+				"disc": "DBZ_SEASON03_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [19, 20, 22, 23],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 14,
+				"disc": "DBZ1_14",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -1682,18 +1682,18 @@
 		},
 		"085": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [37, 45],
-				"disc": 2,
+				"disc": "DBZ_SEASON03_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 15,
+				"disc": "DBZ1_15",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -1702,18 +1702,18 @@
 		},
 		"086": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [46, 54],
-				"disc": 2,
+				"disc": "DBZ_SEASON03_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [31, 32, 34, 35],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 15,
+				"disc": "DBZ1_15",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -1722,18 +1722,18 @@
 		},
 		"087": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 9],
-				"disc": 3,
+				"disc": "DBZ_SEASON03_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [1, 2, 4, 5],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 15,
+				"disc": "DBZ1_15",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -1742,18 +1742,18 @@
 		},
 		"088": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [10, 18],
-				"disc": 3,
+				"disc": "DBZ_SEASON03_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [7, 8, 10, 11],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 15,
+				"disc": "DBZ1_15",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -1762,18 +1762,18 @@
 		},
 		"089": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [19, 27],
-				"disc": 3,
+				"disc": "DBZ_SEASON03_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [13, 14, 16, 17],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 15,
+				"disc": "DBZ1_15",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -1782,18 +1782,18 @@
 		},
 		"090": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [28, 36],
-				"disc": 3,
+				"disc": "DBZ_SEASON03_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [19, 20, 22, 23],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 15,
+				"disc": "DBZ1_15",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -1802,18 +1802,18 @@
 		},
 		"091": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [37, 45],
-				"disc": 3,
+				"disc": "DBZ_SEASON03_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 16,
+				"disc": "DBZ1_16",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -1822,18 +1822,18 @@
 		},
 		"092": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [46, 54],
-				"disc": 3,
+				"disc": "DBZ_SEASON03_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [31, 32, 34, 35],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 16,
+				"disc": "DBZ1_16",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -1842,18 +1842,18 @@
 		},
 		"093": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 9],
-				"disc": 4,
+				"disc": "DBZ_SEASON03_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [1, 2, 4, 5],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 16,
+				"disc": "DBZ1_16",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -1862,18 +1862,18 @@
 		},
 		"094": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [10, 18],
-				"disc": 4,
+				"disc": "DBZ_SEASON03_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [7, 8, 10, 11],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 16,
+				"disc": "DBZ1_16",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -1882,18 +1882,18 @@
 		},
 		"095": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [19, 27],
-				"disc": 4,
+				"disc": "DBZ_SEASON03_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [13, 14, 16, 17],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 16,
+				"disc": "DBZ1_16",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -1902,18 +1902,18 @@
 		},
 		"096": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [28, 36],
-				"disc": 4,
+				"disc": "DBZ_SEASON03_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [19, 20, 22, 23],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 16,
+				"disc": "DBZ1_16",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -1922,18 +1922,18 @@
 		},
 		"097": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [37, 45],
-				"disc": 4,
+				"disc": "DBZ_SEASON03_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 17,
+				"disc": "DBZ1_17",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -1942,18 +1942,18 @@
 		},
 		"098": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 9],
-				"disc": 5,
+				"disc": "DBZ_SEASON03_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [1, 2, 4, 5],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 17,
+				"disc": "DBZ1_17",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -1962,18 +1962,18 @@
 		},
 		"099": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [10, 18],
-				"disc": 5,
+				"disc": "DBZ_SEASON03_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [7, 8, 10, 11],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 17,
+				"disc": "DBZ1_17",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -1982,18 +1982,18 @@
 		},
 		"100": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [19, 27],
-				"disc": 5,
+				"disc": "DBZ_SEASON03_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [13, 14, 16, 17],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 17,
+				"disc": "DBZ1_17",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -2002,18 +2002,18 @@
 		},
 		"101": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [28, 36],
-				"disc": 5,
+				"disc": "DBZ_SEASON03_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [19, 20, 22, 23],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 17,
+				"disc": "DBZ1_17",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -2022,18 +2022,18 @@
 		},
 		"102": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [37, 45],
-				"disc": 5,
+				"disc": "DBZ_SEASON03_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 17,
+				"disc": "DBZ1_17",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -2042,18 +2042,18 @@
 		},
 		"103": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 9],
-				"disc": 6,
+				"disc": "DBZ_SEASON03_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [1, 2, 4, 5],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 18,
+				"disc": "DBZ1_18",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -2062,18 +2062,18 @@
 		},
 		"104": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [10, 18],
-				"disc": 6,
+				"disc": "DBZ_SEASON03_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [7, 8, 10, 11],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 18,
+				"disc": "DBZ1_18",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -2082,18 +2082,18 @@
 		},
 		"105": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [19, 27],
-				"disc": 6,
+				"disc": "DBZ_SEASON03_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [13, 14, 16, 17],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 18,
+				"disc": "DBZ1_18",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -2102,18 +2102,18 @@
 		},
 		"106": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [28, 36],
-				"disc": 6,
+				"disc": "DBZ_SEASON03_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [19, 20, 22, 23],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 18,
+				"disc": "DBZ1_18",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -2122,18 +2122,18 @@
 		},
 		"107": {
 			"R1": {
-				"box": 3,
+				"audio": ["en", "us", "jp"],
 				"cells": [37, 45],
-				"disc": 6,
+				"disc": "DBZ_SEASON03_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29],
 				"vts": 2
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 18,
+				"disc": "DBZ1_18",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -2142,18 +2142,18 @@
 		},
 		"108": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [1, 11],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S4_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 18,
+				"disc": "DBZ1_18",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -2162,18 +2162,18 @@
 		},
 		"109": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [12, 23],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S4_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 10, 12, 13, 15],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 19,
+				"disc": "DBZ1_19",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -2182,18 +2182,18 @@
 		},
 		"110": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [24, 34],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S4_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 17, 19, 20, 22],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 19,
+				"disc": "DBZ1_19",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -2202,18 +2202,18 @@
 		},
 		"111": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [35, 45],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S4_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 24, 26, 27, 29],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 19,
+				"disc": "DBZ1_19",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -2222,18 +2222,18 @@
 		},
 		"112": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [46, 56],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S4_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 31, 33, 34, 36],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 19,
+				"disc": "DBZ1_19",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -2242,18 +2242,18 @@
 		},
 		"113": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [57, 67],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S4_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [37, 38, 40, 41, 43],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 19,
+				"disc": "DBZ1_19",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -2262,18 +2262,18 @@
 		},
 		"114": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [1, 11],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S4_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 19,
+				"disc": "DBZ1_19",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -2282,18 +2282,18 @@
 		},
 		"115": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [12, 22],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S4_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 10, 12, 13, 15],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 20,
+				"disc": "DBZ1_20",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -2302,18 +2302,18 @@
 		},
 		"116": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [23, 33],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S4_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 17, 19, 20, 22],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 20,
+				"disc": "DBZ1_20",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -2322,18 +2322,18 @@
 		},
 		"117": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [34, 44],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S4_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 24, 26, 27, 29],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 20,
+				"disc": "DBZ1_20",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -2342,18 +2342,18 @@
 		},
 		"118": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [45, 55],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S4_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 31, 33, 34, 36],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 20,
+				"disc": "DBZ1_20",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -2362,18 +2362,18 @@
 		},
 		"119": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [56, 66],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S4_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [37, 38, 40, 41, 43],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 20,
+				"disc": "DBZ1_20",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -2382,18 +2382,18 @@
 		},
 		"120": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [1, 11],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S4_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 20,
+				"disc": "DBZ1_20",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -2402,18 +2402,18 @@
 		},
 		"121": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [12, 22],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S4_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 10, 12, 13, 15],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 21,
+				"disc": "DBZ1_21",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -2422,18 +2422,18 @@
 		},
 		"122": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [23, 33],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S4_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 17, 19, 20, 22],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 21,
+				"disc": "DBZ1_21",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -2442,18 +2442,18 @@
 		},
 		"123": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [34, 44],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S4_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 24, 26, 27, 29],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 21,
+				"disc": "DBZ1_21",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -2462,18 +2462,18 @@
 		},
 		"124": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [45, 55],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S4_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 31, 33, 34, 36],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 21,
+				"disc": "DBZ1_21",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -2482,18 +2482,18 @@
 		},
 		"125": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [56, 66],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S4_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [37, 38, 40, 41, 43],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 21,
+				"disc": "DBZ1_21",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -2502,18 +2502,18 @@
 		},
 		"126": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [1, 11],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S4_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 21,
+				"disc": "DBZ1_21",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -2522,18 +2522,18 @@
 		},
 		"127": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [12, 22],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S4_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 10, 12, 13, 15],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 22,
+				"disc": "DBZ1_22",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -2542,18 +2542,18 @@
 		},
 		"128": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [23, 33],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S4_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 17, 19, 20, 22],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 22,
+				"disc": "DBZ1_22",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -2562,18 +2562,18 @@
 		},
 		"129": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [34, 44],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S4_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 24, 26, 27, 29],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 22,
+				"disc": "DBZ1_22",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -2582,18 +2582,18 @@
 		},
 		"130": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [45, 55],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S4_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 31, 33, 34, 36],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 22,
+				"disc": "DBZ1_22",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -2602,18 +2602,18 @@
 		},
 		"131": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [1, 11],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S4_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 22,
+				"disc": "DBZ1_22",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -2622,18 +2622,18 @@
 		},
 		"132": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [12, 22],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S4_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 10, 12, 13, 15],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 22,
+				"disc": "DBZ1_22",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -2642,18 +2642,18 @@
 		},
 		"133": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [23, 33],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S4_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 17, 19, 20, 22],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 23,
+				"disc": "DBZ1_23",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -2662,18 +2662,18 @@
 		},
 		"134": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [34, 44],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S4_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 24, 26, 27, 29],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 23,
+				"disc": "DBZ1_23",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -2682,18 +2682,18 @@
 		},
 		"135": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [45, 55],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S4_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 31, 33, 34, 36],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 23,
+				"disc": "DBZ1_23",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -2702,18 +2702,18 @@
 		},
 		"136": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [1, 11],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S4_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 23,
+				"disc": "DBZ1_23",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -2722,18 +2722,18 @@
 		},
 		"137": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [12, 22],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S4_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 10, 12, 13, 15],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 23,
+				"disc": "DBZ1_23",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -2742,18 +2742,18 @@
 		},
 		"138": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [23, 33],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S4_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 17, 19, 20, 22],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 24,
+				"disc": "DBZ1_24",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -2762,18 +2762,18 @@
 		},
 		"139": {
 			"R1": {
-				"box": 4,
+				"audio": ["us", "jp", "en"],
 				"cells": [34, 44],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S4_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 24, 26, 27, 29],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 24,
+				"disc": "DBZ1_24",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -2782,18 +2782,18 @@
 		},
 		"140": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [1, 10],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S5_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 24,
+				"disc": "DBZ1_24",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -2802,18 +2802,18 @@
 		},
 		"141": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [11, 20],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S5_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 24,
+				"disc": "DBZ1_24",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -2822,18 +2822,18 @@
 		},
 		"142": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [21, 30],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S5_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 24,
+				"disc": "DBZ1_24",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -2842,18 +2842,18 @@
 		},
 		"143": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [32, 41],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S5_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [21, 22, 24, 25],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 25,
+				"disc": "DBZ1_25",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -2862,18 +2862,18 @@
 		},
 		"144": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [42, 51],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S5_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [27, 28, 30, 31],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 25,
+				"disc": "DBZ1_25",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -2882,18 +2882,18 @@
 		},
 		"145": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [52, 61],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S5_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [33, 34, 36, 37],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 25,
+				"disc": "DBZ1_25",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -2902,18 +2902,18 @@
 		},
 		"146": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [1, 10],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S5_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 25,
+				"disc": "DBZ1_25",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -2922,18 +2922,18 @@
 		},
 		"147": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [11, 20],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S5_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 1
 			},
 			"R2": {
-				"box": 1,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 25,
+				"disc": "DBZ1_25",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -2942,18 +2942,18 @@
 		},
 		"148": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [21, 30],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S5_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 1,
+				"disc": "DBZ2_1",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -2962,18 +2962,18 @@
 		},
 		"149": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [32, 41],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S5_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [21, 22, 24, 25],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 1,
+				"disc": "DBZ2_1",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -2982,18 +2982,18 @@
 		},
 		"150": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [42, 51],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S5_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [27, 28, 30, 31],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 1,
+				"disc": "DBZ2_1",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -3002,18 +3002,18 @@
 		},
 		"151": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [52, 61],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S5_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [33, 34, 36, 37],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 1,
+				"disc": "DBZ2_1",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -3022,18 +3022,18 @@
 		},
 		"152": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [1, 10],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S5_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 1,
+				"disc": "DBZ2_1",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -3042,18 +3042,18 @@
 		},
 		"153": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [11, 20],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S5_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 1,
+				"disc": "DBZ2_1",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -3062,18 +3062,18 @@
 		},
 		"154": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [21, 30],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S5_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 2,
+				"disc": "DBZ2_2",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -3082,18 +3082,18 @@
 		},
 		"155": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [31, 40],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S5_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [20, 21, 23, 24],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 2,
+				"disc": "DBZ2_2",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -3102,18 +3102,18 @@
 		},
 		"156": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [41, 50],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S5_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [26, 27, 29, 30],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 2,
+				"disc": "DBZ2_2",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -3122,18 +3122,18 @@
 		},
 		"157": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [1, 10],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S5_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 2,
+				"disc": "DBZ2_2",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -3142,18 +3142,18 @@
 		},
 		"158": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [11, 20],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S5_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 2,
+				"disc": "DBZ2_2",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -3162,18 +3162,18 @@
 		},
 		"159": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [21, 30],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S5_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 2,
+				"disc": "DBZ2_2",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -3182,18 +3182,18 @@
 		},
 		"160": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [1, 10],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S5_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 3,
+				"disc": "DBZ2_3",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -3202,18 +3202,18 @@
 		},
 		"161": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [11, 20],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S5_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 3,
+				"disc": "DBZ2_3",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -3222,18 +3222,18 @@
 		},
 		"162": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [21, 30],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S5_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 3,
+				"disc": "DBZ2_3",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -3242,18 +3242,18 @@
 		},
 		"163": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [1, 10],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S5_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 3,
+				"disc": "DBZ2_3",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -3262,18 +3262,18 @@
 		},
 		"164": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [11, 20],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S5_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 3,
+				"disc": "DBZ2_3",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -3282,18 +3282,18 @@
 		},
 		"165": {
 			"R1": {
-				"box": 5,
+				"audio": ["us", "jp", "en"],
 				"cells": [21, 30],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S5_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 3,
+				"disc": "DBZ2_3",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -3302,18 +3302,18 @@
 		},
 		"166": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 1,
+				"disc": "DRAGONBALL_Z_S6_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 4,
+				"disc": "DBZ2_4",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -3322,18 +3322,18 @@
 		},
 		"167": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 20],
-				"disc": 1,
+				"disc": "DRAGONBALL_Z_S6_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 4,
+				"disc": "DBZ2_4",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -3342,18 +3342,18 @@
 		},
 		"168": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [21, 30],
-				"disc": 1,
+				"disc": "DRAGONBALL_Z_S6_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 4,
+				"disc": "DBZ2_4",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -3362,18 +3362,18 @@
 		},
 		"169": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [32, 41],
-				"disc": 1,
+				"disc": "DRAGONBALL_Z_S6_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [21, 22, 24, 25],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 4,
+				"disc": "DBZ2_4",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -3382,18 +3382,18 @@
 		},
 		"170": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [42, 51],
-				"disc": 1,
+				"disc": "DRAGONBALL_Z_S6_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [27, 28, 30, 31],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 4,
+				"disc": "DBZ2_4",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -3402,18 +3402,18 @@
 		},
 		"171": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [52, 61],
-				"disc": 1,
+				"disc": "DRAGONBALL_Z_S6_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [33, 34, 36, 37],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 4,
+				"disc": "DBZ2_4",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -3422,18 +3422,18 @@
 		},
 		"172": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 2,
+				"disc": "DRAGONBALL_Z_S6_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 5,
+				"disc": "DBZ2_5",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -3442,18 +3442,18 @@
 		},
 		"173": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 20],
-				"disc": 2,
+				"disc": "DRAGONBALL_Z_S6_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 5,
+				"disc": "DBZ2_5",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -3462,18 +3462,18 @@
 		},
 		"174": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [21, 30],
-				"disc": 2,
+				"disc": "DRAGONBALL_Z_S6_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 5,
+				"disc": "DBZ2_5",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -3482,18 +3482,18 @@
 		},
 		"175": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [32, 41],
-				"disc": 2,
+				"disc": "DRAGONBALL_Z_S6_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [21, 22, 24, 25],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 5,
+				"disc": "DBZ2_5",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -3502,18 +3502,18 @@
 		},
 		"176": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [42, 51],
-				"disc": 2,
+				"disc": "DRAGONBALL_Z_S6_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [27, 28, 30, 31],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 5,
+				"disc": "DBZ2_5",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -3522,18 +3522,18 @@
 		},
 		"177": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [52, 61],
-				"disc": 2,
+				"disc": "DRAGONBALL_Z_S6_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [33, 34, 36, 37],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 5,
+				"disc": "DBZ2_5",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -3542,18 +3542,18 @@
 		},
 		"178": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 3,
+				"disc": "DRAGONBALL_Z_S6_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 6,
+				"disc": "DBZ2_6",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -3562,18 +3562,18 @@
 		},
 		"179": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 20],
-				"disc": 3,
+				"disc": "DRAGONBALL_Z_S6_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 6,
+				"disc": "DBZ2_6",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -3582,18 +3582,18 @@
 		},
 		"180": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [21, 30],
-				"disc": 3,
+				"disc": "DRAGONBALL_Z_S6_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 6,
+				"disc": "DBZ2_6",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -3602,18 +3602,18 @@
 		},
 		"181": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [32, 41],
-				"disc": 3,
+				"disc": "DRAGONBALL_Z_S6_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [21, 22, 24, 25],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 6,
+				"disc": "DBZ2_6",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -3622,18 +3622,18 @@
 		},
 		"182": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [42, 51],
-				"disc": 3,
+				"disc": "DRAGONBALL_Z_S6_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [27, 28, 30, 31],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 6,
+				"disc": "DBZ2_6",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -3642,18 +3642,18 @@
 		},
 		"183": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [52, 61],
-				"disc": 3,
+				"disc": "DRAGONBALL_Z_S6_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [33, 34, 36, 37],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 6,
+				"disc": "DBZ2_6",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -3662,18 +3662,18 @@
 		},
 		"184": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 4,
+				"disc": "DRAGONBALL_Z_S6_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 7,
+				"disc": "DBZ2_7",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -3682,18 +3682,18 @@
 		},
 		"185": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 20],
-				"disc": 4,
+				"disc": "DRAGONBALL_Z_S6_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 7,
+				"disc": "DBZ2_7",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -3702,18 +3702,18 @@
 		},
 		"186": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [21, 30],
-				"disc": 4,
+				"disc": "DRAGONBALL_Z_S6_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 7,
+				"disc": "DBZ2_7",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -3722,18 +3722,18 @@
 		},
 		"187": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [31, 40],
-				"disc": 4,
+				"disc": "DRAGONBALL_Z_S6_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [20, 21, 23, 24],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 7,
+				"disc": "DBZ2_7",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -3742,18 +3742,18 @@
 		},
 		"188": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [41, 50],
-				"disc": 4,
+				"disc": "DRAGONBALL_Z_S6_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [26, 27, 29, 30],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 7,
+				"disc": "DBZ2_7",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -3762,18 +3762,18 @@
 		},
 		"189": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 5,
+				"disc": "DRAGONBALL_Z_S6_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 7,
+				"disc": "DBZ2_7",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -3782,18 +3782,18 @@
 		},
 		"190": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 20],
-				"disc": 5,
+				"disc": "DRAGONBALL_Z_S6_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 8,
+				"disc": "DBZ2_8",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -3802,18 +3802,18 @@
 		},
 		"191": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [21, 30],
-				"disc": 5,
+				"disc": "DRAGONBALL_Z_S6_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 8,
+				"disc": "DBZ2_8",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -3822,18 +3822,18 @@
 		},
 		"192": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 6,
+				"disc": "DRAGONBALL_Z_S6_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 8,
+				"disc": "DBZ2_8",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -3842,18 +3842,18 @@
 		},
 		"193": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 20],
-				"disc": 6,
+				"disc": "DRAGONBALL_Z_S6_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [8, 9, 11, 12],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 8,
+				"disc": "DBZ2_8",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -3862,18 +3862,18 @@
 		},
 		"194": {
 			"R1": {
-				"box": 6,
+				"audio": ["en", "us", "jp"],
 				"cells": [21, 30],
-				"disc": 6,
+				"disc": "DRAGONBALL_Z_S6_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [14, 15, 17, 18],
 				"vts": 1
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 8,
+				"disc": "DBZ2_8",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -3882,18 +3882,18 @@
 		},
 		"195": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S7_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 8,
+				"disc": "DBZ2_8",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -3902,18 +3902,18 @@
 		},
 		"196": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 20],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S7_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 10, 12, 13, 15],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 9,
+				"disc": "DBZ2_9",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -3922,18 +3922,18 @@
 		},
 		"197": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [21, 30],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S7_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 17, 19, 20, 22],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 9,
+				"disc": "DBZ2_9",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -3942,18 +3942,18 @@
 		},
 		"198": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [33, 42],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S7_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29, 31],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 9,
+				"disc": "DBZ2_9",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -3962,18 +3962,18 @@
 		},
 		"199": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [43, 52],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S7_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [32, 33, 35, 36, 38],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 9,
+				"disc": "DBZ2_9",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -3982,18 +3982,18 @@
 		},
 		"200": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [53, 62],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S7_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [39, 40, 42, 43, 45],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 9,
+				"disc": "DBZ2_9",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -4002,18 +4002,18 @@
 		},
 		"201": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S7_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 9,
+				"disc": "DBZ2_9",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -4022,18 +4022,18 @@
 		},
 		"202": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 20],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S7_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 10, 12, 13, 15],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 10,
+				"disc": "DBZ2_10",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -4042,18 +4042,18 @@
 		},
 		"203": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [21, 30],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S7_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 17, 19, 20, 22],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 10,
+				"disc": "DBZ2_10",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -4062,18 +4062,18 @@
 		},
 		"204": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [33, 42],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S7_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29, 31],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 10,
+				"disc": "DBZ2_10",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -4082,18 +4082,18 @@
 		},
 		"205": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [43, 52],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S7_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [32, 33, 35, 36, 38],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 10,
+				"disc": "DBZ2_10",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -4102,18 +4102,18 @@
 		},
 		"206": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [53, 62],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S7_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [39, 40, 42, 43, 45],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 10,
+				"disc": "DBZ2_10",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -4122,18 +4122,18 @@
 		},
 		"207": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S7_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 10,
+				"disc": "DBZ2_10",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -4142,18 +4142,18 @@
 		},
 		"208": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 20],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S7_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 10, 12, 13, 15],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 11,
+				"disc": "DBZ2_11",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -4162,18 +4162,18 @@
 		},
 		"209": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S7_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [18, 19, 21, 22, 24],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 11,
+				"disc": "DBZ2_11",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -4182,18 +4182,18 @@
 		},
 		"210": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [33, 42],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S7_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [25, 26, 28, 29, 31],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 11,
+				"disc": "DBZ2_11",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -4202,18 +4202,18 @@
 		},
 		"211": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S7_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 11,
+				"disc": "DBZ2_11",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -4222,18 +4222,18 @@
 		},
 		"212": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 20],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S7_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 10, 12, 13, 15],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 11,
+				"disc": "DBZ2_11",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -4242,18 +4242,18 @@
 		},
 		"213": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [21, 30],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S7_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 17, 19, 20, 22],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 11,
+				"disc": "DBZ2_11",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -4262,18 +4262,18 @@
 		},
 		"214": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S7_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 12,
+				"disc": "DBZ2_12",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -4282,18 +4282,18 @@
 		},
 		"215": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 20],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S7_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 10, 12, 13, 15],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 12,
+				"disc": "DBZ2_12",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -4302,18 +4302,18 @@
 		},
 		"216": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [21, 30],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S7_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 17, 19, 20, 22],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 12,
+				"disc": "DBZ2_12",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -4322,18 +4322,18 @@
 		},
 		"217": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S7_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 12,
+				"disc": "DBZ2_12",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -4342,18 +4342,18 @@
 		},
 		"218": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [11, 20],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S7_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 10, 12, 13, 15],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 12,
+				"disc": "DBZ2_12",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -4362,18 +4362,18 @@
 		},
 		"219": {
 			"R1": {
-				"box": 7,
+				"audio": ["en", "us", "jp"],
 				"cells": [21, 30],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S7_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 17, 19, 20, 22],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 12,
+				"disc": "DBZ2_12",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -4382,18 +4382,18 @@
 		},
 		"220": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S8_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 3, 5, 6, 8],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 13,
+				"disc": "DBZ2_13",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -4402,18 +4402,18 @@
 		},
 		"221": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [12, 21],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S8_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [10, 11, 13, 14, 16],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 13,
+				"disc": "DBZ2_13",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -4422,18 +4422,18 @@
 		},
 		"222": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S8_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [18, 19, 21, 22, 24],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 13,
+				"disc": "DBZ2_13",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -4442,18 +4442,18 @@
 		},
 		"223": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [34, 43],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S8_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [26, 27, 29, 30, 32],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 13,
+				"disc": "DBZ2_13",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -4462,18 +4462,18 @@
 		},
 		"224": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [45, 54],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S8_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [34, 35, 37, 38, 40],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 13,
+				"disc": "DBZ2_13",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -4482,18 +4482,18 @@
 		},
 		"225": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [56, 65],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S8_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [42, 43, 45, 46, 48],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 13,
+				"disc": "DBZ2_13",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -4502,18 +4502,18 @@
 		},
 		"226": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S8_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 4, 5, 7],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 14,
+				"disc": "DBZ2_14",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -4522,18 +4522,18 @@
 		},
 		"227": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [12, 21],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S8_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 11, 12, 14],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 14,
+				"disc": "DBZ2_14",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -4542,18 +4542,18 @@
 		},
 		"228": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S8_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 18, 19, 21],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 14,
+				"disc": "DBZ2_14",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -4562,18 +4562,18 @@
 		},
 		"229": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [34, 43],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S8_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 25, 26, 28],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 14,
+				"disc": "DBZ2_14",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -4582,18 +4582,18 @@
 		},
 		"230": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [45, 54],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S8_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 32, 33, 35],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 14,
+				"disc": "DBZ2_14",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -4602,18 +4602,18 @@
 		},
 		"231": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [56, 65],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S8_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [37, 39, 40, 42],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 14,
+				"disc": "DBZ2_14",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -4622,18 +4622,18 @@
 		},
 		"232": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S8_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 4, 5, 7],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 15,
+				"disc": "DBZ2_15",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -4642,18 +4642,18 @@
 		},
 		"233": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [12, 21],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S8_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 11, 12, 14],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 15,
+				"disc": "DBZ2_15",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -4662,18 +4662,18 @@
 		},
 		"234": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S8_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 18, 19, 21],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 15,
+				"disc": "DBZ2_15",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -4682,18 +4682,18 @@
 		},
 		"235": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [34, 43],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S8_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 25, 26, 28],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 15,
+				"disc": "DBZ2_15",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -4702,18 +4702,18 @@
 		},
 		"236": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [45, 54],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S8_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 32, 33, 35],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 15,
+				"disc": "DBZ2_15",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -4722,18 +4722,18 @@
 		},
 		"237": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [56, 65],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S8_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [37, 39, 40, 42],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 15,
+				"disc": "DBZ2_15",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -4742,18 +4742,18 @@
 		},
 		"238": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S8_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 4, 5, 7],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 16,
+				"disc": "DBZ2_16",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -4762,18 +4762,18 @@
 		},
 		"239": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [12, 21],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S8_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 11, 12, 14],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 16,
+				"disc": "DBZ2_16",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -4782,18 +4782,18 @@
 		},
 		"240": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S8_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 18, 19, 21],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 16,
+				"disc": "DBZ2_16",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -4802,18 +4802,18 @@
 		},
 		"241": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [34, 43],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S8_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 25, 26, 28],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 16,
+				"disc": "DBZ2_16",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -4822,18 +4822,18 @@
 		},
 		"242": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [45, 54],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S8_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 32, 33, 35],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 16,
+				"disc": "DBZ2_16",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -4842,18 +4842,18 @@
 		},
 		"243": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [56, 65],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S8_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [37, 39, 40, 42],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 16,
+				"disc": "DBZ2_16",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -4862,18 +4862,18 @@
 		},
 		"244": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S8_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 4, 5, 7],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 17,
+				"disc": "DBZ2_17",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -4882,18 +4882,18 @@
 		},
 		"245": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [12, 21],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S8_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 11, 12, 14],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 17,
+				"disc": "DBZ2_17",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -4902,18 +4902,18 @@
 		},
 		"246": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S8_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 18, 19, 21],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 17,
+				"disc": "DBZ2_17",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -4922,18 +4922,18 @@
 		},
 		"247": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [34, 43],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S8_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 25, 26, 28],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 17,
+				"disc": "DBZ2_17",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -4942,18 +4942,18 @@
 		},
 		"248": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [45, 54],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S8_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 32, 33, 35],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 17,
+				"disc": "DBZ2_17",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -4962,18 +4962,18 @@
 		},
 		"249": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S8_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 4, 5, 7],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 17,
+				"disc": "DBZ2_17",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -4982,18 +4982,18 @@
 		},
 		"250": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [12, 21],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S8_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 11, 12, 14],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 18,
+				"disc": "DBZ2_18",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -5002,18 +5002,18 @@
 		},
 		"251": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S8_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 18, 19, 21],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 18,
+				"disc": "DBZ2_18",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -5022,18 +5022,18 @@
 		},
 		"252": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [34, 43],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S8_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 25, 26, 28],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 18,
+				"disc": "DBZ2_18",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -5042,18 +5042,18 @@
 		},
 		"253": {
 			"R1": {
-				"box": 8,
+				"audio": ["en", "us", "jp"],
 				"cells": [45, 54],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S8_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 32, 33, 35],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 18,
+				"disc": "DBZ2_18",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -5062,18 +5062,18 @@
 		},
 		"254": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S9_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 4, 5, 7],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 18,
+				"disc": "DBZ2_18",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -5082,18 +5082,18 @@
 		},
 		"255": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [12, 21],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S9_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 11, 12, 14],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 18,
+				"disc": "DBZ2_18",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -5102,18 +5102,18 @@
 		},
 		"256": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S9_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 18, 19, 21],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 19,
+				"disc": "DBZ2_19",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -5122,18 +5122,18 @@
 		},
 		"257": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [34, 43],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S9_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 25, 26, 28],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 19,
+				"disc": "DBZ2_19",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -5142,18 +5142,18 @@
 		},
 		"258": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [45, 54],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S9_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 32, 33, 35],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 19,
+				"disc": "DBZ2_19",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -5162,18 +5162,18 @@
 		},
 		"259": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [56, 65],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S9_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [37, 39, 40, 42],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 19,
+				"disc": "DBZ2_19",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -5182,18 +5182,18 @@
 		},
 		"260": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [67, 76],
-				"disc": 1,
+				"disc": "DRAGON_BALL_Z_S9_D1",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [44, 46, 47, 49],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 19,
+				"disc": "DBZ2_19",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -5202,18 +5202,18 @@
 		},
 		"261": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S9_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 4, 5, 7],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 19,
+				"disc": "DBZ2_19",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -5222,18 +5222,18 @@
 		},
 		"262": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [12, 21],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S9_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 11, 12, 14],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 20,
+				"disc": "DBZ2_20",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -5242,18 +5242,18 @@
 		},
 		"263": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S9_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 18, 19, 21],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 20,
+				"disc": "DBZ2_20",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -5262,18 +5262,18 @@
 		},
 		"264": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [34, 43],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S9_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 25, 26, 28],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 20,
+				"disc": "DBZ2_20",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -5282,18 +5282,18 @@
 		},
 		"265": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [45, 54],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S9_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 32, 33, 35],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 20,
+				"disc": "DBZ2_20",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -5302,18 +5302,18 @@
 		},
 		"266": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [56, 65],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S9_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [37, 39, 40, 42],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 20,
+				"disc": "DBZ2_20",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -5322,18 +5322,18 @@
 		},
 		"267": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [67, 76],
-				"disc": 2,
+				"disc": "DRAGON_BALL_Z_S9_D2",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [44, 46, 47, 49],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 20,
+				"disc": "DBZ2_20",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -5342,18 +5342,18 @@
 		},
 		"268": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S9_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 4, 5, 7],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 21,
+				"disc": "DBZ2_21",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -5362,18 +5362,18 @@
 		},
 		"269": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [12, 21],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S9_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 11, 12, 14],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 21,
+				"disc": "DBZ2_21",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -5382,18 +5382,18 @@
 		},
 		"270": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S9_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 18, 19, 21],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 21,
+				"disc": "DBZ2_21",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -5402,18 +5402,18 @@
 		},
 		"271": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [34, 43],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S9_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 25, 26, 28],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 21,
+				"disc": "DBZ2_21",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -5422,18 +5422,18 @@
 		},
 		"272": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [45, 54],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S9_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 32, 33, 35],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 21,
+				"disc": "DBZ2_21",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -5442,18 +5442,18 @@
 		},
 		"273": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [56, 65],
-				"disc": 3,
+				"disc": "DRAGON_BALL_Z_S9_D3",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [37, 39, 40, 42],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 21,
+				"disc": "DBZ2_21",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -5462,18 +5462,18 @@
 		},
 		"274": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S9_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 4, 5, 7],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 22,
+				"disc": "DBZ2_22",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -5482,18 +5482,18 @@
 		},
 		"275": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [12, 21],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S9_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 11, 12, 14],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 22,
+				"disc": "DBZ2_22",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -5502,18 +5502,18 @@
 		},
 		"276": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S9_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 18, 19, 21],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 22,
+				"disc": "DBZ2_22",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -5522,18 +5522,18 @@
 		},
 		"277": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [34, 43],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S9_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 25, 26, 28],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 22,
+				"disc": "DBZ2_22",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -5542,18 +5542,18 @@
 		},
 		"278": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [45, 54],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S9_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 32, 33, 35],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 22,
+				"disc": "DBZ2_22",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -5562,18 +5562,18 @@
 		},
 		"279": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [56, 65],
-				"disc": 4,
+				"disc": "DRAGON_BALL_Z_S9_D4",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [37, 39, 40, 42],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 22,
+				"disc": "DBZ2_22",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -5582,18 +5582,18 @@
 		},
 		"280": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S9_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 4, 5, 7],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 23,
+				"disc": "DBZ2_23",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -5602,18 +5602,18 @@
 		},
 		"281": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [12, 21],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S9_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 11, 12, 14],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 23,
+				"disc": "DBZ2_23",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -5622,18 +5622,18 @@
 		},
 		"282": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S9_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 18, 19, 21],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 23,
+				"disc": "DBZ2_23",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -5642,18 +5642,18 @@
 		},
 		"283": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [34, 43],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S9_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 25, 26, 28],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 23,
+				"disc": "DBZ2_23",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -5662,18 +5662,18 @@
 		},
 		"284": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [45, 54],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S9_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 32, 33, 35],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 23,
+				"disc": "DBZ2_23",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -5682,18 +5682,18 @@
 		},
 		"285": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [56, 65],
-				"disc": 5,
+				"disc": "DRAGON_BALL_Z_S9_D5",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [37, 39, 40, 42],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 23,
+				"disc": "DBZ2_23",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
@@ -5702,18 +5702,18 @@
 		},
 		"286": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [1, 10],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S9_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [2, 4, 5, 7],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 24,
+				"disc": "DBZ2_24",
 				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
@@ -5722,18 +5722,18 @@
 		},
 		"287": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [12, 21],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S9_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [9, 11, 12, 14],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 24,
+				"disc": "DBZ2_24",
 				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
@@ -5742,18 +5742,18 @@
 		},
 		"288": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [23, 32],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S9_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [16, 18, 19, 21],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 24,
+				"disc": "DBZ2_24",
 				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
@@ -5762,18 +5762,18 @@
 		},
 		"289": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [34, 43],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S9_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [23, 25, 26, 28],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 24,
+				"disc": "DBZ2_24",
 				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
@@ -5782,18 +5782,18 @@
 		},
 		"290": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [45, 54],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S9_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [30, 32, 33, 35],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 24,
+				"disc": "DBZ2_24",
 				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
@@ -5802,23 +5802,87 @@
 		},
 		"291": {
 			"R1": {
-				"box": 9,
+				"audio": ["en", "us", "jp"],
 				"cells": [56, 65],
-				"disc": 6,
+				"disc": "DRAGON_BALL_Z_S9_D6",
 				"pgc": 1,
 				"type": "pgc",
 				"vid": [37, 39, 40, 42],
 				"vts": 5
 			},
 			"R2": {
-				"box": 2,
+				"audio": ["jp"],
 				"cells": null,
-				"disc": 24,
+				"disc": "DBZ2_24",
 				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
 			}
+		},
+		"bardock": {
+			"R1": {
+				"audio": ["us", "jp", "en"],
+				"cells": null,
+				"disc": "BARDOCK_THE_FATHER_OF_GOKU",
+				"pgc": 1,
+				"type": "pgc",
+				"vid": [2, 4, 5, 7, 8],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBZ1_SP",
+				"pgc": null,
+				"type": "vid",
+				"vid": 2,
+				"vts": 1
+			}
+		},
+		"trunks": {         
+			"R1": {
+				"audio": ["us", "jp", "en"],
+				"cells": null,
+				"disc": "THE_HISTORY_OF_TRUNKS",
+				"pgc": 1,
+				"type": "pgc",
+				"vid": [2, 4, 5, 7, 8],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBZ2_SP1",
+				"pgc": null,
+				"type": "vid",
+				"vid": 1,
+				"vts": 1
+			}
 		}
+	},
+	"DBGT": {
+		"special": {
+			"R1": {
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D5",
+				"pgc": null,
+				"type": "vid",
+				"vid": 2,
+				"vts": 8
+			},
+			"R2": {
+				"cells": null,
+				"disc": "DBGT_SP",
+				"pgc": null,
+				"type": "vid",
+				"vid": 2,
+				"vts": 1
+			}
+		}		
+	},
+	"MOVIES": {
+		"DB":{},
+		"DBZ":{}
 	}
 }

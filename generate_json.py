@@ -36,6 +36,27 @@ def r1disc(i):
                 disc_eps = list(range(disc[0], disc[1] + 1))
                 return int(b), int(d), disc_eps.index(i+1)
 
+def _generate_source_folder_name(series, box, disc):
+
+    if series == 'DB':
+        return 'DRAGON_BALL_S{s}_D{d}'.format(s=box, d=disc)
+    if series == 'DBGT':
+        return 'DRAGON_BALL_GT_S{s}_D{d}'.format(s=box, d=disc)
+    if series == 'DBZ':
+        if box > 1 and box < 4:
+            return 'DBZ_SEASON{s}_D{d}'.format(s=str(box).zfill(2),
+                                               d=disc)
+        elif box == 1:
+            return 'DBZ_SEASON{s}_DISC{d}'.format(
+                s=str(box).zfill(2),
+                d=disc)
+        elif box == 6:
+            return 'DRAGONBALL_Z_S{s}_D{d}'.format(
+                s=str(box),
+                d=disc)
+        else:
+            return 'DRAGON_BALL_Z_S{s}_D{d}'.format(
+                s=box, d=disc)
 
 # S1
 for i in range(0, 291):
@@ -302,26 +323,29 @@ for i in range(0, 291):
         vid = dmx['vid'][ep_on_r1disc]
         vts = 5
 
+    audio = ["en", "us", "jp"]
+    if box == 4 or box == 5:
+        audio = ["us", "jp", "en"]
 
     r1_ep_obj = {
-        "box": box,
         "type": "pgc",
-        "disc": disc,
+        "disc": _generate_source_folder_name("DBZ", box, disc),
         "pgc": 1,
         "cells": cells,
         "vid": vid,
-        "vts": vts
+        "vts": vts,
+        "audio": audio
     }
 
     box, disc, ep_on_r2disc = r2disc(i)
     r2_ep_obj = {
-        "box": box,
-        "disc": disc,
+        "disc": "DBZ" +str(box) +"_"+str(disc),
         "type": "pgc",
         "pgc": ep_on_r2disc + 3,
         "vid": None,
         "cells": None,
-        "vts": 1
+        "vts": 1,
+        "audio": ["jp"]
     }
 
     ep_obj = {"R1": r1_ep_obj, "R2": r2_ep_obj}
@@ -470,3 +494,80 @@ with open('new_info.json', 'w') as outfil:
 # 45, 54    /   30, 32, 33, 35
 # 56, 65    /   37, 39, 40, 42
 # 67, 76    /   44, 46, 47, 49
+
+# DBGT
+# S1 - VTS: 1
+# D1: VID 4-10
+# D2: VID 2-8
+# D3: VID 2-8
+# D4: VID 2-8
+# D5: VID 2-7
+# S2 - VTS: 5
+# D1: VID 2-8
+# D2: VID 2-8
+# D3: VID 2-7
+# D4: VID 2-7
+# D5: VID 2-5
+# DBGT SPECIAL: S2D5 VTS 8, VID 2
+
+'''
+        "bardock": {
+            "R1": {
+                "cells": null,
+                "disc": "BARDOCK_THE_FATHER_OF_GOKU",
+                "pgc": 1,
+                "type": "pgc",
+                "vid": [2, 4, 5, 7, 8],
+                "vts": 1,
+                "audio": ["us", "jp", "en"]
+            },
+            "R2": {
+                "cells": null,
+                "disc": "DBZ1_SP",
+                "pgc": null,
+                "type": "vid",
+                "vid": 2,
+                "vts": 1,
+                "audio": ["jp"]
+            },
+        },
+        "trunks": {         
+            "R1": {
+                "cells": null,
+                "disc": "DBZ2_SP1",
+                "pgc": 1,
+                "type": "pgc",
+                "vid": [2, 4, 5, 7, 8],
+                "vts": 1,
+                "audio": ["us", "jp", "en"]
+            },
+            "R2": {
+                "cells": null,
+                "disc": "DBZ2_SP1",
+                "pgc": null,
+                "type": "vid",
+                "vid": 1,
+                "vts": 1,
+                "audio": ["jp"]
+            },
+        }
+        # GT
+        "special": {         
+            "R1": {
+                "cells": null,
+                "disc": "DRAGON_BALL_GT_S2_D5",
+                "pgc": null,
+                "type": "vid",
+                "vid": 2,
+                "vts": 8
+            },
+            "R2": {
+                "cells": null,
+                "disc": "DBGT_SP",
+                "pgc": null,
+                "type": "vid",
+                "vid": 2,
+                "vts": 1
+            },
+        }
+'''

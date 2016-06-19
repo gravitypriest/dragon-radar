@@ -3,12 +3,11 @@ import shutil
 import logging
 import tempfile
 import atexit
+import subprocess
 from constants import Constants
 from utils import delete_temp, create_dir, move_file
 
 APP_NAME = Constants.APP_NAME
-R1_DEMUX_DIR = Constants.R1_DEMUX_DIR
-RETIMED_AUDIO_DIR = Constants.RETIMED_AUDIO_DIR
 FRAME_RATE = Constants.FRAME_RATE
 DELAYCUT_CMD = '{delaycut} -i {i} -endcut {end} -startcut {begin} -o {o}'
 AC3_DIR = Constants.AC3_DIR
@@ -29,14 +28,14 @@ def frame_to_ms(frame, offset):
     return prev_chapter_end, chapter_begin, delay
 
 
-def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, series):
+def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
     file_out_1 = file_in + '.part1'
     file_out_2 = file_in + '.part2'
     file_out_3 = file_in + '.part3'
     if prev_ch_end == 0:
         # initial offset
         logger.debug('Cutting initial part...')
-        subprocess.run([delaycut, '-i', file_in, '-endcut', prev_ch_end, '-startcut', ch_begin, '-o', file_out_1])
+        subprocess.run([delaycut, '-i', file_in, '-endcut', str(prev_ch_end), '-startcut', str(ch_begin), '-o', file_out_1])
         # remove the initial file and begin again
         os.remove(file_in)
         shutil.rename(file_out_1, file_in)
@@ -44,22 +43,17 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, series):
     else:
         # episode up until chapter point
         logger.debug('Cutting first part...')
-        subprocess.run([delaycut, '-i', file_in, '-endcut', prev_ch_end, '-startcut', 0, '-o', file_out_1])
+        subprocess.run([delaycut, '-i', file_in, '-endcut', str(prev_ch_end), '-startcut', '0', '-o', file_out_1])
         # episode from chapter until end with offset applied
         logger.debug('Cutting second part...')
-        subprocess.run([delaycut, '-i', file_in, '-endcut', 0, '-startcut', ch_begin, '-o', file_out_3])
+        subprocess.run([delaycut, '-i', file_in, '-endcut', '0', '-startcut', str(ch_begin), '-o', file_out_3])
         if delay > 0:
-            bitrate = '51_448'
+            # bitrate = '51_448'
             # need to add blank space between cuts
             logger.debug('Cutting blank delay...')
-            if series in ['DBZ', 'DBGT']:
-                if file_in.endswith('_us.ac3'):
-                    bitrate = '20_192'
-            elif series is 'DBoxZ':
-                    bitrate = '51_384'
-            logger.debug('Using %s kbps blank ac3.' % bitrate)
+            logger.debug('Using %s kbps blank ac3.', bitrate)
             blank_file = os.path.join(AC3_DIR, 'blank_' + bitrate + '.ac3')
-            subprocess.run([delaycut, '-i', blank_file, '-endcut', delay, '-startcut', 0, '-o', file_out_2])
+            subprocess.run([delaycut, '-i', blank_file, '-endcut', str(delay), '-startcut', '0', '-o', file_out_2])
         file_combine = []
         file_combine.append(file_out_1)
         if os.path.isfile(file_out_2):
@@ -78,55 +72,42 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, series):
             os.remove(f)
 
 
-def retime_audio(episode, config):
-    logger.info('Retiming audio for episode %s...' % episode.number)
-    working_dir = config.get(APP_NAME, 'working_dir')
-    delaycut = config.get(APP_NAME, 'delaycut')
+def retime_ac3(src_file, dst_file, delaycut, bitrate, episode):
     tmp_dir = tempfile.mkdtemp()
     # in the case of unexpected exit, we don't want to
     # keep temp files around
     atexit.register(delete_temp, tmp_dir)
-    logging.debug('Temp folder: %s' % tmp_dir)
+    logging.debug('Audio temp folder: %s', tmp_dir)
 
-    for suffix in ['en', 'us']:
-        fname = episode.number + '_' + suffix + '.ac3'
-        src_file = os.path.join(working_dir,
-                                episode.series,
-                                R1_DEMUX_DIR,
-                                fname)
-        dst_path = os.path.join(working_dir,
-                                episode.series,
-                                RETIMED_AUDIO_DIR.format(suffix.upper()))
-        if os.path.isfile(src_file):
-            logger.debug('%s found! Proceeding with retiming...' % src_file)
-        else:
-            logger.error('%s not found. Skipping...' % src_file)
-            continue
+    if os.path.isfile(src_file):
+        logger.debug('%s found! Proceeding with retiming...', src_file)
+    else:
+        logger.error('%s not found. Skipping...', src_file)
+        return
 
-        try:
-            # copy source to tempfile for surgery
-            shutil.copy(src_file, tmp_dir)
-            working_file = os.path.join(tmp_dir, fname)
-        except IOError as e:
-            logger.error("Unable to copy file. %s" % e)
-            continue
+    try:
+        # copy source to tempfile for surgery
+        shutil.copy(src_file, tmp_dir)
+        working_file = os.path.join(tmp_dir, os.path.basename(src_file))
+    except IOError as e:
+        logger.error("Unable to copy file. %s", e)
+        return
 
-        r2_chaps = episode.r2_chapters
-        offsets = episode.offsets
+    r2_chaps = episode.r2_chapters
+    offsets = episode.offsets
 
-        for key in ['op', 'prologue', 'partB', 'ED', 'NEP']:
-            if key in offsets.keys():
-                # skip scenes with offset of 0
-                if offsets[key]['offset'] == 0:
-                    continue
-                chapter = r2_chaps[key]
-                offset = offsets[key]['offset']
-                prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
-                                                                     offset)
+    for key in ['op', 'prologue', 'partB', 'ED', 'NEP']:
+        if key in offsets.keys():
+            # skip scenes with offset of 0
+            if offsets[key]['offset'] == 0:
+                continue
+            chapter = r2_chaps[key]
+            offset = offsets[key]['offset']
+            prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
+                                                                 offset)
 
-                run_delaycut(delaycut, working_file, prev_chapter_end,
-                             chapter_begin, delay, episode.series)
+            run_delaycut(delaycut, working_file, prev_chapter_end,
+                         chapter_begin, delay, bitrate)
 
-        create_dir(dst_path)
-        move_file(working_file, dst_path)
+    move_file(working_file, dst_file)
     delete_temp(tmp_dir)

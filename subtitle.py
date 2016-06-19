@@ -57,23 +57,25 @@ def _adjust_timecode(episode, timestamp):
     return to_timestamp(frame)
 
 
-def retime_vobsub(episode, config):
-    orig_file = os.path.join(
-        config.get(Constants.APP_NAME, 'working_dir'),
-        episode.series,
-        Constants.FUNI_SUB_DIR,
-        episode.number + '.idx')
-    logger.info('Opened %s for reading.' % (orig_file))
-    fixed_file = os.path.join(
-        config.get(Constants.APP_NAME, 'working_dir'),
-        episode.series,
-        Constants.RETIMED_SUB_DIR,
-        episode.number + '.idx')
-    logger.info('Opened %s for writing.' % (fixed_file))
+def retime_vobsub(orig_file, fixed_file, episode):
+    # orig_file = os.path.join(
+    #     config.get(Constants.APP_NAME, 'working_dir'),
+    #     episode.series,
+    #     Constants.FUNI_SUB_DIR,
+    #     episode.number + '.idx')
+    # logger.info('Opened %s for reading.' % (orig_file))
+    # fixed_file = os.path.join(
+    #     config.get(Constants.APP_NAME, 'working_dir'),
+    #     episode.series,
+    #     Constants.RETIMED_SUB_DIR,
+    #     episode.number + '.idx')
+    # logger.info('Opened %s for writing.' % (fixed_file))
     try:
         with open(
                 orig_file, 'r') as file_in, open(
                 fixed_file, 'w') as file_out:
+            logger.debug('Opened %s for reading.' % (orig_file))
+            logger.debug('Opened %s for writing.' % (fixed_file))
             for line in file_in:
                 if 'timestamp: ' in line:
                     sub_parts = line.split(',')
@@ -85,5 +87,5 @@ def retime_vobsub(episode, config):
                     file_out.write(line)
     except IOError as e:
         logger.error(e)
-    logger.info('Subtitle retiming for %s %s is complete.' % (episode.series,
-                                                              episode.number))
+    # logger.info('Subtitle retiming for %s %s is complete.' % (episode.series,
+    #                                                           episode.number))

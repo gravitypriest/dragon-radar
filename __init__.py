@@ -1,21 +1,22 @@
 '''
-Dragon Radar
+Dragon Radar -- create MKVs from R2 video and R1 audio/subs
 '''
 import os
 import sys
 import argparse
 import configparser
+import tempfile
 import logging
+import atexit
 from constants import Constants
 from episode import Episode
 from demux import Demux
 from avisynth import Avisynth
-from subtitle import retime_vobsub
-from audio import retime_audio
-from utils import (load_series_frame_data,
+from utils import (
                    get_op_offset,
                    pad_zeroes,
-                   load_validate)
+                   load_validate,
+                   delete_temp)
 
 WELCOME_MSG = Constants.WELCOME_MSG
 WORKING_DIR = Constants.WORKING_DIR
@@ -48,14 +49,13 @@ def create_args():
     '''
     Set up command line options
     '''
-    parser = argparse.ArgumentParser(description='Generate English subtitles '
-                                                 'or audio for the R2 Dragon '
-                                                 'Ball DVDs from an R1 '
-                                                 'source.')
+    parser = argparse.ArgumentParser(description='Create multiplexed Dragon '
+                                                 'Ball MKVs with Dragon Box '
+                                                 'video, and English audio '
+                                                 'and subtitles.')
 
     subparser = parser.add_subparsers(dest='command',
-                                      help='Run Dragon Radar '
-                                           'with one of these commands:')
+                                      help=argparse.SUPPRESS)
 
     # the demux command
     demux_cmd = subparser.add_parser('demux',
@@ -131,15 +131,17 @@ def create_args():
                                              'comparison')
 
     # add these args this way because help message looks fucky otherwise
-    for cmd in [demux_cmd, subtitle_cmd, audio_cmd, avisynth_cmd]:
+    for cmd in [parser, demux_cmd, subtitle_cmd, audio_cmd, avisynth_cmd]:
         cmd.add_argument('--series',
                          metavar='<series>',
                          help='Choose a series [DB, DBZ, DBoxZ, DBGT, DBM]',
                          required=True)
         if cmd is not demux_cmd:
             cmd.add_argument('--episode',
-                             metavar='<first>:<last>',
-                             help='Episodes to process, from first to last',
+                             metavar='<number>',
+                             help='Episode to process. '
+                                  'Can also be used with a range, i.e. '
+                                  '--episode <first>:<last>',
                              required=True)
         cmd.add_argument('--verbose',
                          action='store_true',
@@ -224,11 +226,7 @@ def split_args(argtype, arg):
 
 def main():
     config = load_config_file()
-    parser = create_args()
-    args = parser.parse_args()
-    if not args.command:
-        parser.print_help()
-        sys.exit()
+    args = create_args().parse_args()
     init_logging(args.verbose)
 
     # don't proceed if paths aren't right/programs missing
@@ -236,8 +234,25 @@ def main():
 
     print(WELCOME_MSG)
 
-    if args.command == 'demux' and not (args.no_vid and args.no_aud and
-                                        args.no_sub):
+    # all in one mode (default)
+    if not args.command:
+        # 1. Create temp dir
+        tmp_dir = tempfile.mkdtemp()
+        logger.debug('Episode temp folder: %s', tmp_dir)
+        # atexit.register(delete_temp, tmp_dir)
+        episode = Episode(config, args, tmp_dir)
+        # 1. Demux
+        episode.demux(config)
+        # 2. Retime
+        episode.retime_subs()
+        episode.retime_audio(config)
+        # 3. Remux
+        # 4. Move
+        # 5. Delete temp
+        print(args)
+
+    # dev & debug modes from here on out
+    if args.command == 'demux':
         # demux mode
         start_season, end_season = split_args('season', args.season)
         validate_args('season', [start_season, end_season], args.series)
@@ -249,9 +264,11 @@ def main():
                 logger.info('Launching demux mode for %s season %s disc %s...'
                             % (args.series, season, disc))
                 demux = Demux(config, args, season, disc)
+
                 if args.r1:
                     if args.series in ['DB', 'DBZ', 'DBGT']:
-                        demux.season_set_demux()
+                        pass
+                        # demux.season_set_demux()
                     if args.series in ['DBoxZ']:
                         demux.dbox_demux()
                 if args.r2:

@@ -1,9 +1,9 @@
-# ![app icon](https://raw.githubusercontent.com/gravitypriest/dragon-radar/master/icon_readme.png "Dragon Radar") Dragon Radar
+# Dragon Radar ![app icon](https://raw.githubusercontent.com/gravitypriest/dragon-radar/master/icon_readme.png "Dragon Radar") 
 In a world where the Dragon Ball series DVDs released in the U.S. have lousy video quality, Dragon Radar aims to take the much better video of the Japanese DVDs, and slap on the audio and subtitles from the U.S. DVDs.
 
 ##### Still a work-in-progress, please be patient!
 
-## Requirements:
+## Requirements
 
 #### Software
 - [PGCdemux 1.2.0.5 / m03 MOD](http://www.videohelp.com/software/PgcDemux)
@@ -19,6 +19,8 @@ In a world where the Dragon Ball series DVDs released in the U.S. have lousy vid
     - Dragon Ball GT "Green Brick" Season sets
     - Dragon Ball Movie Complete Collection (4-pack)
     - Dragon Ball Z Double Features -OR- Movie Collections
+    - Funimation Dragon Box Z
+    - Pioneer Uncut Movie DVDs
 - R2 DVDs:
     - Dragon Box
     - Dragon Box Z
