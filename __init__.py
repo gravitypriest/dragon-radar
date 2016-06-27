@@ -10,10 +10,7 @@ import logging
 import atexit
 from constants import Constants
 from episode import Episode
-from demux import Demux
-from avisynth import Avisynth
-from utils import (
-                   get_op_offset,
+from utils import (get_op_offset,
                    pad_zeroes,
                    load_validate,
                    delete_temp)
@@ -54,99 +51,41 @@ def create_args():
                                                  'video, and English audio '
                                                  'and subtitles.')
 
-    subparser = parser.add_subparsers(dest='command',
-                                      help=argparse.SUPPRESS)
-
-    # the demux command
-    demux_cmd = subparser.add_parser('demux',
-                                     help='Demux audio from a DVD '
-                                          'VIDEO_TS folder')
-    demux_cmd.add_argument('--season',
-                           metavar='<first>:<last>',
-                           help='Which season(s)/box(es) to demux, '
-                                'from first to last',
-                           required=True)
-    demux_cmd.add_argument('--disc',
-                           metavar='<first>:<last>',
-                           help='Which disc(s) to demux, from first to last',
-                           required=True)
-
-    vid_group = demux_cmd.add_mutually_exclusive_group()
-    vid_group.add_argument('--vid',
-                           action='store_true',
-                           default=True,
-                           help='Demux video (default)')
-    vid_group.add_argument('--no-vid',
-                           action='store_true',
-                           default=False,
-                           help='Don\'t demux video')
-
-    aud_group = demux_cmd.add_mutually_exclusive_group()
-    aud_group.add_argument('--aud',
-                           action='store_true',
-                           default=True,
-                           help='Demux audio (default)')
-    aud_group.add_argument('--no-aud',
-                           action='store_true',
-                           default=False,
-                           help='Don\'t demux audio')
-    sub_group = demux_cmd.add_mutually_exclusive_group()
-
-    sub_group.add_argument('--sub',
-                           action='store_true',
-                           default=True,
-                           help='Demux subtitles (default)')
-    sub_group.add_argument('--no-sub',
-                           action='store_true',
-                           default=False,
-                           help='Do not demux subtitles')
-    sub_group.add_argument('--avs',
-                           action='store_true',
-                           default=False,
-                           help='Generate .d2v file')
-
-    group = demux_cmd.add_mutually_exclusive_group()
-    group.add_argument('--r1',
-                       action='store_true',
-                       default=True,
-                       help='Demux the audio/video from R1 DVD (default)')
-    group.add_argument('--r2',
-                       action='store_true',
-                       default=False,
-                       help='Demux the audio/video from R2 DVD')
-
-    # process subtitles
-    subtitle_cmd = subparser.add_parser('subtitle',
-                                        help='Sync an R1 VobSub subtitle file '
-                                             'to the R2 Dragon Box')
-
-    # process audio
-    audio_cmd = subparser.add_parser('audio',
-                                     help='Sync an R1 English AC3 audio file '
-                                          'to the R2 Dragon Box')
-
-    avisynth_cmd = subparser.add_parser('avisynth',
-                                        help='Generate an AVS script for '
-                                             'side-by-side R1 vs R2 '
-                                             'comparison')
-
-    # add these args this way because help message looks fucky otherwise
-    for cmd in [parser, demux_cmd, subtitle_cmd, audio_cmd, avisynth_cmd]:
-        cmd.add_argument('--series',
-                         metavar='<series>',
-                         help='Choose a series [DB, DBZ, DBoxZ, DBGT, DBM]',
-                         required=True)
-        if cmd is not demux_cmd:
-            cmd.add_argument('--episode',
-                             metavar='<number>',
-                             help='Episode to process. '
-                                  'Can also be used with a range, i.e. '
-                                  '--episode <first>:<last>',
-                             required=True)
-        cmd.add_argument('--verbose',
-                         action='store_true',
-                         default=False,
-                         help='More descriptive output')
+    parser.add_argument('--series',
+                        metavar='<series>',
+                        help='Choose a series [DB, DBZ, DBoxZ, DBGT, DBM]',
+                        required=True)
+    parser.add_argument('--episode',
+                        metavar='<number>',
+                        help='Episode to process. '
+                             'Can also be used with a range, i.e. '
+                             '--episode <first>:<last>',
+                        required=True)
+    parser.add_argument('--verbose',
+                        action='store_true',
+                        default=False,
+                        help='More descriptive output')
+    # shh, hidden options for debug use only
+    # skip demux
+    parser.add_argument('--no-demux',
+                        action='store_true',
+                        default=False,
+                        help=argparse.SUPPRESS)
+    # save demuxed files to destination directory
+    parser.add_argument('--no-mux',
+                        action='store_true',
+                        default=False,
+                        help=argparse.SUPPRESS)
+    # only demux subtitles
+    parser.add_argument('--sub-only',
+                        action='store_true',
+                        default=False,
+                        help=argparse.SUPPRESS)
+    # create AVIsynth after demux
+    parser.add_argument('--make-avs',
+                        action='store_true',
+                        default=False,
+                        help=argparse.SUPPRESS)
 
     return parser
 
@@ -230,66 +169,39 @@ def main():
     init_logging(args.verbose)
 
     # don't proceed if paths aren't right/programs missing
-    pre_check(args, config)
+    # pre_check(args, config)
 
     print(WELCOME_MSG)
 
-    # all in one mode (default)
-    if not args.command:
-        # 1. Create temp dir
-        tmp_dir = tempfile.mkdtemp()
-        logger.debug('Episode temp folder: %s', tmp_dir)
-        # atexit.register(delete_temp, tmp_dir)
-        episode = Episode(config, args, tmp_dir)
-        # 1. Demux
-        episode.demux(config)
-        # 2. Retime
-        episode.retime_subs()
-        episode.retime_audio(config)
-        # 3. Remux
-        # 4. Move
-        # 5. Delete temp
-        print(args)
+    tmp_dir = tempfile.mkdtemp()
+    logger.debug('Episode temp folder: %s', tmp_dir)
+    atexit.register(delete_temp, tmp_dir)
 
-    # dev & debug modes from here on out
-    if args.command == 'demux':
-        # demux mode
-        start_season, end_season = split_args('season', args.season)
-        validate_args('season', [start_season, end_season], args.series)
-        start_disc, end_disc = split_args('disc', args.disc)
-        validate_args('disc', [start_disc, end_disc], args.series)
+    start, end = split_args('episode', args.episode)
 
-        for season in range(start_season, end_season + 1):
-            for disc in range(start_disc, end_disc + 1):
-                logger.info('Launching demux mode for %s season %s disc %s...'
-                            % (args.series, season, disc))
-                demux = Demux(config, args, season, disc)
+    for ep in range(start, end + 1):
+        episode = Episode(ep, config, args, tmp_dir)
 
-                if args.r1:
-                    if args.series in ['DB', 'DBZ', 'DBGT']:
-                        pass
-                        # demux.season_set_demux()
-                    if args.series in ['DBoxZ']:
-                        demux.dbox_demux()
-                if args.r2:
-                    demux.r2_demux()
+        if not args.no_demux:
+            episode.demux()
+            if args.sub_only:
+                # demuxed subs, we're done here
+                sys.exit()
 
-    elif args.command in ['subtitle', 'audio', 'avisynth']:
-        # per-episode modes
-        start_ep, end_ep = split_args('episode', args.episode)
+            if args.no_mux:
+                # move files to destination folder
+                episode.move_demuxed_files()
+            else:
+                # retime subs & audio
+                episode.retime_subs()
+                episode.retime_audio()
+                episode.make_mkv()
 
-        for ep in range(start_ep, end_ep + 1):
-            episode = Episode(config, ep, args.series)
-            if args.command == 'avisynth':
-                # avisynth mode
-                Avisynth(episode, config).write_avs_file()
-            if args.command == 'subtitle':
-                # subtitle mode
-                retime_vobsub(episode, config)
-            elif args.command == 'audio':
-                # audio mode
-                retime_audio(episode, config)
+        if args.make_avs:
+            # only works on files generated with --no-mux
+            episode.make_avs()
 
+        delete_temp(episode.temp_dir)
 
 if __name__ == "__main__":
     main()

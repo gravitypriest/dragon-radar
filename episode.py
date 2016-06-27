@@ -4,15 +4,14 @@ Object for an episode, call all functionality by episode
 import os
 import sys
 import logging
-from utils import pad_zeroes, get_op_offset, load_frame_data, load_demux_map, create_dir
+from utils import (pad_zeroes, get_op_offset, load_frame_data, load_demux_map, create_dir, move_file)
 from constants import Constants
-from demux_2 import demux
+from demux import demux
 from subtitle import retime_vobsub
 from audio import retime_ac3
+from avisynth import write_avs_file
 
 APP_NAME = Constants.APP_NAME
-R1_DISC_DIR = Constants.R1_DISC_DIR
-R2_DISC_DIR = Constants.R2_DISC_DIR
 
 logger = logging.getLogger(APP_NAME)
 
@@ -39,42 +38,47 @@ def _load_r2_chapters(r2_chap_file):
 
 class Episode(object):
 
-    def __init__(self, config, args, tmp_dir):
-        ep_str = str(args.episode).zfill(pad_zeroes(args.series))
+    def __init__(self, number, config, args, tmp_dir):
+        ep_str = str(number).zfill(pad_zeroes(args.series))
         frame_data, op_offset = load_frame_data(args.series, ep_str)
-        self.dest_dir = os.path.join(tmp_dir, ep_str)
+        self.temp_dir = os.path.join(tmp_dir, ep_str)
         self.number = ep_str
         self.series = args.series
         self.offsets = _combine_framedata(frame_data, op_offset)
         self.r2_chapters = {}
         self.demux_map = load_demux_map(args.series, ep_str)
         self.files = {}
+        # config stuff
+        self.pgcdemux = config.get(APP_NAME, 'pgcdemux')
+        self.vsrip = config.get(APP_NAME, 'vsrip')
+        self.delaycut = config.get(APP_NAME, 'delaycut')
+        self.dgindex = config.get(APP_NAME, 'dgindex')
+        self.src_dir_top = config.get(APP_NAME, 'source_dir')
+        self.output_dir = config.get(APP_NAME, 'output_dir')
         # special flags
         self.is_r1dbox = False
         self.is_pioneer = False
         self.is_movie = False
+        # options
+        self.no_mux = args.no_mux
 
-    def demux(self, config):
+    def demux(self):
         '''
         Demux video, audio, subs
         Return an object with the filenames
         '''
-        pgcdemux = config.get(APP_NAME, 'pgcdemux')
-        vsrip = config.get(APP_NAME, 'vsrip')
-        src_dir_top = config.get(APP_NAME, 'source_dir')
-        src_dir_series = os.path.join(src_dir_top, self.series)
-        for r in ['R1', 'R2']:
-            if r == 'R1':
-                src_dir = os.path.join(src_dir_series, R1_DISC_DIR)
-            elif r == 'R2':
-                src_dir = os.path.join(src_dir_series, R2_DISC_DIR)
-            dest_dir = os.path.join(self.dest_dir, r)
+        src_dir_series = os.path.join(self.src_dir_top, self.series)
+
+        regions = ['R2', 'R1_DBOX'] if self.is_r1dbox else ['R2', 'R1']
+        for r in regions:
+            src_dir = os.path.join(src_dir_series, r)
+            dest_dir = os.path.join(self.temp_dir, r)
             create_dir(dest_dir)
             logger.info('Demuxing %s %s %s...', self.series, self.number, r)
-            self.files[r] = demux(pgcdemux, vsrip, src_dir, dest_dir,
+            self.files[r] = demux(self, src_dir, dest_dir,
                                   self.demux_map[r], nosub=(r == 'R2'))
         print(self.files)
-        self.r2_chapters = _load_r2_chapters(self.files['R2']['chapters'])
+        self.r2_chapters = _load_r2_chapters(self.files['R2']['chapters'][0])
         return self.files
 
     def retime_subs(self):
@@ -121,7 +125,7 @@ class Episode(object):
             bitrate = '20_384'
             if self.episode == 'movie_3':
                 bitrate = '20_192'
-        retime_ac3(en_audio, retimed_audio[0], delaycut, bitrate, self)
+        retime_ac3(self, en_audio, retimed_audio[0], bitrate)
         if len(self.demux_map['R1']['audio']) == 3:
             # 3 tracks, so this episode has US music
             # get track with US replacement music
@@ -131,8 +135,32 @@ class Episode(object):
                                  os.path.basename(us_audio).replace(
                                  '.ac3', '.retimed.ac3')))
             bitrate = '51_448' if self.is_movie else '20_192'
-            retime_ac3(us_audio, retimed_audio[1], delaycut, bitrate, self)
+            retime_ac3(self, us_audio, retimed_audio[1], bitrate)
+        self.files['retimed_audio'] = retimed_audio
         logger.info('Audio retime complete.')
 
-    def make_mkv(self, config):
+    def make_mkv(self):
         pass
+
+    def move_demuxed_files(self):
+        dest_dir = os.path.join(self.output_dir, self.series, self.number)
+        for r in self.files:
+            region_dir = os.path.join(dest_dir, r)
+            create_dir(region_dir)
+            for type_ in ['video', 'audio', 'subs', 'chapters']:
+                for file_ in self.files[r][type_]:
+                    if os.path.isfile(file_):
+                        dest_fname = os.path.join(
+                            region_dir, os.path.basename(file_))
+                        move_file(file_, dest_fname)
+
+    def make_avs(self):
+        dest_dir = os.path.join(self.output_dir, self.series, self.number)
+        if os.path.isdir(dest_dir):
+            if not self.r2_chapters:
+                chapters_file = os.path.join(dest_dir, 'R2', 'Celltimes.txt')
+                self.r2_chapters = _load_r2_chapters(chapters_file)
+            write_avs_file(dest_dir, self)
+        else:
+            logger.error('%s not found', dest_dir)
+            sys.exit(1)

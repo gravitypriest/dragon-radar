@@ -60,7 +60,7 @@ def get_op_offset(series, episode, frame_data):
     '''
     Get the initial frame offset of the beginning of the OP
     '''
-    if series == "DBZ" or series == 'DBoxZ':
+    if series == "DBZ":
         if episode == 25:
             op = "OP25"
         elif episode > 36 and episode < 43:
@@ -78,7 +78,7 @@ def get_op_offset(series, episode, frame_data):
             op = 'op'
     else:
         op = "op"
-    if series != "DBM":
+    if series != "MOVIES":
         op_offset = frame_data[op]["offset"]
     else:
         op_offset = None

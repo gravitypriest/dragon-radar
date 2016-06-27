@@ -72,7 +72,7 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
             os.remove(f)
 
 
-def retime_ac3(src_file, dst_file, delaycut, bitrate, episode):
+def retime_ac3(episode, src_file, dst_file, bitrate):
     tmp_dir = tempfile.mkdtemp()
     # in the case of unexpected exit, we don't want to
     # keep temp files around
@@ -106,7 +106,7 @@ def retime_ac3(src_file, dst_file, delaycut, bitrate, episode):
             prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
                                                                  offset)
 
-            run_delaycut(delaycut, working_file, prev_chapter_end,
+            run_delaycut(episode.delaycut, working_file, prev_chapter_end,
                          chapter_begin, delay, bitrate)
 
     move_file(working_file, dst_file)

@@ -6,7 +6,19 @@ chapter_names = {'op': 'Opening',
                  'NEP': 'Next Episode Preview'}
 
 
-def generate_chapters(episode):
+def run_mkvmerge():
+    args = [mkvmerge, '-o', out_file,
+            '--forced-track', '0:no', '-A', '-S', '-T', '--no-global-tags', '--no-chapters', video_file,
+            '--language', '0:jpn', '--track-name', '0:Dragon Box', '--forced-track', '0:no', '-a', '0', '-D', '-S', '-T', '--no-global-tags', '--no-chapters', jp_audio,
+            '--language', '0:eng', '--track-name', '0:Dub w/ Original Score', '--forced-track', '0:no', '-a', '0', '-D', '-S', '-T', '--no-global-tags', '--no-chapters', en_audio,
+            '--language', '0:eng', '--track-name', '0:Dub w/ Replacement Score', '--forced-track', '0:no', '-a', '0', '-D', '-S', '-T', '--no-global-tags', '--no-chapters', us_audio,
+            '--language', '0:eng', '--track-name', '0:Subtitles', '--forced-track', '0:no', 
+            '--language', '1:eng', '--track-name', '0:Songs & Signs', '--forced-track', '1:no', '-s', '0,1', '-D', '-A', '-T', '--no-global-tags', '--no-chapters', sub_idx,
+            '--track-order" "0:0,1:0,2:0,3:0,4:0,4:1',
+            '--chapters', chap_file]
+
+
+def _generate_chapters(episode):
     '''
     MKV chapter format:
     CHAPTER01=00:00:00.000
@@ -40,3 +52,5 @@ def generate_chapters(episode):
         chapters.append('CHAPTER%sNAME=%s', num, name)
         ctr = ctr + 1
     return chapters
+
+

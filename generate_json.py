@@ -4,7 +4,7 @@ Some jank-ass code for creating demux_by_episode.json, dev use only
 
 import json
 
-new_info = {"DBZ": {}}
+new_info = {"DBZ": {}, "DB":{}, "DBGT":{}, "MOVIES":{}}
 
 with open("./params/demux.json", "r") as demuxfile:
     demux_info = json.load(demuxfile)
@@ -28,10 +28,10 @@ def r2disc(i):
     return int(b), int(d), disc_eps.index(i+1)
 
 
-def r1disc(i):
-    for b in ep_info["DBZ"]:
-        for d in ep_info["DBZ"][b]:
-            disc = ep_info["DBZ"][b][d]
+def r1disc(i, series):
+    for b in ep_info[series]:
+        for d in ep_info[series][b]:
+            disc = ep_info[series][b][d]
             if (i + 1) in range(disc[0], disc[1] + 1):
                 disc_eps = list(range(disc[0], disc[1] + 1))
                 return int(b), int(d), disc_eps.index(i+1)
@@ -61,7 +61,7 @@ def _generate_source_folder_name(series, box, disc):
 # S1
 for i in range(0, 291):
     ep = str(i + 1).zfill(3)
-    box, disc, ep_on_r1disc = r1disc(i)
+    box, disc, ep_on_r1disc = r1disc(i, 'DBZ')
 
     # S1 weird, already documented
     if box == 1:
@@ -347,8 +347,130 @@ for i in range(0, 291):
         "vts": 1,
         "audio": ["jp"]
     }
+    # DBOX Z R1
+    box, disc, ep_on_dbox = r1disc(i, 'DBoxZ')
 
-    ep_obj = {"R1": r1_ep_obj, "R2": r2_ep_obj}
+    # BOX 1: - [en, jp]
+    # D1 - VTS 11 - PGC 1 - VID 1, 4, 7, 10, 13, 17, 20
+    # D2 - VTS 11 - PGC 1 - VID 1, 5, 8, 12, 16, 19, 23
+    # D3 - VTS 13 - PGC 1 - VID 1, 5, 9, 12, 15, 19, 23
+    # D4 - VTS 10 - PGC 1 - VID 1, 5, 8, 12, 16, 19, 23
+    # D5 - VTS 13 - PGC 1 - VID 1, 5, 9, 13, 16, 20, 24
+    # D6 - VTS 13 - PGC 1 - VID 1, 4, 8, 12, 15, 18, 22
+    if box == 1:
+        if disc == 1:
+            vts = 11
+            dmx = [1, 4, 7, 10, 13, 17, 20]
+        if disc == 2:
+            vts = 11
+            dmx = [1, 5, 8, 12, 16, 19, 23]
+        if disc == 3:
+            vts = 13
+            dmx = [1, 5, 9, 12, 15, 19, 23]
+        if disc == 4:
+            vts = 10
+            dmx = [1, 5, 8, 12, 16, 19, 23]
+        if disc == 5:
+            vts = 13
+            dmx = [1, 5, 9, 13, 16, 20, 24]
+        if disc == 6:
+            vts = 13
+            dmx = [1, 4, 8, 12, 15, 18, 22]
+
+    # BOX 2: - [en, jp]
+    # D1 - VTS 13 - PGC 1 - VID 5, 8, 11, 14, 17, 20, 23
+    # D2 - VTS 11 - PGC 1 - VID 4, 7, 10, 13, 17, 21, 24
+    # D3 - VTS 13 - PGC 1 - VID 4, 7, 10, 14, 18, 22, 25
+    # D4 - VTS 11 - PGC 1 - VID 5, 9, 12, 15, 18, 21, 24
+    # D5 - VTS 9  - PGC 1 - VID 4, 7, 10, 13, 17, 20, 23
+    # D6 - VTS 13 - PGC 1 - VID 4, 7, 11, 15, 18, 22, 25
+    if box == 2:
+        if disc == 1:
+            vts = 13
+            dmx = [5, 8, 11, 14, 17, 20, 23]
+        if disc == 2:
+            vts = 11
+            dmx = [4, 7, 10, 13, 17, 21, 24]
+        if disc == 3:
+            vts = 13
+            dmx = [4, 7, 10, 14, 18, 22, 25]
+        if disc == 4:
+            vts = 11
+            dmx = [5, 9, 12, 15, 18, 21, 24]
+        if disc == 5:
+            vts = 9
+            dmx = [4, 7, 10, 13, 17, 20, 23]
+        if disc == 6:
+            vts = 13
+            dmx = [4, 7, 11, 15, 18, 22, 25]
+
+    # BOX 3: - [en, jp]
+    # D1 - VTS 12 - PGC 1 - VID 5, 8, 11, 14, 18, 21, 25
+    # D2 - VTS 11 - PGC 1 - VID 4, 8, 11, 15, 18, 21, 24
+    # D3 - VTS 11 - PGC 1 - VID 5, 9, 12, 16, 20, 24, 27
+    # D4 - VTS 12 - PGC 1 - VID 1, 5, 9, 13, 17, 21, 24
+    # D5 - VTS 12 - PGC 1 - VID 1, 5, 8, 11, 14, 17, 21
+    # D6 - VTS 12 - PGC 1 - VID 1, 4, 8, 12, 15, 19, 23
+    if box == 3:
+        if disc == 1:
+            vts = 12
+            dmx = [5, 8, 11, 14, 18, 21, 25]
+        if disc == 2:
+            vts = 11
+            dmx = [4, 8, 11, 15, 18, 21, 24]
+        if disc == 3:
+            vts = 11
+            dmx = [5, 9, 12, 16, 20, 24, 27]
+        if disc == 4:
+            vts = 12
+            dmx = [1, 5, 9, 13, 17, 21, 24]
+        if disc == 5:
+            vts = 12
+            dmx = [1, 5, 8, 11, 14, 17, 21]
+        if disc == 6:
+            vts = 12
+            dmx = [1, 4, 8, 12, 15, 19, 23]
+
+    # BOX 4: - en.jp
+    # D1,2,3,4,5,6 - VTS 7 - PGC 1 - VID 1, 2, 3, 4, 5, 6, 7
+    if box == 4:
+        vts = 7
+        dmx = [1, 2, 3, 4, 5, 6, 7]
+
+    # BOX 5 - []
+    # D1,2,4,5,6 - VTS 6 - PGC 1 - VID 9, 10, 11, 12, 13, 14, 15
+    if box == 5:
+        vts = 6
+        dmx = [9, 10, 11, 12, 13, 14, 15]
+
+    # BOX 6 - []
+    # D1,2,4,5,6 - VTS 6 - PGC 1 - VID 1, 2, 3, 4, 5, 6, 7
+    # D3 - VTS 6 - PGC 1 - VID 11, 1, 2, 3, 4, 5, 6
+    if box == 6:
+        if disc == 3:
+            vts = 6
+            dmx = [11, 1, 2, 3, 4, 5, 6]
+        else:
+            vts = 6
+            dmx = [1, 2, 3, 4, 5, 6, 7]
+
+    # BOX 7 - []
+    # D1,2,3,4,5,6 - VTS 6 - PGC 1 - VID 1, 2, 3, 4, 5, 6, 7
+    if box == 7:
+        vts = 6
+        dmx = [1, 2, 3, 4, 5, 6, 7]
+
+    r1_dbox_obj = {
+        "disc": "DRAGON_BOX_S%d_D%d" % (box, disc),
+        "type": "vid",
+        "pgc": 1,
+        "cells": None,
+        "vid": [dmx[ep_on_dbox]],
+        "vts": vts,
+        "audio": ['en', 'jp']
+    }
+
+    ep_obj = {"R1": r1_ep_obj, "R2": r2_ep_obj, "R1_DBOX": r1_dbox_obj}
     new_info["DBZ"][ep] = ep_obj
 
 with open('new_info.json', 'w') as outfil:
@@ -571,3 +693,4 @@ with open('new_info.json', 'w') as outfil:
             },
         }
 '''
+

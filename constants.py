@@ -2,7 +2,7 @@ import os
 
 
 class Constants(object):
-    DEMUX_JSON = 'params/demux_by_episode.json'
+    DEMUX_JSON = 'params/demux.json'
     DISC_JSON = 'params/episodes.json'
     OFFSETS_JSON = 'params/offsets.json'
     VALID_JSON = 'params/valid.json'
@@ -13,10 +13,6 @@ class Constants(object):
     FUNI_SUB_DIR = 'Funi VobSubs'
     RETIMED_SUB_DIR = 'Retimed VobSubs'
     RETIMED_AUDIO_DIR = 'Retimed Audio - {0}'
-    R1_DEMUX_DIR = 'R1 Demux'
-    R2_DEMUX_DIR = 'R2 Demux'
-    R1_DISC_DIR = 'R1 Discs'
-    R2_DISC_DIR = 'R2 Discs'
     AVS_DIR = 'AVS Scripts'
     APP_NAME = 'dragon-radar'
     VSRIP_TEMPLATE = ('{in_path}\n'

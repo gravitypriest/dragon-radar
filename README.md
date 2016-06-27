@@ -36,33 +36,40 @@ Once you have the DVDs ripped, create a folder structure like the following, wit
 Top folder (wherever you want, e.g. C:\dragonball)
 │
 ├───DB
-│   ├───R1 Discs
+│   ├───R1
 │   │   ├───DRAGON_BALL_S1_D1
 │   │   └───etc...
-│   └───R2 Discs
+│   └───R2
 │       ├───DB_1
 │       └───etc...
 ├──DBZ
-│   ├───R1 Discs
+│   ├───R1
 │   │   ├───DBZ_SEASON01_DISC1
 │   │   └───etc...
-│   └───R2 Discs
-│       ├───DBZ1_1
+│   ├───R2
+│   │   ├───DBZ1_1
+│   │   └───etc..
+│   └───R1_DBOX
+│       ├───DRAGON_BOX_S1_D1
 │       └───etc..
 ├───DBGT
-│   ├───R1 Discs
+│   ├───R1
 │   │   ├───DRAGON_BALL_GT_S1_D1
 │   │   └───etc...
-│   └───R2 Discs
+│   └───R2
 │       ├───DBGT_01
 │       └───etc...
 └───MOVIES
-    ├───R1 Discs
+    ├───R1
     │   ├───DRAGON_BALL_Z_DEAD_ZONE
     │   └───etc...
-    └───R2 Discs
-        ├───DSSD10371
-        └───etc...
+    ├───R2
+    │   ├───DSSD10371
+    │   └───etc...
+    └───PIONEER
+        ├───DEAD_ZONE
+        ├───WORLDS_STRONGEST
+        └───TREE_OF_MIGHT
 ```
 <b>NOTE:</b> For the Bardock and Trunks DVDs, even though they are part of the movie releases, put those in the `DBZ/R1 Discs` folder.
 
@@ -102,6 +109,9 @@ where `<series>` is the desired series (DB, DBZ, DBGT) and `<number>` is the epi
     - Retime audio with DelayCut using frame differences, retiming is lossless since Delaycut uses nearest AC3 frame
 3. Multiplex to MKV
     - Use mkvmerge to multiplex R2 video, R2 audio, retimed R1 audio, and retimed R1 subtitles to an MKV file with chapters
+
+## Thanks
+- Harry Price & dbzj14 for helping collect the R1 Dragon Box DVD structure info.
 
 ## Future Improvements & Maybes
 - Support to sync the early 2000s DBZ uncut single DVDs.
