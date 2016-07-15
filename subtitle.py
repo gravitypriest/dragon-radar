@@ -10,6 +10,29 @@ APP_NAME = Constants.APP_NAME
 logger = logging.getLogger(APP_NAME)
 
 
+def _op_subtitle_delay(episode):
+    delay = 0
+    if (int(episode.number) in range(1, 6) or
+       int(episode.number) in range(11, 21)):
+        delay = 15
+    if (int(episode.number) in [6, 10] or
+       int(episode.number) == 35):
+        delay = -5
+    if int(episode.number) == 7:
+        delay = 26
+    if (int(episode.number) == 8 or
+       int(episode.number) in range(21, 35) or
+       int(episode.number) in range(36, 43)):
+        delay = 10
+    if int(episode.number) == 9:
+        delay = 5
+    if int(episode.number) in range(43, 47):
+        delay = 45
+    if int(episode.number) in range(47, 108):
+        delay = 40
+    return frame_to_seconds(delay)
+
+
 def _adjust_timecode(episode, timestamp):
     '''
     Offset a timecode by the total number of offset frames
@@ -17,35 +40,20 @@ def _adjust_timecode(episode, timestamp):
     frame = timestamp_to_seconds(timestamp)
     offsets = episode.offsets
     series = episode.series
-
-    # part B on the orange bricks starts after the eyecatch, so
-    #  pedal back a few frames just to be safe
-    # if series == 'DBZ':
-        # offsets['partB']['frame'] = offsets['partB']['frame'] - 100
-
+    total_offset = 0
     # calculate offset from frame data
     if isinstance(offsets, list):
         # for list-types (movies, not episodes), start with 0 offset
-        total_offset = 0
         for o in offsets:
             if frame > frame_to_seconds(o['frame']):
                 total_offset += frame_to_seconds(o['offset'])
     else:
         # for episodes, start with the OP offset
-        total_offset = frame_to_seconds(offsets['op']['offset'])
+        # total_offset = frame_to_seconds(offsets['op']['offset'])
         # orange bricks have a delay on the OP subs
         if (series == 'DBZ' and
            frame < frame_to_seconds(offsets['prologue']["frame"])):
-            # episodes 1-20     +0.5 delay
-            # episodes 21-34    +0.333 delay
-            # episodes 35-39    -0.167 delay
-            # episodes 40-?     +1.5 delay
-            if int(episode.number) in range(1, 21):
-                total_offset += 0.5
-            if int(episode.number) in range(21, 35):
-                total_offset += 0.333
-            if int(episode.number) in range(35, 39):
-                total_offset -= 0.167
+            total_offset += _op_subtitle_delay(episode)
         for key in offsets.keys():
             # also account for ED subs being +0.333 s early
             if frame > frame_to_seconds(offsets[key]["frame"]):
@@ -58,18 +66,6 @@ def _adjust_timecode(episode, timestamp):
 
 
 def retime_vobsub(orig_file, fixed_file, episode):
-    # orig_file = os.path.join(
-    #     config.get(Constants.APP_NAME, 'working_dir'),
-    #     episode.series,
-    #     Constants.FUNI_SUB_DIR,
-    #     episode.number + '.idx')
-    # logger.info('Opened %s for reading.' % (orig_file))
-    # fixed_file = os.path.join(
-    #     config.get(Constants.APP_NAME, 'working_dir'),
-    #     episode.series,
-    #     Constants.RETIMED_SUB_DIR,
-    #     episode.number + '.idx')
-    # logger.info('Opened %s for writing.' % (fixed_file))
     try:
         with open(
                 orig_file, 'r') as file_in, open(
@@ -87,5 +83,35 @@ def retime_vobsub(orig_file, fixed_file, episode):
                     file_out.write(line)
     except IOError as e:
         logger.error(e)
-    # logger.info('Subtitle retiming for %s %s is complete.' % (episode.series,
-    #                                                           episode.number))
+    logger.info('Subtitle retiming for %s %s is complete.' % (episode.series,
+                                                              episode.number))
+
+
+def detect_streams(fname):
+    streams = []
+    vob_idx = -1
+    vob_id = -1
+    firstline=True
+    with open(fname, 'r') as subfile:
+        for line in subfile:
+            if 'id:' in line and 'index' in line:
+                stream_idx = int(line.split('index:')[1].strip())
+                streams.append([])
+                streams[stream_idx] = []
+                vob_idx = -1
+                vob_id = -1
+            if 'Vob/Cell ID' in line:
+                new_vob_id = int(line.split('Vob/Cell ID: ')[1].split(',')[0])
+                if new_vob_id != vob_id:
+                    if vob_idx > -1 and streams[stream_idx][vob_idx] == 0:
+                        logger.error('NO LINES IN VOB')
+                    vob_id = new_vob_id
+                    vob_idx = vob_idx + 1
+                    streams[stream_idx].append([])
+                    streams[stream_idx][vob_idx] = 0
+            if 'timestamp:' in line:
+                if firstline and stream_idx == 1:
+                    firstline=False
+                    print(line)
+                streams[stream_idx][vob_idx] = streams[stream_idx][vob_idx] + 1
+    print(streams)

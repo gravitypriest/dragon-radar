@@ -1,13 +1,12 @@
-'''
-Object for an episode, call all functionality by episode
-'''
 import os
 import sys
+import shutil
 import logging
-from utils import (pad_zeroes, get_op_offset, load_frame_data, load_demux_map, create_dir, move_file)
+from utils import (pad_zeroes, get_op_offset, load_frame_data,
+                   load_demux_map, create_dir, move_file)
 from constants import Constants
-from demux import demux
-from subtitle import retime_vobsub
+from demux import demux, files_index
+from subtitle import retime_vobsub, detect_streams
 from audio import retime_ac3
 from avisynth import write_avs_file
 
@@ -37,17 +36,13 @@ def _load_r2_chapters(r2_chap_file):
 
 
 class Episode(object):
-
+    '''
+    Object for an episode, call all functionality by episode
+    '''
     def __init__(self, number, config, args, tmp_dir):
         ep_str = str(number).zfill(pad_zeroes(args.series))
         frame_data, op_offset = load_frame_data(args.series, ep_str)
-        self.temp_dir = os.path.join(tmp_dir, ep_str)
-        self.number = ep_str
-        self.series = args.series
-        self.offsets = _combine_framedata(frame_data, op_offset)
-        self.r2_chapters = {}
-        self.demux_map = load_demux_map(args.series, ep_str)
-        self.files = {}
+
         # config stuff
         self.pgcdemux = config.get(APP_NAME, 'pgcdemux')
         self.vsrip = config.get(APP_NAME, 'vsrip')
@@ -55,12 +50,37 @@ class Episode(object):
         self.dgindex = config.get(APP_NAME, 'dgindex')
         self.src_dir_top = config.get(APP_NAME, 'source_dir')
         self.output_dir = config.get(APP_NAME, 'output_dir')
+
         # special flags
         self.is_r1dbox = False
         self.is_pioneer = False
         self.is_movie = False
+
         # options
         self.no_mux = args.no_mux
+        self.sub_only = args.sub_only
+
+        self.temp_dir = os.path.join(tmp_dir, ep_str)
+        self.number = ep_str
+        self.series = args.series
+        self.offsets = _combine_framedata(frame_data, op_offset)
+        self.r2_chapters = {}
+        self.demux_map = load_demux_map(args.series, ep_str)
+        self.files = self._init_files() if args.no_demux else {}
+
+    def _init_files(self):
+        '''
+        Create file dictionary with locations of demuxed files
+        Only used if not demuxing
+        '''
+        _files = {}
+        episode_dir = os.path.join(self.output_dir, self.series, self.number)
+        regions = ['R2', 'R1_DBOX'] if self.is_r1dbox else ['R2', 'R1']
+
+        for r in regions:
+            _files[r] = files_index(os.path.join(episode_dir, r))
+        self.r2_chapters = _load_r2_chapters(_files['R2']['chapters'][0])
+        return _files
 
     def demux(self):
         '''
@@ -76,10 +96,10 @@ class Episode(object):
             create_dir(dest_dir)
             logger.info('Demuxing %s %s %s...', self.series, self.number, r)
             self.files[r] = demux(self, src_dir, dest_dir,
-                                  self.demux_map[r], nosub=(r == 'R2'))
-        print(self.files)
-        self.r2_chapters = _load_r2_chapters(self.files['R2']['chapters'][0])
-        return self.files
+                                  self.demux_map[r],
+                                  nosub=(r == 'R2'), sub_only=self.sub_only)
+        if not self.sub_only:
+            self.r2_chapters = _load_r2_chapters(self.files['R2']['chapters'][0])
 
     def retime_subs(self):
         '''
@@ -100,19 +120,18 @@ class Episode(object):
                                      os.path.basename(sub_sub).replace(
                                      '.sub', '.retimed.sub'))]
         retime_vobsub(sub_idx, retimed_subs[0], self)
-        os.rename(sub_sub, retimed_subs[1])
+        shutil.copy(sub_sub, retimed_subs[1])
         self.files['R1']['retimed_subs'] = retimed_subs
-        # delete original sub.idx
-        del self.files['R1']['subs']
-        os.remove(sub_idx)
+        # ignore original sub.idx
+        # del self.files['R1']['subs']
+        # os.remove(sub_idx)
         logger.info('Subtitle retime complete.')
 
-    def retime_audio(self, config):
+    def retime_audio(self):
         '''
         Retime audio tracks
         '''
         logger.info('Retiming audio...')
-        delaycut = config.get(APP_NAME, 'delaycut')
         en_idx = self.demux_map['R1']['audio'].index('en')
         en_audio = self.files['R1']['audio'][en_idx]
         retimed_audio = [os.path.join(os.path.dirname(en_audio),
@@ -136,7 +155,7 @@ class Episode(object):
                                  '.ac3', '.retimed.ac3')))
             bitrate = '51_448' if self.is_movie else '20_192'
             retime_ac3(self, us_audio, retimed_audio[1], bitrate)
-        self.files['retimed_audio'] = retimed_audio
+        self.files['R1']['retimed_audio'] = retimed_audio
         logger.info('Audio retime complete.')
 
     def make_mkv(self):
@@ -147,14 +166,17 @@ class Episode(object):
         for r in self.files:
             region_dir = os.path.join(dest_dir, r)
             create_dir(region_dir)
-            for type_ in ['video', 'audio', 'subs', 'chapters']:
-                for file_ in self.files[r][type_]:
-                    if os.path.isfile(file_):
-                        dest_fname = os.path.join(
-                            region_dir, os.path.basename(file_))
-                        move_file(file_, dest_fname)
+            for type_ in ['video', 'audio', 'subs', 'chapters',
+                          'retimed_subs', 'retimed_audio']:
+                if type_ in self.files[r]:
+                    for file_ in self.files[r][type_]:
+                        if os.path.isfile(file_):
+                            dest_fname = os.path.join(
+                                region_dir, os.path.basename(file_))
+                            move_file(file_, dest_fname)
 
     def make_avs(self):
+        detect_streams(self.files['R1']['subs'][0])
         dest_dir = os.path.join(self.output_dir, self.series, self.number)
         if os.path.isdir(dest_dir):
             if not self.r2_chapters:

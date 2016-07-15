@@ -14,7 +14,7 @@ from utils import (get_op_offset,
                    pad_zeroes,
                    load_validate,
                    delete_temp)
-
+from subtitle import detect_streams
 WELCOME_MSG = Constants.WELCOME_MSG
 WORKING_DIR = Constants.WORKING_DIR
 SOURCE_DIR = Constants.SOURCE_DIR
@@ -73,6 +73,11 @@ def create_args():
                         help=argparse.SUPPRESS)
     # save demuxed files to destination directory
     parser.add_argument('--no-mux',
+                        action='store_true',
+                        default=False,
+                        help=argparse.SUPPRESS)
+    # skip retiming
+    parser.add_argument('--no-retime',
                         action='store_true',
                         default=False,
                         help=argparse.SUPPRESS)
@@ -184,18 +189,19 @@ def main():
 
         if not args.no_demux:
             episode.demux()
+        else:
             if args.sub_only:
-                # demuxed subs, we're done here
-                sys.exit()
-
-            if args.no_mux:
-                # move files to destination folder
-                episode.move_demuxed_files()
-            else:
-                # retime subs & audio
-                episode.retime_subs()
-                episode.retime_audio()
-                episode.make_mkv()
+                detect_streams(os.path.join(config.get(APP_NAME, 'output_dir'), args.series,
+                               str(ep).zfill(3), 'R1', 'Subtitle.idx'))
+        if not args.no_retime:
+            episode.retime_subs()
+            #episode.retime_audio()
+        if args.no_mux:
+            # move files to destination folder
+            episode.move_demuxed_files()
+        else:
+            # retime subs & audio
+            episode.make_mkv()
 
         if args.make_avs:
             # only works on files generated with --no-mux

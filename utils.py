@@ -145,11 +145,11 @@ def pad_zeroes(series):
 def delete_temp(tmp_dir):
     try:
         if os.path.isdir(tmp_dir):
-            logger.info('Deleting temporary files...')
+            logger.debug('Deleting temp directory %s', tmp_dir)
             shutil.rmtree(tmp_dir)
     except OSError:
         logger.info('Problem deleting temp directory. '
-                    'Please manually delete %s' % tmp_dir)
+                    'Please manually delete %s', tmp_dir)
 
 
 def rename(fname, new_fname):

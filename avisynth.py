@@ -12,7 +12,6 @@ logger = logging.getLogger(APP_NAME)
 def episode_edits(episode):
     logger.debug('Generating edits...')
     r2_chaps = episode.r2_chapters
-    print(r2_chaps)
     offsets = episode.offsets
     edits = []
     for key in ['op', 'prologue', 'partA', 'partB', 'ED', 'NEP']:
@@ -53,11 +52,11 @@ def generate_avs(episode):
     r1_version = 'R1_DBOX' if episode.is_r1dbox else 'R1'
     r1_v = os.path.join('.', r1_version, 'VideoFile.d2v')
     r2_v = os.path.join('.', 'R2', 'VideoFile.d2v')
-    r1_a = os.path.join('.', r1_version, 'AudioFile_80.ac3')
+    r1_a = os.path.join('.', r1_version, 'AudioFile_81.ac3')
     r2_a = os.path.join('.', 'R2', 'AudioFile_80.ac3')
     import_section = ('r1_v = MPEG2Source(\"{r1_v}\")\n'
                       'r2_v = MPEG2Source(\"{r2_v}\")\n'
-                      'r1_a = NicAC3Source(\"{r1_a}\").GetChannel(2,3)\n'
+                      'r1_a = NicAC3Source(\"{r1_a}\")\n'
                       'r2_a = NicAC3Source(\"{r2_a}\")\n'.format(
                           r1_v=r1_v,
                           r2_v=r2_v,
@@ -67,8 +66,8 @@ def generate_avs(episode):
                     'r2_v = AudioDub(r2_v, r2_a)\n'
                     'b=BlankClip(clip=r1_v, length=10000)\n')
     process_section = episode_edits(episode)
-    output_section = ('r1_v = r1_v.Telecide().Decimate()\n'
-                      'r2_v = r2_v.Telecide().Decimate()\n'
+    output_section = ('r1_v = r1_v.Telecide().Decimate().LanczosResize(854, 480).Subtitle("US",10,10)\n'
+                      'r2_v = r2_v.Telecide().Decimate().Crop(8,0,-8,0).LanczosResize(640, 480).Subtitle("JP",10,10)\n'
                       'StackHorizontal(r1_v, r2_v)\n')
     return '\n'.join([import_section, prep_section,
                       process_section, output_section])

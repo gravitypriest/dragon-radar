@@ -48,30 +48,7 @@ def _run_vsrip(vsrip, source_ifo, dest_dir, pgc, vid):
     subprocess.run([vsrip, param_file])
 
 
-def demux(episode, src_dir, dest_dir, demux_map, nosub=False):
-    '''
-    Demux video, audio, subs
-    Return an object with the filenames
-    '''
-    cells = demux_map['cells']
-    type_ = demux_map['type']
-    vid = demux_map['vid']
-    pgc = demux_map['pgc']
-    source_ifo = os.path.join(
-        src_dir,
-        demux_map['disc'],
-        'VIDEO_TS',
-        ('VTS_0%d_0.IFO' % demux_map['vts'])
-    )
-    logger.info('Demuxing video and audio...')
-    _run_pgcdemux(episode.pgcdemux, source_ifo, dest_dir,
-                  type_, vid, pgc, cells)
-    logger.info('Video & audio demux complete.')
-    if not nosub:
-        logger.info('Demuxing subtitles to VobSub...')
-        _run_vsrip(episode.vsrip, source_ifo, dest_dir, pgc, vid)
-        logger.info('Subtitle demux complete.')
-
+def files_index(dest_dir):
     video = os.path.join(dest_dir, 'VideoFile.m2v')
     aud_0 = os.path.join(dest_dir, 'AudioFile_80.ac3')
     aud_1 = os.path.join(dest_dir, 'AudioFile_81.ac3')
@@ -86,3 +63,31 @@ def demux(episode, src_dir, dest_dir, demux_map, nosub=False):
         'subs': [sub_idx, sub_sub],
         'chapters': [chapters]
     }
+
+
+def demux(episode, src_dir, dest_dir, demux_map, nosub=False, sub_only=False):
+    '''
+    Demux video, audio, subs
+    Return an object with the filenames
+    '''
+    cells = demux_map['cells']
+    type_ = demux_map['type']
+    vid = demux_map['vid']
+    pgc = demux_map['pgc']
+    source_ifo = os.path.join(
+        src_dir,
+        demux_map['disc'],
+        'VIDEO_TS',
+        ('VTS_0%d_0.IFO' % demux_map['vts'])
+    )
+    if not sub_only:
+        logger.info('Demuxing video and audio...')
+        _run_pgcdemux(episode.pgcdemux, source_ifo, dest_dir,
+                      type_, vid, pgc, cells)
+        logger.info('Video & audio demux complete.')
+    if not nosub:
+        logger.info('Demuxing subtitles to VobSub...')
+        _run_vsrip(episode.vsrip, source_ifo, dest_dir, pgc, vid)
+        logger.info('Subtitle demux complete.')
+
+    return files_index(dest_dir)

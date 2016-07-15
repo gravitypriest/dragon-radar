@@ -15,9 +15,12 @@ AC3_DIR = Constants.AC3_DIR
 logger = logging.getLogger(APP_NAME)
 
 
-def frame_to_ms(frame, offset):
-    prev_chapter_end = int(
-        round(1000 * float(frame - 1) / FRAME_RATE, 0))
+def frame_to_ms(frame, offset):    
+    if frame == 0:
+        prev_chapter_end = 0
+    else:
+        prev_chapter_end = int(
+            round(1000 * float(frame - 1) / FRAME_RATE, 0))
     if int(offset) > -1:
         chapter_begin = int(
             round(1000 * float(frame + offset) / FRAME_RATE, 0))
@@ -32,13 +35,14 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
     file_out_1 = file_in + '.part1'
     file_out_2 = file_in + '.part2'
     file_out_3 = file_in + '.part3'
+    print(prev_ch_end, ch_begin, delay)
     if prev_ch_end == 0:
         # initial offset
         logger.debug('Cutting initial part...')
         subprocess.run([delaycut, '-i', file_in, '-endcut', str(prev_ch_end), '-startcut', str(ch_begin), '-o', file_out_1])
         # remove the initial file and begin again
         os.remove(file_in)
-        shutil.rename(file_out_1, file_in)
+        os.rename(file_out_1, file_in)
 
     else:
         # episode up until chapter point
@@ -95,6 +99,8 @@ def retime_ac3(episode, src_file, dst_file, bitrate):
 
     r2_chaps = episode.r2_chapters
     offsets = episode.offsets
+
+    print(r2_chaps, offsets)
 
     for key in ['op', 'prologue', 'partB', 'ED', 'NEP']:
         if key in offsets.keys():
