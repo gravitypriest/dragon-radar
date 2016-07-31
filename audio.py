@@ -15,7 +15,7 @@ AC3_DIR = Constants.AC3_DIR
 logger = logging.getLogger(APP_NAME)
 
 
-def frame_to_ms(frame, offset):    
+def frame_to_ms(frame, offset):
     if frame == 0:
         prev_chapter_end = 0
     else:
@@ -39,7 +39,8 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
     if prev_ch_end == 0:
         # initial offset
         logger.debug('Cutting initial part...')
-        subprocess.run([delaycut, '-i', file_in, '-endcut', str(prev_ch_end), '-startcut', str(ch_begin), '-o', file_out_1])
+        subprocess.run([delaycut, '-i', file_in, '-endcut', str(prev_ch_end),
+                        '-startcut', str(ch_begin), '-o', file_out_1])
         # remove the initial file and begin again
         os.remove(file_in)
         os.rename(file_out_1, file_in)
@@ -47,17 +48,20 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
     else:
         # episode up until chapter point
         logger.debug('Cutting first part...')
-        subprocess.run([delaycut, '-i', file_in, '-endcut', str(prev_ch_end), '-startcut', '0', '-o', file_out_1])
+        subprocess.run([delaycut, '-i', file_in, '-endcut', str(prev_ch_end),
+                        '-startcut', '0', '-o', file_out_1])
         # episode from chapter until end with offset applied
         logger.debug('Cutting second part...')
-        subprocess.run([delaycut, '-i', file_in, '-endcut', '0', '-startcut', str(ch_begin), '-o', file_out_3])
+        subprocess.run([delaycut, '-i', file_in, '-endcut', '0',
+                        '-startcut', str(ch_begin), '-o', file_out_3])
         if delay > 0:
             # bitrate = '51_448'
             # need to add blank space between cuts
             logger.debug('Cutting blank delay...')
             logger.debug('Using %s kbps blank ac3.', bitrate)
             blank_file = os.path.join(AC3_DIR, 'blank_' + bitrate + '.ac3')
-            subprocess.run([delaycut, '-i', blank_file, '-endcut', str(delay), '-startcut', '0', '-o', file_out_2])
+            subprocess.run([delaycut, '-i', blank_file, '-endcut', str(delay),
+                            '-startcut', '0', '-o', file_out_2])
         file_combine = []
         file_combine.append(file_out_1)
         if os.path.isfile(file_out_2):
@@ -107,6 +111,10 @@ def retime_ac3(episode, src_file, dst_file, bitrate):
             # skip scenes with offset of 0
             if offsets[key]['offset'] == 0:
                 continue
+            # if key == 'partA':
+            #     r2_chaps['partA'] = (offsets['partA']['frame'] -
+            #                          (offsets['prologue']['offset'] +
+            #                           offsets['op']['offset']))
             chapter = r2_chaps[key]
             offset = offsets[key]['offset']
             prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,

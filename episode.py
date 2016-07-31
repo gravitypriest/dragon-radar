@@ -99,7 +99,8 @@ class Episode(object):
                                   self.demux_map[r],
                                   nosub=(r == 'R2'), sub_only=self.sub_only)
         if not self.sub_only:
-            self.r2_chapters = _load_r2_chapters(self.files['R2']['chapters'][0])
+            self.r2_chapters = _load_r2_chapters(
+                self.files['R2']['chapters'][0])
 
     def retime_subs(self):
         '''

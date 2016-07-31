@@ -24,7 +24,7 @@ def episode_edits(episode):
             offset = offsets[key]['offset']
             if key == 'op':
                 if offset < 0:
-                    edit_str = ('r1_v = Trim(b, 1, {offset} ++ '
+                    edit_str = ('r1_v = Trim(b, 1, {offset}) ++ '
                                 'Trim(r1_v, 0, 999999)'.format(
                                     offset=offset))
                 else:

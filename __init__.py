@@ -191,11 +191,12 @@ def main():
             episode.demux()
         else:
             if args.sub_only:
-                detect_streams(os.path.join(config.get(APP_NAME, 'output_dir'), args.series,
+                detect_streams(os.path.join(config.get(APP_NAME, 'output_dir'),
+                               args.series,
                                str(ep).zfill(3), 'R1', 'Subtitle.idx'))
         if not args.no_retime:
             episode.retime_subs()
-            #episode.retime_audio()
+            episode.retime_audio()
         if args.no_mux:
             # move files to destination folder
             episode.move_demuxed_files()

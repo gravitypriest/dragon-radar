@@ -11,25 +11,40 @@ logger = logging.getLogger(APP_NAME)
 
 
 def _op_subtitle_delay(episode):
-    delay = 0
+    '''
+    OP on the orange bricks are out of sync, retime them here
+    to a reference of 00:00:12:512 for the first subtitle
+    '''
     if (int(episode.number) in range(1, 6) or
        int(episode.number) in range(11, 21)):
+        # 00:00:13:013
         delay = 15
     if (int(episode.number) in [6, 10] or
        int(episode.number) == 35):
+        # 00:00:12:345
         delay = -5
     if int(episode.number) == 7:
+        # 00:00:13:380
         delay = 26
     if (int(episode.number) == 8 or
        int(episode.number) in range(21, 35) or
        int(episode.number) in range(36, 43)):
+        # 00:00:12:846 -OR-
+        # 00:00:14:014 & delay on DBox
         delay = 10
     if int(episode.number) == 9:
+        # 00:00:12:679
         delay = 5
     if int(episode.number) in range(43, 47):
+        # 00:00:14:014
         delay = 45
-    if int(episode.number) in range(47, 108):
+    if int(episode.number) in range(47, 140):
+        # 00:00:13:847
         delay = 40
+    if int(episode.number) in range(140, 195):
+        # 00:00:12:512
+        delay = 0
+
     return frame_to_seconds(delay)
 
 
@@ -89,29 +104,33 @@ def retime_vobsub(orig_file, fixed_file, episode):
 
 def detect_streams(fname):
     streams = []
-    vob_idx = -1
     vob_id = -1
-    firstline=True
     with open(fname, 'r') as subfile:
         for line in subfile:
             if 'id:' in line and 'index' in line:
+                firstline = True
                 stream_idx = int(line.split('index:')[1].strip())
                 streams.append([])
-                streams[stream_idx] = []
-                vob_idx = -1
+                streams[stream_idx] = {'vobs': [], 'first': None}
                 vob_id = -1
             if 'Vob/Cell ID' in line:
                 new_vob_id = int(line.split('Vob/Cell ID: ')[1].split(',')[0])
                 if new_vob_id != vob_id:
-                    if vob_idx > -1 and streams[stream_idx][vob_idx] == 0:
-                        logger.error('NO LINES IN VOB')
                     vob_id = new_vob_id
-                    vob_idx = vob_idx + 1
-                    streams[stream_idx].append([])
-                    streams[stream_idx][vob_idx] = 0
+                    streams[stream_idx]['vobs'].append(
+                        {'vob_id': vob_id, 'subs': 0})
             if 'timestamp:' in line:
-                if firstline and stream_idx == 1:
-                    firstline=False
-                    print(line)
-                streams[stream_idx][vob_idx] = streams[stream_idx][vob_idx] + 1
-    print(streams)
+                if firstline:
+                    if '00:00:00:000' not in line:
+                        firstline = False
+                        streams[stream_idx]['first'] = line.strip()
+                streams[stream_idx]['vobs'][-1]['subs'] += 1
+        for s, stream in enumerate(streams):
+            logger.debug('Subs in stream %d: ', s)
+            total = 0
+            logger.debug(' - First subtitle: %s', stream['first'])
+            for vob in stream['vobs']:
+                total += vob['subs']
+                logger.debug(' - VOB %d: %d', vob['vob_id'], vob['subs'])
+            logger.debug(' - TOTAL: %d', total)
+            stream['total'] = total
