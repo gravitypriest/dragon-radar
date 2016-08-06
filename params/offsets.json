@@ -12279,6 +12279,538 @@
 				"frame": 40591,
 				"offset": 0
 			}
+		},
+		"254": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 6
+			},
+			"partB": {
+				"frame": 22893,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"255": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 23613,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"256": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 23223,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
+		},
+		"257": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 22742,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"258": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 22891,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 10
+			}
+		},
+		"259": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 22893,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
+		},
+		"260": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 21633,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 10
+			}
+		},
+		"261": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 23853,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
+		},
+		"262": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 20523,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"263": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 23073,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
+		},
+		"264": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 21993,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
+		},
+		"265": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 22023,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
+		},
+		"266": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 11
+			},
+			"partB": {
+				"frame": 24484,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40592,
+				"offset": 0
+			}
+		},
+		"267": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 22143,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
+		},
+		"268": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 20943,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 30
+			}
+		},
+		"269": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 21723,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"270": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 22083,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"271": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 23163,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"272": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 20763,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"273": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 23013,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"274": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 21783,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 10
+			}
+		},
+		"275": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 23103,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"276": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 22323,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
+		},
+		"277": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 21693,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
+		},
+		"278": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 24513,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"279": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 21183,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
+		},
+		"280": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 23133,
+				"offset": 60
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"281": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 21540,
+				"offset": 10
+			},
+			"ED": {
+				"frame": 40590,
+				"offset": 0
+			}
+		},
+		"282": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 24333,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"283": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 23253,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"284": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 10
+			},
+			"partB": {
+				"frame": 22803,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"285": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 22113,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"286": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 21603,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
+		},
+		"287": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 23583,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"288": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 22593,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
+		},
+		"289": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 8
+			},
+			"partB": {
+				"frame": 22501,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40589,
+				"offset": 5
+			}
+		},
+		"290": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 20943,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 0
+			}
+		},
+		"291": {
+			"prologue": {
+				"frame": 3300,
+				"offset": 5
+			},
+			"partB": {
+				"frame": 21273,
+				"offset": 0
+			},
+			"ED": {
+				"frame": 40591,
+				"offset": 5
+			}
 		}
 	},
 	"DBZSingles": {
