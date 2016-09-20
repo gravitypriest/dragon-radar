@@ -1,4 +1,4 @@
-# Dragon Radar ![app icon](https://raw.githubusercontent.com/gravitypriest/dragon-radar/master/icon_readme.png "Dragon Radar") 
+# Dragon Radar ![app icon](https://raw.githubusercontent.com/gravitypriest/dragon-radar/master/icon_readme.png "Dragon Radar")
 In a world where the Dragon Ball series DVDs released in the U.S. have lousy video quality, Dragon Radar aims to take the much better video of the Japanese DVDs, and slap on the audio and subtitles from the U.S. DVDs.
 
 ##### Still a work-in-progress, please be patient!
@@ -114,6 +114,8 @@ where `<series>` is the desired series (DB, DBZ, DBGT) and `<number>` is the epi
 - Harry Price & dbzj14 for helping collect the R1 Dragon Box DVD structure info.
 
 ## Future Improvements & Maybes
+- Web-based GUI
+    - For the less technical folks
 - Support to sync the early 2000s DBZ uncut single DVDs.
     - These are complex to demux because of their weird and crappy authoring.
 - Reconstruct original edited DBZ Saiyan & Namek episodes with Dragon Box footage.
