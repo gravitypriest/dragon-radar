@@ -6,7 +6,7 @@ import json
 
 new_info = {"DBZ": {}, "DB":{}, "DBGT":{}, "MOVIES":{}}
 
-with open("./params/demux.json", "r") as demuxfile:
+with open("./params/demux.old.json", "r") as demuxfile:
     demux_info = json.load(demuxfile)
 
 with open("./params/episodes.json", "r") as epfile:
@@ -473,8 +473,8 @@ for i in range(0, 291):
     ep_obj = {"R1": r1_ep_obj, "R2": r2_ep_obj, "R1_DBOX": r1_dbox_obj}
     new_info["DBZ"][ep] = ep_obj
 
-with open('new_info.json', 'w') as outfil:
-    json.dump(new_info, outfil, sort_keys=True)
+# with open('new_info.json', 'w') as outfil:
+#     json.dump(new_info, outfil, sort_keys=True)
 
 # S1 weird, already documented
 # S2 1, 9 / 1, 2, 4, 5 pattern checks out
@@ -653,7 +653,7 @@ with open('new_info.json', 'w') as outfil:
                 "audio": ["jp"]
             },
         },
-        "trunks": {         
+        "trunks": {
             "R1": {
                 "cells": null,
                 "disc": "DBZ2_SP1",
@@ -674,7 +674,7 @@ with open('new_info.json', 'w') as outfil:
             },
         }
         # GT
-        "special": {         
+        "special": {
             "R1": {
                 "cells": null,
                 "disc": "DRAGON_BALL_GT_S2_D5",
@@ -694,3 +694,60 @@ with open('new_info.json', 'w') as outfil:
         }
 '''
 
+for i in range(0, 153):
+    ep = str(i + 1).zfill(3)
+    box, disc, ep_on_r1disc = r1disc(i, 'DB')
+
+    # S1 weird, already documented
+    if box == 1:
+        if disc == 1 or disc == 3:
+            vid = ep_on_r1disc + 2
+            vts = 6
+        if disc == 2:
+            vid = ((ep_on_r1disc + 5) % 8) + 2
+            vts = 3
+        if disc == 4:
+            vid = ((ep_on_r1disc + 4) % 8) + 2
+            vts = 3
+        if disc == 5:
+            vid = ep_on_r1disc + 2
+            vts = 4
+    if box == 2 or box == 3 or box == 4 or box == 5:
+        vts = 6
+        if disc == 5:
+            if box == 4 or box == 5:
+                vid = ep_on_r1disc + 2
+            else:
+                vid = ep_on_r1disc + 4
+        else:
+            vid = ep_on_r1disc + 2
+
+    r1_ep_obj = {
+        "type": "vid",
+        "disc": _generate_source_folder_name("DB", box, disc),
+        "pgc": 1,
+        "cells": None,
+        "vid": [vid],
+        "vts": vts,
+        "audio": ['en', 'jp']
+    }
+    print(r1_ep_obj)
+    box, disc, ep_on_r2disc = r2disc(i)
+    disc = int(i / 6) + 1
+    r2_ep_obj = {
+        "disc": "DB_"+str(disc),
+        "type": "pgc",
+        "pgc": ep_on_r2disc + 3,
+        "vid": None,
+        "cells": None,
+        "vts": 1,
+        "audio": ["jp"]
+    }
+
+    new_info['DB'][ep] = {}
+    new_info['DB'][ep]['R1'] = r1_ep_obj
+    new_info['DB'][ep]['R2'] = r2_ep_obj
+
+
+with open('new_info.json', 'w') as outfil:
+    json.dump(new_info, outfil, sort_keys=True)

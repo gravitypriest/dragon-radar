@@ -1,7 +1,7 @@
 import os
 
-
 class Constants(object):
+    VERSION = '0.1'
     DEMUX_JSON = 'params/demux.json'
     DISC_JSON = 'params/episodes.json'
     OFFSETS_JSON = 'params/offsets.json'
@@ -10,10 +10,6 @@ class Constants(object):
     AC3_DIR = 'ac3files'
     WORKING_DIR = 'C:/dragon-radar'
     SOURCE_DIR = WORKING_DIR
-    FUNI_SUB_DIR = 'Funi VobSubs'
-    RETIMED_SUB_DIR = 'Retimed VobSubs'
-    RETIMED_AUDIO_DIR = 'Retimed Audio - {0}'
-    AVS_DIR = 'AVS Scripts'
     APP_NAME = 'dragon-radar'
     VSRIP_TEMPLATE = ('{in_path}\n'
                       '{out_path}\n'
@@ -23,23 +19,9 @@ class Constants(object):
                       'CLOSE\n'
                       'RESETTIME\n')
     PARAM_FILE = 'param.lst'
-    WELCOME_MSG = '''
-       8888888b. 8888888b.        d8888 .d8888b.  .d88888b. 888b    888
-       888  \"Y88b888   Y88b      d88888d88P  Y88bd88P\" \"Y88b8888b   888
-       888    888888    888     d88P888888    888888     88888888b  888
-       888    888888   d88P    d88P 888888       888     888888Y88b 888
-       888    8888888888P\"    d88P  888888  88888888     888888 Y88b888
-       888    888888 T88b    d88P   888888    888888     888888  Y88888
-       888  .d88P888  T88b  d8888888888Y88b  d88PY88b. .d88P888   Y8888
-       8888888P\" 888   T88bd88P     888 \"Y8888P88 \"Y88888P\" 888    Y888
-            8888888b.        d88888888888b.        d88888888888b.
-            888   Y88b      d88888888  \"Y88b      d88888888   Y88b
-            888    888     d88P888888    888     d88P888888    888
-            888   d88P    d88P 888888    888    d88P 888888   d88P
-            8888888P\"    d88P  888888    888   d88P  8888888888P\"
-            888 T88b    d88P   888888    888  d88P   888888 T88b
-            888  T88b  d8888888888888  .d88P d8888888888888  T88b
-            888   T88bd88P     8888888888P\" d88P     888888   T88b
-    '''
+    WELCOME_MSG = ('-----------------\n' +
+                   '\033[93mDragon' + '\033[39m ' +
+                   '\033[91mRadar v{0}'.format(VERSION) + '\033[39m' +
+                   '\n-----------------')
     MIN_SIZE = 100000000
     FRAME_RATE = float(30000) / float(1001)
