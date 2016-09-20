@@ -9,6 +9,7 @@ import tempfile
 import logging
 import atexit
 from constants import Constants
+import colorama
 from episode import Episode
 from utils import (get_op_offset,
                    pad_zeroes,
@@ -53,7 +54,7 @@ def create_args():
 
     parser.add_argument('--series',
                         metavar='<series>',
-                        help='Choose a series [DB, DBZ, DBoxZ, DBGT, DBM]',
+                        help='Choose a series [DB, DBZ, DBGT, DBM]',
                         required=True)
     parser.add_argument('--episode',
                         metavar='<number>',
@@ -65,6 +66,24 @@ def create_args():
                         action='store_true',
                         default=False,
                         help='More descriptive output')
+    # for Z, get R1 assets from Dragon Box
+    parser.add_argument('--r1-dbox',
+                        action='store_true',
+                        default=False,
+                        help='For DBZ, use the audio and subtitle assets'
+                             'from the Funimation Dragon Box')
+    # the first 3 Z movies, get R1 assets from Pioneer DVDs
+    parser.add_argument('--pioneer',
+                        action='store_true',
+                        default=False,
+                        help='For the first 3 DBZ movies, use the audio and'
+                             'subtitle assets from the Pioneer DVDs.')
+    # don't use Funimation Remastered DVDs for the first 3 movies
+    parser.add_argument('--no-funi',
+                        action='store_true',
+                        default=False,
+                        help='Use in conjunction with --pioneer to ignore'
+                             'assets from the Funimation remastered DVDs.')
     # shh, hidden options for debug use only
     # skip demux
     parser.add_argument('--no-demux',
@@ -88,6 +107,11 @@ def create_args():
                         help=argparse.SUPPRESS)
     # create AVIsynth after demux
     parser.add_argument('--make-avs',
+                        action='store_true',
+                        default=False,
+                        help=argparse.SUPPRESS)
+    # demux r1 video in addition to audio/subs
+    parser.add_argument('--r1-vid',
                         action='store_true',
                         default=False,
                         help=argparse.SUPPRESS)
@@ -124,17 +148,11 @@ def pre_check(args, config):
 
     logger.debug('Performing pre-check...')
     bad_conf = False
-    if args.command == 'demux':
-        if not (args.no_vid and args.no_aud):
-            bad_conf = exe_check('PGCDemux')
-        if not args.no_sub:
-            bad_conf = exe_check('VSRip')
-        if args.avs:
-            bad_conf = exe_check('DGIndex')
-    if args.command is 'avisynth':
+    bad_conf = exe_check('PGCDemux')
+    bad_conf = exe_check('VSRip')
+    bad_conf = exe_check('DelayCut')
+    if args.make_avs:
         bad_conf = exe_check('DGIndex')
-    if args.command is 'audio':
-        bad_conf = exe_check('DelayCut')
     if bad_conf:
         sys.exit(1)
     else:
@@ -169,14 +187,14 @@ def split_args(argtype, arg):
 
 
 def main():
+    colorama.init()
+    print(WELCOME_MSG)
     config = load_config_file()
     args = create_args().parse_args()
     init_logging(args.verbose)
 
     # don't proceed if paths aren't right/programs missing
-    # pre_check(args, config)
-
-    print(WELCOME_MSG)
+    pre_check(args, config)
 
     tmp_dir = tempfile.mkdtemp()
     logger.debug('Episode temp folder: %s', tmp_dir)
@@ -197,7 +215,7 @@ def main():
         if not args.no_retime:
             episode.retime_subs()
             episode.retime_audio()
-        if args.no_mux:
+        if not args.no_demux and args.no_mux:
             # move files to destination folder
             episode.move_demuxed_files()
         else:

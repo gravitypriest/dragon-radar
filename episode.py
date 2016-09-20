@@ -52,9 +52,10 @@ class Episode(object):
         self.output_dir = config.get(APP_NAME, 'output_dir')
 
         # special flags
-        self.is_r1dbox = False
+        self.is_r1dbox = args.series == 'DBZ' and args.r1_dbox
         self.is_pioneer = False
         self.is_movie = False
+        self.demux_r1_vid = args.r1_vid
 
         # options
         self.no_mux = args.no_mux
@@ -79,6 +80,13 @@ class Episode(object):
 
         for r in regions:
             _files[r] = files_index(os.path.join(episode_dir, r))
+        if not os.path.exists(_files['R2']['chapters'][0]):
+            logger.error('Could not find the demuxed R2 chapters file at %s. '
+                         'This probably means that either you haven\'t demuxed '
+                         'yet, or the `output_dir` setting in dragon-radar.ini '
+                         'is incorrect.',
+                         _files['R2']['chapters'][0])
+            sys.exit(1)
         self.r2_chapters = _load_r2_chapters(_files['R2']['chapters'][0])
         return _files
 
@@ -91,14 +99,17 @@ class Episode(object):
 
         regions = ['R2', 'R1_DBOX'] if self.is_r1dbox else ['R2', 'R1']
         for r in regions:
+            if r not in self.demux_map:
+                continue
             src_dir = os.path.join(src_dir_series, r)
             dest_dir = os.path.join(self.temp_dir, r)
             create_dir(dest_dir)
             logger.info('Demuxing %s %s %s...', self.series, self.number, r)
             self.files[r] = demux(self, src_dir, dest_dir,
                                   self.demux_map[r],
+                                  novid=(r =='R1' and not self.demux_r1_vid),
                                   nosub=(r == 'R2'), sub_only=self.sub_only)
-        if not self.sub_only:
+        if not self.sub_only and 'R2' in self.files:
             self.r2_chapters = _load_r2_chapters(
                 self.files['R2']['chapters'][0])
 
@@ -123,9 +134,6 @@ class Episode(object):
         retime_vobsub(sub_idx, retimed_subs[0], self)
         shutil.copy(sub_sub, retimed_subs[1])
         self.files['R1']['retimed_subs'] = retimed_subs
-        # ignore original sub.idx
-        # del self.files['R1']['subs']
-        # os.remove(sub_idx)
         logger.info('Subtitle retime complete.')
 
     def retime_audio(self):
@@ -164,25 +172,38 @@ class Episode(object):
 
     def move_demuxed_files(self):
         dest_dir = os.path.join(self.output_dir, self.series, self.number)
+        logger.info('Moving files from %s to %s, please wait a moment...',
+                    self.temp_dir, dest_dir)
+        new_files = {}
         for r in self.files:
             region_dir = os.path.join(dest_dir, r)
             create_dir(region_dir)
+            new_files[r] = {}
             for type_ in ['video', 'audio', 'subs', 'chapters',
                           'retimed_subs', 'retimed_audio']:
                 if type_ in self.files[r]:
+                    new_files[r][type_] = []
                     for file_ in self.files[r][type_]:
                         if os.path.isfile(file_):
                             dest_fname = os.path.join(
                                 region_dir, os.path.basename(file_))
+                            logger.debug('Moving %s...', file_)
                             move_file(file_, dest_fname)
+                            new_files[r][type_].append(dest_fname)
+                            logger.debug('Complete.')
+        self.files = new_files
+        logger.info('Move complete! Demuxed files in %s', dest_dir)
 
     def make_avs(self):
         detect_streams(self.files['R1']['subs'][0])
         dest_dir = os.path.join(self.output_dir, self.series, self.number)
         if os.path.isdir(dest_dir):
             if not self.r2_chapters:
-                chapters_file = os.path.join(dest_dir, 'R2', 'Celltimes.txt')
-                self.r2_chapters = _load_r2_chapters(chapters_file)
+                if 'R2' not in self.demux_map:
+                    self.r2_chapters = {}
+                else:
+                    chapters_file = os.path.join(dest_dir, 'R2', 'Celltimes.txt')
+                    self.r2_chapters = _load_r2_chapters(chapters_file)
             write_avs_file(dest_dir, self)
         else:
             logger.error('%s not found', dest_dir)
