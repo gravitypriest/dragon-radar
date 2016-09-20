@@ -14,11 +14,8 @@ def episode_edits(episode):
     r2_chaps = episode.r2_chapters
     offsets = episode.offsets
     edits = []
-    for key in ['op', 'prologue', 'partA', 'partB', 'ED', 'NEP']:
+    for key in ['op', 'prologue', 'partB', 'ED', 'NEP']:
         if key in offsets.keys():
-            if key == 'partA':
-                # no part A in r2_chaps so improvise
-                r2_chaps[key] = offsets[key]['frame']
             ch_begin = r2_chaps[key]        # JP chapter point
             ch_end = ch_begin - 1           # frame just before chapter
             offset = offsets[key]['offset']
@@ -52,7 +49,7 @@ def generate_avs(episode):
     r1_version = 'R1_DBOX' if episode.is_r1dbox else 'R1'
     r1_v = os.path.join('.', r1_version, 'VideoFile.d2v')
     r2_v = os.path.join('.', 'R2', 'VideoFile.d2v')
-    r1_a = os.path.join('.', r1_version, 'AudioFile_81.ac3')
+    r1_a = os.path.join('.', r1_version, 'AudioFile_80.ac3')
     r2_a = os.path.join('.', 'R2', 'AudioFile_80.ac3')
     import_section = ('r1_v = MPEG2Source(\"{r1_v}\")\n'
                       'r2_v = MPEG2Source(\"{r2_v}\")\n'
@@ -62,12 +59,12 @@ def generate_avs(episode):
                           r2_v=r2_v,
                           r1_a=r1_a,
                           r2_a=r2_a))
-    prep_section = ('r1_v = AudioDub(r1_v, r1_a)\n'
+    prep_section = ('r1_v = AudioDub(r1_v, r1_a).GetChannel(2,3)\n'
                     'r2_v = AudioDub(r2_v, r2_a)\n'
                     'b=BlankClip(clip=r1_v, length=10000)\n')
     process_section = episode_edits(episode)
-    output_section = ('r1_v = r1_v.Telecide().Decimate().LanczosResize(854, 480).Subtitle("US",10,10)\n'
-                      'r2_v = r2_v.Telecide().Decimate().Crop(8,0,-8,0).LanczosResize(640, 480).Subtitle("JP",10,10)\n'
+    output_section = ('r1_v = r1_v.Telecide().Decimate().LanczosResize(640, 480).Subtitle("US",10,10)\n'
+                      'r2_v = r2_v.Telecide().Decimate().LanczosResize(640, 480).Subtitle("JP",10,10)\n'
                       'StackHorizontal(r1_v, r2_v)\n')
     return '\n'.join([import_section, prep_section,
                       process_section, output_section])

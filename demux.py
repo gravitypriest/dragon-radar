@@ -13,14 +13,17 @@ APP_NAME = Constants.APP_NAME
 logger = logging.getLogger(APP_NAME)
 
 
-def _run_pgcdemux(pgcdemux, source_ifo, dest_dir, type_, vid, pgc, cells):
+def _run_pgcdemux(pgcdemux, source_ifo, dest_dir, type_, vid, pgc, cells, novid=False):
     args = [pgcdemux, '-nolog', '-guism']
-    args.extend(['-m2v', '-cellt'])
+    if novid:
+        args.append('-nom2v')
+    else:
+        args.append('-m2v')
+    args.append('-cellt')
     args.append('-aud')
     args.append('-nosub')
-
     if type_ == 'vid':
-        args.extend(['-vid', str(vid)])
+        args.extend(['-vid', str(vid[0])])
     if type_ == 'pgc':
         args.extend(['-pgc', str(pgc)])
         if cells:
@@ -43,6 +46,7 @@ def _run_vsrip(vsrip, source_ifo, dest_dir, pgc, vid):
                                     out_path=out_file,
                                     vid_sequence=vid_seq_str,
                                     pgc=pgc)
+    logger.debug('VSRip params file:\n%s', content)
     with open(param_file, 'w') as param:
         param.write(content)
     subprocess.run([vsrip, param_file])
@@ -65,7 +69,7 @@ def files_index(dest_dir):
     }
 
 
-def demux(episode, src_dir, dest_dir, demux_map, nosub=False, sub_only=False):
+def demux(episode, src_dir, dest_dir, demux_map, novid=False, nosub=False, sub_only=False):
     '''
     Demux video, audio, subs
     Return an object with the filenames
@@ -80,13 +84,19 @@ def demux(episode, src_dir, dest_dir, demux_map, nosub=False, sub_only=False):
         'VIDEO_TS',
         ('VTS_0%d_0.IFO' % demux_map['vts'])
     )
+    if not os.path.exists(source_ifo):
+        logger.error('Source IFO %s not found! Please check the `source_dir` '
+                     'setting in dragon-radar.ini, and follow the README '
+                     'on how to organize your files.', source_ifo)
+        sys.exit(1)
+
     if not sub_only:
         logger.info('Demuxing video and audio...')
         _run_pgcdemux(episode.pgcdemux, source_ifo, dest_dir,
-                      type_, vid, pgc, cells)
+                      type_, vid, pgc, cells, novid=novid)
         logger.info('Video & audio demux complete.')
     if not nosub:
-        logger.info('Demuxing subtitles to VobSub...')
+        logger.info('Demuxing subtitles to VobSub.  Please don\'t close the VSRip window!')
         _run_vsrip(episode.vsrip, source_ifo, dest_dir, pgc, vid)
         logger.info('Subtitle demux complete.')
 

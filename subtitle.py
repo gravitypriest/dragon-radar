@@ -41,8 +41,9 @@ def _op_subtitle_delay(episode):
     if int(episode.number) in range(47, 140):
         # 00:00:13:847
         delay = 40
-    if int(episode.number) in range(140, 195):
+    if int(episode.number) in range(140, 292):
         # 00:00:12:512
+        # 00:00:20:353 (op 2)
         delay = 0
 
     return frame_to_seconds(delay)
@@ -63,8 +64,7 @@ def _adjust_timecode(episode, timestamp):
             if frame > frame_to_seconds(o['frame']):
                 total_offset += frame_to_seconds(o['offset'])
     else:
-        # for episodes, start with the OP offset
-        # total_offset = frame_to_seconds(offsets['op']['offset'])
+        # episodes are map-based, with a key for each chapter
         # orange bricks have a delay on the OP subs
         if (series == 'DBZ' and
            frame < frame_to_seconds(offsets['prologue']["frame"])):
@@ -81,6 +81,9 @@ def _adjust_timecode(episode, timestamp):
 
 
 def retime_vobsub(orig_file, fixed_file, episode):
+    '''
+    Parse the file and retime the sub
+    '''
     try:
         with open(
                 orig_file, 'r') as file_in, open(
@@ -98,8 +101,6 @@ def retime_vobsub(orig_file, fixed_file, episode):
                     file_out.write(line)
     except IOError as e:
         logger.error(e)
-    logger.info('Subtitle retiming for %s %s is complete.' % (episode.series,
-                                                              episode.number))
 
 
 def detect_streams(fname):
