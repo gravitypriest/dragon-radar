@@ -10,6 +10,8 @@ OFFSETS_JSON = Constants.OFFSETS_JSON
 DISC_JSON = Constants.DISC_JSON
 DEMUX_JSON = Constants.DEMUX_JSON
 VALID_JSON = Constants.VALID_JSON
+TITLE_TIMES_JSON = Constants.TITLE_TIMES_JSON
+TITLES_JSON = Constants.TITLES_JSON
 FRAME_RATE = Constants.FRAME_RATE
 
 logger = logging.getLogger(APP_NAME)
@@ -55,6 +57,19 @@ def load_validate(series):
     validate = load_json(VALID_JSON)[series]
     return validate
 
+def load_title_time(series, episode):
+    '''
+    Load the timestamps file for episode titles
+    '''
+    title_time = load_json(TITLE_TIMES_JSON)[series][episode]
+    return title_time
+
+def load_title(series, episode):
+    '''
+    Load the episode title
+    '''
+    title = load_json(TITLES_JSON)[series][episode]
+    return title
 
 def get_op_offset(series, episode, frame_data):
     '''
@@ -118,7 +133,7 @@ def to_timestamp(frame, ntsc_frame=None):
     Convert seconds to timestamp format
     '''
     delimiter = ':'
-    if ntsc_frame:
+    if ntsc_frame is not None:
         frame = float(ntsc_frame) / FRAME_RATE
         delimiter = '.'
     seconds, ms = _split_seconds(frame)

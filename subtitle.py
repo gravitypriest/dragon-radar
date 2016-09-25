@@ -126,12 +126,14 @@ def detect_streams(fname):
                         firstline = False
                         streams[stream_idx]['first'] = line.strip()
                 streams[stream_idx]['vobs'][-1]['subs'] += 1
-        for s, stream in enumerate(streams):
-            logger.debug('Subs in stream %d: ', s)
-            total = 0
-            logger.debug(' - First subtitle: %s', stream['first'])
-            for vob in stream['vobs']:
-                total += vob['subs']
-                logger.debug(' - VOB %d: %d', vob['vob_id'], vob['subs'])
-            logger.debug(' - TOTAL: %d', total)
-            stream['total'] = total
+    for s, stream in enumerate(streams):
+        logger.debug('Subs in stream %d: ', s)
+        total = 0
+        logger.debug(' - First subtitle: %s', stream['first'])
+        for vob in stream['vobs']:
+            total += vob['subs']
+            logger.debug(' - VOB %d: %d', vob['vob_id'], vob['subs'])
+        logger.debug(' - TOTAL: %d', total)
+        stream['total'] = total
+        stream['id'] = s
+    return streams

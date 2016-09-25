@@ -9,6 +9,7 @@ from demux import demux, files_index
 from subtitle import retime_vobsub, detect_streams
 from audio import retime_ac3
 from avisynth import write_avs_file
+from mkvmux import make_mkv
 
 APP_NAME = Constants.APP_NAME
 
@@ -35,6 +36,14 @@ def _load_r2_chapters(r2_chap_file):
     return chapters
 
 
+def _retimed_fname(fname):
+    '''
+    Generate the filename for a retimed subtitle or audio track
+    '''
+    splitpath = os.path.splitext(fname)
+    return '.retimed'.join(splitpath)
+
+
 class Episode(object):
     '''
     Object for an episode, call all functionality by episode
@@ -48,6 +57,7 @@ class Episode(object):
         self.vsrip = config.get(APP_NAME, 'vsrip')
         self.delaycut = config.get(APP_NAME, 'delaycut')
         self.dgindex = config.get(APP_NAME, 'dgindex')
+        self.mkvmerge = config.get(APP_NAME, 'mkvmerge')
         self.src_dir_top = config.get(APP_NAME, 'source_dir')
         self.output_dir = config.get(APP_NAME, 'output_dir')
 
@@ -62,12 +72,15 @@ class Episode(object):
         self.sub_only = args.sub_only
 
         self.temp_dir = os.path.join(tmp_dir, ep_str)
+        create_dir(self.temp_dir)
+
         self.number = ep_str
         self.series = args.series
         self.offsets = _combine_framedata(frame_data, op_offset)
         self.r2_chapters = {}
         self.demux_map = load_demux_map(args.series, ep_str)
         self.files = self._init_files() if args.no_demux else {}
+
 
     def _init_files(self):
         '''
@@ -80,7 +93,7 @@ class Episode(object):
 
         for r in regions:
             _files[r] = files_index(os.path.join(episode_dir, r))
-        if not os.path.exists(_files['R2']['chapters'][0]):
+        if not os.path.isfile(_files['R2']['chapters'][0]):
             logger.error('Could not find the demuxed R2 chapters file at %s. '
                          'This probably means that either you haven\'t demuxed '
                          'yet, or the `output_dir` setting in dragon-radar.ini '
@@ -88,6 +101,17 @@ class Episode(object):
                          _files['R2']['chapters'][0])
             sys.exit(1)
         self.r2_chapters = _load_r2_chapters(_files['R2']['chapters'][0])
+        retimed_sub_idx_path = _retimed_fname(_files['R1']['subs'][0])
+        retimed_sub_sub_path = _retimed_fname(_files['R1']['subs'][1])
+        if os.path.isfile(retimed_sub_idx_path):
+            _files['R1']['retimed_subs'] = [retimed_sub_idx_path, retimed_sub_sub_path]
+        for a in _files['R1']['audio']:
+            retimed = _retimed_fname(a)
+            if os.path.isfile(retimed):
+                if 'retimed_audio' not in _files['R1']:
+                    _files['R1']['retimed_audio'] = []
+                _files['R1']['retimed_audio'].append(retimed)
+
         return _files
 
     def demux(self):
@@ -154,8 +178,7 @@ class Episode(object):
             if self.episode == 'movie_3':
                 bitrate = '20_192'
         retime_ac3(self, en_audio, retimed_audio[0], bitrate)
-        if len(self.demux_map['R1']['audio']) == 3:
-            # 3 tracks, so this episode has US music
+        if 'us' in self.demux_map['R1']['audio']:
             # get track with US replacement music
             us_idx = self.demux_map['R1']['audio'].index('us')
             us_audio = self.files['R1']['audio'][us_idx]
@@ -167,8 +190,12 @@ class Episode(object):
         self.files['R1']['retimed_audio'] = retimed_audio
         logger.info('Audio retime complete.')
 
-    def make_mkv(self):
-        pass
+    def mux(self):
+        '''
+        Create the MKV for this episode
+        '''
+        streams = detect_streams(self.files['R1']['retimed_subs'][0])
+        make_mkv(self, streams)
 
     def move_demuxed_files(self):
         dest_dir = os.path.join(self.output_dir, self.series, self.number)
