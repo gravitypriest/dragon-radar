@@ -11565,11 +11565,345 @@
 		}
 	},
 	"MOVIES": {
-		"01": {},
-		"02": {},
-		"03": {},
-		"15": {},
-		"16": {},
-		"17": {}
+		"01": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_Z_DEAD_ZONE",
+				"pgc": 2,
+				"type": "pgc",
+				"vid": [2, 3],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10372",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 1
+			}
+		},
+		"02": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": [1, 12],
+				"disc": "DRAGON_BALL_Z_WORLDS_STRONGEST",
+				"pgc": 1,
+				"type": "pgc",
+				"vid": [2, 3],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10372",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 2
+			}
+		},
+		"03": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGONBALL_Z_MOVIE_3",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10372",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 3
+			}
+		},
+		"04": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_Z_LORD_SLUG",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10373",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 1
+			}
+		},
+		"05": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_Z_COOLERS_REVENGE",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10373",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 2
+			}
+		},
+		"06": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_Z_RETURN_OF_COOLER",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10374",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 1
+			}
+		},
+		"07": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_Z_SUPER_ANDROID_13",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10374",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 2
+			}
+		},
+		"08": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_Z_MOVIE_8",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10375",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 1
+			}
+		},
+		"09": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_Z_BOJACK_UNBOUND",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10375",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 2
+			}
+		},
+		"10": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_Z_MOVIES_10_11",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10376",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 1
+			}
+		},
+		"11": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_Z_MOVIES_10_11",
+				"pgc": null,
+				"type": "vid",
+				"vid": [3],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10376",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 2
+			}
+		},
+		"12": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGONBALL_Z_MOVIE_12",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10377",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 1
+			}
+		},
+		"13": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGONBALL_Z_MOVIE_13",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10377",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 2
+			}
+		},
+		"14": {
+			"R1": {
+				"audio": ["en", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_MOVIE_4",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 7
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10378",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 1
+			}
+		},
+		"15": {			
+			"R1": {
+				"audio": ["en", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_MOVIE1",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 7
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10371",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 1
+			}
+		},
+		"16": {
+			"R1": {
+				"audio": ["en", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_MOVIE_2",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 7
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10371",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 2
+			}
+		},
+		"17": {
+			"R1": {
+				"audio": ["en", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_MOVIE_3",
+				"pgc": null,
+				"type": "vid",
+				"vid": [2],
+				"vts": 7
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DSSD10371",
+				"pgc": null,
+				"type": "vid",
+				"vid": [1],
+				"vts": 3
+			}
+		}
 	}
 }
