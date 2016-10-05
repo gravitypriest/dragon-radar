@@ -1,15 +1,18 @@
 import os
 
 class Constants(object):
-    VERSION = '0.1'
-    DEMUX_JSON = 'params/demux.json'
-    DISC_JSON = 'params/episodes.json'
-    OFFSETS_JSON = 'params/offsets.json'
-    VALID_JSON = 'params/valid.json'
-    TITLE_TIMES_JSON = 'params/title-times.json'
-    TITLES_JSON = 'params/titles.json'
-    CONF_FILE = 'dragon-radar.ini'
-    AC3_DIR = 'ac3files'
+    VERSION = '0.1.0'
+    CODENAME = 'Appule'
+    PACKAGE_PATH = os.path.dirname(os.path.realpath(__file__))
+    PARAMS_PATH = os.path.join(PACKAGE_PATH, 'params')
+    DEMUX_JSON = os.path.join(PARAMS_PATH, 'demux.json')
+    DISC_JSON = os.path.join(PARAMS_PATH, 'episodes.json')
+    OFFSETS_JSON = os.path.join(PARAMS_PATH, 'offsets.json')
+    VALID_JSON = os.path.join(PARAMS_PATH, 'valid.json')
+    TITLE_TIMES_JSON = os.path.join(PARAMS_PATH, 'title-times.json')
+    TITLES_JSON = os.path.join(PARAMS_PATH, 'titles.json')
+    CONF_FILE = os.path.join(PACKAGE_PATH, 'dragon-radar.ini')
+    AC3_DIR = os.path.join(PACKAGE_PATH, 'ac3files')
     WORKING_DIR = 'C:/dragon-radar'
     SOURCE_DIR = WORKING_DIR
     APP_NAME = 'dragon-radar'
@@ -21,9 +24,10 @@ class Constants(object):
                       'CLOSE\n'
                       'RESETTIME\n')
     PARAM_FILE = 'param.lst'
-    WELCOME_MSG = ('-----------------\n' +
+    WELCOME_MSG = ('----------------------------\n' +
                    '\033[93mDragon' + '\033[39m ' +
-                   '\033[91mRadar v{0}'.format(VERSION) + '\033[39m' +
-                   '\n-----------------')
+                   '\033[91mRadar' + '\033[39m' + ' v' + VERSION +
+                   ' \"' + CODENAME + '\"'
+                   '\n----------------------------')
     MIN_SIZE = 100000000
     FRAME_RATE = float(30000) / float(1001)

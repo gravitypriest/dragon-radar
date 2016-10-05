@@ -154,7 +154,7 @@ def pad_zeroes(series):
     Add leading zeroes for dictionary keys
     '''
     leading = 3
-    if series == 'DBM' or series == 'DBGT':
+    if series == 'MOVIES' or series == 'DBGT':
         leading = 2
     return leading
 

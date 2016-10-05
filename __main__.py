@@ -54,7 +54,7 @@ def create_args():
 
     parser.add_argument('--series',
                         metavar='<series>',
-                        help='Choose a series [DB, DBZ, DBGT, DBM]',
+                        help='Choose a series [DB, DBZ, DBGT, MOVIES]',
                         required=True)
     parser.add_argument('--episode',
                         metavar='<number>',

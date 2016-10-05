@@ -121,18 +121,33 @@ def retime_ac3(episode, src_file, dst_file, bitrate):
     r2_chaps = episode.r2_chapters
     offsets = episode.offsets
 
-    for key in ['op', 'prologue', 'partB', 'ED', 'NEP']:
-        if key in offsets.keys():
-            # skip scenes with offset of 0
-            if offsets[key]['offset'] == 0:
+    if isinstance(offsets, list):
+        # movies
+        totalOffset = 0
+        for o in offsets:
+            if o['offset'] == 0:
                 continue
-            chapter = r2_chaps[key]
-            offset = offsets[key]['offset']
+            chapter = o['frame'] - totalOffset
+            offset = o['offset']
             prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
                                                                  offset)
-
             run_delaycut(episode.delaycut, working_file, prev_chapter_end,
                          chapter_begin, delay, bitrate)
+            totalOffset += offset
+    else:
+        # TV
+        for key in ['op', 'prologue', 'partB', 'ED', 'NEP']:
+            if key in offsets.keys():
+                # skip scenes with offset of 0
+                if offsets[key]['offset'] == 0:
+                    continue
+                chapter = r2_chaps[key]
+                offset = offsets[key]['offset']
+                prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
+                                                                     offset)
+
+                run_delaycut(episode.delaycut, working_file, prev_chapter_end,
+                             chapter_begin, delay, bitrate)
 
     move_file(working_file, dst_file)
     delete_temp(tmp_dir)

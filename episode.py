@@ -22,10 +22,12 @@ def _combine_framedata(offsets, op_offset):
     return offsets
 
 
-def _load_r2_chapters(r2_chap_file):
+def _load_r2_chapters(r2_chap_file, series):
     logger.debug('Loading R2 chapter file...')
     with open(r2_chap_file) as r2_chaps:
         chap_list = r2_chaps.readlines()
+    if series == 'MOVIES':
+        return map(lambda c: int(c), chap_list)
     chapters = {
         'op': 0,
         'prologue': int(chap_list[0]),
@@ -100,7 +102,7 @@ class Episode(object):
                          'is incorrect.',
                          _files['R2']['chapters'][0])
             sys.exit(1)
-        self.r2_chapters = _load_r2_chapters(_files['R2']['chapters'][0])
+        self.r2_chapters = _load_r2_chapters(_files['R2']['chapters'][0], self.series)
         retimed_sub_idx_path = _retimed_fname(_files['R1']['subs'][0])
         retimed_sub_sub_path = _retimed_fname(_files['R1']['subs'][1])
         if os.path.isfile(retimed_sub_idx_path):
@@ -135,7 +137,7 @@ class Episode(object):
                                   nosub=(r == 'R2'), sub_only=self.sub_only)
         if not self.sub_only and 'R2' in self.files:
             self.r2_chapters = _load_r2_chapters(
-                self.files['R2']['chapters'][0])
+                self.files['R2']['chapters'][0], self.series)
 
     def retime_subs(self):
         '''
@@ -230,7 +232,7 @@ class Episode(object):
                     self.r2_chapters = {}
                 else:
                     chapters_file = os.path.join(dest_dir, 'R2', 'Celltimes.txt')
-                    self.r2_chapters = _load_r2_chapters(chapters_file)
+                    self.r2_chapters = _load_r2_chapters(chapters_file, self.series)
             write_avs_file(dest_dir, self)
         else:
             logger.error('%s not found', dest_dir)
