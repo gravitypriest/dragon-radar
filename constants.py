@@ -1,7 +1,7 @@
 import os
 
 class Constants(object):
-    VERSION = '0.1.0'
+    VERSION = '1.0.0'
     CODENAME = 'Appule'
     PACKAGE_PATH = os.path.dirname(os.path.realpath(__file__))
     PARAMS_PATH = os.path.join(PACKAGE_PATH, 'params')
