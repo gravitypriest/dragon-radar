@@ -7,6 +7,7 @@ In a world where the Dragon Ball series DVDs released in the U.S. have lousy vid
 
 #### Software
 - [PGCdemux 1.2.0.5 / m03 MOD](http://www.videohelp.com/software/PgcDemux)
+- [ReStream](http://www.videohelp.com/software/Restream)
 - [VSRip](http://www.videohelp.com/software/VSRip)
 - [DelayCut](http://www.videohelp.com/software/delaycut)
 - [MKVToolnix](http://www.videohelp.com/software/MKVtoolnix)
@@ -18,7 +19,7 @@ In a world where the Dragon Ball series DVDs released in the U.S. have lousy vid
     - Dragon Ball Z "Orange Brick" Season sets
     - Dragon Ball GT "Green Brick" Season sets
     - Dragon Ball Movie Complete Collection (4-pack)
-    - Dragon Ball Z Double Features -OR- Movie Collections
+    - Dragon Ball Z Double Features / Movie Collections
     - Funimation Dragon Box Z
     - Pioneer Uncut Movie DVDs
 - R2 DVDs:
