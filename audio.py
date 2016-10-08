@@ -31,6 +31,17 @@ def frame_to_ms(frame, offset):
     return prev_chapter_end, chapter_begin, delay
 
 
+def combine_files(file_list, final_file):
+    '''
+    Merge multiple audio files into one
+    '''
+    with open(final_file, 'wb') as output:
+        for fname in file_list:
+            with open(fname, 'rb') as f:
+                shutil.copyfileobj(f, output)
+    for f in file_list:
+        os.remove(f)
+
 def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
     '''
     Run delaycut here.  Hide all output because it has a LOT of it.  Check
@@ -86,18 +97,17 @@ def run_delaycut(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
 
             # delete file before re-creating it
             os.remove(file_in)
-            with open(file_in, 'wb') as final_file:
-                for fname in file_combine:
-                    with open(fname, 'rb') as f:
-                        shutil.copyfileobj(f, final_file)
-            for f in file_combine:
-                os.remove(f)
+            combine_files(file_combine, file_in)
+
     except subprocess.SubprocessError:
         logger.error('Delaycut had non-zero exit code. Aborting.')
         sys.exit(1)
 
 
-def retime_ac3(episode, src_file, dst_file, bitrate):
+def retime_ac3(episode, src_file, dst_file, bitrate, offset_override=None):
+    '''
+    Retime an AC3 file based on offsets
+    '''
     tmp_dir = tempfile.mkdtemp()
     # in the case of unexpected exit, we don't want to
     # keep temp files around
@@ -119,7 +129,7 @@ def retime_ac3(episode, src_file, dst_file, bitrate):
         return
 
     r2_chaps = episode.r2_chapters
-    offsets = episode.offsets
+    offsets = episode.offsets if not offset_override else offset_override
 
     if isinstance(offsets, list):
         # movies

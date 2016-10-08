@@ -515,9 +515,31 @@
 				"cells": null,
 				"disc": "DB_5",
 				"pgc": 4,
-				"type": "pgc",
+				"type": "complex",
 				"vid": null,
-				"vts": 1
+				"vts": 1,
+				"complex": {
+					"cells": [{
+						"vid": 2,
+						"cell": 1,
+						"fix": false}, {
+						"vid": 3,	
+						"cell": 1,
+						"fix": false}, {
+						"vid": 3,
+						"cell": 2,
+						"fix": true}, {
+						"vid": 3,
+						"cell": 3,
+						"fix": false}, {
+						"vid": 3,
+						"cell": 4,
+						"fix": false}, {
+						"vid": 3,
+						"cell": 5,
+						"fix": false
+					}]
+				}
 			}
 		},
 		"027": {
@@ -815,9 +837,31 @@
 				"cells": null,
 				"disc": "DB_7",
 				"pgc": 7,
-				"type": "pgc",
+				"type": "complex",
 				"vid": null,
-				"vts": 1
+				"vts": 1,
+				"complex": {
+					"cells": [{
+						"vid": 2,
+						"cell": 1,
+						"fix": false}, {
+						"vid": 6,	
+						"cell": 1,
+						"fix": false}, {
+						"vid": 6,
+						"cell": 2,
+						"fix": true}, {
+						"vid": 6,
+						"cell": 3,
+						"fix": false}, {
+						"vid": 6,
+						"cell": 4,
+						"fix": false}, {
+						"vid": 6,
+						"cell": 5,
+						"fix": false
+					}]
+				}
 			}
 		},
 		"042": {
@@ -2754,10 +2798,14 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_23",
-				"pgc": 3,
-				"type": "pgc",
+				"pgc": 8,
+				"type": "complex",
 				"vid": null,
-				"vts": 1
+				"vts": 1,
+				"complex": {
+					"start": 41085,
+					"vid": [[2], [6]]
+				}
 			}
 		},
 		"139": {
@@ -2774,7 +2822,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_24",
-				"pgc": 4,
+				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -2794,7 +2842,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_24",
-				"pgc": 5,
+				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -2814,7 +2862,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_24",
-				"pgc": 6,
+				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -2834,7 +2882,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_24",
-				"pgc": 7,
+				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -2854,7 +2902,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_24",
-				"pgc": 3,
+				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -2874,7 +2922,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_24",
-				"pgc": 4,
+				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -2894,7 +2942,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_25",
-				"pgc": 5,
+				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -2914,7 +2962,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_25",
-				"pgc": 6,
+				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -2934,7 +2982,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_25",
-				"pgc": 7,
+				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -2954,7 +3002,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_25",
-				"pgc": 3,
+				"pgc": 6,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -2974,7 +3022,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_25",
-				"pgc": 4,
+				"pgc": 7,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -2994,7 +3042,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_25",
-				"pgc": 5,
+				"pgc": 8,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -3014,7 +3062,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_26",
-				"pgc": 6,
+				"pgc": 3,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -3034,7 +3082,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_26",
-				"pgc": 7,
+				"pgc": 4,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -3054,7 +3102,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DB_26",
-				"pgc": 8,
+				"pgc": 5,
 				"type": "pgc",
 				"vid": null,
 				"vts": 1
@@ -3775,9 +3823,28 @@
 				"cells": null,
 				"disc": "DBZ1_4",
 				"pgc": 8,
-				"type": "pgc",
+				"type": "complex",
 				"vid": null,
-				"vts": 1
+				"vts": 1,
+				"complex": {
+					"cells": [{
+						"vid": 6,
+						"cell": 1,
+						"fix": false}, {
+						"vid": 8,	
+						"cell": 1,
+						"fix": true}, {
+						"vid": 8,
+						"cell": 2,
+						"fix": false}, {
+						"vid": 8,
+						"cell": 3,
+						"fix": false}, {
+						"vid": 8,
+						"cell": 4,
+						"fix": false
+					}]
+				}
 			}
 		},
 		"025": {
@@ -10428,7 +10495,7 @@
 				"disc": "DRAGON_BALL_Z_S9_D1",
 				"pgc": 1,
 				"type": "pgc",
-				"vid": [2, 4, 5, 7],
+				"vid": [2, 4, 5, 6],
 				"vts": 5
 			},
 			"R1_DBOX": {
@@ -10457,7 +10524,7 @@
 				"disc": "DRAGON_BALL_Z_S9_D1",
 				"pgc": 1,
 				"type": "pgc",
-				"vid": [9, 11, 12, 14],
+				"vid": [9, 11, 12, 13],
 				"vts": 5
 			},
 			"R1_DBOX": {

@@ -1,6 +1,6 @@
 import os
 import subprocess
-from utils import load_title_time, load_title, to_timestamp
+from utils import load_title_time, to_timestamp
 
 chapter_names = {'op': 'Opening',
                  'prologue': 'Prologue',
@@ -10,13 +10,8 @@ chapter_names = {'op': 'Opening',
                  'NEP': 'Next Episode Preview'}
 
 
-def _generate_output_filename(episode):
-    base_fname = '{0} ~ {1}.mkv'.format(episode.number, load_title(episode.series, episode.number))
-    return os.path.join(episode.output_dir, base_fname)
-
 def _run_mkvmerge(mkvmerge, video, jp_audio, en_audio, us_audio, subs, sub_id, signs_id, chapter_file, episode):
-    out_file = _generate_output_filename(episode)
-    args = [mkvmerge, '--output', out_file]
+    args = [mkvmerge, '--output', episode.mkv_file]
     # video
     args.extend(['--language', '0:und', '(', video, ')'])
     # jp audio
@@ -41,7 +36,7 @@ def _run_mkvmerge(mkvmerge, video, jp_audio, en_audio, us_audio, subs, sub_id, s
         args.append('0:0,1:0,2:0,3:0')
     # chapters
     args.extend(['--chapters', chapter_file])
-
+    args.append('-q')
     subprocess.run(args)
 
 def _generate_mkv_chapters(episode):
@@ -111,6 +106,6 @@ def make_mkv(episode, streams):
 
     chapter_file = os.path.join(episode.temp_dir, 'mkv_chapters.txt')
     with open(chapter_file, 'w') as file_:
-        file_.write(_generate_mkv_chapters(episode))
+        file_.write(_generate_mkv_chapters(episode))    
 
     _run_mkvmerge(episode.mkvmerge, video, jp_audio, en_audio, us_audio, subs, sub_id, signs_id, chapter_file, episode)

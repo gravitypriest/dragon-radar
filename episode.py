@@ -60,6 +60,7 @@ class Episode(object):
         self.delaycut = config.get(APP_NAME, 'delaycut')
         self.dgindex = config.get(APP_NAME, 'dgindex')
         self.mkvmerge = config.get(APP_NAME, 'mkvmerge')
+        self.restream = config.get(APP_NAME, 'restream')
         self.src_dir_top = config.get(APP_NAME, 'source_dir')
         self.output_dir = config.get(APP_NAME, 'output_dir')
 
@@ -196,8 +197,12 @@ class Episode(object):
         '''
         Create the MKV for this episode
         '''
+        self.mkv_file = self.mkv_filename()
+        logger.info('Multiplexing to %s', self.mkv_file)
         streams = detect_streams(self.files['R1']['retimed_subs'][0])
         make_mkv(self, streams)
+        logger.info('%s %s complete.', episode.series, episode.number)
+
 
     def move_demuxed_files(self):
         dest_dir = os.path.join(self.output_dir, self.series, self.number)
@@ -237,3 +242,8 @@ class Episode(object):
         else:
             logger.error('%s not found', dest_dir)
             sys.exit(1)
+
+    def mkv_filename(self):
+        from utils import load_title
+        base_fname = '{0} ~ {1}.mkv'.format(self.number, load_title(self.series, self.number))
+        return os.path.join(self.output_dir, base_fname)
