@@ -55,14 +55,19 @@ def create_args():
 
     parser.add_argument('--series',
                         metavar='<series>',
-                        help='Choose a series [DB, DBZ, DBGT, MOVIES]',
+                        help='Choose a series [DB, DBZ, DBGT]',
                         required=True)
-    parser.add_argument('--episode',
+    episode_group = parser.add_mutually_exclusive_group(required=True)
+    episode_group.add_argument('--episode',
                         metavar='<number>',
                         help='Episode to process. '
                              'Can also be used with a range, i.e. '
-                             '--episode <first>:<last>',
-                        required=True)
+                             '--episode <first>:<last>')
+    episode_group.add_argument('--movie',
+                        metavar='<number>',
+                        help='Movie to process. '
+                             'Can also be used with a range, i.e. '
+                             '--movie <first>:<last>')
     parser.add_argument('--verbose',
                         action='store_true',
                         default=False,
@@ -152,6 +157,7 @@ def pre_check(args, config):
     bad_conf = exe_check('PGCDemux')
     bad_conf = exe_check('VSRip')
     bad_conf = exe_check('DelayCut')
+    bad_conf = exe_check('ReStream')
     if not args.no_mux:
         bad_conf = exe_check('mkvmerge')
     if args.make_avs:
@@ -163,14 +169,8 @@ def pre_check(args, config):
 
 
 def bad_arg_exit(arg):
-    logger.error('Bad argument for --%s' % arg)
+    logger.error('Bad argument for --%s', arg)
     sys.exit(1)
-
-
-def validate_args(argtype, arg, series):
-    valid = load_validate(series)
-    if not all((a - 1) in range(valid[argtype]) for a in arg):
-        bad_arg_exit(argtype)
 
 
 def split_args(argtype, arg):
@@ -184,14 +184,29 @@ def split_args(argtype, arg):
     except ValueError:
         bad_arg_exit(argtype)
     except IndexError:
-        logger.debug('No end %s specified.' % argtype)
+        logger.debug('No end %s specified.', argtype)
         end = start
+    return start, end
+
+
+def validate_args(args):
+    if args.series not in ['DB', 'DBZ', 'DBGT']:
+        bad_arg_exit('series')
+    valid = load_validate(args.series)
+    if args.episode:
+        argtype = 'episode'
+        start, end = split_args('episode', args.episode)
+    elif args.movie:
+        argtype = 'movie'
+        start, end = split_args('movie', args.movie)
+    if not all((a - 1) in range(valid[argtype]) for a in (start, end)):
+        bad_arg_exit(argtype)
     return start, end
 
 
 def main():
     colorama.init()
-    print(WELCOME_MSG)
+    
     config = load_config_file()
     args = create_args().parse_args()
     init_logging(args.verbose)
@@ -203,7 +218,8 @@ def main():
     logger.debug('Episode temp folder: %s', tmp_dir)
     atexit.register(delete_temp, tmp_dir)
 
-    start, end = split_args('episode', args.episode)
+    start, end = validate_args(args)
+    print(WELCOME_MSG)
 
     for ep in range(start, end + 1):
         start_time = time.clock()
@@ -231,7 +247,7 @@ def main():
 
         delete_temp(episode.temp_dir)
         elapsed = time.clock() - start_time
-        logger.debug('Elapsed time: %s seconds', elapsed)
+        logger.info('Elapsed time: %s seconds', elapsed)
 
 if __name__ == "__main__":
     main()

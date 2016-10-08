@@ -11677,7 +11677,7 @@
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGONBALL_Z_MOVIE_3",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 1
@@ -11686,7 +11686,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DSSD10372",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [1],
 				"vts": 3
@@ -11697,7 +11697,7 @@
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_Z_LORD_SLUG",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 1
@@ -11717,7 +11717,7 @@
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_Z_COOLERS_REVENGE",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 1
@@ -11737,7 +11737,7 @@
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_Z_RETURN_OF_COOLER",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 1
@@ -11757,7 +11757,7 @@
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_Z_SUPER_ANDROID_13",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 5
@@ -11777,7 +11777,7 @@
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_Z_MOVIE_8",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 5
@@ -11797,7 +11797,7 @@
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_Z_BOJACK_UNBOUND",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 5
@@ -11817,7 +11817,7 @@
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_Z_MOVIES_10_11",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 5
@@ -11837,7 +11837,7 @@
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_Z_MOVIES_10_11",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [3],
 				"vts": 5
@@ -11857,7 +11857,7 @@
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGONBALL_Z_MOVIE_12",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 5
@@ -11866,7 +11866,7 @@
 				"audio": ["jp"],
 				"cells": null,
 				"disc": "DSSD10377",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [1],
 				"vts": 1
@@ -11877,7 +11877,7 @@
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGONBALL_Z_MOVIE_13",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 5
@@ -11897,7 +11897,7 @@
 				"audio": ["en", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_MOVIE_4",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 7
@@ -11917,7 +11917,7 @@
 				"audio": ["en", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_MOVIE1",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 7
@@ -11937,7 +11937,7 @@
 				"audio": ["en", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_MOVIE_2",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 7
@@ -11957,7 +11957,7 @@
 				"audio": ["en", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_MOVIE_3",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 7

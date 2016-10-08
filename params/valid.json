@@ -1,22 +1,13 @@
 {
 	"DB":{
-		"season":5,
-		"disc":5,
-		"episode":153
+		"episode":153,
+		"movie":4
 	},
 	"DBZ":{
-		"season":9,
-		"disc":6,
-		"episode":291
+		"episode":291,
+		"movie":13
 	},
 	"DBGT":{
-		"season":2,
-		"disc":5,
 		"episode":64
-	},
-	"DBoxZ":{
-		"season":7,
-		"disc":6,
-		"episode":291
 	}
 }

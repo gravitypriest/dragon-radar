@@ -194,3 +194,20 @@ def create_dir(newdir):
             raise
         logger.debug('%s not created (already exists)' %
                      newdir)
+
+def series_to_movie(series, movie):
+    '''
+    Translate a series & movie to an 'episode' in the MOVIES series
+    e.g. series:DBZ movie:1 -> series:MOVIES episode:1
+    '''
+    if series == 'DB':
+        if movie == 4:
+            number = 14
+        else:
+            number = movie - 14
+    if series == 'DBZ':
+        number = movie
+    if series == 'DBGT':
+        logger.error('No DBGT movies!')
+        sys.exit(1)
+    return number

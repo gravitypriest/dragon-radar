@@ -3,7 +3,7 @@ import sys
 import shutil
 import logging
 from utils import (pad_zeroes, get_op_offset, load_frame_data,
-                   load_demux_map, create_dir, move_file)
+                   load_demux_map, create_dir, move_file, series_to_movie)
 from constants import Constants
 from demux import demux, files_index
 from subtitle import retime_vobsub, detect_streams
@@ -51,8 +51,13 @@ class Episode(object):
     Object for an episode, call all functionality by episode
     '''
     def __init__(self, number, config, args, tmp_dir):
-        ep_str = str(number).zfill(pad_zeroes(args.series))
-        frame_data, op_offset = load_frame_data(args.series, ep_str)
+
+        if args.movie:
+            series = 'MOVIES'
+            number = series_to_movie(args.series, number)
+
+        ep_str = str(number).zfill(pad_zeroes(series))
+        frame_data, op_offset = load_frame_data(series, ep_str)
 
         # config stuff
         self.pgcdemux = config.get(APP_NAME, 'pgcdemux')
@@ -78,10 +83,10 @@ class Episode(object):
         create_dir(self.temp_dir)
 
         self.number = ep_str
-        self.series = args.series
+        self.series = series
         self.offsets = _combine_framedata(frame_data, op_offset)
         self.r2_chapters = {}
-        self.demux_map = load_demux_map(args.series, ep_str)
+        self.demux_map = load_demux_map(series, ep_str)
         self.files = self._init_files() if args.no_demux else {}
 
 
@@ -201,7 +206,7 @@ class Episode(object):
         logger.info('Multiplexing to %s', self.mkv_file)
         streams = detect_streams(self.files['R1']['retimed_subs'][0])
         make_mkv(self, streams)
-        logger.info('%s %s complete.', episode.series, episode.number)
+        logger.info('%s %s complete.', self.series, self.number)
 
 
     def move_demuxed_files(self):
