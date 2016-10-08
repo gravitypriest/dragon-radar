@@ -8,8 +8,9 @@ import configparser
 import tempfile
 import logging
 import atexit
-from constants import Constants
 import colorama
+import time
+from constants import Constants
 from episode import Episode
 from utils import (get_op_offset,
                    pad_zeroes,
@@ -70,19 +71,19 @@ def create_args():
     parser.add_argument('--r1-dbox',
                         action='store_true',
                         default=False,
-                        help='For DBZ, use the audio and subtitle assets'
+                        help='For DBZ, use the audio and subtitle assets '
                              'from the Funimation Dragon Box')
     # the first 3 Z movies, get R1 assets from Pioneer DVDs
     parser.add_argument('--pioneer',
                         action='store_true',
                         default=False,
-                        help='For the first 3 DBZ movies, use the audio and'
+                        help='For the first 3 DBZ movies, use the audio and '
                              'subtitle assets from the Pioneer DVDs.')
     # don't use Funimation Remastered DVDs for the first 3 movies
     parser.add_argument('--no-funi',
                         action='store_true',
                         default=False,
-                        help='Use in conjunction with --pioneer to ignore'
+                        help='Use in conjunction with --pioneer to ignore '
                              'assets from the Funimation remastered DVDs.')
     # shh, hidden options for debug use only
     # skip demux
@@ -205,6 +206,7 @@ def main():
     start, end = split_args('episode', args.episode)
 
     for ep in range(start, end + 1):
+        start_time = time.clock()
         episode = Episode(ep, config, args, tmp_dir)
 
         if not args.no_demux:
@@ -228,6 +230,8 @@ def main():
             episode.make_avs()
 
         delete_temp(episode.temp_dir)
+        elapsed = time.clock() - start_time
+        logger.debug('Elapsed time: %s seconds', elapsed)
 
 if __name__ == "__main__":
     main()
