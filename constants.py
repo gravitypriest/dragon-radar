@@ -13,8 +13,7 @@ class Constants(object):
     TITLES_JSON = os.path.join(PARAMS_PATH, 'titles.json')
     CONF_FILE = os.path.join(PACKAGE_PATH, 'dragon-radar.ini')
     AC3_DIR = os.path.join(PACKAGE_PATH, 'ac3files')
-    WORKING_DIR = 'C:/dragon-radar'
-    SOURCE_DIR = WORKING_DIR
+    LOG_FILE = os.path.join(PACKAGE_PATH, 'dragon-radar.log')
     APP_NAME = 'dragon-radar'
     VSRIP_TEMPLATE = ('{in_path}\n'
                       '{out_path}\n'

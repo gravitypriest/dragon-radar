@@ -112,7 +112,7 @@ def retime_ac3(episode, src_file, dst_file, bitrate, offset_override=None):
     # in the case of unexpected exit, we don't want to
     # keep temp files around
     atexit.register(delete_temp, tmp_dir)
-    logging.debug('Audio temp folder: %s', tmp_dir)
+    logger.debug('Audio temp folder: %s', tmp_dir)
 
     if os.path.isfile(src_file):
         logger.debug('%s found! Proceeding with retiming...', src_file)
@@ -130,6 +130,8 @@ def retime_ac3(episode, src_file, dst_file, bitrate, offset_override=None):
 
     r2_chaps = episode.r2_chapters
     offsets = episode.offsets if not offset_override else offset_override
+    if episode.is_pioneer:
+        offsets = episode.pioneer_offsets
 
     if isinstance(offsets, list):
         # movies

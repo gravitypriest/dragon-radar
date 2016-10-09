@@ -1,7 +1,14 @@
 import os
+import sys
+import logging
 import subprocess
+from subtitle import detect_streams
 from utils import load_title_time, to_timestamp
+from constants import Constants
 
+APP_NAME = Constants.APP_NAME
+
+logger = logging.getLogger(APP_NAME)
 chapter_names = {'op': 'Opening',
                  'prologue': 'Prologue',
                  'partA': 'Part A',
@@ -10,34 +17,44 @@ chapter_names = {'op': 'Opening',
                  'NEP': 'Next Episode Preview'}
 
 
-def _run_mkvmerge(mkvmerge, video, jp_audio, en_audio, us_audio, subs, sub_id, signs_id, chapter_file, episode):
-    args = [mkvmerge, '--output', episode.mkv_file]
+def _run_mkvmerge(episode, video, audio, subtitles, chapter_file):
+    args = [episode.mkvmerge, '--output', episode.mkv_file]
     # video
     args.extend(['--language', '0:und', '(', video, ')'])
-    # jp audio
-    args.extend(['--language', '0:jpn', '--track-name', '0:Dragon Box', '(', jp_audio, ')'])
+    tracks = ['0:0']
+    current_track_len = len(tracks)
+    for a in audio:
+        args.extend(['--language', '0:' + a['lang'], '--track-name', '0:' + a['name'], '(', a['file'], ')'])
+        tracks.append(str(audio.index(a) + current_track_len) + ':' + '0')
     # en audio
-    args.extend(['--language', '0:eng', '--track-name', '0:Dub w/ Original Score', '(', en_audio, ')'])
-    if us_audio:
-        # us broadcast audio
-        args.extend(['--language', '0:eng', '--track-name', '0:Dub w/ Replacement Score', '(', us_audio, ')'])
-    # subs
-    args.extend(['--language', '{0}:eng'.format(sub_id), '--track-name', '{0}:Subtitles'.format(sub_id),
-                 '--language', '{0}:eng'.format(signs_id), '--track-name', '{0}:Signs'.format(signs_id), '(', subs, ')']) 
+    current_track_len = len(tracks)
+    for sub in subtitles:
+        for s in sub['streams']:
+            if len(sub['streams']) == 1 and s['idx'] == 1:
+                args.extend(['--subtitle-tracks', '1'])
+            args.extend(['--language', str(s['idx']) + ':eng', '--track-name', str(s['idx']) + ':' + s['name']])
+            tracks.append(str(subtitles.index(sub) + current_track_len) + ':' + str(s['idx']))
+        args.extend(['(', sub['file'], ')'])
+
     # track order
-    args.append('--track-order')
-    if us_audio and signs_id is not None:
-        args.append('0:0,1:0,2:0,3:0,4:{0},4:{1}'.format(sub_id, signs_id))
-    if us_audio and signs_id is None:
-        args.append('0:0,1:0,2:0,3:0,4:0')
-    if not us_audio and signs_id is not None:
-        args.append('0:0,1:0,2:0,3:{0},3:{1}'.format(sub_id, signs_id))
-    if not us_audio and signs_id is None:
-        args.append('0:0,1:0,2:0,3:0')
+    args.extend(['--track-order', ','.join(tracks)])
+
     # chapters
     args.extend(['--chapters', chapter_file])
+
+    # suppress MKVmerge output
     args.append('-q')
-    subprocess.run(args)
+
+    logger.debug('MKVmerge args:')
+    logger.debug(args)
+
+    try:
+        mergeproc = subprocess.run(args)
+        mergeproc.check_returncode()
+    except subprocess.SubprocessError:
+        logger.error('MKVmerge had non-zero exit code. Aborting.')
+        sys.exit(1)
+
 
 def _generate_mkv_chapters(episode):
     '''
@@ -84,28 +101,66 @@ def _generate_mkv_chapters(episode):
         ctr = ctr + 1
     return '\n'.join(chapters)
 
-def make_mkv(episode, streams):
+def make_mkv(episode, streams=None):
     '''
     Make the MKV file
     '''
     # put the stream with most subpictures first
-    streams.sort(key=lambda s: s['total'], reverse=True)
     video = episode.files['R2']['video'][0]
-    jp_audio = episode.files['R2']['audio'][0]
-    en_audio = episode.files['R1']['retimed_audio'][0]
-    if len(episode.files['R1']['retimed_audio']) > 1:
-        us_audio = episode.files['R1']['retimed_audio'][1]
-    else:
-        us_audio = None
-    subs = episode.files['R1']['retimed_subs'][0]
-    sub_id = streams[0]['id']
-    if len(streams) > 1:
-        signs_id = streams[1]['id']
-    else:
-        signs_id = None
+    audio = [{
+        'file': episode.files['R2']['audio'][0],
+        'name': 'Dragon Box',
+        'lang': 'jpn'
+    }]
+    subtitles = []
+
+    if not episode.no_funi:
+        if 'retimed_subs' not in episode.files['R1']:
+            logger.error('No retimed subs found.  Run again without --no-retime')
+            sys.exit(1)
+        streams = detect_streams(episode.files['R1']['retimed_subs'][0])
+        streams.sort(key=lambda s: s['total'], reverse=True)
+        streams_ = [{'name': 'Subtitles',
+                     'idx': streams[0]['id']}]
+        if len(streams) > 1:
+            streams_.append({'name': 'Signs',
+                             'idx': streams[1]['id']})
+        subtitles.append(
+            {'streams': streams_,
+             'file': episode.files['R1']['retimed_subs'][0]})
+
+    if episode.is_pioneer:
+        if 'retimed_subs' not in episode.files['PIONEER']:
+            logger.error('No retimed subs found.  Run again without --no-retime')
+            sys.exit(1)
+        audio.append({
+            'file': episode.files['PIONEER']['retimed_audio'][0],
+            'name': 'Pioneer Dub',
+            'lang': 'eng'
+        })
+        subtitles.append({
+            'streams':[{
+                'name': 'Pioneer Subtitles',
+                'idx': 0 if episode.number == '03' else 1}],
+            'file': episode.files['PIONEER']['retimed_subs'][0]
+        })
+
+
+    if not episode.no_funi:
+        audio.append({
+            'file': episode.files['R1']['retimed_audio'][0],
+            'name': 'Dub w/ Original Score',
+            'lang': 'eng'
+        })
+        if len(episode.files['R1']['retimed_audio']) > 1:
+            audio.append({
+                'file': episode.files['R1']['retimed_audio'][1],
+                'name': 'Dub w/ Replacement Score',
+                'lang': 'eng'
+            })
 
     chapter_file = os.path.join(episode.temp_dir, 'mkv_chapters.txt')
     with open(chapter_file, 'w') as file_:
         file_.write(_generate_mkv_chapters(episode))    
 
-    _run_mkvmerge(episode.mkvmerge, video, jp_audio, en_audio, us_audio, subs, sub_id, signs_id, chapter_file, episode)
+    _run_mkvmerge(episode, video, audio, subtitles, chapter_file)

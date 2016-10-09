@@ -18,10 +18,9 @@ from utils import (get_op_offset,
                    delete_temp)
 from subtitle import detect_streams
 WELCOME_MSG = Constants.WELCOME_MSG
-WORKING_DIR = Constants.WORKING_DIR
-SOURCE_DIR = Constants.SOURCE_DIR
 CONF_FILE = Constants.CONF_FILE
 APP_NAME = Constants.APP_NAME
+LOG_FILE = Constants.LOG_FILE
 logger = logging.getLogger(APP_NAME)
 
 
@@ -29,9 +28,7 @@ def load_config_file():
     '''
     Load config from dragon-radar.ini
     '''
-    config = configparser.ConfigParser(
-        {'working_dir': WORKING_DIR,
-         'source_dir': SOURCE_DIR})
+    config = configparser.ConfigParser()
     try:
         config.read(CONF_FILE)
     except configparser.Error:
@@ -129,10 +126,18 @@ def init_logging(verbose):
     level = logging.INFO
     if verbose:
         level = logging.DEBUG
-    stdout_handler = logging.StreamHandler(sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    stdout_handler = logging.StreamHandler()
     stdout_handler.setLevel(level)
-    logging.root.addHandler(stdout_handler)
-    logger.setLevel(level)
+
+    file_handler = logging.FileHandler(LOG_FILE, mode='w')
+    file_handler.setLevel(logging.DEBUG)
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    file_handler.setFormatter(formatter)
+
+    logger.addHandler(stdout_handler)
+    logger.addHandler(file_handler)
 
 
 def pre_check(args, config):
@@ -158,10 +163,13 @@ def pre_check(args, config):
     bad_conf = exe_check('VSRip')
     bad_conf = exe_check('DelayCut')
     bad_conf = exe_check('ReStream')
+    if (args.series == 'DB' and args.episode in [26, 41] or
+       args.series == 'DBZ' and args.episode == 24 or
+       args.make_avs):
+        # complex demux or avs generation, DGIndex required
+        bad_conf = exe_check('DGIndex')
     if not args.no_mux:
         bad_conf = exe_check('mkvmerge')
-    if args.make_avs:
-        bad_conf = exe_check('DGIndex')
     if bad_conf:
         sys.exit(1)
     else:
@@ -190,6 +198,9 @@ def split_args(argtype, arg):
 
 
 def validate_args(args):
+    '''
+    Validate all arguments
+    '''
     if args.series not in ['DB', 'DBZ', 'DBGT']:
         bad_arg_exit('series')
     valid = load_validate(args.series)
@@ -208,7 +219,10 @@ def main():
     colorama.init()
     
     config = load_config_file()
-    args = create_args().parse_args()
+    args, wtf = create_args().parse_known_args()
+    if (wtf):
+        logger.error('Unknown argument %s', wtf[0])
+        sys.exit(1)
     init_logging(args.verbose)
 
     # don't proceed if paths aren't right/programs missing
@@ -247,7 +261,8 @@ def main():
 
         delete_temp(episode.temp_dir)
         elapsed = time.clock() - start_time
-        logger.info('Elapsed time: %s seconds', elapsed)
+        logger.debug('Elapsed time: %s seconds', elapsed)
+    logger.info('Finished!')
 
 if __name__ == "__main__":
     main()

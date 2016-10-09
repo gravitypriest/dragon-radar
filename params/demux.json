@@ -11650,6 +11650,15 @@
 				"type": "vid",
 				"vid": [1],
 				"vts": 1
+			},
+			"PIONEER": {
+				"audio": ["en", "jp"],
+				"cells": null,
+				"disc": "DEAD_ZONE",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [1],
+				"vts": 1
 			}
 		},
 		"02": {
@@ -11670,6 +11679,15 @@
 				"type": "vid",
 				"vid": [1],
 				"vts": 2
+			},
+			"PIONEER": {
+				"audio": ["en", "jp"],
+				"cells": null,
+				"disc": "WORLDS_STRONGEST",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [3],
+				"vts": 1
 			}
 		},
 		"03": {
@@ -11690,6 +11708,15 @@
 				"type": "vid",
 				"vid": [1],
 				"vts": 3
+			},
+			"PIONEER": {
+				"audio": ["en", "jp"],
+				"cells": null,
+				"disc": "TREE_OF_MIGHT",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [1],
+				"vts": 1
 			}
 		},
 		"04": {

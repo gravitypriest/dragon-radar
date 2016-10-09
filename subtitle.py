@@ -55,6 +55,8 @@ def _adjust_timecode(episode, timestamp):
     '''
     frame = timestamp_to_seconds(timestamp)
     offsets = episode.offsets
+    if episode.is_pioneer:
+        offsets = episode.pioneer_offsets
     series = episode.series
     total_offset = 0
     # calculate offset from frame data
