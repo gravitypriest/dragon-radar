@@ -1,18 +1,19 @@
 import json
 import os
+import sys
 import time
 import logging
 import shutil
-from constants import Constants
+import constants
 
-APP_NAME = Constants.APP_NAME
-OFFSETS_JSON = Constants.OFFSETS_JSON
-DISC_JSON = Constants.DISC_JSON
-DEMUX_JSON = Constants.DEMUX_JSON
-VALID_JSON = Constants.VALID_JSON
-TITLE_TIMES_JSON = Constants.TITLE_TIMES_JSON
-TITLES_JSON = Constants.TITLES_JSON
-FRAME_RATE = Constants.FRAME_RATE
+APP_NAME = constants.APP_NAME
+OFFSETS_JSON = constants.OFFSETS_JSON
+DISC_JSON = constants.DISC_JSON
+DEMUX_JSON = constants.DEMUX_JSON
+VALID_JSON = constants.VALID_JSON
+TITLE_TIMES_JSON = constants.TITLE_TIMES_JSON
+TITLES_JSON = constants.TITLES_JSON
+FRAME_RATE = constants.FRAME_RATE
 
 logger = logging.getLogger(APP_NAME)
 
@@ -75,28 +76,28 @@ def get_op_offset(series, episode, frame_data):
     '''
     Get the initial frame offset of the beginning of the OP
     '''
-    if series == "DBZ":
+    if series == 'DBZ' or series == 'DBoxZ':
         if episode == 25:
-            op = "OP25"
+            op = 'OP25'
         elif episode > 36 and episode < 43:
-            op = "OP37TO42"
+            op = 'OP37TO42'
         elif episode > 177 and episode < 184:
-            op = "OP178TO183"
+            op = 'OP178TO183'
         elif episode > 199:
-            op = "OP2"
+            op = 'OP2'
             if episode > 219:
-                op = "OP220UP"
+                op = 'OP220UP'
         else:
-            op = "OP1"
-    elif series == "DBGT":
+            op = 'OP1'
+    elif series == 'DBGT':
         if episode > 34:
             op = 'op2'
         else:
             op = 'op'
     else:
-        op = "op"
-    if series != "MOVIES":
-        op_offset = frame_data[op]["offset"]
+        op = 'op'
+    if series != 'MOVIES':
+        op_offset = frame_data[op]['offset']
     else:
         op_offset = None
 
@@ -108,7 +109,7 @@ def timestamp_to_seconds(timestamp):
     Represent timestamp in total seconds
     '''
     # separate vobsub timestamp
-    time_parts = timestamp.split(":")
+    time_parts = timestamp.split(':')
     h = int(time_parts[0])
     m = int(time_parts[1])
     s = int(time_parts[2])
@@ -195,6 +196,7 @@ def create_dir(newdir):
         logger.debug('%s not created (already exists)' %
                      newdir)
 
+
 def series_to_movie(series, movie):
     '''
     Translate a series & movie to an 'episode' in the MOVIES series
@@ -211,3 +213,9 @@ def series_to_movie(series, movie):
         logger.error('No DBGT movies!')
         sys.exit(1)
     return number
+
+
+def check_abort(returncode, name):
+    if returncode != 0:
+        logger.error('%s had non-zero exit code (%s). Aborting.', name, returncode)
+        sys.exit(1)

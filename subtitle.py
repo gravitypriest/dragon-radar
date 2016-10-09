@@ -3,9 +3,9 @@ import logging
 from utils import (timestamp_to_seconds,
                    to_timestamp,
                    frame_to_seconds)
-from constants import Constants
+import constants
 
-APP_NAME = Constants.APP_NAME
+APP_NAME = constants.APP_NAME
 
 logger = logging.getLogger(APP_NAME)
 
@@ -68,7 +68,7 @@ def _adjust_timecode(episode, timestamp):
     else:
         # episodes are map-based, with a key for each chapter
         # orange bricks have a delay on the OP subs
-        if (series == 'DBZ' and
+        if (series == 'DBZ' and not episode.is_r1dbox and
            frame < frame_to_seconds(offsets['prologue']["frame"])):
             total_offset += _op_subtitle_delay(episode)
         for key in offsets.keys():

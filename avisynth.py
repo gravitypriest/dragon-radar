@@ -1,52 +1,75 @@
 import os
 import logging
 import subprocess
-from constants import Constants
+import constants
 from utils import create_dir, pad_zeroes
 
-APP_NAME = Constants.APP_NAME
+APP_NAME = constants.APP_NAME
 
 logger = logging.getLogger(APP_NAME)
+
+
+def make_string(ch_begin, ch_end, offset, first=False):
+    if first:
+        if offset < 0:
+            return ('r1_v = Trim(b, 1, {offset}) ++ '
+                    'Trim(r1_v, 0, 999999)'.format(
+                        offset=offset))
+        else:
+            return 'r1_v = Trim(r1_v, {offset}, 999999)'.format(
+                       offset=offset)
+    else:
+        if offset < 0:
+            return ('r1_v = Trim(r1_v, 0, {ch_end}) ++ '
+                    'Trim(b, 1, {offset}) ++ '
+                    'Trim(r1_v, {ch_begin}, 999999)'.format(
+                        ch_end=ch_end,
+                        offset=(offset * (-1)),
+                        ch_begin=ch_begin))
+        else:
+            return ('r1_v = Trim(r1_v, 0, {ch_end}) ++ '
+                    'Trim(r1_v, {off_begin}, 999999)'.format(
+                        ch_end=ch_end,
+                        off_begin=ch_begin + offset))
 
 
 def episode_edits(episode):
     logger.debug('Generating edits...')
     r2_chaps = episode.r2_chapters
-    offsets = episode.offsets
+    if episode.is_pioneer:
+        offsets = episode.pioneer_offsets
+    else:
+        offsets = episode.offsets
     edits = []
-    for key in ['op', 'prologue', 'partB', 'ED', 'NEP']:
-        if key in offsets.keys():
-            ch_begin = r2_chaps[key]        # JP chapter point
-            ch_end = ch_begin - 1           # frame just before chapter
-            offset = offsets[key]['offset']
-            if key == 'op':
-                if offset < 0:
-                    edit_str = ('r1_v = Trim(b, 1, {offset}) ++ '
-                                'Trim(r1_v, 0, 999999)'.format(
-                                    offset=offset))
-                else:
-                    edit_str = 'r1_v = Trim(r1_v, {offset}, 999999)'.format(
-                        offset=offset)
-            else:
-                if offset < 0:
-                    edit_str = ('r1_v = Trim(r1_v, 0, {ch_end}) ++ '
-                                'Trim(b, 1, {offset}) ++ '
-                                'Trim(r1_v, {ch_begin}, 999999)'.format(
-                                    ch_end=ch_end,
-                                    offset=(offset * (-1)),
-                                    ch_begin=ch_begin))
-                else:
-                    edit_str = ('r1_v = Trim(r1_v, 0, {ch_end}) ++ '
-                                'Trim(r1_v, {off_begin}, 999999)'.format(
-                                    ch_end=ch_end,
-                                    off_begin=ch_begin + offset))
+
+    if isinstance(offsets, list):
+        totalOffset = 0
+        for o in offsets:
+            if o['offset'] == 0:
+                continue
+            ch_begin = o['frame'] - totalOffset
+            ch_end = ch_begin - 1
+            offset = o['offset']
+            edit_str = make_string(ch_begin, ch_end, offset, first=offsets.index(o) == 0)
             edits.append(edit_str)
+    else:
+        for key in ['op', 'prologue', 'partB', 'ED', 'NEP']:
+            if key in offsets.keys():
+                ch_begin = r2_chaps[key]        # JP chapter point
+                ch_end = ch_begin - 1           # frame just before chapter
+                offset = offsets[key]['offset']
+                if key == 'op':
+                    edit_str = make_string(ch_begin, ch_end, offset, first=True)
+                else:
+                    edit_str = make_string(ch_begin, ch_end, offset)
+                edits.append(edit_str)
     return '\n'.join(edits) + '\n'
 
 
 def generate_avs(episode):
     # only use audio channels 2 and 3 because Virtualdub can't deal with 5.1
     r1_version = 'R1_DBOX' if episode.is_r1dbox else 'R1'
+    r1_version = 'PIONEER' if episode.is_pioneer else 'R1'
     r1_v = os.path.join('.', r1_version, 'VideoFile.d2v')
     r2_v = os.path.join('.', 'R2', 'VideoFile.d2v')
     r1_a = os.path.join('.', r1_version, 'AudioFile_80.ac3')
@@ -59,7 +82,7 @@ def generate_avs(episode):
                           r2_v=r2_v,
                           r1_a=r1_a,
                           r2_a=r2_a))
-    prep_section = ('r1_v = AudioDub(r1_v, r1_a).GetChannel(2,3)\n'
+    prep_section = ('r1_v = AudioDub(r1_v, r1_a)\n'
                     'r2_v = AudioDub(r2_v, r2_a)\n'
                     'b=BlankClip(clip=r1_v, length=10000)\n')
     process_section = episode_edits(episode)
@@ -77,12 +100,13 @@ def run_dgindex(dir_, episode):
             '-IF=[' + m2vfile + ']',
             '-OF=[' + outfile + ']',
             '-MINIMIZE', '-EXIT']
-    subprocess.run(args)
+    subprocess.call(args)
 
 
 def check_for_d2v(dir_, episode):
     logger.debug('Checking that .d2v file exists for episode %s...' %
                  episode.number)
+    print(dir_)
     d2v_file = os.path.join(dir_, 'VideoFile.d2v')
     if not os.path.isfile(d2v_file):
         logger.debug('.d2v file not found. Creating...')
@@ -90,7 +114,13 @@ def check_for_d2v(dir_, episode):
 
 
 def write_avs_file(dir_, episode):
-    regions = ['R2', 'R1_DBOX'] if episode.is_r1dbox else ['R2', 'R1']
+    regions = ['R2']
+    if episode.is_pioneer:
+        regions.append('PIONEER')
+    elif episode.is_r1dbox:
+        regions.append('R1_DBOX')
+    else:
+        regions.append('R1')
     for r in regions:
         region_dir = os.path.join(dir_, r)
         check_for_d2v(region_dir, episode)

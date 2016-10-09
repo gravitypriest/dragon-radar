@@ -5,13 +5,13 @@ import os
 import sys
 import subprocess
 import logging
-from constants import Constants
+import constants
 from utils import rename
 from audio import retime_ac3, combine_files
 
-PARAM_FILE = Constants.PARAM_FILE
-VSRIP_TEMPLATE = Constants.VSRIP_TEMPLATE
-APP_NAME = Constants.APP_NAME
+PARAM_FILE = constants.PARAM_FILE
+VSRIP_TEMPLATE = constants.VSRIP_TEMPLATE
+APP_NAME = constants.APP_NAME
 logger = logging.getLogger(APP_NAME)
 
 
@@ -39,7 +39,9 @@ def _run_pgcdemux(pgcdemux, source_ifo, dest_dir, type_, vid, pgc, cells, novid=
     if type_ == 'cell':
         args.extend(['-cid', str(vid[0]), str(cells[0])])
     args.extend([source_ifo, dest_dir])
-    proc = subprocess.run(args)
+    logger.debug('PGCDemux args:')
+    logger.debug(args)
+    proc = subprocess.call(args)
 
 
 def _run_vsrip(vsrip, source_ifo, dest_dir, pgc, vid):
@@ -59,7 +61,7 @@ def _run_vsrip(vsrip, source_ifo, dest_dir, pgc, vid):
     logger.debug('VSRip params file:\n%s', content)
     with open(param_file, 'w') as param:
         param.write(content)
-    subprocess.run([vsrip, param_file])
+    subprocess.call([vsrip, param_file])
 
 
 def files_index(dest_dir):
@@ -112,7 +114,7 @@ def complex_demux(episode, source_ifo, src_dir, dest_dir, demux_map, novid=False
             # need to open ReStream GUI for this, ugh
             if cell['fix']:
                 logger.info('Launching ReStream...')
-                subprocess.Popen(episode.restream)
+                subprocess.call(episode.restream)
                 # user prompt
                 print('\n1. In the ReStream window, copy and paste\n\n'
                       '   {0}\n\n'
@@ -144,7 +146,7 @@ def complex_demux(episode, source_ifo, src_dir, dest_dir, demux_map, novid=False
         args = [episode.dgindex, '-i']
         args.extend(output_files)
         args.extend(['-od', os.path.splitext(final_file)[0], '-minimize', '-exit'])
-        subprocess.run(args)
+        subprocess.call(args)
         logger.debug('Cell combination finished.')
         rename(final_dgd, final_file)
         # normal demux
@@ -202,7 +204,7 @@ def demux(episode, src_dir, dest_dir, demux_map, novid=False, nosub=False, sub_o
         src_dir,
         demux_map['disc'],
         'VIDEO_TS',
-        ('VTS_0%d_0.IFO' % demux_map['vts'])
+        ('VTS_%s_0.IFO' % str(demux_map['vts']).zfill(2))
     )
     if not os.path.exists(source_ifo):
         logger.error('Source IFO %s not found! Please check the `source_dir` '

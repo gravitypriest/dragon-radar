@@ -2,11 +2,11 @@ import os
 import sys
 import logging
 import subprocess
+import constants
 from subtitle import detect_streams
-from utils import load_title_time, to_timestamp
-from constants import Constants
+from utils import load_title_time, to_timestamp, check_abort
 
-APP_NAME = Constants.APP_NAME
+APP_NAME = constants.APP_NAME
 
 logger = logging.getLogger(APP_NAME)
 chapter_names = {'op': 'Opening',
@@ -48,12 +48,9 @@ def _run_mkvmerge(episode, video, audio, subtitles, chapter_file):
     logger.debug('MKVmerge args:')
     logger.debug(args)
 
-    try:
-        mergeproc = subprocess.run(args)
-        mergeproc.check_returncode()
-    except subprocess.SubprocessError:
-        logger.error('MKVmerge had non-zero exit code. Aborting.')
-        sys.exit(1)
+    mergeproc = subprocess.call(args)
+    check_abort(mergeproc, 'MKVmerge')
+
 
 
 def _generate_mkv_chapters(episode):
@@ -114,11 +111,12 @@ def make_mkv(episode, streams=None):
     }]
     subtitles = []
 
+    reg = 'R1_DBOX' if episode.is_r1dbox else 'R1'
     if not episode.no_funi:
-        if 'retimed_subs' not in episode.files['R1']:
+        if 'retimed_subs' not in episode.files[reg]:
             logger.error('No retimed subs found.  Run again without --no-retime')
             sys.exit(1)
-        streams = detect_streams(episode.files['R1']['retimed_subs'][0])
+        streams = detect_streams(episode.files[reg]['retimed_subs'][0])
         streams.sort(key=lambda s: s['total'], reverse=True)
         streams_ = [{'name': 'Subtitles',
                      'idx': streams[0]['id']}]
@@ -127,7 +125,7 @@ def make_mkv(episode, streams=None):
                              'idx': streams[1]['id']})
         subtitles.append(
             {'streams': streams_,
-             'file': episode.files['R1']['retimed_subs'][0]})
+             'file': episode.files[reg]['retimed_subs'][0]})
 
     if episode.is_pioneer:
         if 'retimed_subs' not in episode.files['PIONEER']:
@@ -141,20 +139,25 @@ def make_mkv(episode, streams=None):
         subtitles.append({
             'streams':[{
                 'name': 'Pioneer Subtitles',
-                'idx': 0 if episode.number == '03' else 1}],
+                'idx': 0 if episode.number == '03' else 1
+            },
+            {
+                'name': 'Pioneer Dub CC',
+                'idx': 1 if episode.number == '03' else 0
+            }],
             'file': episode.files['PIONEER']['retimed_subs'][0]
         })
 
 
     if not episode.no_funi:
         audio.append({
-            'file': episode.files['R1']['retimed_audio'][0],
+            'file': episode.files[reg]['retimed_audio'][0],
             'name': 'Dub w/ Original Score',
             'lang': 'eng'
         })
-        if len(episode.files['R1']['retimed_audio']) > 1:
+        if len(episode.files[reg]['retimed_audio']) > 1:
             audio.append({
-                'file': episode.files['R1']['retimed_audio'][1],
+                'file': episode.files[reg]['retimed_audio'][1],
                 'name': 'Dub w/ Replacement Score',
                 'lang': 'eng'
             })

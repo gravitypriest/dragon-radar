@@ -10,17 +10,17 @@ import logging
 import atexit
 import colorama
 import time
-from constants import Constants
+import constants
 from episode import Episode
 from utils import (get_op_offset,
                    pad_zeroes,
                    load_validate,
                    delete_temp)
 from subtitle import detect_streams
-WELCOME_MSG = Constants.WELCOME_MSG
-CONF_FILE = Constants.CONF_FILE
-APP_NAME = Constants.APP_NAME
-LOG_FILE = Constants.LOG_FILE
+WELCOME_MSG = constants.WELCOME_MSG
+CONF_FILE = constants.CONF_FILE
+APP_NAME = constants.APP_NAME
+LOG_FILE = constants.LOG_FILE
 logger = logging.getLogger(APP_NAME)
 
 
@@ -181,6 +181,16 @@ def bad_arg_exit(arg):
     sys.exit(1)
 
 
+def bad_combos(args):
+    msg = 'Bad combination: '
+    for a in args:
+        msg += '--' + a + ' '
+        if args.index(a) < len(args) - 1:
+            msg += ', '
+    logger.error(msg)
+    sys.exit(1)
+
+
 def split_args(argtype, arg):
     '''
     Split argument into start/end
@@ -201,6 +211,7 @@ def validate_args(args):
     '''
     Validate all arguments
     '''
+    # series/episode checks
     if args.series not in ['DB', 'DBZ', 'DBGT']:
         bad_arg_exit('series')
     valid = load_validate(args.series)
@@ -212,6 +223,20 @@ def validate_args(args):
         start, end = split_args('movie', args.movie)
     if not all((a - 1) in range(valid[argtype]) for a in (start, end)):
         bad_arg_exit(argtype)
+    # contradictory arguments
+    if args.r1_dbox and args.series != 'DBZ':
+        logger.error('--r1-dbox can only be used with --series DBZ')
+        sys.exit(1)
+    if args.movie and args.r1_dbox:
+        logger.error('Bad combination --movie and --r1-dbox')
+        sys.exit(1)
+    if not args.movie and args.pioneer:
+        logger.error('--pioneer can only be used with --movie')
+        sys.exit(1)
+    if not args.pioneer and args.no_funi:
+        logger.error('--no-funi can only be used with --pioneer')
+        sys.exit(1)
+
     return start, end
 
 
@@ -265,4 +290,8 @@ def main():
     logger.info('Finished!')
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        logger.error('Aborting.')
+        sys.exit(1)

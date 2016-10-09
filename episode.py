@@ -2,16 +2,16 @@ import os
 import sys
 import shutil
 import logging
+import constants
 from utils import (pad_zeroes, get_op_offset, load_frame_data,
                    load_demux_map, create_dir, move_file, series_to_movie)
-from constants import Constants
 from demux import demux, files_index
 from subtitle import retime_vobsub, detect_streams
 from audio import retime_ac3
 from avisynth import write_avs_file
 from mkvmux import make_mkv
 
-APP_NAME = Constants.APP_NAME
+APP_NAME = constants.APP_NAME
 
 logger = logging.getLogger(APP_NAME)
 
@@ -60,7 +60,10 @@ class Episode(object):
             self.is_movie = True
 
         ep_str = str(number).zfill(pad_zeroes(series))
-        frame_data, op_offset = load_frame_data(series, ep_str)
+        if args.r1_dbox:
+            frame_data, op_offset = load_frame_data('DBoxZ', ep_str)
+        else:
+            frame_data, op_offset = load_frame_data(series, ep_str)
 
         # config stuff
         self.pgcdemux = config.get(APP_NAME, 'pgcdemux')
@@ -256,7 +259,14 @@ class Episode(object):
         logger.info('Move complete! Demuxed files in %s', dest_dir)
 
     def make_avs(self):
-        detect_streams(self.files['R1']['subs'][0])
+        if self.is_pioneer:
+            r = 'PIONEER'
+        elif self.is_r1dbox:
+            r = 'R1_DBOX'
+        else:
+            r = 'R1'
+        print(self.is_pioneer)
+        detect_streams(self.files[r]['subs'][0])
         dest_dir = os.path.join(self.output_dir, self.series, self.number)
         if os.path.isdir(dest_dir):
             if not self.r2_chapters:
