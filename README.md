@@ -1,7 +1,7 @@
 # Dragon Radar ![app icon](https://raw.githubusercontent.com/gravitypriest/dragon-radar/master/icon_readme.png "Dragon Radar")
 In a world where the Dragon Ball series DVDs released in the U.S. have lousy video quality, Dragon Radar aims to take the much better video of the Japanese DVDs, and slap on the audio and subtitles from the U.S. DVDs.
 
-##### Still a work-in-progress, please be patient!
+#### [Click here to download](https://github.com/gravitypriest/dragon-radar/releases)
 
 ## Requirements
 
