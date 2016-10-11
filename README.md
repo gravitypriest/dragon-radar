@@ -83,6 +83,7 @@ Top folder (wherever you want, e.g. C:\dragonball)
     - `output_dir` - path where you want your finished .mkv files to go
     - `pgcdemux` - path to PGCdemux
     - `vsrip` - path to VSRip
+    - `restream` - path to ReStream
     - `delaycut` - path to DelayCut
 
 <b>NOTE:</b> Dragon Radar makes extensive use of large (>1GB) temporary files. If your operating system is installed on a SSD, you may want to set your Windows temporary folder to a directory on another drive to lessen I/O to the SSD.
