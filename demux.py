@@ -223,7 +223,7 @@ def demux(episode, src_dir, dest_dir, demux_map, novid=False, nosub=False, sub_o
             logger.info('Video & audio demux complete.')
 
     if not nosub:
-        logger.info('Demuxing subtitles to VobSub.  Please don\'t close the VSRip window!')
+        logger.info('Demuxing subtitles to VobSub. Please don\'t close the VSRip window!')
         _run_vsrip(episode.vsrip, source_ifo, dest_dir, pgc, vid)
         logger.info('Subtitle demux complete.')
 

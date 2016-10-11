@@ -212,16 +212,32 @@ def validate_args(args):
     Validate all arguments
     '''
     # series/episode checks
+    start = 0
+    end = 0
+    special = None
     if args.series not in ['DB', 'DBZ', 'DBGT']:
         bad_arg_exit('series')
     valid = load_validate(args.series)
     if args.episode:
         argtype = 'episode'
-        start, end = split_args('episode', args.episode)
+        if args.series == 'DBZ':
+            if args.episode in ['bardock', 'trunks']:
+                special = args.episode
+            elif 'bardock' in args.episode or 'trunks' in args.episode:
+                logger.error('Please run --episode bardock or --episode trunks on their own.')
+                sys.exit(1)
+        if args.series == 'DBGT':
+            if args.episode == 'special':
+                special = args.episode
+            elif 'special' in args.episode:
+                logger.error('Please run --episode special on its own.')
+                sys.exit(1)
+        if not special:
+            start, end = split_args('episode', args.episode)
     elif args.movie:
         argtype = 'movie'
         start, end = split_args('movie', args.movie)
-    if not all((a - 1) in range(valid[argtype]) for a in (start, end)):
+    if not special and not all((a - 1) in range(valid[argtype]) for a in (start, end)):
         bad_arg_exit(argtype)
     # contradictory arguments
     if args.r1_dbox and args.series != 'DBZ':
@@ -237,7 +253,7 @@ def validate_args(args):
         logger.error('--no-funi can only be used with --pioneer')
         sys.exit(1)
 
-    return start, end
+    return start, end, special
 
 
 def main():
@@ -257,12 +273,12 @@ def main():
     logger.debug('Episode temp folder: %s', tmp_dir)
     atexit.register(delete_temp, tmp_dir)
 
-    start, end = validate_args(args)
+    start, end, special = validate_args(args)
     print(WELCOME_MSG)
 
     for ep in range(start, end + 1):
         start_time = time.clock()
-        episode = Episode(ep, config, args, tmp_dir)
+        episode = Episode(ep, config, args, tmp_dir, special)
 
         if not args.no_demux:
             episode.demux()
@@ -270,7 +286,7 @@ def main():
             if args.sub_only:
                 detect_streams(os.path.join(config.get(APP_NAME, 'output_dir'),
                                args.series,
-                               str(ep).zfill(3), 'R1', 'Subtitle.idx'))
+                               str(ep if not special else special).zfill(3), 'R1', 'Subtitle.idx'))
         if not args.no_retime:
             episode.retime_subs()
             episode.retime_audio()

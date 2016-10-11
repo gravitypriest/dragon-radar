@@ -2,6 +2,7 @@ import os
 import sys
 
 VERSION = '1.0.0'
+CODENAME = 'Appule'
 
 if hasattr(sys, 'frozen') and sys.frozen in ('windows_exe', 'console_exe'):
     _file = os.path.abspath(sys.argv[0])
@@ -28,9 +29,10 @@ VSRIP_TEMPLATE = ('{in_path}\n'
                   'CLOSE\n'
                   'RESETTIME\n')
 PARAM_FILE = 'param.lst'
-WELCOME_MSG = ('-------------------\n' +
+WELCOME_MSG = ('----------------------------\n' +
                '\033[93mDragon' + '\033[39m ' +
                '\033[91mRadar' + '\033[39m' + ' v' + VERSION +
-               '\n-------------------')
+               ' \"' + CODENAME + '\"' +
+               '\n----------------------------')
 MIN_SIZE = 100000000
 FRAME_RATE = float(30000) / float(1001)

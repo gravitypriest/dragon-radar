@@ -31,7 +31,11 @@ def load_frame_data(series, episode):
     Load the JSON data of frame offsets for one series
     '''
     series_frame_data = load_json(OFFSETS_JSON)[series]
-    op_offset = get_op_offset(series, int(episode), series_frame_data)
+    try:
+        op_offset = get_op_offset(series, int(episode), series_frame_data)
+    except ValueError:
+        # string index (for the specials)
+        op_offset = None
     return series_frame_data[episode], op_offset
 
 

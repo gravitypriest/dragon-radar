@@ -22,11 +22,11 @@ def _combine_framedata(offsets, op_offset):
     return offsets
 
 
-def _load_r2_chapters(r2_chap_file, series):
+def _load_r2_chapters(r2_chap_file, series, is_special):
     logger.debug('Loading R2 chapter file...')
     with open(r2_chap_file) as r2_chaps:
         chap_list = r2_chaps.readlines()
-    if series == 'MOVIES':
+    if series == 'MOVIES' or is_special:
         chap_list.insert(0,0)
         return map(lambda c: int(c), chap_list)
     chapters = {
@@ -51,15 +51,19 @@ class Episode(object):
     '''
     Object for an episode, call all functionality by episode
     '''
-    def __init__(self, number, config, args, tmp_dir):
+    def __init__(self, number, config, args, tmp_dir, special):
         series = args.series
         self.is_movie = False
         if args.movie:
             series = 'MOVIES'
             number = series_to_movie(args.series, number)
             self.is_movie = True
-
-        ep_str = str(number).zfill(pad_zeroes(series))
+        if special:
+            ep_str = special
+            self.is_special = True
+        else:
+            ep_str = str(number).zfill(pad_zeroes(series))
+            self.is_special = False
         if args.r1_dbox:
             frame_data, op_offset = load_frame_data('DBoxZ', ep_str)
         else:
@@ -117,7 +121,8 @@ class Episode(object):
                                  'is incorrect.',
                                  _files['R2']['chapters'][0])
                     sys.exit(1)
-                self.r2_chapters = _load_r2_chapters(_files['R2']['chapters'][0], self.series)
+                self.r2_chapters = _load_r2_chapters(_files['R2']['chapters'][0],
+                                                     self.series, self.is_special)
             else:
                 retimed_sub_idx_path = _retimed_fname(_files[r]['subs'][0])
                 retimed_sub_sub_path = _retimed_fname(_files[r]['subs'][1])
@@ -163,7 +168,8 @@ class Episode(object):
                                   nosub=(r == 'R2'), sub_only=self.sub_only)
         if not self.sub_only and 'R2' in self.files:
             self.r2_chapters = _load_r2_chapters(
-                self.files['R2']['chapters'][0], self.series)
+                self.files['R2']['chapters'][0], self.series,
+                self.is_special)
 
     def retime_subs(self):
         '''
@@ -274,7 +280,7 @@ class Episode(object):
                     self.r2_chapters = {}
                 else:
                     chapters_file = os.path.join(dest_dir, 'R2', 'Celltimes.txt')
-                    self.r2_chapters = _load_r2_chapters(chapters_file, self.series)
+                    self.r2_chapters = _load_r2_chapters(chapters_file, self.series, self.is_special)
             write_avs_file(dest_dir, self)
         else:
             logger.error('%s not found', dest_dir)
@@ -282,7 +288,7 @@ class Episode(object):
 
     def mkv_filename(self):
         from utils import load_title
-        if self.is_movie:
+        if self.is_movie or self.is_special:
             base_fname = '{0}.mkv'.format(load_title(self.series, self.number))
         else:
             base_fname = '{0} ~ {1}.mkv'.format(self.number, load_title(self.series, self.number))

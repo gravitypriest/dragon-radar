@@ -61,40 +61,24 @@ def delaycut_chain(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
     file_out_2 = file_in + '.part2'
     file_out_3 = file_in + '.part3'
 
-    if prev_ch_end == 0:
-        # initial offset
-        logger.debug('Cutting initial part...')
-
-        if delay > 0:
-            # need to add blank space between cuts
-            logger.debug('Cutting blank delay...')
-            logger.debug('Using %s kbps blank ac3.', bitrate)
-            blank_file = os.path.join(AC3_DIR, 'blank_' + bitrate + '.ac3')
-            _run_delaycut([delaycut, '-i', blank_file, '-endcut',
-                          str(delay), '-startcut', '0', '-o', file_out_1])
-
-        _run_delaycut([delaycut, '-i', file_in, '-endcut', '0',
-                       '-startcut', str(ch_begin), '-o', file_out_3])
-    else:
+    if prev_ch_end != 0:
         # episode up until chapter point
         logger.debug('Cutting first part...')
-        _run_delaycut([delaycut, '-i', file_in, '-endcut',
-                      str(prev_ch_end), '-startcut', '0', '-o',
-                      file_out_1])
-        # episode from chapter until end with offset applied
-        logger.debug('Cutting second part...')
-        _run_delaycut([delaycut, '-i', file_in, '-endcut', '0',
-                        '-startcut', str(ch_begin), '-o', file_out_3])
-        if delay > 0:
-            # need to add blank space between cuts
-            logger.debug('Cutting blank delay...')
-            logger.debug('Using %s kbps blank ac3.', bitrate)
-            blank_file = os.path.join(AC3_DIR, 'blank_' + bitrate + '.ac3')
-            _run_delaycut([delaycut, '-i', blank_file, '-endcut',
-                          str(delay), '-startcut', '0', '-o', file_out_2])
+        _run_delaycut([delaycut, '-i', file_in, '-endcut', str(prev_ch_end), '-startcut', '0', '-o', file_out_1])
+
+    if delay > 0:
+        # need to add blank space between cuts
+        logger.debug('Cutting blank delay...')
+        logger.debug('Using %s kbps blank ac3.', bitrate)
+        blank_file = os.path.join(AC3_DIR, 'blank_' + bitrate + '.ac3')
+        _run_delaycut([delaycut, '-i', blank_file, '-endcut', str(delay), '-startcut', '0', '-o', file_out_2])
+     # episode from chapter until end with offset applied
+    logger.debug('Cutting second part...')
+    _run_delaycut([delaycut, '-i', file_in, '-endcut', '0', '-startcut', str(ch_begin), '-o', file_out_3])
 
     file_combine = []
-    file_combine.append(file_out_1)
+    if os.path.isfile(file_out_1):
+        file_combine.append(file_out_1)
     if os.path.isfile(file_out_2):
         file_combine.append(file_out_2)
     if os.path.isfile(file_out_3):
@@ -146,13 +130,16 @@ def retime_ac3(episode, src_file, dst_file, bitrate, offset_override=None):
         for o in offsets:
             if o['offset'] == 0:
                 continue
-            chapter = o['frame'] - totalOffset
+            if episode.is_special:
+                # frames are at R2 chapter breakpoints, accounted for in the json
+                chapter = o['frame']
+            else:
+                # chapters are based on reel changes in R1 file
+                chapter = o['frame'] - totalOffset
             offset = o['offset']
+
             prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
                                                                  offset)
-            print(prev_chapter_end)
-            print(chapter_begin)
-            print(delay)
             delaycut_chain(episode.delaycut, working_file, prev_chapter_end,
                            chapter_begin, delay, bitrate)
             totalOffset += offset

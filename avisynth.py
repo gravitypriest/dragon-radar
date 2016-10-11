@@ -106,7 +106,6 @@ def run_dgindex(dir_, episode):
 def check_for_d2v(dir_, episode):
     logger.debug('Checking that .d2v file exists for episode %s...' %
                  episode.number)
-    print(dir_)
     d2v_file = os.path.join(dir_, 'VideoFile.d2v')
     if not os.path.isfile(d2v_file):
         logger.debug('.d2v file not found. Creating...')

@@ -66,7 +66,7 @@ def _generate_mkv_chapters(episode):
     CHAPTER04NAME=Credits
     '''
     chapters = []
-    if episode.series == 'MOVIES':
+    if episode.series == 'MOVIES' or episode.is_special:
         # different from the episodes, just a list of chapters
         for c, chapter in enumerate(episode.r2_chapters):
             c_str = str(c + 1)
