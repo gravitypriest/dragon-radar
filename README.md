@@ -72,7 +72,7 @@ Top folder (wherever you want, e.g. C:\dragonball)
         ├───WORLDS_STRONGEST
         └───TREE_OF_MIGHT
 ```
-<b>NOTE:</b> For the Bardock and Trunks DVDs, even though they are part of the movie releases, put those in the `DBZ/R1 Discs` folder.
+<b>NOTE:</b> For the Bardock and Trunks DVDs, even though they are part of the movie releases, put those in the `DBZ/R1` folder.
 
 ## Usage
 
@@ -102,6 +102,8 @@ where `<series>` is the desired series (DB, DBZ, DBGT) and `<number>` is the epi
     - `dragon-radar.exe --series DBZ --movie 6`
 - The Z specials are specially labeled episodes `bardock` and `trunks`, and the GT special is `special`.  Run them using `--episode`. For example:
     - `dragon-radar.exe --series DBGT --episode special`
+    
+Use `dragon-radar.exe --help` for full usage instructions.
 
 ## How it works!
 1. Demultiplex from DVD
