@@ -2,3 +2,4 @@
 *txt
 __pycache__
 .todo
+!changelog.txt

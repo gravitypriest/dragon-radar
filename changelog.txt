@@ -1,0 +1,7 @@
+Version 1.0.1 "Babidi" 10-11-2016
+- Fixed ReStream prompt not showing because of the wrong subprocess function
+- Hid DGIndex output when merging cells together
+- Ctrl+C handling during wait for input
+
+Version 1.0.0 "Appule" 10-10-2016
+- Initial release
