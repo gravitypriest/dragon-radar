@@ -308,6 +308,10 @@ def main():
 if __name__ == "__main__":
     try:
         main()
+    except EOFError:
+        # cancel the input in the input prompt
+        logger.error('Aborting.')
+        sys.exit(1)
     except KeyboardInterrupt:
         logger.error('Aborting.')
         sys.exit(1)

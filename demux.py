@@ -7,7 +7,7 @@ import subprocess
 import logging
 import constants
 from utils import rename
-from audio import retime_ac3, combine_files
+from audio import retime_ac3, combine_files, check_abort
 
 PARAM_FILE = constants.PARAM_FILE
 VSRIP_TEMPLATE = constants.VSRIP_TEMPLATE
@@ -114,12 +114,15 @@ def complex_demux(episode, source_ifo, src_dir, dest_dir, demux_map, novid=False
             # need to open ReStream GUI for this, ugh
             if cell['fix']:
                 logger.info('Launching ReStream...')
-                subprocess.call(episode.restream)
+                proc = subprocess.Popen(episode.restream)
+                proc.poll()
                 # user prompt
-                print('\n1. In the ReStream window, copy and paste\n\n'
+                print('\n1. In the ReStream window, copy & paste\n\n'
                       '   {0}\n\n'
-                      '   into "MPEG-2 Source" box at the top.\n'
-                      '2. Once open, uncheck the checkbox which says '
+                      '   into "MPEG-2 Source" box at the top.\n\n'
+                      '   NOTE: If you are using standard Windows command prompt (not PowerShell),\n' 
+                      '   double left-click the line to highlight it, then right-click to copy it.\n\n'
+                      '2. Uncheck the checkbox which says '
                       '\"Frametype progressive.\"\n'
                       '3. Click the button which says \"Write!\"\n'
                       '4. When finished, you may close the '
@@ -138,7 +141,7 @@ def complex_demux(episode, source_ifo, src_dir, dest_dir, demux_map, novid=False
                 output_files.append(renamed)
 
         # use dgindex to merge the files
-        logger.debug('Combining cells...')
+        logger.info('Combining cells...')
         final_file = os.path.join(dest_dir, 'VideoFile.m2v')
 
         # dgindex adds .demuxed to the file so we have to rename it
@@ -146,8 +149,11 @@ def complex_demux(episode, source_ifo, src_dir, dest_dir, demux_map, novid=False
         args = [episode.dgindex, '-i']
         args.extend(output_files)
         args.extend(['-od', os.path.splitext(final_file)[0], '-minimize', '-exit'])
-        subprocess.call(args)
-        logger.debug('Cell combination finished.')
+        with open(os.devnull, 'w') as devnull:
+            dcut = subprocess.call(args, stdout=devnull,
+                                   stderr=subprocess.STDOUT)
+        check_abort(dcut, 'Delaycut')
+        logger.info('Cell combination finished.')
         rename(final_dgd, final_file)
         # normal demux
         logger.debug('Demuxing normally from now on.')
