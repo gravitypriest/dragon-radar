@@ -90,20 +90,20 @@ Top folder (wherever you want, e.g. C:\dragonball)
 #### Running It
 Open a command prompt in the Dragon Radar directory, and run
 
-#### `dragon-radar.exe --series <series> --episode <number>`
+#### `dragon-radar --series <series> --episode <number>`
 
 where `<series>` is the desired series (DB, DBZ, DBGT) and `<number>` is the episode number.
 
 - Example command:
-    - `dragon-radar.exe --series DBZ --episode 75`
+    - `dragon-radar --series DBZ --episode 75`
 - You can do a range of episodes by doing `--episode <start>:<end>`, for example:
-    - `dragon-radar.exe --series DBZ --episode 75:107`
+    - `dragon-radar --series DBZ --episode 75:107`
 - Movies are done like this:
-    - `dragon-radar.exe --series DBZ --movie 6`
+    - `dragon-radar --series DBZ --movie 6`
 - The Z specials are specially labeled episodes `bardock` and `trunks`, and the GT special is `special`.  Run them using `--episode`. For example:
-    - `dragon-radar.exe --series DBGT --episode special`
+    - `dragon-radar --series DBGT --episode special`
     
-Use `dragon-radar.exe --help` for full usage instructions.
+Use `dragon-radar --help` for full usage instructions.
 
 ## How it works!
 1. Demultiplex from DVD
