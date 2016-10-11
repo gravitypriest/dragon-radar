@@ -8330,7 +8330,14 @@
 				"frame": 40571,
 				"offset": 17
 			}
-		}
+		},
+		"special": [{
+			"frame": 0,
+			"offset": -146
+		}, {
+			"frame": 3266,
+			"offset": -5
+		}]
 	},
 	"MOVIES": {
 		"01": [{
@@ -8499,45 +8506,6 @@
 		"17": [{
 			"frame": 0,
 			"offset": 23
-		}],
-		"18": [{
-			"frame": 0,
-			"offset": -209
-		}, {
-			"frame": 3440,
-			"offset": 9
-		}, {
-			"frame": 22450,
-			"offset": 10
-		}, {
-			"frame": 41730,
-			"offset": 10
-		}, {
-			"frame": 62360,
-			"offset": 9
-		}],
-		"19": [{
-			"frame": 0,
-			"offset": -218
-		}, {
-			"frame": 3450,
-			"offset": 5
-		}, {
-			"frame": 21955,
-			"offset": 10
-		}, {
-			"frame": 41745,
-			"offset": 10
-		}, {
-			"frame": 61985,
-			"offset": 10
-		}],
-		"20": [{
-			"frame": 0,
-			"offset": -146
-		}, {
-			"frame": 3266,
-			"offset": -5
 		}],
 		"51": [{
 			"frame": 0,
@@ -12817,7 +12785,39 @@
 				"frame": 40591,
 				"offset": 5
 			}
-		}
+		},
+		"bardock": [{
+			"frame": 0,
+			"offset": -209
+		}, {
+			"frame": 3440,
+			"offset": 9
+		}, {
+			"frame": 22450,
+			"offset": 10
+		}, {
+			"frame": 41730,
+			"offset": 10
+		}, {
+			"frame": 62360,
+			"offset": 9
+		}],
+		"trunks": [{
+			"frame": 0,
+			"offset": -218
+		}, {
+			"frame": 3450,
+			"offset": 5
+		}, {
+			"frame": 21955,
+			"offset": 10
+		}, {
+			"frame": 41745,
+			"offset": 10
+		}, {
+			"frame": 61985,
+			"offset": 10
+		}]
 	},
 	"DBZSingles": {
 		"068": {

@@ -445,7 +445,9 @@
         "288": "You're Late, Goku! Everyone Party!!",
         "289": "Grandpa Goku! I Am Pan!!",
         "290": "I Am Oob! Now 10 Years Old, the Former Majin!",
-        "291": "Even Stronger!! Goku's Dream is Super-Huge"
+        "291": "Even Stronger!! Goku's Dream is Super-Huge",
+        "bardock": "A Final, Solitary Battle The Z Warrior Son Goku's Father Challenges Freeza",
+        "trunks": "Defiance in the Face of Despair!! The Remaining Superwarriors- Gohan and Trunks"
     },
     "DBGT": {
         "01": "Mysterious Dragon Balls Appear!! Goku Turns Into a Child!",
@@ -511,7 +513,8 @@
         "61": "I'll Win For Sure! Goku Eats Si Xing Qiu",
         "62": "Save Goku! A Final Ally Appears",
         "63": "A Miraculous Come-From-Behind Victory!! Goku Saves the Universe",
-        "64": "Farewell, Goku... Until the Day We Meet Again"
+        "64": "Farewell, Goku... Until the Day We Meet Again",
+        "special": "Goku's Side Story! Si Xing Qiu is a Testament to Courage"
     },
     "MOVIES": {
         "01": "(4) Dragon Ball Z ~ The Movie",

@@ -3110,12 +3110,1292 @@
 		}
 	},
 	"DBGT": {
+		"01": {
+			"R1": {
+				"audio": ["us", "jp", "en"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [4],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_01",
+				"pgc": 3,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"02": {
+			"R1": {
+				"audio": ["us", "jp", "en"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [5],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_01",
+				"pgc": 4,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"03": {
+			"R1": {
+				"audio": ["us", "jp", "en"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [6],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_01",
+				"pgc": 5,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"04": {
+			"R1": {
+				"audio": ["us", "jp", "en"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [7],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_01",
+				"pgc": 6,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"05": {
+			"R1": {
+				"audio": ["us", "jp", "en"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [8],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_01",
+				"pgc": 7,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"06": {
+			"R1": {
+				"audio": ["us", "jp", "en"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [9],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_01",
+				"pgc": 8,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"07": {
+			"R1": {
+				"audio": ["us", "jp", "en"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [10],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_02",
+				"pgc": 3,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"08": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [2],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_02",
+				"pgc": 4,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"09": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [3],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_02",
+				"pgc": 5,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"10": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [4],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_02",
+				"pgc": 6,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"11": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [5],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_02",
+				"pgc": 7,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"12": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [6],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_02",
+				"pgc": 8,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"13": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [7],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_03",
+				"pgc": 3,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"14": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [8],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_03",
+				"pgc": 4,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"15": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [2],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_03",
+				"pgc": 5,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"16": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [3],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_03",
+				"pgc": 6,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"17": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [4],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_03",
+				"pgc": 7,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"18": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [5],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_03",
+				"pgc": 8,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"19": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [6],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_04",
+				"pgc": 3,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"20": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [7],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_04",
+				"pgc": 4,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"21": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [8],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_04",
+				"pgc": 5,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"22": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [2],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_04",
+				"pgc": 6,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"23": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [3],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_04",
+				"pgc": 7,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"24": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [4],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_04",
+				"pgc": 8,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"25": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [5],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_05",
+				"pgc": 3,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"26": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [6],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_05",
+				"pgc": 4,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"27": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [7],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_05",
+				"pgc": 5,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"28": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [8],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_05",
+				"pgc": 6,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"29": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D5",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [2],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_05",
+				"pgc": 7,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"30": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D5",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [3],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_05",
+				"pgc": 8,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"31": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D5",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [4],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_06",
+				"pgc": 3,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"32": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D5",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [5],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_06",
+				"pgc": 4,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"33": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D5",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [6],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_06",
+				"pgc": 5,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"34": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S1_D5",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [7],
+				"vts": 1
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_06",
+				"pgc": 6,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"35": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [2],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_06",
+				"pgc": 7,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"36": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [3],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_06",
+				"pgc": 8,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"37": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [4],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_07",
+				"pgc": 3,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"38": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [5],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_07",
+				"pgc": 4,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"39": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [6],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_07",
+				"pgc": 5,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"40": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [7],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_07",
+				"pgc": 6,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"41": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D1",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [8],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_07",
+				"pgc": 7,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"42": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [2],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_07",
+				"pgc": 8,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"43": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [3],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_08",
+				"pgc": 3,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"44": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [4],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_08",
+				"pgc": 4,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"45": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [5],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_08",
+				"pgc": 5,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"46": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [6],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_08",
+				"pgc": 6,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"47": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [7],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_08",
+				"pgc": 7,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"48": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D2",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [8],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_08",
+				"pgc": 8,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"49": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [2],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_09",
+				"pgc": 3,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"50": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [3],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_09",
+				"pgc": 4,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"51": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [4],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_09",
+				"pgc": 5,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"52": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [5],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_09",
+				"pgc": 6,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"53": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [6],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_09",
+				"pgc": 7,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"54": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D3",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [7],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_09",
+				"pgc": 8,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"55": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [2],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_10",
+				"pgc": 3,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"56": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [3],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_10",
+				"pgc": 4,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"57": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [4],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_10",
+				"pgc": 5,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"58": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [5],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_10",
+				"pgc": 6,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"59": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [6],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_10",
+				"pgc": 7,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"60": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D4",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [7],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_10",
+				"pgc": 8,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"61": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D5",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [2],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_11",
+				"pgc": 3,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"62": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D5",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [3],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_11",
+				"pgc": 4,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"63": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D5",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [4],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_11",
+				"pgc": 5,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
+		"64": {
+			"R1": {
+				"audio": ["en", "us", "jp"],
+				"cells": null,
+				"disc": "DRAGON_BALL_GT_S2_D5",
+				"pgc": 1,
+				"type": "vid",
+				"vid": [5],
+				"vts": 5
+			},
+			"R2": {
+				"audio": ["jp"],
+				"cells": null,
+				"disc": "DBGT_11",
+				"pgc": 6,
+				"type": "pgc",
+				"vid": null,
+				"vts": 1
+			}
+		},
 		"special": {
 			"R1": {
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_GT_S2_D5",
-				"pgc": null,
+				"pgc": 1,
 				"type": "vid",
 				"vid": [2],
 				"vts": 8
