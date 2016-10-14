@@ -6,11 +6,13 @@ In a world where the Dragon Ball series DVDs released in the U.S. have lousy vid
 ## Requirements
 
 #### Software
-- [PGCdemux 1.2.0.5 / m03 MOD](http://www.videohelp.com/software/PgcDemux)
-- [ReStream](http://www.videohelp.com/software/Restream)
-- [VSRip](http://www.videohelp.com/software/VSRip)
-- [DelayCut](http://www.videohelp.com/software/delaycut)
-- [MKVToolnix](http://www.videohelp.com/software/MKVtoolnix)
+<b>NOTE:</b> Pay attention to versions! If version number is listed, it means the program will not work unless you use the version specified. Clicking 'direct link' will get you the proper files direc.
+- [PGCdemux m03 MOD](http://www.videohelp.com/software/PgcDemux) ([direct link](http://www.videohelp.com/download/PgcDemux_1205Mod_m03_bin.zip))
+- [ReStream](http://www.videohelp.com/software/Restream) ([direct link](http://www.videohelp.com/download/ReStream_v090.zip))
+- [VSRip](http://www.videohelp.com/software/VSRip) ([direct link](http://www.videohelp.com/download/VSRip_20030530.zip))
+- [DelayCut 1.4.3.7](http://www.videohelp.com/software/delaycut) ([direct link](http://www.videohelp.com/download/delaycut1.4.3.7.7z))
+- [DGMPGDec](http://www.videohelp.com/software/DGMPGDec) ([direct link](http://www.videohelp.com/download/dgmpgdec158.zip))
+- [MKVToolnix](http://www.videohelp.com/software/MKVtoolnix) ([direct link](http://www.videohelp.com/download/mkvtoolnix-32bit-9.4.2-setup.exe)) (v9.4.2 latest as of this writing)
 
 #### DVDs
 
@@ -83,8 +85,9 @@ Top folder (wherever you want, e.g. C:\dragonball)
     - `output_dir` - path where you want your finished .mkv files to go
     - `pgcdemux` - path to PGCdemux
     - `vsrip` - path to VSRip
-    - `restream` - path to ReStream
     - `delaycut` - path to DelayCut
+    - `dgindex` - path to DGIndex.exe in the DGMPGDec package
+    - `restream` - path to ReStream
 
 <b>NOTE:</b> Dragon Radar makes extensive use of large (>1GB) temporary files. If your operating system is installed on a SSD, you may want to set your Windows temporary folder to a directory on another drive to lessen I/O to the SSD.
 
@@ -117,7 +120,8 @@ Use `dragon-radar --help` for full usage instructions.
     - Use mkvmerge to multiplex R2 video, R2 audio, retimed R1 audio, and retimed R1 subtitles to an MKV file with chapters
 
 ## Thanks
-- Harry Price & dbzj14 for helping collect the R1 Dragon Box DVD structure info.
+- <b>Harry Price</b> & <b>dbzj14</b> for helping collect the R1 Dragon Box DVD structure info.
+- <b>Clutchins</b> for basically being my QC guy, finding bugs & usability issues.
 
 ## Future Improvements & Maybes
 - Web-based GUI
