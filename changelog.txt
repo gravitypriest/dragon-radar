@@ -1,3 +1,7 @@
+Version 1.0.2 "Coola" 10-16-2016
+- If MKVMerge fails because of bad R2 audio, attempt to fix AC3 errors and re-mux
+- Fix bug where the Funi audio would be retimed with the Pioneer timings for the first 3 movies
+
 Version 1.0.1 "Babidi" 10-11-2016
 - Fixed ReStream prompt not showing because of the wrong subprocess function
 - Hid DGIndex output when merging cells together

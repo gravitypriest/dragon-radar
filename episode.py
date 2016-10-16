@@ -217,7 +217,7 @@ class Episode(object):
                 bitrate = '20_384'
                 if self.number == '03':
                     bitrate = '20_192'
-            retime_ac3(self, en_audio, retimed_audio[0], bitrate)
+            retime_ac3(self, en_audio, retimed_audio[0], bitrate, region=r)
             if 'us' in self.demux_map[r]['audio']:
                 # get track with US replacement music
                 us_idx = self.demux_map[r]['audio'].index('us')

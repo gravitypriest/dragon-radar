@@ -3,6 +3,7 @@ import sys
 import logging
 import subprocess
 import constants
+from audio import fix_audio
 from subtitle import detect_streams
 from utils import load_title_time, to_timestamp, check_abort
 
@@ -43,14 +44,19 @@ def _run_mkvmerge(episode, video, audio, subtitles, chapter_file):
     args.extend(['--chapters', chapter_file])
 
     # suppress MKVmerge output
-    args.append('-q')
+    # args.append('-q')
 
     logger.debug('MKVmerge args:')
     logger.debug(args)
 
     mergeproc = subprocess.call(args)
-    check_abort(mergeproc, 'MKVmerge')
-
+    if mergeproc == 1:
+        logger.info('MKVMerge had non-zero exit code (%s), possibly bad AC3 file.', mergeproc)
+        # Possibly bad R2 AC3 file, try again
+        fix_audio(episode.delaycut, audio[0]['file'])
+        # logger.info('Trying mux again.')
+        mergeproc = subprocess.call(args)
+        check_abort(mergeproc, 'MKVmerge')
 
 
 def _generate_mkv_chapters(episode):

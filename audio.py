@@ -5,7 +5,7 @@ import tempfile
 import atexit
 import subprocess
 import constants
-from utils import delete_temp, create_dir, move_file, check_abort
+from utils import delete_temp, create_dir, move_file, check_abort, rename
 
 APP_NAME = constants.APP_NAME
 FRAME_RATE = constants.FRAME_RATE
@@ -28,6 +28,26 @@ def frame_to_ms(frame, offset):
         chapter_begin = int(round(1000 * float(frame) / FRAME_RATE, 0))
         delay = int(round(-1000 * float(offset) / FRAME_RATE, 0))
     return prev_chapter_end, chapter_begin, delay
+
+
+def fix_audio(delaycut, file_in):
+    '''
+    Attempt to fix broken AC3 files
+    '''
+    logger.info('Fixing %s', file_in)
+    file_out = os.path.join(os.path.dirname(file_in),
+                            os.path.basename(file_in).replace(
+                            '.ac3', '.fixed.ac3'))
+    file_in_old = os.path.join(os.path.dirname(file_in),
+                               os.path.basename(file_in).replace(
+                              '.ac3', '.old.ac3'))
+    _run_delaycut([delaycut,
+                   '-i', file_in,
+                   '-o', file_out,
+                   '-fixcrc', 'silence'])
+    rename(file_in, file_in_old)
+    rename(file_out, file_in)
+    logger.info('Fix complete.')
 
 
 def combine_files(file_list, final_file):
@@ -64,17 +84,24 @@ def delaycut_chain(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
     if prev_ch_end != 0:
         # episode up until chapter point
         logger.debug('Cutting first part...')
-        _run_delaycut([delaycut, '-i', file_in, '-endcut', str(prev_ch_end), '-startcut', '0', '-o', file_out_1])
+        _run_delaycut([delaycut, '-i', file_in,
+                       '-endcut', str(prev_ch_end), '-startcut', '0',
+                       '-o', file_out_1])
 
     if delay > 0:
         # need to add blank space between cuts
         logger.debug('Cutting blank delay...')
         logger.debug('Using %s kbps blank ac3.', bitrate)
         blank_file = os.path.join(AC3_DIR, 'blank_' + bitrate + '.ac3')
-        _run_delaycut([delaycut, '-i', blank_file, '-endcut', str(delay), '-startcut', '0', '-o', file_out_2])
-     # episode from chapter until end with offset applied
+        _run_delaycut([delaycut, '-i', blank_file,
+                       '-endcut', str(delay), '-startcut', '0',
+                       '-o', file_out_2])
+
+    # episode from chapter until end with offset applied
     logger.debug('Cutting second part...')
-    _run_delaycut([delaycut, '-i', file_in, '-endcut', '0', '-startcut', str(ch_begin), '-o', file_out_3])
+    _run_delaycut([delaycut, '-i', file_in,
+                   '-endcut', '0', '-startcut', str(ch_begin),
+                   '-o', file_out_3])
 
     file_combine = []
     if os.path.isfile(file_out_1):
@@ -95,7 +122,8 @@ def delaycut_chain(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
         os.rename(file_out_3, file_in)
 
 
-def retime_ac3(episode, src_file, dst_file, bitrate, offset_override=None):
+def retime_ac3(episode, src_file, dst_file, bitrate,
+               offset_override=None, region='R1'):
     '''
     Retime an AC3 file based on offsets
     '''
@@ -121,7 +149,7 @@ def retime_ac3(episode, src_file, dst_file, bitrate, offset_override=None):
 
     r2_chaps = episode.r2_chapters
     offsets = episode.offsets if not offset_override else offset_override
-    if episode.is_pioneer:
+    if episode.is_pioneer and region == 'PIONEER':
         offsets = episode.pioneer_offsets
 
     if isinstance(offsets, list):
@@ -131,7 +159,8 @@ def retime_ac3(episode, src_file, dst_file, bitrate, offset_override=None):
             if o['offset'] == 0:
                 continue
             if episode.is_special:
-                # frames are at R2 chapter breakpoints, accounted for in the json
+                # frames are at R2 chapter breakpoints
+                # accounted for in the json
                 chapter = o['frame']
             else:
                 # chapters are based on reel changes in R1 file
@@ -155,8 +184,9 @@ def retime_ac3(episode, src_file, dst_file, bitrate, offset_override=None):
                 prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
                                                                      offset)
 
-                delaycut_chain(episode.delaycut, working_file, prev_chapter_end,
-                               chapter_begin, delay, bitrate)
+                delaycut_chain(episode.delaycut, working_file,
+                               prev_chapter_end, chapter_begin, delay,
+                               bitrate)
 
     move_file(working_file, dst_file)
     delete_temp(tmp_dir)

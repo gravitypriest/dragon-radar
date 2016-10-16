@@ -6,7 +6,7 @@ In a world where the Dragon Ball series DVDs released in the U.S. have lousy vid
 ## Requirements
 
 #### Software
-<b>NOTE:</b> Pay attention to versions! If version number is listed, it means the program will not work unless you use the version specified. Clicking 'direct link' will get you the proper files direc.
+<b>NOTE:</b> Pay attention to versions! If version number is listed, it means the program will not work unless you use the version specified. Clicking 'direct link' will get you the proper files directly.
 - [PGCdemux m03 MOD](http://www.videohelp.com/software/PgcDemux) ([direct link](http://www.videohelp.com/download/PgcDemux_1205Mod_m03_bin.zip))
 - [ReStream](http://www.videohelp.com/software/Restream) ([direct link](http://www.videohelp.com/download/ReStream_v090.zip))
 - [VSRip](http://www.videohelp.com/software/VSRip) ([direct link](http://www.videohelp.com/download/VSRip_20030530.zip))

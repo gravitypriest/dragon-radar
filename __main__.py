@@ -56,15 +56,15 @@ def create_args():
                         required=True)
     episode_group = parser.add_mutually_exclusive_group(required=True)
     episode_group.add_argument('--episode',
-                        metavar='<number>',
-                        help='Episode to process. '
-                             'Can also be used with a range, i.e. '
-                             '--episode <first>:<last>')
+                               metavar='<number>',
+                               help='Episode to process. '
+                                    'Can also be used with a range, i.e. '
+                                    '--episode <first>:<last>')
     episode_group.add_argument('--movie',
-                        metavar='<number>',
-                        help='Movie to process. '
-                             'Can also be used with a range, i.e. '
-                             '--movie <first>:<last>')
+                               metavar='<number>',
+                               help='Movie to process. '
+                                    'Can also be used with a range, i.e. '
+                                    '--movie <first>:<last>')
     parser.add_argument('--verbose',
                         action='store_true',
                         default=False,
@@ -224,7 +224,8 @@ def validate_args(args):
             if args.episode in ['bardock', 'trunks']:
                 special = args.episode
             elif 'bardock' in args.episode or 'trunks' in args.episode:
-                logger.error('Please run --episode bardock or --episode trunks on their own.')
+                logger.error('Please run --episode bardock or '
+                             '--episode trunks on their own.')
                 sys.exit(1)
         if args.series == 'DBGT':
             if args.episode == 'special':
@@ -237,7 +238,8 @@ def validate_args(args):
     elif args.movie:
         argtype = 'movie'
         start, end = split_args('movie', args.movie)
-    if not special and not all((a - 1) in range(valid[argtype]) for a in (start, end)):
+    if not special and not all((a - 1) in range(
+            valid[argtype]) for a in (start, end)):
         bad_arg_exit(argtype)
     # contradictory arguments
     if args.r1_dbox and args.series != 'DBZ':
@@ -258,7 +260,7 @@ def validate_args(args):
 
 def main():
     colorama.init()
-    
+
     config = load_config_file()
     args, wtf = create_args().parse_known_args()
     if (wtf):
@@ -286,7 +288,8 @@ def main():
             if args.sub_only:
                 detect_streams(os.path.join(config.get(APP_NAME, 'output_dir'),
                                args.series,
-                               str(ep if not special else special).zfill(3), 'R1', 'Subtitle.idx'))
+                               str(ep if not special else special).zfill(3),
+                               'R1', 'Subtitle.idx'))
         if not args.no_retime:
             episode.retime_subs()
             episode.retime_audio()

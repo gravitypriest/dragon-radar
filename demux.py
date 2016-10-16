@@ -97,7 +97,7 @@ def complex_demux(episode, source_ifo, src_dir, dest_dir, demux_map, novid=False
         audio.    
     '''
     # interlacing correction
-    if (episode.series == 'DB' and episode.number in ['026', '041'] or
+    if (episode.series == 'DB' and episode.number in ['006', '026', '041'] or
        episode.series == 'DBZ' and episode.number == '024'):
         cells = demux_map['complex']['cells']
         output_files = []
