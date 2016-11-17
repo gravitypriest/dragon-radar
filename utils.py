@@ -158,9 +158,9 @@ def pad_zeroes(series):
     '''
     Add leading zeroes for dictionary keys
     '''
-    leading = 3
-    if series == 'MOVIES' or series == 'DBGT':
-        leading = 2
+    leading = 2
+    if series == 'DB' or series == 'DBZ':
+        leading = 3
     return leading
 
 
@@ -182,6 +182,7 @@ def rename(fname, new_fname):
 
 
 def move_file(fname, new_path):
+    logger.debug('Moving %s to %s', fname, new_path)
     try:
         shutil.move(fname, new_path)
     except (shutil.Error, FileNotFoundError) as e:
@@ -210,7 +211,7 @@ def series_to_movie(series, movie):
         if movie == 4:
             number = 14
         else:
-            number = movie - 14
+            number = movie + 14
     if series == 'DBZ':
         number = movie
     if series == 'DBGT':

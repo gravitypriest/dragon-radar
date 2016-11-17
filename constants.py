@@ -1,8 +1,8 @@
 import os
 import sys
 
-VERSION = '1.0.1'
-CODENAME = 'Babidi'
+VERSION = '1.0.3'
+CODENAME = 'Daimao'
 
 if hasattr(sys, 'frozen') and sys.frozen in ('windows_exe', 'console_exe'):
     _file = os.path.abspath(sys.argv[0])

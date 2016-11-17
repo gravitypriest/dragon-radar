@@ -75,7 +75,26 @@ def _run_delaycut(args):
     check_abort(dcut, 'Delaycut')
 
 
+def correct_ac3_delay(delaycut, file_in, file_out, delay, bitrate):
+    '''
+    Just correct a single delay
+    '''
+    file_out_1 = file_in + '.part1'
+    file_out_2 = file_in + '.part2'
+
+    do_ = ['-startcut', str(-delay)]
+    args = [delaycut, '-i', file_in]
+    args.extend(do_)
+    args.extend(['-o', file_out_1])
+    _run_delaycut(args)
+
+    rename(file_out_1,  file_out)
+
+
 def delaycut_chain(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
+    '''
+    3-stage audio correction
+    '''
 
     file_out_1 = file_in + '.part1'
     file_out_2 = file_in + '.part2'
@@ -183,7 +202,6 @@ def retime_ac3(episode, src_file, dst_file, bitrate,
                 offset = offsets[key]['offset']
                 prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
                                                                      offset)
-
                 delaycut_chain(episode.delaycut, working_file,
                                prev_chapter_end, chapter_begin, delay,
                                bitrate)

@@ -13035,7 +13035,7 @@
 				"disc": "DSSD10373",
 				"pgc": null,
 				"type": "vid",
-				"vid": [1],
+				"vid": [2],
 				"vts": 2
 			}
 		},
@@ -13144,7 +13144,7 @@
 				"audio": ["en", "us", "jp"],
 				"cells": null,
 				"disc": "DRAGON_BALL_Z_MOVIES_10_11",
-				"pgc": 1,
+				"pgc": 2,
 				"type": "vid",
 				"vid": [3],
 				"vts": 5

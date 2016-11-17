@@ -98,7 +98,10 @@ class Episode(object):
         self.offsets = _combine_framedata(frame_data, op_offset)
         self.pioneer_offsets = None if not self.is_pioneer else load_frame_data(series, str(number+50))[0]
         self.r2_chapters = {}
-        self.demux_map = load_demux_map(series, ep_str)
+        if not args.no_demux:
+            self.demux_map = load_demux_map(series, ep_str)
+        else:
+            self.demux_map = {'R1': {'audio': ['en', 'jp']}}
         self.files = self._init_files() if args.no_demux else {}
 
 
@@ -163,9 +166,11 @@ class Episode(object):
             logger.info('Demuxing %s %s %s...', self.series, self.number, r)
             self.files[r] = demux(self, src_dir, dest_dir,
                                   self.demux_map[r],
-                                  novid=((r =='R1' or r == 'PIONEER')
-                                         and not self.demux_r1_vid),
-                                  nosub=(r == 'R2'), sub_only=self.sub_only)
+                                  novid=((r == 'R1' or r == 'PIONEER') and
+                                         not self.demux_r1_vid),
+                                  nosub=(r == 'R2'), sub_only=self.sub_only,
+                                  orange_brick=(
+                                    r == 'R1' and self.series == 'DBZ'))
         if not self.sub_only and 'R2' in self.files:
             self.r2_chapters = _load_r2_chapters(
                 self.files['R2']['chapters'][0], self.series,

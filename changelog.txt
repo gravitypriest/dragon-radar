@@ -1,3 +1,8 @@
+Version 1.0.3 "Daimao" 11-16-2016
+- Fix issue where trying to process the Dragon Ball movies did nothing
+- Fix Orange Brick audio delay issue by changing demux method
+- Fix some errors in demux indices & correct some episode scene offsets
+
 Version 1.0.2 "Coola" 10-16-2016
 - If MKVMerge fails because of bad R2 audio, attempt to fix AC3 errors and re-mux
 - Fix bug where the Funi audio would be retimed with the Pioneer timings for the first 3 movies
