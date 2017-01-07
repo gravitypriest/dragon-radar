@@ -108,9 +108,13 @@ def retime_vobsub(orig_file, fixed_file, episode):
 def detect_streams(fname):
     streams = []
     vob_id = -1
+    filtered_streams = []
+    previous_empty = False
     with open(fname, 'r') as subfile:
         for line in subfile:
             if 'id:' in line and 'index' in line:
+                # if 'id: --' in line:
+                #     continue
                 firstline = True
                 stream_idx = int(line.split('index:')[1].strip())
                 streams.append([])
@@ -125,10 +129,12 @@ def detect_streams(fname):
             if 'timestamp:' in line:
                 if firstline:
                     if '00:00:00:000' not in line:
+                        # ignore fucky empty streams
                         firstline = False
                         streams[stream_idx]['first'] = line.strip()
                 streams[stream_idx]['vobs'][-1]['subs'] += 1
     for s, stream in enumerate(streams):
+        filtered_stream = {}
         logger.debug('Subs in stream %d: ', s)
         total = 0
         logger.debug(' - First subtitle: %s', stream['first'])
@@ -136,6 +142,21 @@ def detect_streams(fname):
             total += vob['subs']
             logger.debug(' - VOB %d: %d', vob['vob_id'], vob['subs'])
         logger.debug(' - TOTAL: %d', total)
-        stream['total'] = total
-        stream['id'] = s
-    return streams
+        if total == 1 and not stream['first']:
+            # try to detect fucky empty streams
+            continue
+        filtered_stream['id'] = s
+
+        # mkvmerge ignores empty subtitle tracks and
+        #  treats the first non-empty as idx 0, so
+        #  remember if the first track is empty to
+        #  adjust the next
+        if previous_empty:
+            filtered_stream['id'] = s - 1
+            previous_empty = False
+        if total == 0:
+            previous_empty = True
+            continue
+        filtered_stream['total'] = total
+        filtered_streams.append(filtered_stream)
+    return filtered_streams

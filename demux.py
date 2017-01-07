@@ -220,6 +220,7 @@ def _fuck_the_orange_bricks(episode, source_ifo, src_dir, dest_dir,
         They are mostly the same so it only needs to be corrected once --
             and correcting each one would actually produce gaps in the audio.
         Need to rip each  VID, correct the delay, then combine video & audio.
+        Delay only needs to be corrected on Season 1
     '''
     output_files = {'v': [], 'a': []}
 
@@ -266,8 +267,9 @@ def _fuck_the_orange_bricks(episode, source_ifo, src_dir, dest_dir,
                 output_a = a
                 renamed_a = os.path.join(
                     dest_dir, str(vid) + '_' + str(idx) + '.ac3')
-                if ((v_idx == 0 and delay > 0 and not delay_set[idx]) or
-                   (v_idx == 1 and not delay_set[idx])):
+                if (episode.number < 40 and
+                    ((v_idx == 0 and delay > 0 and not delay_set[idx]) or
+                     (v_idx == 1 and not delay_set[idx]))):
                     delay_set[idx] = True
                     logger.debug('Correcting the audio for VID %s (#%s)',
                                  vid, v_idx)

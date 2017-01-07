@@ -1,15 +1,14 @@
 import os
 import sys
 
-VERSION = '1.0.3'
-CODENAME = 'Daimao'
+VERSION = '1.0.4'
+CODENAME = 'Ebifurya'
 
 if hasattr(sys, 'frozen') and sys.frozen in ('windows_exe', 'console_exe'):
     _file = os.path.abspath(sys.argv[0])
     PACKAGE_PATH = os.path.dirname(_file)
 else:
     PACKAGE_PATH = os.path.dirname(os.path.realpath(__file__))
-print(PACKAGE_PATH)
 PARAMS_PATH = os.path.join(PACKAGE_PATH, 'params')
 DEMUX_JSON = os.path.join(PARAMS_PATH, 'demux.json')
 DISC_JSON = os.path.join(PARAMS_PATH, 'episodes.json')

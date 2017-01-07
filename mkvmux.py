@@ -51,12 +51,7 @@ def _run_mkvmerge(episode, video, audio, subtitles, chapter_file):
 
     mergeproc = subprocess.call(args)
     if mergeproc == 1:
-        logger.info('MKVMerge had non-zero exit code (%s), possibly bad AC3 file.', mergeproc)
-        # Possibly bad R2 AC3 file, try again
-        fix_audio(episode.delaycut, audio[0]['file'])
-        # logger.info('Trying mux again.')
-        mergeproc = subprocess.call(args)
-        check_abort(mergeproc, 'MKVmerge')
+        logger.warn('WARNING: MKVMerge had non-zero exit code (%s)', mergeproc)
 
 
 def _generate_mkv_chapters(episode):
@@ -90,6 +85,8 @@ def _generate_mkv_chapters(episode):
         keys.remove('partA')
 
     for k in keys:
+        if k == 'NEP' and k not in episode.r2_chapters:
+            continue
         if k != 'partA':
             chap = episode.r2_chapters[k]
             time = to_timestamp(None, ntsc_frame=chap)
@@ -103,6 +100,7 @@ def _generate_mkv_chapters(episode):
         chapters.append('CHAPTER{0}NAME={1}'.format(num, name))
         ctr = ctr + 1
     return '\n'.join(chapters)
+
 
 def make_mkv(episode, streams=None):
     '''
@@ -143,11 +141,10 @@ def make_mkv(episode, streams=None):
             'lang': 'eng'
         })
         subtitles.append({
-            'streams':[{
+            'streams': [{
                 'name': 'Pioneer Subtitles',
                 'idx': 0 if episode.number == '03' else 1
-            },
-            {
+            }, {
                 'name': 'Pioneer Dub CC',
                 'idx': 1 if episode.number == '03' else 0
             }],

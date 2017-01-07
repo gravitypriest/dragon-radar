@@ -1,3 +1,11 @@
+Version 1.0.4 "Ebifurya" 01-06-2017
+- Orange Bricks only need audio delay correction on season 1 box
+- Fix audio track order for demux on several GT discs
+- Fix blank audio selection for specials (wrong bitrate)
+- Fix chapter generation bug when there was an unexpected number of chapters on the DVD (e.g. no NEP)
+- Warn when MKVmerge has non-zero exit code instead of exiting
+- Fix subtitle naming and muxing issues when empty streams are ripped from the DVD
+
 Version 1.0.3 "Daimao" 11-16-2016
 - Fix issue where trying to process the Dragon Ball movies did nothing
 - Fix Orange Brick audio delay issue by changing demux method

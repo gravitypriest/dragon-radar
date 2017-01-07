@@ -27,15 +27,16 @@ def _load_r2_chapters(r2_chap_file, series, is_special):
     with open(r2_chap_file) as r2_chaps:
         chap_list = r2_chaps.readlines()
     if series == 'MOVIES' or is_special:
-        chap_list.insert(0,0)
+        chap_list.insert(0, 0)
         return map(lambda c: int(c), chap_list)
     chapters = {
         'op': 0,
         'prologue': int(chap_list[0]),
         'partB': int(chap_list[1]),
-        'ED': int(chap_list[2]),
-        'NEP': int(chap_list[3])
+        'ED': int(chap_list[2])
     }
+    if len(chap_list) > 3:
+        chapters['NEP'] = int(chap_list[3])
     return chapters
 
 
@@ -104,7 +105,6 @@ class Episode(object):
             self.demux_map = {'R1': {'audio': ['en', 'jp']}}
         self.files = self._init_files() if args.no_demux else {}
 
-
     def _init_files(self):
         '''
         Create file dictionary with locations of demuxed files
@@ -170,7 +170,9 @@ class Episode(object):
                                          not self.demux_r1_vid),
                                   nosub=(r == 'R2'), sub_only=self.sub_only,
                                   orange_brick=(
-                                    r == 'R1' and self.series == 'DBZ'))
+                                    r == 'R1' and
+                                    self.series == 'DBZ' and
+                                    not self.is_special))
         if not self.sub_only and 'R2' in self.files:
             self.r2_chapters = _load_r2_chapters(
                 self.files['R2']['chapters'][0], self.series,
@@ -230,7 +232,9 @@ class Episode(object):
                 retimed_audio.append(os.path.join(os.path.dirname(us_audio),
                                      os.path.basename(us_audio).replace(
                                      '.ac3', '.retimed.ac3')))
-                bitrate = '51_448' if self.is_movie else '20_192'
+                bitrate = '51_448' if (self.is_movie or
+                                       (self.is_special and
+                                        self.series == 'DBGT')) else '20_192'
                 retime_ac3(self, us_audio, retimed_audio[1], bitrate)
             self.files[r]['retimed_audio'] = retimed_audio
         logger.info('Audio retime complete.')
@@ -243,7 +247,6 @@ class Episode(object):
         logger.info('Multiplexing to \"%s\",\nplease wait a few moments...', self.mkv_file)
         make_mkv(self)
         logger.info('Multiplex of %s %s complete.', self.series, self.number)
-
 
     def move_demuxed_files(self):
         dest_dir = os.path.join(self.output_dir, self.series, self.number)
