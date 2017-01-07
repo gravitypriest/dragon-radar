@@ -267,7 +267,7 @@ def _fuck_the_orange_bricks(episode, source_ifo, src_dir, dest_dir,
                 output_a = a
                 renamed_a = os.path.join(
                     dest_dir, str(vid) + '_' + str(idx) + '.ac3')
-                if (episode.number < 40 and
+                if (int(episode.number) < 40 and
                     ((v_idx == 0 and delay > 0 and not delay_set[idx]) or
                      (v_idx == 1 and not delay_set[idx]))):
                     delay_set[idx] = True
