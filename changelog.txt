@@ -1,3 +1,8 @@
+Version 1.1.0 "Freeza" 04-02-2017
+- Fix R1 DBox ripping errors with one-time autodetection for VIDs
+- Add 'working_dir' config option to be able to set working temp directory
+- Bugfixes
+
 Version 1.0.4 "Ebifurya" 01-06-2017
 - Orange Bricks only need audio delay correction on season 1 box
 - Fix audio track order for demux on several GT discs

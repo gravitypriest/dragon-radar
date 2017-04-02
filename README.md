@@ -124,6 +124,13 @@ Use `dragon-radar --help` for full usage instructions.
 - <b>Clutchins</b> for basically being my QC guy, finding bugs & usability issues.
 
 ## Future Improvements & Maybes
+- Set the target video source
+    - E.g., be able use R1 Dragon Box as the 'target' for muxing, useful for retiming OB audio to the DBox
+    - Maybe expand into piece-by-piece track selection for all releases
+- Misc. MKV stuff
+    - Set the default audio track
+    - Omit or reorder tracks
+    - Create straight DVD-to-MKV rips of a single release
 - Web-based GUI
     - For the less technical folks
 - Support to sync the early 2000s DBZ uncut single DVDs.

@@ -13,6 +13,7 @@ DEMUX_JSON = constants.DEMUX_JSON
 VALID_JSON = constants.VALID_JSON
 TITLE_TIMES_JSON = constants.TITLE_TIMES_JSON
 TITLES_JSON = constants.TITLES_JSON
+AUTODETECT_JSON = constants.AUTODETECT_JSON
 FRAME_RATE = constants.FRAME_RATE
 
 logger = logging.getLogger(APP_NAME)
@@ -20,10 +21,11 @@ logger = logging.getLogger(APP_NAME)
 
 def load_json(filename):
     try:
-        json_data = json.load(open(filename))
+        with open(filename) as file_:
+            json_data = json.load(file_)
+            return json_data
     except OSError as o:
         logger.error(o)
-    return json_data
 
 
 def load_frame_data(series, episode):
@@ -62,6 +64,7 @@ def load_validate(series):
     validate = load_json(VALID_JSON)[series]
     return validate
 
+
 def load_title_time(series, episode):
     '''
     Load the timestamps file for episode titles
@@ -69,12 +72,39 @@ def load_title_time(series, episode):
     title_time = load_json(TITLE_TIMES_JSON)[series][episode]
     return title_time
 
+
 def load_title(series, episode):
     '''
     Load the episode title
     '''
     title = load_json(TITLES_JSON)[series][episode]
     return title
+
+
+def load_autodetect(episode):
+    '''
+    Auto-detection data for the R1 DBox
+    '''
+    if not os.path.isfile(AUTODETECT_JSON):
+        return None
+    autodetect = load_json(AUTODETECT_JSON)
+    if episode in autodetect:
+        return autodetect[episode]
+    return None
+
+
+def save_autodetect(demux_map):
+    '''
+    Save auto-detection data for the R1 DBox
+    '''
+    if os.path.isfile(AUTODETECT_JSON):
+        autodetect = load_json(AUTODETECT_JSON)
+    else:
+        autodetect = {}
+    autodetect.update(demux_map)
+    with open(AUTODETECT_JSON, 'w') as file_:
+        json.dump(autodetect, file_, sort_keys=True)
+
 
 def get_op_offset(series, episode, frame_data):
     '''
@@ -194,7 +224,6 @@ def create_dir(newdir):
         os.makedirs(newdir)
     except OSError:
         if not os.path.isdir(newdir):
-            self._delete_temp(tmp_dir)
             logger.debug('There was a problem creating %s' %
                          newdir)
             raise
@@ -222,5 +251,7 @@ def series_to_movie(series, movie):
 
 def check_abort(returncode, name):
     if returncode != 0:
-        logger.error('%s had non-zero exit code (%s). Aborting.', name, returncode)
+        logger.error('Something went wrong. '
+                     '%s had non-zero exit code (%s). Aborting.',
+                     name, returncode)
         sys.exit(1)

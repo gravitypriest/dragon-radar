@@ -3,6 +3,9 @@
 # Root of discs source directory
 source_dir=
 
+# Working directory to use instead of Windows TEMP folder
+working_dir=
+
 # Destination directory for output files
 output_dir=
 

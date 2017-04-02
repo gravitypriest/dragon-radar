@@ -10,6 +10,7 @@ setup(zipfile=None,
            'icon_resources': [(0, 'icon.ico')]
            }],
       data_files=[('params', ['params/demux.json',
+                              'params/episodes.json',
                               'params/offsets.json',
                               'params/titles.json',
                               'params/title-times.json',

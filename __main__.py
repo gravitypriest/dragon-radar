@@ -15,7 +15,8 @@ from episode import Episode
 from utils import (get_op_offset,
                    pad_zeroes,
                    load_validate,
-                   delete_temp)
+                   delete_temp,
+                   create_dir)
 from subtitle import detect_streams
 WELCOME_MSG = constants.WELCOME_MSG
 CONF_FILE = constants.CONF_FILE
@@ -145,31 +146,33 @@ def pre_check(args, config):
     Make sure directories are correct
     and required programs are installed
     '''
-    def exe_check(name):
+    def exe_check(name, isfile=False):
         try:
-            exe = config.get(APP_NAME, name.lower())
+            path = config.get(APP_NAME, name.lower())
         except configparser.Error:
             logger.error('Path to %s is not defined in dragon-radar.ini', name)
             return True
-        logger.debug('%s path: %s', name, exe)
-        if not os.path.isfile(exe):
-            logger.error('Path to %s \"%s\" is invalid.', name, exe)
+        logger.debug('%s path: %s', name, path)
+        if isfile and not os.path.isfile(path):
+            logger.error('Path to %s \"%s\" is invalid.', name, path)
             return True
         return False
 
     logger.debug('Performing pre-check...')
     bad_conf = False
-    bad_conf = exe_check('PGCDemux')
-    bad_conf = exe_check('VSRip')
-    bad_conf = exe_check('DelayCut')
-    bad_conf = exe_check('ReStream')
+    bad_conf = bad_conf or exe_check('PGCDemux', True)
+    bad_conf = bad_conf or exe_check('VSRip', True)
+    bad_conf = bad_conf or exe_check('DelayCut', True)
+    bad_conf = bad_conf or exe_check('ReStream', True)
+    bad_conf = bad_conf or exe_check('source_dir')
+    bad_conf = bad_conf or exe_check('output_dir')
     if (args.series == 'DB' and args.episode in [26, 41] or
        args.series == 'DBZ' and args.episode == 24 or
        args.make_avs):
         # complex demux or avs generation, DGIndex required
-        bad_conf = exe_check('DGIndex')
+        bad_conf = bad_conf or exe_check('DGIndex', True)
     if not args.no_mux:
-        bad_conf = exe_check('mkvmerge')
+        bad_conf = bad_conf or exe_check('mkvmerge', True)
     if bad_conf:
         sys.exit(1)
     else:
@@ -270,6 +273,16 @@ def main():
 
     # don't proceed if paths aren't right/programs missing
     pre_check(args, config)
+
+    try:
+        working_dir = config.get(APP_NAME, 'working_dir')
+    except configparser.Error:
+        working_dir = None
+
+    if working_dir:
+        if not os.path.isdir(working_dir):
+            create_dir(working_dir)
+        tempfile.tempdir = working_dir
 
     tmp_dir = tempfile.mkdtemp()
     logger.debug('Episode temp folder: %s', tmp_dir)

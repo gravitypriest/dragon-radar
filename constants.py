@@ -1,8 +1,8 @@
 import os
 import sys
 
-VERSION = '1.0.4'
-CODENAME = 'Ebifurya'
+VERSION = '1.1.0'
+CODENAME = 'Freeza'
 
 if hasattr(sys, 'frozen') and sys.frozen in ('windows_exe', 'console_exe'):
     _file = os.path.abspath(sys.argv[0])
@@ -19,6 +19,7 @@ TITLES_JSON = os.path.join(PARAMS_PATH, 'titles.json')
 CONF_FILE = os.path.join(PACKAGE_PATH, 'dragon-radar.ini')
 AC3_DIR = os.path.join(PACKAGE_PATH, 'ac3files')
 LOG_FILE = os.path.join(PACKAGE_PATH, 'dragon-radar.log')
+AUTODETECT_JSON = os.path.join(PARAMS_PATH, '.autodetect.json')
 APP_NAME = 'dragon-radar'
 VSRIP_TEMPLATE = ('{in_path}\n'
                   '{out_path}\n'
@@ -35,3 +36,6 @@ WELCOME_MSG = ('----------------------------\n' +
                '\n----------------------------')
 MIN_SIZE = 100000000
 FRAME_RATE = float(30000) / float(1001)
+
+if __name__ == '__main__':
+    print(VERSION)

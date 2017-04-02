@@ -10,6 +10,7 @@ from subtitle import retime_vobsub, detect_streams
 from audio import retime_ac3
 from avisynth import write_avs_file
 from mkvmux import make_mkv
+from auto_detect import auto_detect
 
 APP_NAME = constants.APP_NAME
 
@@ -101,6 +102,8 @@ class Episode(object):
         self.r2_chapters = {}
         if not args.no_demux:
             self.demux_map = load_demux_map(series, ep_str)
+            if self.is_r1dbox:
+                self.demux_map['R1_DBOX'] = auto_detect(self)
         else:
             self.demux_map = {'R1': {'audio': ['en', 'jp']}}
         self.files = self._init_files() if args.no_demux else {}
@@ -279,7 +282,6 @@ class Episode(object):
             r = 'R1_DBOX'
         else:
             r = 'R1'
-        print(self.is_pioneer)
         detect_streams(self.files[r]['subs'][0])
         dest_dir = os.path.join(self.output_dir, self.series, self.number)
         if os.path.isdir(dest_dir):
