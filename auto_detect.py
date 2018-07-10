@@ -78,8 +78,8 @@ def auto_detect(episode):
             for line in file_:
                 if line.startswith('Number of Cells in Selected VOB='):
                     num_cells = int(line.strip().split('=')[1])
-                    # always 5 cells per episode
-                    if num_cells == 5:
+                    # at least 5 cells per episode
+                    if num_cells >= 5:
                         episode_num = str(disc_eps[eps_detected]).zfill(3)
                         logger.debug('Detected episode: %s', episode_num)
                         auto_demux_map[episode_num] = {
@@ -93,6 +93,16 @@ def auto_detect(episode):
                         }
                         eps_detected = eps_detected + 1
                     break
+
+    if disc_name == 'DRAGON_BOX_S6_D3':
+        # weird offset of episodes on this disc
+        vids = {k: m['vid'][0] for (k, m) in auto_demux_map.items()}
+        for e in disc_eps:
+            if e < 230:
+                cur = str(e)
+                nxt = str(e+1)
+                auto_demux_map[nxt]['vid'][0] = vids[cur]
+        auto_demux_map['224']['vid'][0] = vids['230']
     logger.debug('Saving detected information for disc %s.', disc_name)
     save_autodetect(auto_demux_map)
     return auto_demux_map[episode.number]
