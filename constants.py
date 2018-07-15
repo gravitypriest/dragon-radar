@@ -1,8 +1,8 @@
 import os
 import sys
 
-VERSION = '1.1.0'
-CODENAME = 'Freeza'
+VERSION = '1.1.1'
+CODENAME = 'Gogeta'
 
 if hasattr(sys, 'frozen') and sys.frozen in ('windows_exe', 'console_exe'):
     _file = os.path.abspath(sys.argv[0])

@@ -1,3 +1,6 @@
+Version 1.1.1 "Gogeta" 07-15-2018
+- Fix autodetection bug, add unique offsets for Funi DBox 6
+
 Version 1.1.0 "Freeza" 04-02-2017
 - Fix R1 DBox ripping errors with one-time autodetection for VIDs
 - Add 'working_dir' config option to be able to set working temp directory
