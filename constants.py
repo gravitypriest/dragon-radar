@@ -12,7 +12,8 @@ else:
 PARAMS_PATH = os.path.join(PACKAGE_PATH, 'params')
 DEMUX_JSON = os.path.join(PARAMS_PATH, 'demux.json')
 DISC_JSON = os.path.join(PARAMS_PATH, 'episodes.json')
-OFFSETS_JSON = os.path.join(PARAMS_PATH, 'offsets.json')
+# OFFSETS_JSON = os.path.join(PARAMS_PATH, 'offsets.jp.json')
+OFFSETS_JSON = os.path.join(PARAMS_PATH, 'offsets.en.json')
 VALID_JSON = os.path.join(PARAMS_PATH, 'valid.json')
 TITLE_TIMES_JSON = os.path.join(PARAMS_PATH, 'title-times.json')
 TITLES_JSON = os.path.join(PARAMS_PATH, 'titles.json')
@@ -35,7 +36,8 @@ WELCOME_MSG = ('----------------------------\n' +
                ' \"' + CODENAME + '\"' +
                '\n----------------------------')
 MIN_SIZE = 100000000
-FRAME_RATE = float(30000) / float(1001)
+FRAME_RATE = float(24000) / float(1001)
+FRAME_RATE_30 = float(30000) / float(1001)
 
 if __name__ == '__main__':
     print(VERSION)

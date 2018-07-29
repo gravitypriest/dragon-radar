@@ -4,6 +4,7 @@ import logging
 import tempfile
 import atexit
 import subprocess
+import re
 import constants
 from utils import delete_temp, create_dir, move_file, check_abort, rename
 
@@ -20,13 +21,13 @@ def frame_to_ms(frame, offset):
     else:
         prev_chapter_end = int(
             round(1000 * float(frame - 1) / FRAME_RATE, 0))
-    if int(offset) > -1:
+    if int(offset) < 0:
         chapter_begin = int(
-            round(1000 * float(frame + offset) / FRAME_RATE, 0))
+            round(1000 * float(frame - offset) / FRAME_RATE, 0))
         delay = 0
     else:
         chapter_begin = int(round(1000 * float(frame) / FRAME_RATE, 0))
-        delay = int(round(-1000 * float(offset) / FRAME_RATE, 0))
+        delay = int(round(1000 * float(offset) / FRAME_RATE, 0))
     return prev_chapter_end, chapter_begin, delay
 
 
@@ -141,22 +142,45 @@ def delaycut_chain(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
         os.rename(file_out_3, file_in)
 
 
-def retime_ac3(episode, src_file, dst_file, bitrate,
-               offset_override=None, region='R1'):
+def get_bitrate(src_file):
+    # run ffprobe to determine bitrate
+    ff = subprocess.run([config['ffprobe'], src_file], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    check_abort(ff.returncode, 'ffprobe')
+    m = re.search(r'bitrate: (\d+).*Hz, ([^,(]+)(?:\(.*\))?,', str(ff.stderr))
+    bitrate = m.group(1)
+    channel = m.group(2)
+
+    if channel == '5.1':
+        return '51_' + bitrate
+    elif channel == 'stereo':
+        return '20_' + bitrate
+    else:
+        logger.error('Unknown channel/bitrate combination: %s/%s', channel, bitrate)
+
+def retime_ac3(config, offsets, src_file, dst_file):
     '''
     Retime an AC3 file based on offsets
+
+    Offsets should be a list of objects, formatted as such:
+    [{
+        "frame": 0
+        "offset": 124
+    },{
+        "frame": 47282
+        "offset": -6
+    }]
     '''
+    if not os.path.isfile(src_file):
+        logger.error('ERROR: %s not found. Skipping.', src_file)
+        return
+
+    bitrate = get_bitrate(src_file)
+
     tmp_dir = tempfile.mkdtemp()
     # in the case of unexpected exit, we don't want to
     # keep temp files around
     atexit.register(delete_temp, tmp_dir)
     logger.debug('Audio temp folder: %s', tmp_dir)
-
-    if os.path.isfile(src_file):
-        logger.debug('%s found! Proceeding with retiming...', src_file)
-    else:
-        logger.error('%s not found. Skipping...', src_file)
-        return
 
     try:
         # copy source to tempfile for surgery
@@ -164,47 +188,36 @@ def retime_ac3(episode, src_file, dst_file, bitrate,
         working_file = os.path.join(tmp_dir, os.path.basename(src_file))
     except IOError as e:
         logger.error("Unable to copy file. %s", e)
-        return
+        return 
+    totalOffset = 0
+    for o in offsets:
+        if o['offset'] == 0:
+            continue
+        # "frame" is based on the source video, so maintain
+        # total offset to match the same frame in destination video
+        chapter = o['frame'] + totalOffset
+        offset = o['offset']
 
-    r2_chaps = episode.r2_chapters
-    offsets = episode.offsets if not offset_override else offset_override
-    if episode.is_pioneer and region == 'PIONEER':
-        offsets = episode.pioneer_offsets
-
-    if isinstance(offsets, list):
-        # movies
-        totalOffset = 0
-        for o in offsets:
-            if o['offset'] == 0:
-                continue
-            if episode.is_special:
-                # frames are at R2 chapter breakpoints
-                # accounted for in the json
-                chapter = o['frame']
-            else:
-                # chapters are based on reel changes in R1 file
-                chapter = o['frame'] - totalOffset
-            offset = o['offset']
-
-            prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
-                                                                 offset)
-            delaycut_chain(episode.delaycut, working_file, prev_chapter_end,
-                           chapter_begin, delay, bitrate)
-            totalOffset += offset
-    else:
-        # TV
-        for key in ['op', 'prologue', 'partB', 'ED', 'NEP']:
-            if key in offsets.keys():
-                # skip scenes with offset of 0
-                if offsets[key]['offset'] == 0:
-                    continue
-                chapter = r2_chaps[key]
-                offset = offsets[key]['offset']
-                prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
-                                                                     offset)
-                delaycut_chain(episode.delaycut, working_file,
-                               prev_chapter_end, chapter_begin, delay,
-                               bitrate)
-
+        prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
+                                                             offset)
+        delaycut_chain(config['delaycut'], working_file, prev_chapter_end,
+                       chapter_begin, delay, bitrate)
+        totalOffset += offset
     move_file(working_file, dst_file)
     delete_temp(tmp_dir)
+
+if __name__ == '__main__':
+    config = {
+        'delaycut': 'F:/Pogroms/delaycut1.4.3.7/delaycut.exe',
+        'ffprobe': 'F:/Pogroms/ffmpeg-20161208-3ab1311-win32-static/bin/ffprobe.exe'
+    }
+    offsets = [{
+            "frame": 0,
+            "offset": 20
+        }, {
+            "frame": 26097,
+            "offset": 2
+        }]
+    src_file = 'E:/output/MOVIES/01/R1/AudioFile_80.ac3'
+    dst_file = 'E:/output/MOVIES/01/R1/AudioFile_80.retimed.ac3'
+    retime_ac3(config, offsets, src_file, dst_file)

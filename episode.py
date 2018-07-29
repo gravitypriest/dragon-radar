@@ -105,7 +105,7 @@ class Episode(object):
             if self.is_r1dbox:
                 self.demux_map['R1_DBOX'] = auto_detect(self)
         else:
-            self.demux_map = {'R1': {'audio': ['en', 'jp']}}
+            self.demux_map = load_demux_map(series, ep_str)
         self.files = self._init_files() if args.no_demux else {}
 
     def _init_files(self):
@@ -115,7 +115,6 @@ class Episode(object):
         '''
         _files = {}
         episode_dir = os.path.join(self.output_dir, self.series, self.number)
-
         for r in self._regions():
             _files[r] = files_index(os.path.join(episode_dir, r))
 
