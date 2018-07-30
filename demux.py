@@ -195,8 +195,9 @@ def _audio_correction(episode, source_ifo, src_dir, dest_dir,
     logger.debug('Trimming audio...')
     ep_newfname = os.path.join(dest_dir, 'ep_audio.ac3')
     retime_ac3(
-        episode, ep_audio, ep_newfname, 448,
-        offset_override=[{'frame': 0, 'offset': start_frame}])
+        episode,
+        [{'frame': 0, 'offset': start_frame}],
+        ep_audio, ep_newfname)
 
     # smash them together
     logger.debug('Combining audio...')

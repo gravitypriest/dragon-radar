@@ -1,4 +1,5 @@
 import json
+import yaml
 import os
 import sys
 import time
@@ -27,11 +28,21 @@ def load_json(filename):
     except OSError as o:
         logger.error(o)
 
+def load_yaml(filename):
+    try:
+        with open(filename) as file_:
+            yaml_data = yaml.load(file_)
+            return yaml_data
+    except OSError as o:
+        logger.error(o)
 
 def load_frame_data(series, episode):
     '''
     Load the JSON data of frame offsets for one series
     '''
+    if series == 'MOVIES':
+        return load_yaml(constants.OFFSETS_YAML)['movies'][episode], None
+        
     series_frame_data = load_json(OFFSETS_JSON)[series]
     try:
         op_offset = get_op_offset(series, int(episode), series_frame_data)
@@ -255,3 +266,6 @@ def check_abort(returncode, name):
                      '%s had non-zero exit code (%s). Aborting.',
                      name, returncode)
         sys.exit(1)
+
+if __name__ == '__main__':
+    print(load_frame_data('MOVIES', '01', 'R1'))

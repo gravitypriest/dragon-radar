@@ -80,6 +80,7 @@ class Episode(object):
         self.restream = config.get(APP_NAME, 'restream')
         self.src_dir_top = config.get(APP_NAME, 'source_dir')
         self.output_dir = config.get(APP_NAME, 'output_dir')
+        self.config = config
 
         # special flags
         self.is_r1dbox = args.series == 'DBZ' and args.r1_dbox
@@ -185,6 +186,7 @@ class Episode(object):
         Retime .idx file, rename .sub file to match
         new .idx filename, then save to episode.files
         '''
+        # return
         logger.info('Retiming subtitles...')
         for r in self._regions():
             if r == 'R2':
@@ -201,7 +203,7 @@ class Episode(object):
                             os.path.join(os.path.dirname(sub_sub),
                                          os.path.basename(sub_sub).replace(
                                          '.sub', '.retimed.sub'))]
-            retime_vobsub(sub_idx, retimed_subs[0], self)
+            retime_vobsub(sub_idx, retimed_subs[0], r, self)
             shutil.copy(sub_sub, retimed_subs[1])
             self.files[r]['retimed_subs'] = retimed_subs
         logger.info('Subtitle retime complete.')
@@ -211,22 +213,24 @@ class Episode(object):
         Retime audio tracks
         '''
         logger.info('Retiming audio...')
+        retimed_audio = []
         for r in self._regions():
             if r == 'R2':
+                jp_idx = self.demux_map[r]['audio'].index('jp')
+                jp_audio = self.files[r]['audio'][jp_idx]
+                self.files[r]['retimed_audio'] = [os.path.join(os.path.dirname(jp_audio),
+                                     os.path.basename(jp_audio).replace(
+                                     '.ac3', '.retimed.ac3'))]
+                print(self.offsets)
+                retime_ac3(self.config, self.offsets[r.lower()], jp_audio, self.files[r]['retimed_audio'][-1])
                 continue
-            en_idx = self.demux_map[r]['audio'].index('en')
-            en_audio = self.files[r]['audio'][en_idx]
-            retimed_audio = [os.path.join(os.path.dirname(en_audio),
-                                          os.path.basename(en_audio).replace(
-                                          '.ac3', '.retimed.ac3'))]
-            bitrate = '51_448'
-            if r == 'R1_DBOX':
-                bitrate = '51_384'
-            if r == 'PIONEER':
-                bitrate = '20_384'
-                if self.number == '03':
-                    bitrate = '20_192'
-            retime_ac3(self, en_audio, retimed_audio[0], bitrate, region=r)
+            if 'en' in self.demux_map[r]['audio']:
+                en_idx = self.demux_map[r]['audio'].index('en')
+                en_audio = self.files[r]['audio'][en_idx]
+                retimed_audio.append(os.path.join(os.path.dirname(en_audio),
+                                     os.path.basename(en_audio).replace(
+                                    '.ac3', '.retimed.ac3')))
+                retime_ac3(self.config, self.offsets[r.lower()], en_audio, retimed_audio[-1])
             if 'us' in self.demux_map[r]['audio']:
                 # get track with US replacement music
                 us_idx = self.demux_map[r]['audio'].index('us')
@@ -234,10 +238,7 @@ class Episode(object):
                 retimed_audio.append(os.path.join(os.path.dirname(us_audio),
                                      os.path.basename(us_audio).replace(
                                      '.ac3', '.retimed.ac3')))
-                bitrate = '51_448' if (self.is_movie or
-                                       (self.is_special and
-                                        self.series == 'DBGT')) else '20_192'
-                retime_ac3(self, us_audio, retimed_audio[1], bitrate)
+                retime_ac3(self.config, self.offsets[r.lower()], us_audio, retimed_audio[-1])
             self.files[r]['retimed_audio'] = retimed_audio
         logger.info('Audio retime complete.')
 

@@ -123,6 +123,7 @@ def write_avs_file(dir_, episode):
     for r in regions:
         region_dir = os.path.join(dir_, r)
         check_for_d2v(region_dir, episode)
+    return
     dst_file = os.path.join(dir_,
                             episode.number + '.avs')
     with open(dst_file, 'w') as avs_file:

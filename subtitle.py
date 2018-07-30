@@ -49,14 +49,14 @@ def _op_subtitle_delay(episode):
     return frame_to_seconds(delay)
 
 
-def _adjust_timecode(episode, timestamp):
+def _adjust_timecode(episode, region, timestamp):
     '''
     Offset a timecode by the total number of offset frames
     '''
     frame = timestamp_to_seconds(timestamp)
-    offsets = episode.offsets
-    if episode.is_pioneer:
-        offsets = episode.pioneer_offsets
+    offsets = episode.offsets[region.lower()]
+    # if episode.is_pioneer:
+    #     offsets = episode.pioneer_offsets
     series = episode.series
     total_offset = 0
     # calculate offset from frame data
@@ -82,7 +82,7 @@ def _adjust_timecode(episode, timestamp):
     return to_timestamp(frame)
 
 
-def retime_vobsub(orig_file, fixed_file, episode):
+def retime_vobsub(orig_file, fixed_file, region, episode):
     '''
     Parse the file and retime the sub
     '''
@@ -96,7 +96,7 @@ def retime_vobsub(orig_file, fixed_file, episode):
                 if 'timestamp: ' in line:
                     sub_parts = line.split(',')
                     sub_time = sub_parts[0].split('timestamp: ')[1].strip()
-                    retimed = _adjust_timecode(episode, sub_time)
+                    retimed = _adjust_timecode(episode, region, sub_time)
                     sub_parts[0] = 'timestamp: ' + retimed
                     file_out.write(','.join(sub_parts))
                 else:

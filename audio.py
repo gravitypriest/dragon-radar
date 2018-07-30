@@ -14,21 +14,23 @@ AC3_DIR = constants.AC3_DIR
 
 logger = logging.getLogger(APP_NAME)
 
+def some_maths(frame):
+    return round(1000 * float(frame) / FRAME_RATE, 0)
 
 def frame_to_ms(frame, offset):
     if frame == 0:
         prev_chapter_end = 0
     else:
-        prev_chapter_end = int(
-            round(1000 * float(frame - 1) / FRAME_RATE, 0))
+        prev_chapter_end = frame - 1
     if int(offset) < 0:
-        chapter_begin = int(
-            round(1000 * float(frame - offset) / FRAME_RATE, 0))
+        chapter_begin = frame - offset
         delay = 0
     else:
-        chapter_begin = int(round(1000 * float(frame) / FRAME_RATE, 0))
-        delay = int(round(1000 * float(offset) / FRAME_RATE, 0))
-    return prev_chapter_end, chapter_begin, delay
+        chapter_begin = frame
+        delay = offset
+    return (some_maths(prev_chapter_end),
+           some_maths(chapter_begin),
+           some_maths(delay))
 
 
 def fix_audio(delaycut, file_in):
@@ -142,9 +144,9 @@ def delaycut_chain(delaycut, file_in, prev_ch_end, ch_begin, delay, bitrate):
         os.rename(file_out_3, file_in)
 
 
-def get_bitrate(src_file):
+def get_bitrate(config, src_file):
     # run ffprobe to determine bitrate
-    ff = subprocess.run([config['ffprobe'], src_file], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    ff = subprocess.run([config.get(APP_NAME, 'ffprobe'), src_file], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     check_abort(ff.returncode, 'ffprobe')
     m = re.search(r'bitrate: (\d+).*Hz, ([^,(]+)(?:\(.*\))?,', str(ff.stderr))
     bitrate = m.group(1)
@@ -157,7 +159,7 @@ def get_bitrate(src_file):
     else:
         logger.error('Unknown channel/bitrate combination: %s/%s', channel, bitrate)
 
-def retime_ac3(config, offsets, src_file, dst_file):
+def retime_ac3(config, offsets, src_file, dst_file, frame_basis_source=True):
     '''
     Retime an AC3 file based on offsets
 
@@ -174,7 +176,9 @@ def retime_ac3(config, offsets, src_file, dst_file):
         logger.error('ERROR: %s not found. Skipping.', src_file)
         return
 
-    bitrate = get_bitrate(src_file)
+    bitrate = get_bitrate(config, src_file)
+
+    logger.debug('Detected bitrate : %s', bitrate)
 
     tmp_dir = tempfile.mkdtemp()
     # in the case of unexpected exit, we don't want to
@@ -182,6 +186,7 @@ def retime_ac3(config, offsets, src_file, dst_file):
     atexit.register(delete_temp, tmp_dir)
     logger.debug('Audio temp folder: %s', tmp_dir)
 
+    logger.debug('Retiming %s', src_file)
     try:
         # copy source to tempfile for surgery
         shutil.copy(src_file, tmp_dir)
@@ -198,11 +203,16 @@ def retime_ac3(config, offsets, src_file, dst_file):
         chapter = o['frame'] + totalOffset
         offset = o['offset']
 
+        # if frame_basis_source is False, we are basing our "cuts"
+        # on predetermined chapter points from the destination video,
+        # so don't maintain shifts aggregately
+        if frame_basis_source:
+            totalOffset += offset
+
         prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
                                                              offset)
-        delaycut_chain(config['delaycut'], working_file, prev_chapter_end,
+        delaycut_chain(config.get(APP_NAME, 'delaycut'), working_file, prev_chapter_end,
                        chapter_begin, delay, bitrate)
-        totalOffset += offset
     move_file(working_file, dst_file)
     delete_temp(tmp_dir)
 
