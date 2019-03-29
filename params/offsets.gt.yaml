@@ -1,0 +1,653 @@
+---
+# Frame offsets targeting R2 Dragon Box GT
+#
+# r1 = funimation "digitally remastered" DVDs
+dbgt:
+  rate: 30000/1001 # ntsc 29.97
+  frameBasis: destination
+  '01':
+    r1:
+    - frame:  0      # OP
+      offset: 3
+    - frame:  3236   # part A
+      offset: -8
+    - frame:  21566  # part B
+      offset: -6
+    - frame:  40522  # ED
+      offset: 5
+  '02':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  21412
+      offset: -2
+    - frame:  40521
+      offset: 2
+  '03':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -7
+    - frame:  19640
+      offset: -1
+    - frame:  40534
+      offset: 2
+  '04':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -4
+    - frame:  22197
+      offset: -5
+    - frame:  40526
+      offset: 1
+  '05':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  22614
+      offset: -4
+    - frame:  40524
+      offset: 1
+  '06':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: 1
+    - frame:  22211
+      offset: 1
+    - frame:  40525
+      offset: 1
+  '07':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -4
+    - frame:  23696
+      offset: 1
+    - frame:  40525
+      offset: 1
+  08:
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -4
+    - frame:  22136
+      offset: 2
+    - frame:  40525
+      offset: 0
+  09:
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3235
+      offset: -3
+    - frame:  20845
+      offset: 1
+    - frame:  40524
+      offset: 1
+  '10':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -4
+    - frame:  23246
+      offset: 1
+    - frame:  40520
+      offset: 6
+  '11':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -4
+    - frame:  22586
+      offset: 1
+    - frame:  40525
+      offset: 1
+  '12':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -4
+    - frame:  19826
+      offset: 1
+    - frame:  40525
+      offset: 1
+  '13':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  22492
+      offset: 3
+    - frame:  40522
+      offset: 1
+  '14':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -4
+    - frame:  22073
+      offset: 3
+    - frame:  40523
+      offset: 1
+  '15':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3237
+      offset: -2
+    - frame:  24290
+      offset: 6
+    - frame:  40518
+      offset: 1
+  '16':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3237
+      offset: -3
+    - frame:  21716
+      offset: 0
+    - frame:  40525
+      offset: 1
+  '17':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3237
+      offset: -3
+    - frame:  23246
+      offset: -5
+    - frame:  40525
+      offset: 1
+  '18':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3237
+      offset: -3
+    - frame:  22196
+      offset: -5
+    - frame:  40525
+      offset: 1
+  '19':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -4
+    - frame:  23306
+      offset: 1
+    - frame:  40525
+      offset: 1
+  '20':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -4
+    - frame:  23126
+      offset: 1
+    - frame:  40525
+      offset: 1
+  '21':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  23246
+      offset: 0
+    - frame:  40526
+      offset: 0
+  '22':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: 1
+    - frame:  22646
+      offset: 1
+    - frame:  40525
+      offset: 1
+  '23':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  22016
+      offset: 0
+    - frame:  40525
+      offset: 1
+  '24':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  22436
+      offset: 0
+    - frame:  40525
+      offset: 1
+  '25':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  22015
+      offset: -5
+    - frame:  40525
+      offset: 1
+  '26':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  22584
+      offset: -4
+    - frame:  40524
+      offset: 1
+  '27':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  22435
+      offset: 1
+    - frame:  40524
+      offset: 2
+  '28':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: 3
+    - frame:  22135
+      offset: -1
+    - frame:  40525
+      offset: 2
+  '29':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  22645
+      offset: 0
+    - frame:  40525
+      offset: 2
+  '30':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -2
+    - frame:  23485
+      offset: 0
+    - frame:  40524
+      offset: 2
+  '31':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -2
+    - frame:  21114
+      offset: 0
+    - frame:  40524
+      offset: 2
+  '32':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  21175
+      offset: 0
+    - frame:  40525
+      offset: 2
+  '33':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  20725
+      offset: 0
+    - frame:  40525
+      offset: 3
+  '34':
+    r1:
+    - frame:  0
+      offset: 3
+    - frame:  3236
+      offset: -3
+    - frame:  20606
+      offset: 0
+    - frame:  40525
+      offset: 2
+  '35':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: 1
+    - frame:  24508
+      offset: 0
+    - frame:  40553
+      offset: 2
+  '36':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  22045
+      offset: 1
+    - frame:  40555
+      offset: 2
+  '37':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -4
+    - frame:  22437
+      offset: 0
+    - frame:  40557
+      offset: 2
+  '38':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -4
+    - frame:  21338
+      offset: 19
+    - frame:  40538
+      offset: 2
+  '39':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -5
+    - frame:  21716
+      offset: 3
+    - frame:  40555
+      offset: 2
+  '40':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: 1
+    - frame:  22313
+      offset: 2
+    - frame:  40555
+      offset: 2
+  '41':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -4
+    - frame:  21837
+      offset: 1
+    - frame:  40556
+      offset: 2
+  '42':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  23397
+      offset: 0
+    - frame:  40497
+      offset: -1
+  '43':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  23667
+      offset: 0
+    - frame:  40555
+      offset: 1
+  '44':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -4
+    - frame:  23187
+      offset: 0
+    - frame:  40556
+      offset: 1
+  '45':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  23305
+      offset: 1
+    - frame:  40554
+      offset: 1
+  '46':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3264
+      offset: -2
+    - frame:  22733
+      offset: 2
+    - frame:  40552
+      offset: 1
+  '47':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  21265
+      offset: 1
+    - frame:  40553
+      offset: 2
+  '48':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3267
+      offset: -3
+    - frame:  23549
+      offset: -2
+    - frame:  40559
+      offset: -1
+  '49':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -4
+    - frame:  21896
+      offset: 1
+    - frame:  40556
+      offset: 0
+  '50':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -4
+    - frame:  22765
+      offset: 3
+    - frame:  40553
+      offset: 1
+  '51':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -4
+    - frame:  22766
+      offset: 1
+    - frame:  40556
+      offset: -1
+  '52':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  21318
+      offset: 8
+    - frame:  40548
+      offset: -1
+  '53':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  23603
+      offset: 3
+    - frame:  40541
+      offset: 11
+  '54':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -4
+    - frame:  23031
+      offset: 4
+    - frame:  40551
+      offset: 2
+  '55':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  23546
+      offset: 0
+    - frame:  40556
+      offset: 0
+  '56':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  20544
+      offset: 3
+    - frame:  40554
+      offset: -1
+  '57':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  22734
+      offset: 3
+    - frame:  40553
+      offset: 0
+  '58':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  22945
+      offset: 1
+    - frame:  40555
+      offset: 0
+  '59':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -4
+    - frame:  21954
+      offset: 3
+    - frame:  40552
+      offset: 2
+  '60':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  20846
+      offset: 1
+    - frame:  40554
+      offset: 1
+  '61':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -4
+    - frame:  22684
+      offset: 23
+    - frame:  40487
+      offset: 47
+  '62':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: -3
+    - frame:  21804
+      offset: 3
+    - frame:  40554
+      offset: -1
+  '63':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: 2
+    - frame:  19886
+      offset: 1
+    - frame:  40555
+      offset: 0
+  '64':
+    r1:
+    - frame:  0
+      offset: -27
+    - frame:  3266
+      offset: 2
+    - frame:  20864
+      offset: 2
+    - frame:  40571
+      offset: -17
+  'special':
+    r1:
+    - frame:  0
+      offset: 146
+    - frame:  3266
+      offset: 5

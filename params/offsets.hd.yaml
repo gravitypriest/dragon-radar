@@ -18,6 +18,7 @@ movies:
       offset: 28
     - frame:  35077
       offset: 1
+      soften: 3
     pioneer:
     - frame:  0
       offset: 35
@@ -56,8 +57,10 @@ movies:
       offset: 31
     - frame:  22677
       offset: 2
+      soften: 1
     - frame:  42617
       offset: 2
+      soften: 1
     pioneer:
     - frame:  0
       offset: 38
@@ -91,6 +94,7 @@ movies:
       offset: 1
     - frame:  51557
       offset: 1
+      soften: 1
   '06': # spaghetti star
     r1:
     - frame:  0
@@ -109,6 +113,7 @@ movies:
       offset: 24
     - frame:  28569
       offset: 2
+      soften: 1
   '08': # DEDENNNN
     r1: [] # no sync needed for funi
     r2:
@@ -120,6 +125,7 @@ movies:
       offset: 2
     - frame:  74500
       offset: 4
+      soften: 1
   '09': # horseman
     r1:
     - frame:  0
@@ -133,8 +139,9 @@ movies:
       offset: 2
   '10': # broly 2
     r1:
-    - frame:  25877
+    - frame:  25880
       offset: -3
+      soften: -3
     r2:
     - frame:  0
       offset: 24
@@ -151,6 +158,7 @@ movies:
       offset: 3
     - frame:  45081
       offset: 1
+      soften: 2
   '12': # cubes
     r1: [] # no sync needed for funi
     r2:
@@ -158,8 +166,10 @@ movies:
       offset: 24
     - frame:  25373
       offset: 2
+      soften: 1
     - frame:  47197
       offset: 2
+      soften: 2
   '13': # you dare to destroy my house
     r1: [] # no sync needed for funi
     r2:
@@ -178,10 +188,13 @@ movies:
       offset: 2
     - frame:  50041
       offset: 1
+      soften: 2
     - frame:  70013
       offset: 1
+      soften: 2
     - frame:  89009
       offset: 3
+      soften: 2
   '15': # legend of shenlong
     r1:
     - frame:  0
@@ -191,8 +204,10 @@ movies:
       offset: 23
     - frame:  23161
       offset: 2
+      soften: 1
     - frame:  47573
       offset: 3
+      soften: 1
   '16': # sleeping princess
     r1:
     - frame:  0
@@ -202,6 +217,7 @@ movies:
       offset: 19
     - frame:  42728
       offset: 2
+      soften: 1
   '17': # arale's in this one
     r1:
     - frame:  0

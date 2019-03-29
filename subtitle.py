@@ -77,7 +77,7 @@ def _adjust_timecode(episode, region, timestamp):
                 total_offset += frame_to_seconds(
                     offsets[key]["offset"])
     # apply offset to subtitle timing
-    frame -= total_offset
+    frame += total_offset
 
     return to_timestamp(frame)
 

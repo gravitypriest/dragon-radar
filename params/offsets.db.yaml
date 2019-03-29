@@ -1,0 +1,1545 @@
+---
+# Frame offsets targeting R2 Dragon Box
+#
+# frame_basis: source | destination
+#   source: Frames are determined from the source video
+#           (the one being cut). Thus, offsets are relative,
+#           and cuts are done at the frames + sum of previous
+#           offsets on successive sync points.
+#   destination: Frames are determined from the destination video.
+#                Thus, offsets are absolute, and cuts are done at
+#                the frames as specified.
+# r1 = funimation "digitally remastered" DVDs
+db:
+  rate: 30000/1001
+  frameBasis: destination
+  '001':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21691
+      offset: -10
+    - frame:  40590
+      offset: -5
+  '002':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22501
+      offset: -5
+    - frame:  40590
+      offset: 0
+  '003':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22531
+      offset: -5
+    - frame:  40590
+      offset: 0
+  '004':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  20731
+      offset: -5
+    - frame:  40590
+      offset: 0
+  '005':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22351
+      offset: -5
+    - frame:  40590
+      offset: 0
+  '006':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  20311
+      offset: -5
+    - frame:  40590
+      offset: 0
+  '007':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -5
+    - frame:  21481
+      offset: 0
+    - frame:  40590
+      offset: 0
+  '008':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22411
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '009':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21871
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '010':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  20851
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '011':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21751
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '012':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21781
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '013':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21661
+      offset: -25
+    - frame:  40590
+      offset: 0
+  '014':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -20
+    - frame:  23431
+      offset: -25
+    - frame:  40590
+      offset: 0
+  '015':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -20
+    - frame:  21810
+      offset: -25
+    - frame:  40590
+      offset: 0
+  '016':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21841
+      offset: -25
+    - frame:  40590
+      offset: -5
+  '017':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23191
+      offset: -25
+    - frame:  40590
+      offset: 0
+  '018':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22321
+      offset: -25
+    - frame:  40590
+      offset: 0
+  '019':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22261
+      offset: -25
+    - frame:  40590
+      offset: 0
+  '020':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3304
+      offset: -15
+    - frame:  23041
+      offset: -25
+    - frame:  40590
+      offset: 0
+  '021':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22231
+      offset: -25
+    - frame:  40590
+      offset: 0
+  '022':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  23850
+      offset: -25
+    - frame:  40590
+      offset: 0
+  '023':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22023
+      offset: -25
+    - frame:  40590
+      offset: 0
+  '024':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21330
+      offset: -25
+    - frame:  40590
+      offset: 0
+  '025':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  19140
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '026':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22920
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '027':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21629
+      offset: -28
+    - frame:  40590
+      offset: -2
+  '028':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  20130
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '029':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22560
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '030':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21030
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '031':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21150
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '032':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22170
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '033':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  20160
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '034':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22713
+      offset: -32
+    - frame:  40590
+      offset: -8
+  '035':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -20
+    - frame:  24061
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '036':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21749
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '037':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21361
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '038':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21271
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '039':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22203
+      offset: -32
+    - frame:  40590
+      offset: -3
+  '040':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22021
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '041':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  20341
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '042':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22831
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '043':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  23130
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '044':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23775
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '045':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  23085
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '046':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21675
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '047':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3305
+      offset: -15
+    - frame:  21885
+      offset: -25
+    - frame:  40590
+      offset: -5
+  '048':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23205
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '049':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21045
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '050':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22426
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '051':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21285
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '052':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22515
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '053':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  24435
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '054':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22845
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '055':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -6
+    - frame:  23501
+      offset: -30
+    - frame:  40590
+      offset: -4
+  '056':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -7
+    - frame:  22813
+      offset: -30
+    - frame:  40590
+      offset: -8
+  '057':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  23055
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '058':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  23085
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '059':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  23536
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '060':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -12
+    - frame:  21584
+      offset: -30
+    - frame:  40590
+      offset: -13
+  '061':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  23955
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '062':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -7
+    - frame:  21523
+      offset: -30
+    - frame:  40588
+      offset: -8
+  '063':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22290
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '064':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22125
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '065':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21945
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '066':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  19936
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '067':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21765
+      offset: -30
+    - frame:  40590
+      offset: 0
+  068:
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  19905
+      offset: -30
+    - frame:  40590
+      offset: -10
+  069:
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  20296
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '070':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22455
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '071':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22006
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '072':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  20746
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '073':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22096
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '074':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21436
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '075':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22183
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '076':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  20836
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '077':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21135
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '078':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21436
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '079':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22156
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '080':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22485
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '081':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22485
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '082':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  23355
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '083':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21526
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '084':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23236
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '085':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22245
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '086':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22158
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '087':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  24046
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '088':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -20
+    - frame:  21255
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '089':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23026
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '090':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22695
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '091':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22036
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '092':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21166
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '093':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22096
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '094':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21495
+      offset: -28
+    - frame:  40590
+      offset: -7
+  '095':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22006
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '096':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  21346
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '097':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  24286
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '098':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21916
+      offset: -31
+    - frame:  40590
+      offset: 1
+  '099':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22246
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '100':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22065
+      offset: -28
+    - frame:  40590
+      offset: -2
+  '101':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  20626
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '102':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  20416
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '103':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21165
+      offset: -28
+    - frame:  40590
+      offset: -7
+  '104':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  23055
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '105':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -8
+    - frame:  22246
+      offset: -31
+    - frame:  40590
+      offset: -10
+  '106':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21496
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '107':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21016
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '108':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  20656
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '109':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23686
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '110':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22006
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '111':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  20716
+      offset: -28
+    - frame:  40590
+      offset: -12
+  '112':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  20926
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '113':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  20806
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '114':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21466
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '115':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  24316
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '116':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22306
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '117':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21436
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '118':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22276
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '119':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22666
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '120':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23476
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '121':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22816
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '122':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  24226
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '123':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22186
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '124':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22696
+      offset: -30
+    - frame:  40589
+      offset: -8
+  '125':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22276
+      offset: -30
+    - frame:  40589
+      offset: -8
+  '126':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22695
+      offset: -33
+    - frame:  40590
+      offset: -8
+  '127':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  22426
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '128':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23776
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '129':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  24181
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '130':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23866
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '131':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22396
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '132':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23116
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '133':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22486
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '134':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23145
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '135':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22726
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '136':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -13
+    - frame:  23086
+      offset: -32
+    - frame:  40590
+      offset: 0
+  '137':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  23206
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '138':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -20
+    - frame:  22876
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '139':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  24256
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '140':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  19606
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '141':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23626
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '142':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  24616
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '143':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  24946
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '144':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23836
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '145':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  23626
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '146':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  20116
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '147':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -10
+    - frame:  20446
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '148':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22216
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '149':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  24406
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '150':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22636
+      offset: -30
+    - frame:  40590
+      offset: 0
+  '151':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  24106
+      offset: -30
+    - frame:  40590
+      offset: -10
+  '152':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  21016
+      offset: -30
+    - frame:  40590
+      offset: -5
+  '153':
+    r1:
+    - frame:  0
+      offset: -40
+    - frame:  3300
+      offset: -15
+    - frame:  22516
+      offset: -30
+    - frame:  40590
+      offset: 0

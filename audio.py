@@ -203,11 +203,16 @@ def retime_ac3(config, offsets, src_file, dst_file, frame_basis_source=True):
         chapter = o['frame'] + totalOffset
         offset = o['offset']
 
-        # if frame_basis_source is False, we are basing our "cuts"
-        # on predetermined chapter points from the destination video,
-        # so don't maintain shifts aggregately
         if frame_basis_source:
+            # if frame_basis_source is False, we are basing our "cuts"
+            # on predetermined chapter points from the destination video,
+            # so don't maintain shifts aggregately
             totalOffset += offset
+        if 'soften' in o:
+            # "soften" is an optional offset that shifts the
+            # frame in case the audio transitions slightly
+            # differently than the video, in order to avoid jarring cuts
+            chapter = chapter + o['soften']
 
         prev_chapter_end, chapter_begin, delay = frame_to_ms(chapter,
                                                              offset)
